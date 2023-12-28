@@ -95,18 +95,16 @@ int main (int argc, char** argv)
 	      return 1;
 	   }
    }
-   char* hostname = (argc >= 2) ? argv[1] : NULL;
-   int port = (argc >= 3) ? atoi(argv[2]) : DEFAULT_PORTID;
-   unsigned int jointMask = (argc >= 4) ? (unsigned int)atoi(argv[3]) : DEFAULT_JOINTMASK;
-   double frequency = (argc >= 5) ? atof(argv[4]) : DEFAULT_FREQUENCY;
-   double amplitude = (argc >= 6) ? atof(argv[5]) : DEFAULT_AMPLITUDE;
-   double filterCoeff = (argc >= 7) ? atof(argv[6]) : DEFAULT_FILTER_COEFFICIENT;
+    char* hostname = (argc >= 2) ? argv[1] : NULL;
+    printf("hostname: %s\n", hostname);
+    int port = (argc >= 3) ? atoi(argv[2]) : DEFAULT_PORTID;
+    unsigned int jointMask = (argc >= 4) ? (unsigned int)atoi(argv[3]) : DEFAULT_JOINTMASK;
+    double frequency = (argc >= 5) ? atof(argv[4]) : DEFAULT_FREQUENCY;
+    double amplitude = (argc >= 6) ? atof(argv[5]) : DEFAULT_AMPLITUDE;
+    double filterCoeff = (argc >= 7) ? atof(argv[6]) : DEFAULT_FILTER_COEFFICIENT;
 
-   /***************************************************************************/
-   /*                                                                         */
-   /*   Place user Client Code here                                           */
-   /*                                                                         */
-   /**************************************************************************/
+    if (hostname == NULL) hostname = "172.31.0.147";
+
    
    // create new sine overlay client
    mastersclient trafoClient(jointMask, frequency, amplitude, filterCoeff);
@@ -140,7 +138,7 @@ int main (int argc, char** argv)
    while (success)
    {
       success = app.step();
-      printf((const char *) trafoClient.robotState().getSessionState());
+      //printf((const char *) trafoClient.robotState().getSessionState());
       // check if we are in IDLE because the FRI session was closed
       if (trafoClient.robotState().getSessionState() == IDLE)
       {
