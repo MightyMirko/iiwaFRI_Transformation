@@ -7,8 +7,6 @@
 
 #include "friLBRClient.h"
 
-
-
 /**
  * \brief Test client that can overlay interpolator joint positions with sine waves.
  */
@@ -44,8 +42,7 @@ public:
    /**
     * \brief Callback for the FRI state 'Commanding Active'.
     */
-   virtual void
-   command();
+   void command() override;
       
 private:
    
