@@ -190,7 +190,7 @@ endif(BUILD_FRI_APPS)
 if (BUILD_MASTERS)
 file(GLOB_RECURSE MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/masters/*.cpp)
 #file(GLOB_RECURSE MASTERS_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/masters/src *.cpp)
-find_library(TEST_LIBRARY FRIClient build)
+#find_library(TEST_LIBRARY FRIClient build)
 add_executable(mastersAPP
         ${MASTERS_SOURCES}
 )
@@ -203,8 +203,8 @@ target_include_directories(mastersAPP
 )
 
 target_link_libraries(mastersAPP
-        LINK_PUBLIC ${TEST_LIBRARY}
-        #${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/FRIClient
+        PRIVATE
+        FRIClient
         # Add other libraries if needed
 )
 endif (BUILD_MASTERS)
