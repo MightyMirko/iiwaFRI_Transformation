@@ -1,9 +1,5 @@
 /**
 
-
-
-
-
 \file
 \version {1.17}
 */
@@ -63,23 +59,18 @@ void mastersclient::onStateChange(ESessionState oldState, ESessionState newState
 //******************************************************************************
 void mastersclient::command()
 {
-   // calculate new offset
-   double newOffset = _amplRad * sin(_phi);
-   _offset = _offset * _filterCoeff + newOffset * (1.0 - _filterCoeff);
-   _phi += _stepWidth;
-   if (_phi >= 2 * M_PI) _phi -= 2 * M_PI;      
-   // add offset to ipo joint position for all masked joints
-   double jointPos[LBRState::NUMBER_OF_JOINTS];
-   memcpy(jointPos, robotState().getIpoJointPosition(), LBRState::NUMBER_OF_JOINTS * sizeof(double));
-   for (int i=0; i< LBRState::NUMBER_OF_JOINTS; i++)
-   {
-      if (_jointMask & (1<<i))
-      {
-         jointPos[i] += _offset;
-      }
-   }
-   robotCommand().setJointPosition(jointPos);
+    double jointPos[LBRState::NUMBER_OF_JOINTS];
+    memcpy(jointPos, robotState().getMeasuredJointPosition(), LBRState::NUMBER_OF_JOINTS * sizeof(double));
+
+    for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++)
+    {
+        printf(" J%d: %f\n", i, jointPos[i]);
+    }
+
+    // Uncomment the line below if you want to set joint positions in robotCommand
+    robotCommand().setJointPosition(jointPos);
 }
+
 //******************************************************************************
 // clean up additional defines
 #ifdef _USE_MATH_DEFINES
