@@ -30,26 +30,60 @@ mastersclient::mastersclient(unsigned int jointMask, double freqHz,
 mastersclient::~mastersclient() {}
 
 //******************************************************************************
-void mastersclient::onStateChange(ESessionState oldState, ESessionState newState)
-{
-   LBRClient::onStateChange(oldState, newState);
-   // (re)initialize sine parameters when entering Monitoring
-   switch (newState)
-   {
-      case MONITORING_READY:
-      {
-         _offset = 0.0;
-         _phi = 0.0;
-         _stepWidth = 2 * M_PI * _freqHz * robotState().getSampleTime();
-         break;
-      }
-      default:
-      {
-         break;
-      }
-   }
+void mastersclient::onStateChange(ESessionState oldState,
+                                  ESessionState newState) {
+  LBRClient::onStateChange(oldState, newState);
+  // (re)initialize sine parameters when entering Monitoring
+  switch (newState) {
+  case IDLE: {
+    this->s_eSessionstate = "IDLE";
+    break;
+  }
+  case MONITORING_READY: {
+    _offset = 0.0;
+    _phi = 0.0;
+    _stepWidth = 2 * M_PI * _freqHz * robotState().getSampleTime();
+    this->printJointPos();
+    this->s_eSessionstate = "MONITORING_READY";
+    break;
+  }
+  case COMMANDING_WAIT: {
+    this->s_eSessionstate = "COMMANDING_WAIT";
+    break;
+  }
+  case COMMANDING_ACTIVE: {
+    this->s_eSessionstate = "COMMANDING_ACTIVE";
+    break;
+  }
+  default: {
+    break;
+  }
+  }
 }
-   
+void mastersclient::monitor() {
+  // In waitForCommand(), the joint values have to be mirrored. Which is done,
+  // by calling the base method.
+  LBRClient::monitor();
+  this->printJointPos();
+
+  /***************************************************************************/
+  /*                                                                         */
+  /*   Place user Client Code here                                           */
+  /*                                                                         */
+  /***************************************************************************/
+
+}
+void mastersclient::printJointPos() {
+  double jointPos[LBRState::NUMBER_OF_JOINTS];
+  memcpy(jointPos, robotState().getMeasuredJointPosition(),
+         LBRState::NUMBER_OF_JOINTS * sizeof(double));
+
+  for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
+    printf(" J%d: %f\n", i, jointPos[i]);
+  }
+}
+void mastersclient::waitForCommand() {}
+
 //******************************************************************************
 void mastersclient::command() {
   double jointPos[LBRState::NUMBER_OF_JOINTS];
