@@ -12,6 +12,11 @@
 
 using namespace KUKA::FRI;
 //******************************************************************************
+mastersclient::mastersclient(unsigned int jointMask, double freqHz,
+                             double amplRad, double filterCoeff)
+    : _jointMask(jointMask), _freqHz(freqHz), _amplRad(amplRad),
+      _filterCoeff(filterCoeff), _offset(0.0), _phi(0.0), _stepWidth(0.0) {
+  printf("mastersclient initialized:\n"
 mastersclient::mastersclient(unsigned int jointMask,
                              double freqHz, double amplRad, double filterCoeff)
    : _jointMask(jointMask)
