@@ -6,6 +6,7 @@
 #define MASTERSCLIENT_H
 
 #include "friLBRClient.h"
+#include <string>
 
 /**
  * \brief Test client that can overlay interpolator joint positions with sine waves.
@@ -14,7 +15,9 @@ class mastersclient : public KUKA::FRI::LBRClient
 {
    
 public:
-      
+
+    //KUKA::FRI::ESessionState eSessionState;
+    const char *  s_eSessionstate ;
    /**
     * \brief Constructor.
     * 
@@ -25,8 +28,8 @@ public:
     */
    mastersclient(unsigned int jointMask, double freqHz,
                  double amplRad, double filterCoeff);
-   
-   /** 
+
+    /**
     * \brief Destructor.
     */
    ~mastersclient();
@@ -37,8 +40,16 @@ public:
     * @param oldState
     * @param newState
     */
+   virtual void waitForCommand();
+
    virtual void onStateChange(KUKA::FRI::ESessionState oldState, KUKA::FRI::ESessionState newState);
-   
+   /**
+    * \brief Callback for the FRI session states 'Monitoring Wait' and 'Monitoring Ready'.
+    *
+    * If you do not want to change the default-behavior, you do not have to implement this method.
+    */
+   virtual void monitor();
+
    /**
     * \brief Callback for the FRI state 'Commanding Active'.
     */
@@ -53,7 +64,8 @@ private:
    double _offset;         //!< offset for current interpolation step
    double _phi;            //!< phase of sine wave
    double _stepWidth;      //!< stepwidth for sine 
-   
+
+    void printJointPos();
 };
 
 #endif // _KUKA_FRI_LBR_JOINT_SINE_OVERLAY_CLIENT_H
