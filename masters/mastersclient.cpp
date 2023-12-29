@@ -3,8 +3,6 @@
 \file
 \version {1.17}
 */
-#include <cstring>
-#include <cstdio>
 #include "include/mastersclient.h"
 #include "friLBRState.h"
 #include <cstdio>
