@@ -99,6 +99,30 @@ void mastersclient::monitor() {
     /***************************************************************************/
 
 }
+
+void mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 1970 (UTC)
+    this->currentSampleTimeSec = robotState().getTimestampSec();
+    // Get nanoseconds elapsed since the last second (in Unix time)
+    this->currentSampleTimeNanoSec = robotState().getTimestampNanoSec();
+
+    std::cout << "Timestamp (sec):\t" << currentSampleTimeSec << std::endl;
+    std::cout << "Timestamp (nanoSec):\t" << currentSampleTimeNanoSec << std::endl;
+
+    // Calculate the time difference
+    this->deltaTimeSec = currentSampleTimeSec - prvSampleTimeSec;
+    this->deltaTimeNanoSec = currentSampleTimeNanoSec - prvSampleTimeNanoSec;
+    this->deltaTime = deltaTimeSec + (deltaTimeNanoSec) / 1e9;
+
+    // Update previous timestamps
+    prvSampleTimeSec = currentSampleTimeSec;
+    prvSampleTimeNanoSec = currentSampleTimeNanoSec;
+    std::cout << "Current delta in sec:\t" << deltaTimeSec << std::endl;
+    std::cout << "Current delta in nanosec:\t" << deltaTimeNanoSec << std::endl;
+    std::cout << "Current delta :\t" << deltaTime << std::endl;
+
+}
+
+
 void mastersclient::printJointPos() {
     for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
         printf(" J%d: %f\n", i, jointPos[i]);
