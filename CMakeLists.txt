@@ -195,13 +195,9 @@ if (BUILD_MASTERS)
             masters/robotModel.cpp
             masters/include/robotModel.h
     )
-file(GLOB_RECURSE MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/masters/*.cpp)
-#file(GLOB_RECURSE MASTERS_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/masters/src *.cpp)
-#find_library(TEST_LIBRARY FRIClient build)
-add_executable(mastersAPP
-        ${MASTERS_SOURCES}
-)
-
+    file(GLOB_RECURSE MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/masters/*.cpp)
+    #file(GLOB_RECURSE MASTERS_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/masters/src *.cpp)
+    #find_library(TEST_LIBRARY FRIClient build)
     target_include_directories(mastersAPP
             PRIVATE
             ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include
