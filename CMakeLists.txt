@@ -19,8 +19,8 @@ message(STATUS "Configuring Source ${CMAKE_CURRENT_SOURCE_DIR}")
 # extract the FRIClient from the zip file
 #########################################
 file(ARCHIVE_EXTRACT
-    INPUT ${CMAKE_CURRENT_SOURCE_DIR}/${FRIClient_SDK_NAME}.zip
-    DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}
+        INPUT ${CMAKE_CURRENT_SOURCE_DIR}/${FRIClient_SDK_NAME}.zip
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}
 )
 
 #######################
@@ -53,7 +53,7 @@ set(FRICLIENT_VERSION ${FRICLIENT_VERSION_MAJOR}.${FRICLIENT_VERSION_MINOR})
 
 if (NOT FRICLIENT_VERSION STREQUAL "1.17")
     message(FATAL_ERROR "Expected FRIClient ersion 1.17, found: " ${FRICLIENT_VERSION})
-endif()
+endif ()
 
 message("Found FRIClient of version: " ${FRICLIENT_VERSION})
 
@@ -62,49 +62,49 @@ message("Found FRIClient of version: " ${FRICLIENT_VERSION})
 #################################
 message(STATUS "Configuring FRIClient version ${FRICLIENT_VERSION}")
 file(GLOB_RECURSE NANOPB_SOURCES RELATIVE ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/nanopb-${NANOPB_VERSION}/*.c
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/nanopb-${NANOPB_VERSION}/*.c
 )
 
 file(GLOB_RECURSE FRI_SOURCES RELATIVE ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/base/*.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/client_lbr/*.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/client_trafo/*.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/connection/*.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf/*.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf/*.c
-    ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf_gen/*.pb.c
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/base/*.cpp
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/client_lbr/*.cpp
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/client_trafo/*.cpp
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/connection/*.cpp
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf/*.cpp
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf/*.c
+        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf_gen/*.pb.c
 )
 
 add_library(FRIClient SHARED
-    ${FRI_SOURCES}
-    ${NANOPB_SOURCES}
+        ${FRI_SOURCES}
+        ${NANOPB_SOURCES}
 )
 
 add_library(FRIClient::FRIClient ALIAS FRIClient) # alias for anyone adding this as a submodule
 
 target_include_directories(FRIClient
-    PUBLIC
+        PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include>
-    PRIVATE
+        PRIVATE
         ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/base
         ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/nanopb-${NANOPB_VERSION}
         ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf_gen
         ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/src/protobuf
 )
 
-if(MSVC)
+if (MSVC)
     target_compile_options(FRIClient
-        PRIVATE
+            PRIVATE
             -DPB_SYSTEM_HEADER="pb_syshdr_win.h"
             -DPB_FIELD_16BIT
             -DWIN32
             -DHAVE_STDINT_H
             -DHAVE_STDBOOL_H
     )
-else()
+else ()
     target_compile_options(FRIClient
-        PRIVATE
+            PRIVATE
             -Wall
             -O2
             -DHAVE_SOCKLEN_T
@@ -115,8 +115,8 @@ else()
             -DHAVE_STDBOOL_H
             -DHAVE_STDLIB_H
             -DHAVE_STRING_H
-    ) 
-endif()
+    )
+endif ()
 
 #################
 # install targets
@@ -124,31 +124,31 @@ endif()
 include(CMakePackageConfigHelpers)
 
 write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/FRIClientConfigVersion.cmake"
-    VERSION ${FRICLIENT_VERSION}
-    COMPATIBILITY SameMajorVersion
+        "${CMAKE_CURRENT_BINARY_DIR}/FRIClientConfigVersion.cmake"
+        VERSION ${FRICLIENT_VERSION}
+        COMPATIBILITY SameMajorVersion
 )
 #include(GNUInstallDirs)
 install(TARGETS FRIClient
-    EXPORT FRIClientTargets
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib  # Add this line
-    INCLUDES DESTINATION include
+        EXPORT FRIClientTargets
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib  # Add this line
+        INCLUDES DESTINATION include
 )
 
 install(
-    DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include/
-    DESTINATION include
+        DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include/
+        DESTINATION include
 )
 
 install(EXPORT FRIClientTargets
-    FILE FRIClientConfig.cmake
-    NAMESPACE FRIClient::
-    DESTINATION lib/cmake/FRIClient
+        FILE FRIClientConfig.cmake
+        NAMESPACE FRIClient::
+        DESTINATION lib/cmake/FRIClient
 )
 
 install(FILES ${CMAKE_BINARY_DIR}/FRIClientConfigVersion.cmake
-    DESTINATION lib/cmake/FRIClient
+        DESTINATION lib/cmake/FRIClient
 )
 
 ################
@@ -157,20 +157,20 @@ install(FILES ${CMAKE_BINARY_DIR}/FRIClientConfigVersion.cmake
 if (BUILD_FRI_APPS)
     function(build_fri_example NAME)
         file(GLOB_RECURSE ${NAME}_SOURCES RELATIVE ${CMAKE_CURRENT_BINARY_DIR}
-            ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/example/${NAME}/*.cpp
+                ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/example/${NAME}/*.cpp
         )
 
         add_executable(${NAME}App
-            ${${NAME}_SOURCES}
+                ${${NAME}_SOURCES}
         )
 
         target_include_directories(${NAME}App
-            PRIVATE
+                PRIVATE
                 ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/example/${NAME}
         )
 
         target_link_libraries(${NAME}App
-            PRIVATE
+                PRIVATE
                 FRIClient
         )
     endfunction()
@@ -181,13 +181,20 @@ if (BUILD_FRI_APPS)
     build_fri_example(LBRWrenchSineOverlay)
     build_fri_example(SimulatedTransformationProvider)
     build_fri_example(TransformationProvider)
-endif(BUILD_FRI_APPS)
+endif (BUILD_FRI_APPS)
 
 
 ################
 # build masters
 ################
 if (BUILD_MASTERS)
+    find_package(RL COMPONENTS MDL REQUIRED)
+    file(GLOB_RECURSE MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/masters/*.cpp)
+    add_executable(mastersAPP
+            ${MASTERS_SOURCES}
+            masters/robotModel.cpp
+            masters/include/robotModel.h
+    )
 file(GLOB_RECURSE MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/masters/*.cpp)
 #file(GLOB_RECURSE MASTERS_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/masters/src *.cpp)
 #find_library(TEST_LIBRARY FRIClient build)
@@ -195,16 +202,18 @@ add_executable(mastersAPP
         ${MASTERS_SOURCES}
 )
 
-target_include_directories(mastersAPP
-        PRIVATE
-        ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/masters/include
-        # Add other include directories if needed
-)
+    target_include_directories(mastersAPP
+            PRIVATE
+            ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include
+            ${CMAKE_CURRENT_SOURCE_DIR}/masters/include
+            # Add other include directories if needed
+    )
 
-target_link_libraries(mastersAPP
-        PRIVATE
-        FRIClient
-        # Add other libraries if needed
-)
+    target_link_libraries(mastersAPP
+            PUBLIC
+            ${RL_LIBRARIES}
+            PRIVATE
+            FRIClient
+            # Add other libraries if needed
+    )
 endif (BUILD_MASTERS)
