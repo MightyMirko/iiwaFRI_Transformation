@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rlmdl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="rlmdl.xsd">
+    <model>
+        <manufacturer>KUKA</manufacturer>
+        <name>LBR iiwa 7 R800</name>
+        <!-- Add any other relevant model information here -->
+
+        <!-- Define the world frame -->
+        <world id="world">
+            <rotation>
+                <x>0</x>
+                <y>0</y>
+                <z>0</z>
+            </rotation>
+            <translation>
+                <x>0</x>
+                <y>0</y>
+                <z>0</z>
+            </translation>
+            <g>
+                <x>0</x>
+                <y>0</y>
+                <z>9.86055</z>
+            </g>
+        </world>
+
+        <!-- Add frames and bodies for each joint -->
+        <!-- Repeat this structure for each joint -->
+        <frame id="frame0"/>
+        <body id="body0">
+            <!-- Define center of mass, inertia, mass, and references to other bodies -->
+        </body>
+        <revolute id="joint0">
+            <frame>
+                <a idref="frame0"/>
+                <b idref="frame1"/>
+            </frame>
+            <max>3.1416</max>
+            <min>-3.1416</min>
+            <speed>320</speed>
+        </revolute>
+
+        <!-- Repeat the above structure for joints 1 to 6 -->
+
+        <!-- Example for joint 1 -->
+        <frame id="frame1"/>
+        <body id="body1">
+            <!-- Define center of mass, inertia, mass, and references to other bodies -->
+        </body>
+        <revolute id="joint1">
+            <frame>
+                <a idref="frame1"/>
+                <b idref="frame2"/>
+            </frame>
+            <max>1.0472</max>
+            <min>-1.0472</min>
+            <speed>250</speed>
+        </revolute>
+
+        <!-- Continue the structure for joint 2 -->
+        <frame id="frame2"/>
+        <body id="body2">
+            <!-- Define center of mass, inertia, mass, and references to other bodies -->
+        </body>
+        <revolute id="joint2">
+            <frame>
+                <a idref="frame2"/>
+                <b idref="frame3"/>
+            </frame>
+            <max>2.0944</max>
+            <min>-2.0944</min>
+            <speed>270</speed>
+        </revolute>
+
+        <!-- Continue for joints 3 to 6 -->
+
+        <!-- Example for joint 3 -->
+        <frame id="frame3"/>
+        <body id="body3">
+            <!-- Define center of mass, inertia, mass, and references to other bodies -->
+        </body>
+        <revolute id="joint3">
+            <frame>
+                <a idref="frame3"/>
+                <b idref="frame4"/>
+            </frame>
+            <max>3.1416</max>
+            <min>-3.1416</min>
+            <speed>300</speed>
+        </revolute>
+
+        <!-- Continue for joints 4 to 6 -->
+
+        <!-- Example for joint 4 -->
+        <frame id="frame4"/>
+        <body id="body4">
+            <!-- Define center of mass, inertia, mass, and references to other bodies -->
+        </body>
+        <revolute id="joint4">
+            <frame>
+                <a idref="frame4"/>
+                <b idref="frame5"/>
+            </frame>
+            <max>1.74533</max>
+            <min>-1.74533</min>
+            <speed>200</speed>
+        </revolute>
+
+        <!-- Example for joint 5 -->
+        <frame id="frame5"/>
+        <body id="body5">
+            <!-- Define center of mass, inertia, mass, and references to other bodies -->
+        </body>
+        <revolute id="joint5">
+            <frame>
+                <a idref="frame5"/>
+                <b idref="frame6"/>
+            </frame>
+            <max>4.6507</max>
+            <min>-4.6507</min>
+            <speed>532</speed>
+        </revolute>
+
+        <!-- Example for joint 6 -->
+        <frame id="frame6"/>
+        <body id="body6">
+            <!-- Define center of mass, inertia, mass, and references to other bodies -->
+        </body>
+        <revolute id="joint6">
+            <frame>
+                <a idref="frame6"/>
+                <b idref="frame7"/>
+            </frame>
+            <max>3.1416</max>
+            <min>-3.1416</min>
+            <speed>300</speed>
+        </revolute>
+
+        <!-- Fixed body 7 -->
+        <fixed id="fixed7">
+            <frame>
+                <a idref="frame7"/>
+                <b idref="body7"/>
+            </frame>
+            <rotation>
+                <x>0</x>
+                <y>0</y>
+                <z>0</z>
+            </rotation>
+            <translation>
+                <x>0</x>
+                <y>0</y>
+                <z>0.04125</z>
+            </translation>
+        </fixed>
+
+    </model>
+</rlmdl>
