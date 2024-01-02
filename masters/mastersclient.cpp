@@ -70,43 +70,48 @@ void mastersclient::onStateChange(ESessionState oldState,
         }
     }
 }
-void mastersclient::monitor() {
-  // In waitForCommand(), the joint values have to be mirrored. Which is done,
-  // by calling the base method.
-  LBRClient::monitor();
-  this->printJointPos();
 
-  /***************************************************************************/
-  /*                                                                         */
-  /*   Place user Client Code here                                           */
-  /*                                                                         */
-  /***************************************************************************/
+void mastersclient::monitor() {
+    // In waitForCommand(), the joint values have to be mirrored. Which is done,
+    // by calling the base method.
+    LBRClient::monitor();
+//this->printJointPos();
+    //double performance = robotState().getTrackingPerformance(); // bringt nichts im monitor modus - immer 0
+    try {
+        memcpy(jointPos, robotState().getMeasuredJointPosition(),
+               LBRState::NUMBER_OF_JOINTS * sizeof(double));
+        this->robotmdl->setQ(jointPos);
+        this->robotmdl->performForwardKinematics();
+        // get TimeStamp and compare
+        this->getCurrentTimestamp();
+        robotmdl->getTCPvelocity();
+
+
+    } catch (const std::runtime_error &e) {
+        std::printf("Not connected yet;\n");
+    } catch (const std::exception &e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+    /***************************************************************************/
+    /*                                                                         */
+    /*   Place user Client Code here                                           */
+    /*                                                                         */
+    /***************************************************************************/
 
 }
 void mastersclient::printJointPos() {
-  double jointPos[LBRState::NUMBER_OF_JOINTS];
-  memcpy(jointPos, robotState().getMeasuredJointPosition(),
-         LBRState::NUMBER_OF_JOINTS * sizeof(double));
-
-  for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
-    printf(" J%d: %f\n", i, jointPos[i]);
-  }
+    for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
+        printf(" J%d: %f\n", i, jointPos[i]);
+    }
 }
+
 void mastersclient::waitForCommand() {}
 
 //******************************************************************************
 void mastersclient::command() {
-  double jointPos[LBRState::NUMBER_OF_JOINTS];
-  memcpy(jointPos, robotState().getMeasuredJointPosition(),
-         LBRState::NUMBER_OF_JOINTS * sizeof(double));
-
-  for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
-    printf(" J%d: %f\n", i, jointPos[i]);
-  }
-
-  // Uncomment the line below if you want to set joint positions in robotCommand
-  // robotCommand().setJointPosition(jointPos);
-  // robotCommand().setJointPosition()
+    // Uncomment the line below if you want to set joint positions in robotCommand
+    // robotCommand().setJointPosition(jointPos);
+    // robotCommand().setJointPosition()
 }
 
 //******************************************************************************
