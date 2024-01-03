@@ -19,7 +19,7 @@ class mastersclient : public KUKA::FRI::LBRClient {
 public:
     double *jointPos;
     //KUKA::FRI::ESessionState eSessionState;
-    const char *s_eSessionstate;
+    const char *s_eSessionstate{};
 
     /**
      * \brief Constructor.
@@ -72,13 +72,13 @@ private:
     unsigned int currentSampleTimeNanoSec;
     unsigned int prvSampleTimeSec;
     unsigned int prvSampleTimeNanoSec;
-    unsigned int deltaTimeSec;
-    unsigned int deltaTimeNanoSec;
-    double deltaTime;
+    unsigned int deltaTimeSec{};
+    unsigned int deltaTimeNanoSec{};
+    double deltaTime{};
     robotModel *robotmdl;
 
 
-    void printJointPos();
+    void printJointPos() const;
 
     void transformation() const;
 

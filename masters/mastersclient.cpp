@@ -32,12 +32,13 @@ mastersclient::mastersclient(unsigned int jointMask, double freqHz,
     currentSampleTimeNanoSec = 0;
     prvSampleTimeSec = 0;
     prvSampleTimeNanoSec = 0;
-    std::string xmlpath = "/home/mirko/OneDrive/codespace/fri_cmake/masters/exa_iiwa_dh_model.xml";
+    std::string xmlpath = "/home/mirko/OneDrive/codespace/fri_cmake/masters/iiwa_dh_model.xml";
+   //std::string xmlpath = "/home/mirko/OneDrive/codespace/fri_cmake/masters/rl-examples/rlmdl/kuka-lbr-iiwa-7-r800.xml";
     robotmdl = new robotModel(xmlpath);
 }
 
 //******************************************************************************
-mastersclient::~mastersclient() {}
+mastersclient::~mastersclient() = default;
 
 //******************************************************************************
 void mastersclient::onStateChange(ESessionState oldState,
@@ -80,6 +81,7 @@ void mastersclient::monitor() {
     try {
         memcpy(jointPos, robotState().getMeasuredJointPosition(),
                LBRState::NUMBER_OF_JOINTS * sizeof(double));
+        //this->printJointPos();
         this->robotmdl->setQ(jointPos);
         this->robotmdl->performForwardKinematics();
         // get TimeStamp and compare
@@ -105,8 +107,8 @@ void mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1s
     // Get nanoseconds elapsed since the last second (in Unix time)
     this->currentSampleTimeNanoSec = robotState().getTimestampNanoSec();
 
-    std::cout << "Timestamp (sec):\t" << currentSampleTimeSec << std::endl;
-    std::cout << "Timestamp (nanoSec):\t" << currentSampleTimeNanoSec << std::endl;
+    //std::cout << "Timestamp (sec):\t" << currentSampleTimeSec << std::endl;
+    //std::cout << "Timestamp (nanoSec):\t" << currentSampleTimeNanoSec << std::endl;
 
     // Calculate the time difference
     this->deltaTimeSec = currentSampleTimeSec - prvSampleTimeSec;
@@ -116,16 +118,16 @@ void mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1s
     // Update previous timestamps
     prvSampleTimeSec = currentSampleTimeSec;
     prvSampleTimeNanoSec = currentSampleTimeNanoSec;
-    std::cout << "Current delta in sec:\t" << deltaTimeSec << std::endl;
+    /*std::cout << "Current delta in sec:\t" << deltaTimeSec << std::endl;
     std::cout << "Current delta in nanosec:\t" << deltaTimeNanoSec << std::endl;
     std::cout << "Current delta :\t" << deltaTime << std::endl;
-
+*/
 }
 
 
-void mastersclient::printJointPos() {
+void mastersclient::printJointPos() const {
     for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
-        printf(" J%d: %f\n", i, jointPos[i]);
+        printf(" J%d: %f\n", i, jointPos[i]* (180/M_PI));
     }
 }
 

@@ -21,7 +21,7 @@
 #include <cmath>
 #include "iostream"
 #include <rl/hal/WeissWsg50.h>
-
+#include <rl/mdl/Dynamic.h>
 class robotModel {
 public:
     explicit robotModel(const std::string &xmlFilePath);
@@ -42,6 +42,8 @@ private:
 
 
     double _tcpVelocity;
+
+    void printVector(rl::math::Vector3 &position, rl::math::Vector3 &orientation);
 };
 
 

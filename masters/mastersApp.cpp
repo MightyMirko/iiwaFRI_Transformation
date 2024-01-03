@@ -138,7 +138,8 @@ int main(int argc, char **argv) {
         // check if we are in IDLE because the FRI session was closed
         //std::printf("Session State:\t%s\n", trafoClient.s_eSessionstate.c_str());      //     std::printf("Session State%s",tmp);
         //std::printf(trafoClient.robotState().getClientCommandMode());
-        std::printf("Session State:\t%s\n", trafoClient.s_eSessionstate);
+        if (trafoClient.s_eSessionstate){
+        std::printf("Session State:\t%s\n", trafoClient.s_eSessionstate);}
         if (trafoClient.robotState().getSessionState() == IDLE) {
             // In this demo application we simply quit.
             // Waiting for a new FRI session would be another possibility.
