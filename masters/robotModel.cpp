@@ -45,7 +45,7 @@ robotModel::robotModel(const std::string &xmlFilePath) {
     lbr.qd = model->getVelocity();
     lbr.qdd = model->getAcceleration();
     lbr.tau = model->getTorque();
-    //  this->printQ();
+
 
 }
 

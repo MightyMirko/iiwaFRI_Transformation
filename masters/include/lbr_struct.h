@@ -14,7 +14,7 @@ struct TCPParameters {
     rl::math::Real b;
     rl::math::Real c;
     rl::math::Vector3 vecV, vecOmega;
-    rl::math::Transform& vecQ;
+    rl::math::Transform vecQ;
 };
 
 //Gelenkdynamiken
