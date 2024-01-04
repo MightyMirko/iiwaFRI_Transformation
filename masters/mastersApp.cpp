@@ -24,7 +24,7 @@ Redistribution and use of the software in source and binary forms, with or
 without modification, are permitted provided that the following conditions are
 met:
 a) The software is used in conjunction with KUKA products only. 
-b) Redistributions of source code must retain the above copyright notice, this
+tcp_kuka_b) Redistributions of source code must retain the above copyright notice, this
 list of conditions and the disclaimer.
 c) Redistributions in binary form must reproduce the above copyright notice,
 this list of conditions and the disclaimer in the documentation and/or other
@@ -136,10 +136,12 @@ int main(int argc, char **argv) {
         success = app.step();
         //printf((const char *) trafoClient.robotState().getSessionState());
         // check if we are in IDLE because the FRI session was closed
-        //std::printf("Session State:\t%s\n", trafoClient.s_eSessionstate.c_str());      //     std::printf("Session State%s",tmp);
+        //std::printf("Session State:\traPosition%s\n", trafoClient.s_eSessionstate.c_str());
+        // std::printf("Session State%s",tmp);
         //std::printf(trafoClient.robotState().getClientCommandMode());
         if (trafoClient.s_eSessionstate){
-        std::printf("Session State:\t%s\n", trafoClient.s_eSessionstate);}
+        //std::printf("Session State:\traPosition%s\n", trafoClient.s_eSessionstate);
+        }
         if (trafoClient.robotState().getSessionState() == IDLE) {
             // In this demo application we simply quit.
             // Waiting for a new FRI session would be another possibility.
