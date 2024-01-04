@@ -9,7 +9,7 @@
 #include "robotModel.h"
 #include <string>
 #include <memory>
-
+#include <vector>
 
 /**
  * \brief Test client that can overlay interpolator joint positions with sine waves.
@@ -17,7 +17,9 @@
 class mastersclient : public KUKA::FRI::LBRClient {
 
 public:
-    double *jointPos;
+    std::vector<double> jointTest, oldJointPos, jointvel;
+    double * jointPos;
+
     //KUKA::FRI::ESessionState eSessionState;
     const char *s_eSessionstate{};
 
@@ -75,7 +77,7 @@ private:
     unsigned int deltaTimeSec{};
     unsigned int deltaTimeNanoSec{};
     double deltaTime{};
-    robotModel *robotmdl;
+    robotModel * robotmdl;
 
 
     void printJointPos() const;
@@ -83,7 +85,10 @@ private:
     void transformation() const;
 
     void getCurrentTimestamp();
+    //std::vector<double> calcJointVel(const std::vector<double> &inputVector, double dt);
+    rl::math::Vector calcJointVel(double dt);
 
+    void calcRobot();
 };
 
-#endif // _KUKA_FRI_LBR_JOINT_SINE_OVERLAY_CLIENT_H
+#endif //MASTERSCLIENT_H
