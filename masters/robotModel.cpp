@@ -73,7 +73,7 @@ void robotModel::getTransformation() {
     kinematics->forwardPosition();
     tcp.vecV = kinematics->getOperationalPosition(0).linear() * xd.linear();
     tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();
-    const rl::math::Transform& x = kinematics->getOperationalPosition(0); // output value
+    tcp.vecQ = kinematics->getOperationalPosition(0); // output value
 }
 
 void robotModel::getTCPvelocity() {
@@ -83,8 +83,7 @@ void robotModel::getTCPvelocity() {
     // Print all values of vecV with labels
     std::cout << "Linear Velocity (vecV): [Vx, Vy, Vz] = [" << tcp.vecV.transpose() << "]" << std::endl;
     // Print all values of vecOmega with labels
-    std::cout << "Angular Velocity (vecOmega): [Omega_x, Omega_y, Omega_z] = [" << tcp.vecOmega.transpose() << "]"
-              << std::endl;
+    //std::cout << "Angular Velocity (vecOmega): [Omega_x, Omega_y, Omega_z] = [" << tcp.vecOmega.transpose() << "]"<< std::endl;
 }
 
 
