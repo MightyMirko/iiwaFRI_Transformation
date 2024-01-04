@@ -73,6 +73,7 @@ void robotModel::getTransformation() {
     kinematics->forwardPosition();
     tcp.vecV = kinematics->getOperationalPosition(0).linear() * xd.linear();
     tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();
+    const rl::math::Transform& x = kinematics->getOperationalPosition(0); // output value
 }
 
 void robotModel::getTCPvelocity() {
