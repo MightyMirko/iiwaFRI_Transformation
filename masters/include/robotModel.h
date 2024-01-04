@@ -5,45 +5,48 @@
 #ifndef FRICLIENT_ROBOTMODEL_H
 #define FRICLIENT_ROBOTMODEL_H
 
-#include <rl/mdl/Model.h>
-#include <rl/math/Transform.h>
-#include <rl/math/Unit.h>
-#include <rl/mdl/Kinematic.h>
-#include <rl/mdl/Model.h>
 #include <rl/mdl/XmlFactory.h>
-#include <rl/math/Transform.h>
-#include <rl/math/Unit.h>
-#include <rl/mdl/Kinematic.h>
 #include <rl/mdl/Model.h>
-#include <rl/mdl/XmlFactory.h>
-#include <cstdio>
-#include <cstring>
-#include <cmath>
-#include "iostream"
-#include <rl/hal/WeissWsg50.h>
+#include <rl/math/Unit.h>
+#include <rl/math/Transform.h>
+#include <rl/mdl/Kinematic.h>
 #include <rl/mdl/Dynamic.h>
+#include "lbr_struct.h"
+#include <stdexcept>
+#include <boost/lexical_cast.hpp>
+#include <rl/math/Unit.h>
+#include <rl/mdl/Body.h>
+#include <rl/mdl/Dynamic.h>
+#include <rl/mdl/Fixed.h>
+#include <rl/mdl/Frame.h>
+#include <rl/mdl/Revolute.h>
+
 class robotModel {
 public:
     explicit robotModel(const std::string &xmlFilePath);
 
     void performForwardKinematics();
-
-    void setQ(double *jointPos);
-
-    void getTransformation(double cart[6]);
-
+    void getTransformation();
     void getTCPvelocity();
+    void printQ();
 
+    void update_model();
+    void setQ(std::vector<double> &q, rl::math::Vector &qd);
 
 private:
+    // Model and casts
     std::shared_ptr<rl::mdl::Model> model;
     rl::mdl::Kinematic *kinematics;
-    rl::math::Vector q;
+    rl::mdl::Dynamic *dynamic;
 
+    TCPParameters tcp;
 
-    double _tcpVelocity;
+    rl::math::Transform traPosition;
+    rl::math::MotionVector traVelocity;
+    LBR_Rob lbr;
 
-    void printVector(rl::math::Vector3 &position, rl::math::Vector3 &orientation);
+    // Methods
+    void printVector();
 };
 
 
