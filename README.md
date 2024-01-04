@@ -1,50 +1,60 @@
-# fri
-![GitHub](https://img.shields.io/github/license/KCL-BMEIS/fri)
+Certainly! Here's the formatted project summary in Markdown:
 
-This folder adds CMake support to KUKA's Fast Robot Interface (FRI).
+# Project Title
 
-## Build
-To build, run
+The project is a robotics-related development that involves the utilization of the FRI (Fast Research Interface)
+Client SDK (Software Development Kit) in C++. The primary focus is on robot control and communication with a KUKA
+robotic arm. The project includes a collection of source code, configuration files, and documentation to facilitate
+the integration and understanding of the FRI Client SDK.
 
-```shell
-cmake -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_FRI_APPS=ON
-cmake --build build
+## Overview
+
+### Key Components:
+
+- **FRI Client SDK (C++)**
+  - The project includes the FRI Client SDK in C++.
+  - The SDK facilitates communication and control of KUKA robotic arms.
+  - Loosely Based on:
+    - [@lbr-stack/fri](https://github.com/lbr-stack/fri)
+    - [https://github.com/lbr-stack/fri](https://github.com/lbr-stack/fri)
+
+- **Robotics Libraries**
+  - Various XML files describe robot models, such as "iiwa_dh_model.xml" and "iiwa_my.xml."
+  - These models likely represent different configurations or kinematic structures of the KUKA robotic arm.
+  - Based on:
+    - [@roboticslibrary/rl](https://github.com/roboticslibrary/rl)
+    - [https://github.com/roboticslibrary/rl](https://github.com/roboticslibrary/rl)
+
+- **Application Code**
+  - The "masters" directory contains application-specific code, including "mastersApp.cpp" and "mastersclient.cpp."
+  - These files are crucial for interfacing with the FRI Client SDK and implementing specific functionalities.
+
+- **Documentation**
+  - The "img" directory contains images used for documentation purposes.
+  - The "README.md" file provides essential information, instructions, and details about the project.
+
+## Getting Started
+
+### Development Environment:
+
+The project uses CMake for building and managing the build process. Dependencies may include specific libraries or tools required for successful execution.
+
+```bash
+#!/bin/bash
+
+# Set your project directory
+PROJECT_DIR="/home/mirko/CLionProjects/thesis2024_orphaned"
+
+# Set the build directory
+BUILD_DIR="${PROJECT_DIR}/build"
+
+# Set additional CMake options
+CMAKE_OPTIONS="-DCMAKE_BUILD_TYPE=Debug -DBUILD_FRI_APPS=ON -DBUILD_MASTERS=ON -DCMAKE_INSTALL_PREFIX:PATH=${PROJECT_DIR}"
+
+# Run CMake
+cmake -S "${PROJECT_DIR}" -B "${BUILD_DIR}" ${CMAKE_OPTIONS}
 ```
 
-## Run the Apps
-To run the example applications, run
-
-```shell
-./build/LBRJointSineOverlayApp
+```bash
+cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_FRI_APPS=ON -DBUILD_MASTERS=ON -B build
 ```
-
-On the `smartPAD`, run the `LBRJointSineOverlay` application. You should see the robot execute a sine wave.
-
-## Contributing
-Do you use a different FRI version?
-
-1. Fork this repository.
-2. Create a branch fri-major.minor (e.g. fri-1.15).
-3. Replace `FRI-Client-SDK_Cpp.zip` with your client SDK as extracted from `KUKA Sunrise Workbench`. Therefore (see images):
-    * In the `Software` tab of `StationSetup.cat`, add `Fast Robot Interface Extension`.
-    * Save via `ctrl+s`, click `Save and apply`.
-    * Under `FastRobotInterface_Client_Source`, find `FRI-Client-SDK_Cpp.zip`.
-
-  <figure>
-    <p align="center"><img src="img/00_extract_fri_client_sdk.png" width="25%" height="25%" hspace="20"><img   src="img/01_extract_fri_client_sdk.png" width="25%" height="25%" hspace="20"><img src="img/02_extract_fri_client_sdk.png" width="25%" height="25%" hspace="20"></p>
-    <figcaption></figcaption>
-  </figure>
-
-4. Open a pull request.
-
-## License
-Please note that we distribute the CMake support under MIT license. Please note that third party libraries under `FRI-Client-SDK_Cpp.zip` are distributed under their respective license.
-
-## Acknowledgements
-<img src="https://medicalengineering.org.uk/wp-content/themes/aalto-child/_assets/images/medicalengineering-logo.svg" alt="wellcome" height="45" width="65" align="left">
-
-This work was supported by core and project funding from the Wellcome/EPSRC [WT203148/Z/16/Z; NS/A000049/1; WT101957; NS/A000027/1]. 
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1920px-Flag_of_Europe.svg.png" alt="eu_flag" height="45" width="65" align="left" >
-
-This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 101016985 (FAROS project).
