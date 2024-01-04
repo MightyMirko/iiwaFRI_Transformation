@@ -73,7 +73,9 @@ mastersclient::~mastersclient() {
     delete jointPos, s_eSessionstate;
 }
 
-//******************************************************************************
+/// \brief
+/// \param oldState
+/// \param newState
 void mastersclient::onStateChange(ESessionState oldState,
                                   ESessionState newState) {
     LBRClient::onStateChange(oldState, newState);
@@ -123,6 +125,9 @@ rl::math::Vector mastersclient::calcJointVel(double dt) {
 }
 
 
+
+
+
 void mastersclient::calcRobot() {
     try {
         getCurrentTimestamp();
@@ -132,7 +137,8 @@ void mastersclient::calcRobot() {
         std::copy(measuredJointPosPtr, measuredJointPosPtr + LBRState::NUMBER_OF_JOINTS, jointTest.begin());
 
         // Calculate the derivative of the joint positions
-        rl::math::Vector jointVel = calcJointVel(_stepWidth);  // Assuming dt is 5ms
+        rl::math::Vector jointVel = calcJointVel(deltaTime);
+
         //std::cout << "Joint Velocities: " << jointVel << std::endl;
         robotmdl->setQ(jointTest, jointVel);
         robotmdl->performForwardKinematics();
@@ -144,6 +150,34 @@ void mastersclient::calcRobot() {
     } catch (const std::exception &e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
+}
+
+bool mastersclient::compareVectors(const rl::math::Vector &v1, const rl::math::Vector &v2, double tolerance) {
+    if (v1.size() != v2.size()) {
+        std::cerr << "Vectors differ in size." << std::endl;
+        return false; // Vectors must have the same size
+    }
+    for (std::size_t i = 0; i < v1.size(); ++i) {
+        if (std::abs(v1(i) - v2(i)) > tolerance) {
+            std::cerr << "Vectors differ at index " << i << "." << std::endl;
+            return false; // Elements differ by more than the tolerance
+        }
+    }
+    //std::cout << "Vectors are approximately equal." << std::endl;
+
+    // Calculate the error vector
+    rl::math::Vector errorVector = v1 - v2;
+
+    // Calculate the norm of the error vector
+    double errorNorm = errorVector.norm();
+
+    // Print or handle the error
+    if(errorNorm > 1.0) {
+    std::cout << "Error Norm: " << errorNorm << std::endl;
+
+    }
+
+    return true; // Vectors are approximately equal
 }
 
 void mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 1970 (UTC)

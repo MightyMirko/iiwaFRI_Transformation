@@ -41,12 +41,12 @@ public:
 
     /**
      * \brief Callback for FRI state changes.
-     *
-     * @param oldState
-     * @param newState
      */
     virtual void waitForCommand();
 
+    /// \brief
+    /// \param oldState
+    /// \param newState
     virtual void onStateChange(KUKA::FRI::ESessionState oldState, KUKA::FRI::ESessionState newState);
 
     /**
@@ -79,16 +79,14 @@ private:
     double deltaTime{};
     robotModel * robotmdl;
 
-
-    void printJointPos() const;
-
-    void transformation() const;
-
-    void getCurrentTimestamp();
-    //std::vector<double> calcJointVel(const std::vector<double> &inputVector, double dt);
-    rl::math::Vector calcJointVel(double dt);
+    bool compareVectors(const rl::math::Vector& v1, const rl::math::Vector& v2, double tolerance = 1e-6);
 
     void calcRobot();
+    void getCurrentTimestamp();
+    void printJointPos() const;
+
+    rl::math::Vector calcJointVel(double dt);
+
 };
 
 #endif //MASTERSCLIENT_H
