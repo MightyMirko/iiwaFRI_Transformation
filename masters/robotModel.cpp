@@ -45,19 +45,37 @@ robotModel::robotModel(const std::string &xmlFilePath) {
     lbr.qd = model->getVelocity();
     lbr.qdd = model->getAcceleration();
     lbr.tau = model->getTorque();
-
+    lbr.home = model->getHomePosition();
+    //std::cout<< " Home: " << lbr.home.matrix()<<std::endl;
 
 }
 
 
-void robotModel::setQ(std::vector<double> &q, rl::math::Vector &qd) {
-    // Setze akuelle FRI Werte in Kinematicberechnung
-    assert(q.size() == lbr.q.size());
-    assert(qd.size() == lbr.qd.size());
-    lbr.q(q.data(), q.size());
-    lbr.qd = qd;
+void robotModel::setQ(std::vector<double> &jointPositions, const rl::math::Vector &jointVelocities) {
+    // Ensure that the sizes of input vectors match the sizes of robot model vectors
+    assert(jointPositions.size() == lbr.q.size());
+    assert(jointVelocities.size() == lbr.qd.size());
+
+    // Set current joint positions in the robot model
+    lbr.q(jointPositions.data(), jointPositions.size());
+
+    // Set current joint velocities in the robot model
+    lbr.qd = jointVelocities;
+    // Note: Depending on the implementation, this might involve a copy operation.
 }
 
+
+/*!
+ * @brief This method is responsible for updating the forward kinematics of the robot. Forward kinematics involves determining the position and orientation of the end-effector based on the current joint positions and velocities.
+ * @details
+ *   kinematics->setPosition(this->lbr.q);: Sets the joint positions of the robot model to the values stored in the lbr.q vector.
+ *   kinematics->setVelocity(this->lbr.qd);: Sets the joint velocities of the robot model to the values stored in the
+ *   lbr.qd vector.
+ *   kinematics->forwardPosition();: Computes the forward position kinematics, determining the end-effector position
+ *   and orientation based on the current joint positions.
+ *   kinematics->forwardVelocity();: Computes the forward velocity kinematics, determining the end-effector linear
+ *   and angular velocities based on the current joint positions and velocities.
+ */
 void robotModel::performForwardKinematics() {
     kinematics->setPosition(this->lbr.q);
     kinematics->setVelocity(this->lbr.qd);
@@ -66,24 +84,71 @@ void robotModel::performForwardKinematics() {
     kinematics->forwardVelocity();
 }
 
-void robotModel::getTransformation() {
-    //auto xd = kinematics->getJacobian() * lbr.qd;
-
-    rl::math::MotionVector xd = kinematics->getOperationalVelocity(0);
-    kinematics->forwardPosition();
+/*!
+ * @brief This method is responsible for retrieving and printing the transformation of the end-effector. This method essentially calculates and prints the linear and angular velocities of the end-effector based on the kinematic state.
+ *
+ * @details
+ * rl::math::MotionVector xd = kinematics->getOperationalVelocity(0);: Retrieves the operational velocity of the
+ * end-effector.
+ * tcp.vecV = kinematics->getOperationalPosition(0).linear() * xd.linear();: Computes the linear velocity of the
+ * end-effector.
+ * tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();: Computes the angular velocity of
+ * the end-effector.
+ *  tcp.vecQ = kinematics->getOperationalPosition(0);: Retrieves the operational position of the end-effector.
+ */
+void robotModel::getTransformation(bool printFlag /*= false*/) {
+    rl::math::MotionVector xd = kinematics->getOperationalVelocity(0); // Endeffektor Geschwindgkeitsvektor
+    //kinematics->forwardPosition(); // das muss falsch sein an der stelle.
     tcp.vecV = kinematics->getOperationalPosition(0).linear() * xd.linear();
     tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();
     tcp.vecQ = kinematics->getOperationalPosition(0); // output value
+    //std::cout<< "\t"<< tcp.vecQ.matrix()<<std::endl;
+    //std::cout<< "\t"<< tcp.vecV.matrix()<<std::endl;
+    if (printFlag) {
+        // Set the width for better formatting
+        const int width = 10;
+
+      /*  std::cout << "Aktuelle Geschwindigkeitsvektor in WeltKoordinaten xyz \t"
+                  << std::setw(width) << xd. x() << std::setw(width) << xd.y() << std::setw(width) << xd.z()
+                  << std::endl;*/
+
+        std::cout << "Aktuelle Geschwindigkeitsvektor linear in WeltKoordinaten xyz \t"
+                  << std::setw(width) << tcp.vecV.x() << std::setw(width) << tcp.vecV.y() << std::setw(width) << tcp.vecV.z()
+                  << std::endl;
+
+        std::cout << "Aktuelle Geschwindigkeitsvektor radial inWeltKoordinaten xyz \t"
+                  << std::setw(width) << tcp.vecOmega.x() << std::setw(width) << tcp.vecOmega.y() << std::setw(width) << tcp.vecOmega.z()
+                  << std::endl;
+    }
 }
 
-void robotModel::getTCPvelocity() {
+void robotModel::getUnitsFromModel() const {
+    auto q_units = model->getPositionUnits();
+    auto qd_units = model->getVelocityUnits();
+    auto qdd_units = model->getAccelerationUnits();
+}
+/*!
+ * @brief This method converts and prints the linear and angular velocities of the end-effector.
+ * @details
+ * tcp.vecV = rl::math::RAD2DEG * tcp.vecV;: Converts linear velocity to degrees.
+ * tcp.vecOmega = rl::math::RAD2DEG * tcp.vecOmega;: Converts angular velocity to degrees.
+ * std::cout << "\t" << tcp.vecV.transpose() << std::endl;: Prints the converted linear velocity.
+ */
+void robotModel::getTCPvelocity(bool printFlag /*= false*/) {
     // Convert values to degrees
-    tcp.vecV = rl::math::RAD2DEG * tcp.vecV;
+    //tcp.vecV = rl::math::RAD2DEG * tcp.vecV;
     tcp.vecOmega = rl::math::RAD2DEG * tcp.vecOmega;
-    // Print all values of vecV with labels
-    std::cout << "Linear Velocity (vecV): [Vx, Vy, Vz] = [" << tcp.vecV.transpose() << "]" << std::endl;
-    // Print all values of vecOmega with labels
-    //std::cout << "Angular Velocity (vecOmega): [Omega_x, Omega_y, Omega_z] = [" << tcp.vecOmega.transpose() << "]"<< std::endl;
+
+    if (printFlag) {
+        // Set the width for better formatting
+        const int width = 25;
+
+        // Print linear velocity
+        std::cout << "[Vx, Vy, Vz] = [" << std::setw(width) << tcp.vecV.coeff(0) << std::setw(width) << tcp.vecV.coeff(1) << std::setw(width) << tcp.vecV.coeff(2) << "]" << std::endl;
+
+        // Print angular velocity
+        std::cout << "[Omega_x, Omega_y, Omega_z] = [" << std::setw(width) << tcp.vecOmega.coeff(0) << std::setw(width) << tcp.vecOmega.coeff(1) << std::setw(width) << tcp.vecOmega.coeff(2) << "]" << std::endl;
+    }
 }
 
 

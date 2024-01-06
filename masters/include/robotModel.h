@@ -20,20 +20,22 @@
 #include <rl/mdl/Fixed.h>
 #include <rl/mdl/Frame.h>
 #include <rl/mdl/Revolute.h>
+#include <iomanip> // Include this for std::setw
 
 class robotModel {
 public:
     explicit robotModel(const std::string &xmlFilePath);
 
     void performForwardKinematics();
-    void getTransformation();
-    void getTCPvelocity();
-    void printQ();
+    void getTransformation(bool printFlag= false);
+    void getTCPvelocity(bool printFlag=false /*= false*/);
 
-    void update_model();
-    void setQ(std::vector<double> &q, rl::math::Vector &qd);
+    void setQ(std::vector<double>& jointPositions, const rl::math::Vector& jointVelocities);
+    void getUnitsFromModel() const;
 
 private:
+    void printQ();
+    void update_model();
     // Model and casts
     std::shared_ptr<rl::mdl::Model> model;
     rl::mdl::Kinematic *kinematics;
@@ -47,6 +49,7 @@ private:
 
     // Methods
     void printVector();
+
 };
 
 
