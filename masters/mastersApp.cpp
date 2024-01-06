@@ -67,16 +67,6 @@ int main(int argc, char **argv) {
     std::cout << "Using " << numThreads << " threads." << std::endl;
 
     // create new sine overlay client
-    mastersclient trafoClient(jointMask, frequency, amplitude, filterCoeff);
-
-    /***************************************************************************/
-    /*                                                                         */
-    /*   Standard application structure                                        */
-    /*   Configuration                                                         */
-    /*                                                                         */
-    /***************************************************************************/
-
-    // create new udp connection
     mastersclient trafoClient(
             jointMask, frequency, amplitude, filterCoeff, plotMaster(plotCount));
     // pass connection and client to a new FRI client application
@@ -86,29 +76,35 @@ int main(int argc, char **argv) {
     // repeatedly call the step routine to receive and process FRI packets
     bool success = app.connect(port, hostname);
     while (success) {
-        success = app.step();
-        //printf((const char *) trafoClient.robotState().getSessionState());
-        // check if we are in IDLE because the FRI session was closed
-        //std::printf("Session State:\traPosition%s\n", trafoClient.s_eSessionstate.c_str());
-        // std::printf("Session State%s",tmp);
-        //std::printf(trafoClient.robotState().getClientCommandMode());
-        if (trafoClient.s_eSessionstate){
-        //std::printf("Session State:\traPosition%s\n", trafoClient.s_eSessionstate);
+        try {
+            success = app.step();
+            if (trafoClient.s_eSessionstate) {
+                //std::printf("Session State:\traPosition%s\n", trafoClient.s_eSessionstate);
+                idleCycle = 0;
+            }
+            if (trafoClient.robotState().getSessionState() == IDLE) {
+                ++idleCycle;
+                if (idleCycle >= maxIdleCycles) {
+                    throw std::runtime_error("FRI session entered IDLE state too often");
+                }
+            }
         }
-        if (trafoClient.robotState().getSessionState() == IDLE) {
-            // In this demo application we simply quit.
-            // Waiting for a new FRI session would be another possibility.
-            break;
+        catch (const std::runtime_error &e) {
+            // Handle the exception (e.g., log the error)
+            ++retryCount;
+            if (retryCount <= maxRetries) {
+                // Retry the connection
+                std::cerr << "Caught exception: " << e.what() << ". Retrying connection..."
+                          << std::endl;
+                app.disconnect();  // Disconnect before retrying
+                app.connect(port, hostname);  // Retry connection
+            } else {
+                // If max retries exceeded, exit the loop
+                std::cerr << "Maximum number of retries exceeded. Exiting." << std::endl;
+                break;
+            }
         }
     }
-
-    /***************************************************************************/
-    /*                                                                         */
-    /*   Standard application structure                                        */
-    /*   Dispose                                                               */
-    /*                                                                         */
-    /***************************************************************************/
-
     // disconnect from controller
     app.disconnect();
     return 1;
