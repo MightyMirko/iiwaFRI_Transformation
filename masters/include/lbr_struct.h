@@ -23,5 +23,6 @@ struct LBR_Rob {
     rl::math::Vector qd;
     rl::math::Vector qdd;
     rl::math::Vector tau;
+    rl::math::Vector home;
 };
 #endif //FRICLIENT_LBR_STRUCT_H
