@@ -2,6 +2,10 @@
 # cmake support for KUKA's Fast Robot Interface (FRI) client library
 ####################################################################
 cmake_minimum_required(VERSION 3.18)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+cmake_minimum_required(VERSION 3.18)
+# GoogleTest requires at least C++14
 
 project(FRIClient VERSION 1.0.0
         DESCRIPTION "KUKA's Fast Robot Interface client library."
@@ -13,6 +17,8 @@ set(CMAKE_GENERATOR "Ninja" CACHE INTERNAL "" FORCE)
 ######################
 set(FRIClient_SDK_NAME "FRI-Client-SDK_Cpp")
 option(BUILD_FRI_APPS "Build FRIClient example applications" OFF)
+option(BUILD_MASTER "Build Master App and Lib" ON)
+
 message(STATUS "Configuring Binary ${CMAKE_CURRENT_BINARY_DIR}")
 message(STATUS "Configuring Source ${CMAKE_CURRENT_SOURCE_DIR}")
 
@@ -188,9 +194,9 @@ endif (BUILD_FRI_APPS)
 ################
 # build masters
 ################
-if (BUILD_MASTERS)
+if (BUILD_MASTER)
     add_subdirectory(masters)  # Fügen Sie diese Zeile hinzu
-endif (BUILD_MASTERS)
+endif (BUILD_MASTER)
 
 #[[
 
