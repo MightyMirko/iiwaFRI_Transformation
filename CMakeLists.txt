@@ -189,12 +189,17 @@ endif (BUILD_FRI_APPS)
 ################
 if (BUILD_MASTERS)
     find_package(RL COMPONENTS MDL KIN MATH REQUIRED)
+    find_package(Boost REQUIRED COMPONENTS iostreams)
+    find_package(PythonLibs REQUIRED)
+    include_directories(${PYTHON_INCLUDE_DIRS})
+
     file(GLOB_RECURSE MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/masters/*.cpp)
     add_executable(mastersAPP
-            ${MASTERS_SOURCES}
-            masters/robotModel.cpp
+                   ${MASTERS_SOURCES}
+                   masters/robotModel.cpp
+                   masters/plotMaster.cpp
 
-    )
+                   )
     target_include_directories(mastersAPP
             PRIVATE
             ${CMAKE_CURRENT_BINARY_DIR}/${FRIClient_SDK_NAME}/include
@@ -206,7 +211,9 @@ if (BUILD_MASTERS)
             PUBLIC
             ${RL_LIBRARIES}
             PRIVATE
+            ${PYTHON_LIBRARIES}
             FRIClient
+            Boost::iostreams
             # Add other libraries if needed
     )
 endif (BUILD_MASTERS)
