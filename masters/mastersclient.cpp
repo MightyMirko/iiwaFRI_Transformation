@@ -6,41 +6,35 @@
 #include "include/mastersclient.h"
 #include "friLBRState.h"
 #include <cstdio>
-#include <cstring>
-// Visual studio needs extra define to use math constants
 #include <cmath>
 #include <filesystem>
 #include <iostream>
-
-
+#include <chrono>
 using namespace KUKA::FRI;
 
 //******************************************************************************
 mastersclient::mastersclient(unsigned int jointMask, double freqHz,
-                             double amplRad, double filterCoeff)
+                             double amplRad, double filterCoeff,
+                             plotMaster plotter)
         : _jointMask(jointMask), _freqHz(freqHz), _amplRad(amplRad),
-          _filterCoeff(filterCoeff), _offset(0.0), _phi(0.0), _stepWidth(0.0) {
-    printf("mastersclient initialized:\n"
-           "\tjoint mask: 0x%x\n"
-           "\tfrequency (Hz): %f\n"
-           "\tamplitude (rad): %f\n"
-           "\tfilterCoeff: %f\n",
-           jointMask, freqHz, amplRad, filterCoeff);
-    //jointTest = new std::vector<double>;
-    //jointTest.resize(LBRState::NUMBER_OF_JOINTS,0.0);
+          _filterCoeff(filterCoeff), _offset(0.0), _phi(0.0), _stepWidth(0.0),
+          plotter(plotter) {
+    printf(
+            "mastersclient initialized:\n"
+            "\tjoint mask: 0x%x\n"
+            "\tfrequency (Hz): %f\n"
+            "\tamplitude (rad): %f\n"
+            "\tfilterCoeff: %f\n",
+            jointMask, freqHz, amplRad, filterCoeff
+          );
+    //jointPosition = new std::vector<double>;
+    //jointPosition.resize(LBRState::NUMBER_OF_JOINTS,0.0);
     //std::cout << "\nSize : " << jointPos.size();
-    jointTest.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
-    oldJointPos.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
-    jointvel.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
+    jointPosition.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
+    //oldJointPos.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
+    jointvel.resize(LBRState::NUMBER_OF_JOINTS, 1);
+    jointvel.setZero();
 
-    jointPos = new double[LBRState::NUMBER_OF_JOINTS];
-    std::cout << "%\n" << jointPos << "%\n" << "\n With * " << *jointPos << std::endl;
-    for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
-
-        std::cout << i << "before:\t" << jointPos[i] << std::endl;
-        jointPos[i] = 0.0;
-        std::cout << "\t after:\t" << jointPos[i] << "%\n" << std::endl;
-    }
 
     currentSampleTimeSec = 0;
     currentSampleTimeNanoSec = 0;
@@ -48,9 +42,7 @@ mastersclient::mastersclient(unsigned int jointMask, double freqHz,
     prvSampleTimeNanoSec = 0;
     //
     std::vector<std::string> xmlpath{//
-            "/home/mirko/OneDrive/codespace/fri_cmake/masters/iiwa_dh_model.xml",
-            "/home/mirko/OneDrive/codespace/fri_cmake/masters/iiwa_my.xml",
-            "/home/mirko/OneDrive/codespace/fri_cmake/masters/rl-examples/rlmdl/kuka-lbr-iiwa-7-r800.xml",
+            "/home/mirko/CLionProjects/thesis2024_orphaned/masters/descr/rlmdl/kuka-lbr-iiwa-7-r800.xml",
             "/usr/share/rl-0.7.0/examples/rlmdl/mitsubishi-rv6sl.xml"
     };
     // Check if the file exists
@@ -63,23 +55,27 @@ mastersclient::mastersclient(unsigned int jointMask, double freqHz,
             throw std::invalid_argument("File does not exist");
         }
     }
-    robotmdl = new robotModel(xmlpath[2]);
+    robotmdl = new robotModel(xmlpath[0]);
+
+    robotmdl->getUnitsFromModel();
 
 }
 
 //******************************************************************************
 //mastersclient::~mastersclient() = default;
 mastersclient::~mastersclient() {
-    delete jointPos, s_eSessionstate;
+    delete s_eSessionstate;
 }
 
-/// \brief
-/// \param oldState
-/// \param newState
+/*!
+ * @brief
+ @param oldState
+ @param newState
+*/
+
 void mastersclient::onStateChange(ESessionState oldState,
                                   ESessionState newState) {
     LBRClient::onStateChange(oldState, newState);
-    // (re)initialize sine parameters when entering Monitoring
     switch (newState) {
         case IDLE: {
             this->s_eSessionstate = "IDLE";
@@ -89,7 +85,6 @@ void mastersclient::onStateChange(ESessionState oldState,
             _offset = 0.0;
             _phi = 0.0;
             _stepWidth = 2 * M_PI * _freqHz * robotState().getSampleTime();
-            //this->printJointPos();
             this->s_eSessionstate = "MONITORING_READY";
             break;
         }
@@ -180,7 +175,8 @@ bool mastersclient::compareVectors(const rl::math::Vector &v1, const rl::math::V
     return true; // Vectors are approximately equal
 }
 
-void mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 1970 (UTC)
+void
+mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 1970 (UTC)
     this->currentSampleTimeSec = robotState().getTimestampSec();
     // Get nanoseconds elapsed since the last second (in Unix time)
     this->currentSampleTimeNanoSec = robotState().getTimestampNanoSec();
@@ -202,16 +198,9 @@ void mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1s
 */
 }
 
-void mastersclient::printJointPos() const {
-    for (int i = 0; i < LBRState::NUMBER_OF_JOINTS; i++) {
-        printf(" J%d: %f\t", i, jointPos[i] * rl::math::RAD2DEG);
-    }
-    printf("\n");
-}
-
 void mastersclient::monitor() {
     LBRClient::monitor();
-    calcRobot();
+    doPositionAndVelocity();
 }
 
 
