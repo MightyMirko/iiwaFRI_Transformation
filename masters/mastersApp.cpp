@@ -1,17 +1,17 @@
 /**
-\file
-\version {1.17}
-*/
+ * \file
+ * \version {1.17}
+ */
+
 #include <cstdlib>
 #include <cstdio>
 #include <cstring> // strstr
+#include <iostream>
+#include <stdexcept>
+#include <thread>
 #include "include/mastersclient.h"
 #include "friUdpConnection.h"
 #include "friClientApplication.h"
-#include <stdio.h>
-#include <stdexcept>
-#include <iostream>
-#include <thread>
 
 using namespace KUKA::FRI;
 
@@ -58,40 +58,42 @@ int main(int argc, char **argv) {
     int retryCount = 0;
     int idleCycle = 0;
     int plotCount = 15e2;
-    // Hier kannst du Threads mit der gewünschten Anzahl erstellen
-    // Maximale Anzahl der Threads abrufen, die vom System unterstützt werden
-    unsigned int maxThreads = std::thread::hardware_concurrency();
-    // Begrenze die Anzahl der Threads auf z.B. die Hälfte der verfügbaren Threads
-    unsigned int numThreads = maxThreads / 2;
-    std::cout << "Max threads supported by system: " << maxThreads << std::endl;
+
+    // Set the number of threads to be half of the available hardware threads
+    unsigned int numThreads = std::thread::hardware_concurrency() / 2;
+    std::cout << "Max threads supported by system: " << std::thread::hardware_concurrency() << std::endl;
     std::cout << "Using " << numThreads << " threads." << std::endl;
 
-    // create new sine overlay client
-    mastersclient trafoClient(
-            jointMask, frequency, amplitude, filterCoeff, plotMaster(plotCount));
-    // pass connection and client to a new FRI client application
+    // Create a new sine overlay client
+    mastersclient trafoClient(jointMask, frequency, amplitude, filterCoeff, plotMaster(plotCount));
+
+    // Pass connection and client to a new FRI client application
     UdpConnection connection;
     ClientApplication app(connection, trafoClient);
-    // connect client application to KUKA Sunrise controller
-    // repeatedly call the step routine to receive and process FRI packets
-    bool success = app.connect(port, hostname);
+
+    // Connect client application to KUKA Sunrise controller
+    // Repeatedly call the step routine to receive and process FRI packets
+    bool success = app.connect(port, hostname.c_str());
     while (success) {
         try {
             success = app.step();
+
             if (trafoClient.s_eSessionstate) {
                 //std::printf("Session State:\traPosition%s\n", trafoClient.s_eSessionstate);
                 idleCycle = 0;
             }
+
             if (trafoClient.robotState().getSessionState() == IDLE) {
                 ++idleCycle;
+
                 if (idleCycle >= maxIdleCycles) {
                     throw std::runtime_error("FRI session entered IDLE state too often");
                 }
             }
-        }
-        catch (const std::runtime_error &e) {
+        } catch (const std::runtime_error& e) {
             // Handle the exception (e.g., log the error)
             ++retryCount;
+
             if (retryCount <= maxRetries) {
                 // Retry the connection
                 std::cerr << "Caught exception: " << e.what() << ". Retrying connection..."
@@ -105,7 +107,8 @@ int main(int argc, char **argv) {
             }
         }
     }
-    // disconnect from controller
+
+    // Disconnect from controller
     app.disconnect();
     return 1;
 }
