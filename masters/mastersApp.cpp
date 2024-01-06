@@ -9,6 +9,9 @@
 #include "friUdpConnection.h"
 #include "friClientApplication.h"
 #include <stdio.h>
+#include <stdexcept>
+#include <iostream>
+#include <thread>
 
 using namespace KUKA::FRI;
 
@@ -36,7 +39,7 @@ int main(int argc, char **argv) {
                     "\t4) sine frequency in Hertz (optional)\n"
                     "\t5) sine amplitude in radians (optional)\n"
                     "\t6) filter coefficient from 0 (off) to 1 (optional)\n"
-            );
+                  );
             return 1;
         }
     }
@@ -50,6 +53,18 @@ int main(int argc, char **argv) {
 
     if (hostname == NULL) hostname = "172.31.0.147";
 
+    const int maxRetries = 3;  // You can adjust the maximum number of retries as needed
+    const int maxIdleCycles = 20;
+    int retryCount = 0;
+    int idleCycle = 0;
+    int plotCount = 15e2;
+    // Hier kannst du Threads mit der gewünschten Anzahl erstellen
+    // Maximale Anzahl der Threads abrufen, die vom System unterstützt werden
+    unsigned int maxThreads = std::thread::hardware_concurrency();
+    // Begrenze die Anzahl der Threads auf z.B. die Hälfte der verfügbaren Threads
+    unsigned int numThreads = maxThreads / 2;
+    std::cout << "Max threads supported by system: " << maxThreads << std::endl;
+    std::cout << "Using " << numThreads << " threads." << std::endl;
 
     // create new sine overlay client
     mastersclient trafoClient(jointMask, frequency, amplitude, filterCoeff);
@@ -62,24 +77,14 @@ int main(int argc, char **argv) {
     /***************************************************************************/
 
     // create new udp connection
-    UdpConnection connection;
-
-
+    mastersclient trafoClient(
+            jointMask, frequency, amplitude, filterCoeff, plotMaster(plotCount));
     // pass connection and client to a new FRI client application
+    UdpConnection connection;
     ClientApplication app(connection, trafoClient);
-
     // connect client application to KUKA Sunrise controller
-    app.connect(port, hostname);
-
-    /***************************************************************************/
-    /*                                                                         */
-    /*   Standard application structure                                        */
-    /*   Execution mainloop                                                    */
-    /*                                                                         */
-    /***************************************************************************/
-
     // repeatedly call the step routine to receive and process FRI packets
-    bool success = true;
+    bool success = app.connect(port, hostname);
     while (success) {
         success = app.step();
         //printf((const char *) trafoClient.robotState().getSessionState());
