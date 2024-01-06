@@ -11,6 +11,7 @@
 #include <future>
 #include <iostream>
 #include <chrono>
+
 using namespace KUKA::FRI;
 
 //******************************************************************************
@@ -36,11 +37,6 @@ mastersclient::mastersclient(unsigned int jointMask, double freqHz,
     jointvel.resize(LBRState::NUMBER_OF_JOINTS, 1);
     jointvel.setZero();
 
-
-    currentSampleTimeSec = 0;
-    currentSampleTimeNanoSec = 0;
-    prvSampleTimeSec = 0;
-    prvSampleTimeNanoSec = 0;
     //
     std::vector<std::string> xmlpath{//
             "/home/mirko/CLionProjects/thesis2024_orphaned/masters/descr/rlmdl/kuka-lbr-iiwa-7-r800.xml",
@@ -59,7 +55,6 @@ mastersclient::mastersclient(unsigned int jointMask, double freqHz,
     robotmdl = new robotModel(xmlpath[0]);
 
     robotmdl->getUnitsFromModel();
-
 }
 
 //******************************************************************************
@@ -125,7 +120,7 @@ mastersclient::calculateJointVelocityOneSided(const std::vector<double> &oldJoin
     for (size_t i = 0; i < size - 1; ++i) {
         derivativeVector(i) = (currJointPos[i] - oldJointPos[i]) / (dt);
         //derivativeVector(i) = std::round(derivativeVector(i) * ROUND_AFTER_COMMA) /
-                          //    ROUND_AFTER_COMMA;
+        //    ROUND_AFTER_COMMA;
     }
     //std::cout << "One Sided: : " << derivativeVector.transpose() << std::endl;
 
@@ -151,16 +146,16 @@ rl::math::Vector mastersclient::calculateJointVelocityMultiSided(
         for (size_t j = 0; j < size; ++j) {
             derivativeVector[j] =
                     ((-1 * cJointHistory[0][j]) + (8 * cJointHistory[1][j]) -
-                     (8 * cJointHistory[3][j] )+ (cJointHistory[4][j])) / (12 * dt);
+                     (8 * cJointHistory[3][j]) + (cJointHistory[4][j])) / (12 * dt);
 
-          //  derivativeVector(j) =
+            //  derivativeVector(j) =
             //        std::round(derivativeVector(j) * ROUND_AFTER_COMMA) /
-              //      ROUND_AFTER_COMMA;
+            //      ROUND_AFTER_COMMA;
         }
-       /* std::cout << "MultiSided: Derivative Vector: "
-                  << derivativeVector.transpose()
-                  << std::endl;
-*/
+        /* std::cout << "MultiSided: Derivative Vector: "
+                   << derivativeVector.transpose()
+                   << std::endl;
+ */
         return derivativeVector;
     } else {
         throw std::runtime_error(
@@ -206,25 +201,25 @@ mastersclient::compareVectors(const rl::math::Vector &v1, const rl::math::Vector
 
 void
 mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 1970 (UTC)
-    this->currentSampleTimeSec = robotState().getTimestampSec();
-    // Get nanoseconds elapsed since the last second (in Unix time)
-    this->currentSampleTimeNanoSec = robotState().getTimestampNanoSec();
+    auto desiredDeltaTime = std::chrono::duration<double>(5e-3);
+    unsigned int currentSampleTimeSec = robotState().getTimestampSec();
+    unsigned int currentSampleTimeNanoSec = robotState().getTimestampNanoSec();
+    // Convert seconds and nanoseconds to std::chrono::time_point
+    currentSampleTime = std::chrono::time_point<std::chrono::seconds, std::chrono::nanoseconds>(
+            std::chrono::seconds(currentSampleTimeSec) +
+            std::chrono::nanoseconds(currentSampleTimeNanoSec));
 
-    //std::cout << "Timestamp (sec):\traPosition" << currentSampleTimeSec << std::endl;
-    //std::cout << "Timestamp (nanoSec):\traPosition" << currentSampleTimeNanoSec << std::endl;
+    deltaTime = currentSampleTime - prvSampleTime;
+    prvSampleTime = currentSampleTime;
 
-    // Calculate the time difference
-    this->deltaTimeSec = currentSampleTimeSec - prvSampleTimeSec;
-    this->deltaTimeNanoSec = currentSampleTimeNanoSec - prvSampleTimeNanoSec;
-    this->deltaTime = deltaTimeSec + (deltaTimeNanoSec) / 1e9;
+    // Check if the error between deltaTime and desiredDeltaTime is larger than 500 microseconds
+    const auto error = std::chrono::duration_cast<std::chrono::microseconds>( deltaTime - desiredDeltaTime);
+    if (std::abs(error.count()) > 500) {
+        // If the error is too large, log the error and throw an exception
+        std::cerr << "Error: " << error.count() << " microseconds." << std::endl;
+        throw std::runtime_error("DeltaTime error exceeds 500 microseconds. Handle the exception accordingly.");
+    }
 
-    // Update previous timestamps
-    prvSampleTimeSec = currentSampleTimeSec;
-    prvSampleTimeNanoSec = currentSampleTimeNanoSec;
-    /*std::cout << "Current delta in sec:\traPosition" << deltaTimeSec << std::endl;
-    std::cout << "Current delta in nanosec:\traPosition" << deltaTimeNanoSec << std::endl;
-    std::cout << "Current delta :\traPosition" << deltaTime << std::endl;
-*/
 }
 
 void mastersclient::monitor() {
@@ -307,7 +302,7 @@ void mastersclient::doPositionAndVelocity() {
         auto oneSidedResult = std::async(
                 std::launch::async, [&]() {
                     return calculateJointVelocityOneSided(
-                            oldJointPos, jointPosition, deltaTime
+                            oldJointPos, jointPosition, deltaTime.count()
                                                          );
                 }
                                         );
@@ -322,7 +317,7 @@ void mastersclient::doPositionAndVelocity() {
                     [&]() {
                         auto result =
                                 calculateJointVelocityMultiSided(
-                                        dQ_JointP_history, deltaTime
+                                        dQ_JointP_history, deltaTime.count()
                                                                 );
 
                         // Sende
@@ -331,7 +326,7 @@ void mastersclient::doPositionAndVelocity() {
                                               );
 
 
-                //std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
+            //std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
             multiSided_jointVel = multiSidedResult.get();
 
             multiSided_jointVel *= -1;

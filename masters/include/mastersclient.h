@@ -13,6 +13,8 @@
 #include <queue>
 #include "gnuplot-iostream.h"
 #include "plotMaster.h"
+#include <chrono>
+
 #define ROUND_AFTER_COMMA 1e7
 
 /**
@@ -73,13 +75,16 @@ private:
     double _offset;         //!< offset for current interpolation step
     double _phi;            //!< phase of sine wave
     double _stepWidth;      //!< stepwidth for sine
-    unsigned int currentSampleTimeSec;
-    unsigned int currentSampleTimeNanoSec;
-    unsigned int prvSampleTimeSec;
-    unsigned int prvSampleTimeNanoSec;
-    unsigned int deltaTimeSec{};
-    unsigned int deltaTimeNanoSec{};
-    double deltaTime{};
+
+
+    std::chrono::time_point<std::chrono::seconds, std::chrono::nanoseconds> currentSampleTime;
+    std::chrono::time_point<std::chrono::seconds, std::chrono::nanoseconds> prvSampleTime;
+    // Update these declarations accordingly
+    std::chrono::duration<double> deltaTime;
+
+
+
+    //double deltaTime{};
     robotModel *robotmdl;
     plotMaster plotter;
     static std::mutex calculationMutex;
@@ -94,24 +99,26 @@ private:
     std::deque<d_vecJointPosition> dQ_JointP_history;
 
 
-    static bool compareVectors(const rl::math::Vector &v1, const rl::math::Vector &v2,
-                        double tolerance = 1e-6, bool verbosity=false);
+    static bool
+    compareVectors(const rl::math::Vector &v1, const rl::math::Vector &v2,
+                   double tolerance = 1e-6, bool verbosity = false);
 
     void doPositionAndVelocity();
 
     void getCurrentTimestamp();
 
     static rl::math::Vector
-    calculateJointVelocityOneSided(const std::vector<double>& oldJointPos,
-                                   const std::vector<double>& currJointPos,
+    calculateJointVelocityOneSided(const std::vector<double> &oldJointPos,
+                                   const std::vector<double> &currJointPos,
                                    double dt);
 
 
     static rl::math::Vector
-    calculateJointVelocityMultiSided(const std::deque<d_vecJointPosition> &cJointHistory,
-                                     double dt);
+    calculateJointVelocityMultiSided(
+            const std::deque<d_vecJointPosition> &cJointHistory,
+            double dt);
 
-    void doProcessJointData(const rl::math::Vector& jointVel);
+    void doProcessJointData(const rl::math::Vector &jointVel);
 
     void plotVelocityHistories();
 
