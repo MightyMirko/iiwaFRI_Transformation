@@ -188,6 +188,12 @@ endif (BUILD_FRI_APPS)
 # build masters
 ################
 if (BUILD_MASTERS)
+    add_subdirectory(masters)  # Fügen Sie diese Zeile hinzu
+endif (BUILD_MASTERS)
+
+#[[
+
+if (BUILD_MASTERS)
     find_package(RL COMPONENTS MDL KIN MATH REQUIRED)
     find_package(Boost REQUIRED COMPONENTS iostreams)
     find_package(PythonLibs REQUIRED)
@@ -216,4 +222,4 @@ if (BUILD_MASTERS)
             Boost::iostreams
             # Add other libraries if needed
     )
-endif (BUILD_MASTERS)
+endif (BUILD_MASTERS)]]
