@@ -10,6 +10,10 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include <queue>
+#include "gnuplot-iostream.h"
+#include "plotMaster.h"
+#define ROUND_AFTER_COMMA 1e7
 
 /**
  * \brief Test client that can overlay interpolator joint positions with sine waves.
@@ -17,9 +21,6 @@
 class mastersclient : public KUKA::FRI::LBRClient {
 
 public:
-    std::vector<double> jointTest, oldJointPos, jointvel;
-    double * jointPos;
-
     //KUKA::FRI::ESessionState eSessionState;
     const char *s_eSessionstate{};
 
@@ -32,7 +33,8 @@ public:
      * @param filterCoeff Filter coefficient between 0 (filter off) and 1 (max filter)
      */
     mastersclient(unsigned int jointMask, double freqHz,
-                  double amplRad, double filterCoeff);
+                  double amplRad, double filterCoeff,
+                  plotMaster plotter);
 
     /**
     * \brief Destructor.
@@ -47,7 +49,8 @@ public:
     /// \brief
     /// \param oldState
     /// \param newState
-    virtual void onStateChange(KUKA::FRI::ESessionState oldState, KUKA::FRI::ESessionState newState);
+    virtual void onStateChange(KUKA::FRI::ESessionState oldState,
+                               KUKA::FRI::ESessionState newState);
 
     /**
      * \brief Callback for the FRI session states 'Monitoring Wait' and 'Monitoring Ready'.
@@ -77,15 +80,44 @@ private:
     unsigned int deltaTimeSec{};
     unsigned int deltaTimeNanoSec{};
     double deltaTime{};
-    robotModel * robotmdl;
+    robotModel *robotmdl;
+    plotMaster plotter;
+    static std::mutex calculationMutex;
+    //Gnuplot gp;
 
-    bool compareVectors(const rl::math::Vector& v1, const rl::math::Vector& v2, double tolerance = 1e-6);
+    using d_vecJointPosition = std::vector<double>;
+    using rlvec_Velocity = rl::math::Vector;
 
-    void calcRobot();
+    d_vecJointPosition jointPosition;
+    rlvec_Velocity jointvel;
+
+    std::deque<d_vecJointPosition> dQ_JointP_history;
+
+
+    static bool compareVectors(const rl::math::Vector &v1, const rl::math::Vector &v2,
+                        double tolerance = 1e-6, bool verbosity=false);
+
+    void doPositionAndVelocity();
+
     void getCurrentTimestamp();
-    void printJointPos() const;
 
-    rl::math::Vector calcJointVel(double dt);
+    static rl::math::Vector
+    calculateJointVelocityOneSided(const std::vector<double>& oldJointPos,
+                                   const std::vector<double>& currJointPos,
+                                   double dt);
+
+
+    static rl::math::Vector
+    calculateJointVelocityMultiSided(const std::deque<d_vecJointPosition> &cJointHistory,
+                                     double dt);
+
+    void doProcessJointData(const rl::math::Vector& jointVel);
+
+    void plotVelocityHistories();
+
+    static std::mutex historyMutex;
+    static std::mutex multiSidedJointVelMutex;
+    static std::mutex oneSidedJointVelMutex;
 
 };
 

@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <cmath>
 #include <filesystem>
+#include <future>
 #include <iostream>
 #include <chrono>
 using namespace KUKA::FRI;
@@ -105,70 +106,98 @@ void mastersclient::onStateChange(ESessionState oldState,
 /*
  * One Sided differencing for numerical differentiation
  */
-rl::math::Vector mastersclient::calcJointVel(double dt) {
-    size_t size = jointTest.size();
+rl::math::Vector
+mastersclient::calculateJointVelocityOneSided(const std::vector<double> &oldJointPos,
+                                              const std::vector<double> &currJointPos,
+                                              double dt) {
+    if (oldJointPos.size() != currJointPos.size()) {
+        throw std::runtime_error(
+                "oldJointPos and currJointPos have different sizes."
+                                );
+    }
+
+    std::lock_guard<std::mutex> lock(oneSidedJointVelMutex);
+    size_t size = currJointPos.size();
     rl::math::Vector derivativeVector(size);
     derivativeVector.setZero();
 
     // Central differencing for numerical differentiation
-    for (size_t i = 1; i < size - 1; ++i) {
-        derivativeVector(i) = (jointTest[i] - oldJointPos[i]) / (dt);
-        //derivativeVector(i) = std::round(derivativeVector(i) * 10000.0) / 10000.0;
+    for (size_t i = 0; i < size - 1; ++i) {
+        derivativeVector(i) = (currJointPos[i] - oldJointPos[i]) / (dt);
+        //derivativeVector(i) = std::round(derivativeVector(i) * ROUND_AFTER_COMMA) /
+                          //    ROUND_AFTER_COMMA;
     }
+    //std::cout << "One Sided: : " << derivativeVector.transpose() << std::endl;
 
     return derivativeVector;
 }
 
 
+/*
+ * Multi Sided differencing for numerical differentiation
+ */
+rl::math::Vector mastersclient::calculateJointVelocityMultiSided(
+        const std::deque<d_vecJointPosition> &cJointHistory, double dt) {
 
 
+    std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
 
-void mastersclient::calcRobot() {
-    try {
-        getCurrentTimestamp();
-        const double *measuredJointPosPtr = robotState().getMeasuredJointPosition();
-        // KOpiere von vorne nach hinten in jointpos
-        oldJointPos = jointTest;
-        std::copy(measuredJointPosPtr, measuredJointPosPtr + LBRState::NUMBER_OF_JOINTS, jointTest.begin());
 
-        // Calculate the derivative of the joint positions
-        rl::math::Vector jointVel = calcJointVel(deltaTime);
+    if (!cJointHistory.empty()) {
+        size_t size = cJointHistory.front().size();
+        rl::math::Vector derivativeVector(size);
+        derivativeVector.setZero();
 
-        //std::cout << "Joint Velocities: " << jointVel << std::endl;
-        robotmdl->setQ(jointTest, jointVel);
-        robotmdl->performForwardKinematics();
-        robotmdl->getTransformation();
-        robotmdl->getTCPvelocity();
+        for (size_t j = 0; j < size; ++j) {
+            derivativeVector[j] =
+                    ((-1 * cJointHistory[0][j]) + (8 * cJointHistory[1][j]) -
+                     (8 * cJointHistory[3][j] )+ (cJointHistory[4][j])) / (12 * dt);
 
-    } catch (const std::runtime_error &e) {
-        printf("Not connected yet;\n");
-    } catch (const std::exception &e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+          //  derivativeVector(j) =
+            //        std::round(derivativeVector(j) * ROUND_AFTER_COMMA) /
+              //      ROUND_AFTER_COMMA;
+        }
+       /* std::cout << "MultiSided: Derivative Vector: "
+                  << derivativeVector.transpose()
+                  << std::endl;
+*/
+        return derivativeVector;
+    } else {
+        throw std::runtime_error(
+                "cJointHistory is empty. Unable to perform calculations."
+                                );
     }
 }
 
-bool mastersclient::compareVectors(const rl::math::Vector &v1, const rl::math::Vector &v2, double tolerance) {
+std::mutex mastersclient::oneSidedJointVelMutex;
+
+bool
+mastersclient::compareVectors(const rl::math::Vector &v1, const rl::math::Vector &v2,
+                              double tolerance, bool verbosity) {
     if (v1.size() != v2.size()) {
         std::cerr << "Vectors differ in size." << std::endl;
         return false; // Vectors must have the same size
     }
-    for (std::size_t i = 0; i < v1.size(); ++i) {
-        if (std::abs(v1(i) - v2(i)) > tolerance) {
-            std::cerr << "Vectors differ at index " << i << "." << std::endl;
-            return false; // Elements differ by more than the tolerance
-        }
-    }
-    //std::cout << "Vectors are approximately equal." << std::endl;
-
     // Calculate the error vector
     rl::math::Vector errorVector = v1 - v2;
-
+    for (size_t i = 0; i < errorVector.size(); ++i)
+        errorVector(i) =
+                std::round(errorVector(i) * ROUND_AFTER_COMMA) / ROUND_AFTER_COMMA;
+    for (std::size_t i = 0; i < v1.size(); ++i) {
+        if (std::abs(v1(i) - v2(i)) > tolerance && verbosity) {
+            std::cerr << "Vectors differ at index " << i << "." << std::endl;
+            std::cout << (v1.matrix() - v2.matrix()).transpose() << std::endl;
+            std::cout << errorVector.transpose() << std::endl;
+            //return false; // Elements differ by more than the tolerance
+        }
+    }
+    if (verbosity) std::cout << "Vectors are approximately equal." << std::endl;
     // Calculate the norm of the error vector
     double errorNorm = errorVector.norm();
 
     // Print or handle the error
-    if(errorNorm > 1.0) {
-    std::cout << "Error Norm: " << errorNorm << std::endl;
+    if (errorNorm > 1.0) {
+        std::cerr << "Error Norm: " << errorNorm << std::endl;
 
     }
 
@@ -213,8 +242,143 @@ void mastersclient::command() {
     // robotCommand().setJointPosition()
 }
 
-//******************************************************************************
-// clean up additional defines
-#ifdef _USE_MATH_DEFINES
-#undef _USE_MATH_DEFINES
-#endif
+
+
+// ...
+
+
+// ...
+
+void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
+    //std::cout << "jointVel: " << jointVel.transpose() << std::endl;
+    // Set joint positions and velocities in the robot model
+    robotmdl->setQ(jointPosition, jointVel);
+
+    // Perform forward kinematics
+    robotmdl->performForwardKinematics();
+
+    // Get transformation matrix at joint 0
+    //auto transformationMatrix =
+    robotmdl->getTransformation(0);
+
+    // Get TCP velocity at joint 0
+    //auto tcpVelocity =
+    robotmdl->getTCPvelocity(0);
+
+
+}
+
+void mastersclient::plotVelocityHistories() {
+    // Check if the size of the velocity history is sufficient for plotting
+    if (plotter.getHistSize()) {
+        // Plot the velocity histories using plotter object
+        if (plotter.plotLiveFirstAxis("r-", "b-"))
+            plotter.clearData();
+    }
+}
+
+std::mutex mastersclient::historyMutex;
+std::mutex mastersclient::multiSidedJointVelMutex;
+
+void mastersclient::doPositionAndVelocity() {
+    try {
+
+        getCurrentTimestamp();
+        const double *measuredJointPosPtr = robotState().getMeasuredJointPosition();
+
+        const std::vector<double> oldJointPos = jointPosition;
+        std::copy(
+                measuredJointPosPtr,
+                measuredJointPosPtr + LBRState::NUMBER_OF_JOINTS,
+                jointPosition.begin());
+
+
+        {
+            std::lock_guard<std::mutex> lock(historyMutex);
+            dQ_JointP_history.push_back(jointPosition);
+        }
+
+
+
+        // Start time measurement
+        auto startTime = std::chrono::high_resolution_clock::now();
+
+        // One Sided:
+        auto oneSidedResult = std::async(
+                std::launch::async, [&]() {
+                    return calculateJointVelocityOneSided(
+                            oldJointPos, jointPosition, deltaTime
+                                                         );
+                }
+                                        );
+
+        rl::math::Vector multiSided_jointVel;
+        multiSided_jointVel.setZero();
+        // Multi Sided:
+        if (dQ_JointP_history.size() >= 5) {
+            // Start the asynchronous computation only if dQ_JointP_history size is sufficient
+            auto multiSidedResult = std::async(
+                    std::launch::async,
+                    [&]() {
+                        auto result =
+                                calculateJointVelocityMultiSided(
+                                        dQ_JointP_history, deltaTime
+                                                                );
+
+                        // Sende
+                        return result;
+                    }
+                                              );
+
+
+                //std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
+            multiSided_jointVel = multiSidedResult.get();
+
+            multiSided_jointVel *= -1;
+            doProcessJointData(multiSided_jointVel);
+            // Remove the oldest joint position from history
+            {
+                std::lock_guard<std::mutex> lock(historyMutex);
+                dQ_JointP_history.pop_front();
+            }
+            // Wait for the asynchronous computations to finish
+            rl::math::Vector oneSided_jointVel = oneSidedResult.get();
+
+
+            //std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
+            plotter.printJointPos(jointPosition);
+            std::cout << "\rMulti-Sided Derivative Vector: "
+                      << multiSided_jointVel.transpose() << std::endl;
+            std::cout << "One-Sided Derivative Vector: "
+                      << oneSided_jointVel.transpose() << std::endl;
+            plotter.addVelocityData(oneSided_jointVel, multiSided_jointVel);
+
+        }
+
+
+        // Plot velocity histories
+        this->plotVelocityHistories();
+
+        // End time measurement
+        auto endTime = std::chrono::high_resolution_clock::now();
+        auto duration =
+                std::chrono::duration_cast<std::chrono::nanoseconds>(
+                        endTime - startTime
+                                                                    );
+
+        // Print the duration
+        /*
+        if (duration.count() > 5e5) {
+            std::cout << "Time taken by threads: " << duration.count()
+                      << " nanoseconds." << std::endl;
+        }*/
+    }
+    catch (const std::runtime_error &e) {
+        std::cerr << "Runtime Error in mastersclient->robotCalc() caught: "
+                  << e.what() << std::endl;
+    }
+    catch (const std::exception &e) {
+        std::cerr << "Exception caught in mastersclient->robotCalc(): " << e.what()
+                  << std::endl;
+    }
+}
