@@ -6,7 +6,8 @@ cmake_minimum_required(VERSION 3.18)
 project(FRIClient VERSION 1.0.0
         DESCRIPTION "KUKA's Fast Robot Interface client library."
         LANGUAGES C CXX)
-
+# Set Ninja as the generator
+set(CMAKE_GENERATOR "Ninja" CACHE INTERNAL "" FORCE)
 ######################
 # variable definitions
 ######################
