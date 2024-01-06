@@ -15,45 +15,40 @@
 
 using namespace KUKA::FRI;
 
+constexpr int DEFAULT_PORT_ID = 30201;
+constexpr unsigned int DEFAULT_JOINT_MASK = 0x8;
+constexpr double DEFAULT_FREQUENCY = 0.5;
+constexpr double DEFAULT_AMPLITUDE = 0.08;
+constexpr double DEFAULT_FILTER_COEFFICIENT = 0.99;
 
-#define DEFAULT_PORTID 30201
-#define DEFAULT_JOINTMASK 0x8
-#define DEFAULT_FREQUENCY 0.5
-#define DEFAULT_AMPLITUDE 0.08
-#define DEFAULT_FILTER_COEFFICIENT 0.99
+void printHelp() {
+    std::cout << "\nKUKA LBR joint sine overlay test application\n\n"
+              << "\tCommand line arguments:\n"
+              << "\t1) remote hostname (optional)\n"
+              << "\t2) port ID (optional)\n"
+              << "\t3) bitmask encoding of joints to be overlayed (optional)\n"
+              << "\t4) sine frequency in Hertz (optional)\n"
+              << "\t5) sine amplitude in radians (optional)\n"
+              << "\t6) filter coefficient from 0 (off) to 1 (optional)\n";
+}
 
-/// \brief
-/// \param argc
-/// \param argv
-/// \return
-int main(int argc, char **argv) {
-    // parse command line arguments
-    if (argc > 1) {
-        if (strstr(argv[1], "help") != NULL) {
-            printf(
-                    "\nKUKA LBR joint sine overlay test application\n\n"
-                    "\tCommand line arguments:\n"
-                    "\t1) remote hostname (optional)\n"
-                    "\t2) port ID (optional)\n"
-                    "\t3) bitmask encoding of joints to be overlayed (optional)\n"
-                    "\t4) sine frequency in Hertz (optional)\n"
-                    "\t5) sine amplitude in radians (optional)\n"
-                    "\t6) filter coefficient from 0 (off) to 1 (optional)\n"
-                  );
-            return 1;
-        }
+int main(int argc, char** argv) {
+    // Parse command line arguments
+    if (argc > 1 && strstr(argv[1], "help") != nullptr) {
+        printHelp();
+        return 1;
     }
-    char *hostname = (argc >= 2) ? argv[1] : NULL;
-    printf("hostname: %s\n", hostname);
-    int port = (argc >= 3) ? atoi(argv[2]) : DEFAULT_PORTID;
-    unsigned int jointMask = (argc >= 4) ? (unsigned int) atoi(argv[3]) : DEFAULT_JOINTMASK;
-    double frequency = (argc >= 5) ? atof(argv[4]) : DEFAULT_FREQUENCY;
-    double amplitude = (argc >= 6) ? atof(argv[5]) : DEFAULT_AMPLITUDE;
-    double filterCoeff = (argc >= 7) ? atof(argv[6]) : DEFAULT_FILTER_COEFFICIENT;
 
-    if (hostname == NULL) hostname = "172.31.0.147";
+    std::string hostname = (argc >= 2) ? argv[1] : "172.31.0.147";
+    int port = (argc >= 3) ? std::atoi(argv[2]) : DEFAULT_PORT_ID;
+    unsigned int jointMask = (argc >= 4) ? static_cast<unsigned int>(std::atoi(argv[3])) : DEFAULT_JOINT_MASK;
+    double frequency = (argc >= 5) ? std::atof(argv[4]) : DEFAULT_FREQUENCY;
+    double amplitude = (argc >= 6) ? std::atof(argv[5]) : DEFAULT_AMPLITUDE;
+    double filterCoeff = (argc >= 7) ? std::atof(argv[6]) : DEFAULT_FILTER_COEFFICIENT;
 
-    const int maxRetries = 3;  // You can adjust the maximum number of retries as needed
+    std::cout << "hostname: " << hostname << std::endl;
+
+    const int maxRetries = 3;
     const int maxIdleCycles = 20;
     int retryCount = 0;
     int idleCycle = 0;
@@ -99,7 +94,7 @@ int main(int argc, char **argv) {
                 std::cerr << "Caught exception: " << e.what() << ". Retrying connection..."
                           << std::endl;
                 app.disconnect();  // Disconnect before retrying
-                app.connect(port, hostname);  // Retry connection
+                app.connect(port, hostname.c_str());  // Retry connection
             } else {
                 // If max retries exceeded, exit the loop
                 std::cerr << "Maximum number of retries exceeded. Exiting." << std::endl;
