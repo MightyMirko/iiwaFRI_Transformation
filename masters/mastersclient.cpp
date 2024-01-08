@@ -19,11 +19,13 @@ mastersclient::mastersclient(bool doPlot, double plotCount)
         : doPlot(doPlot), plotter(plotCount) {
     // init vars
     jointPosition.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
-    //oldJointPos.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
     jointvel.resize(LBRState::NUMBER_OF_JOINTS, 1);
     jointvel.setZero();
+    this->dQ_JointP_history =
+            std::deque<d_vecJointPosition>(
+                    5,
+                    d_vecJointPosition(jointPosition.size(), 0.0));
 
-    //
     std::vector<std::string> xmlpath{//
             "/home/mirko/CLionProjects/thesis2024_orphaned/masters/descr/rlmdl/kuka-lbr-iiwa-7-r800.xml",
             "/usr/share/rl-0.7.0/examples/rlmdl/mitsubishi-rv6sl.xml"
@@ -39,14 +41,7 @@ mastersclient::mastersclient(bool doPlot, double plotCount)
         }
     }
     robotmdl = new robotModel(xmlpath[0]);
-
     robotmdl->getUnitsFromModel();
-    this->dQ_JointP_history = std::deque<d_vecJointPosition>(
-            5,
-            d_vecJointPosition(
-                    jointPosition.size(), 0.0
-                              ));
-
 
 }
 
@@ -56,11 +51,6 @@ mastersclient::~mastersclient() {
     delete s_eSessionstate;
 }
 
-/*!
- * @brief
- @param oldState
- @param newState
-*/
 
 void mastersclient::onStateChange(ESessionState oldState,
                                   ESessionState newState) {
@@ -71,9 +61,6 @@ void mastersclient::onStateChange(ESessionState oldState,
             break;
         }
         case MONITORING_READY: {
-            _offset = 0.0;
-            _phi = 0.0;
-            _stepWidth = 2 * M_PI * _freqHz * robotState().getSampleTime();
             this->s_eSessionstate = "MONITORING_READY";
             break;
         }
@@ -91,9 +78,6 @@ void mastersclient::onStateChange(ESessionState oldState,
     }
 }
 
-/*
- * One Sided differencing for numerical differentiation
- */
 rl::math::Vector
 mastersclient::calculateJointVelocityOneSided(const std::vector<double> &oldJointPos,
                                               const std::vector<double> &currJointPos,
@@ -120,18 +104,19 @@ mastersclient::calculateJointVelocityOneSided(const std::vector<double> &oldJoin
     return derivativeVector;
 }
 
-
 /*
- * Multi Sided differencing for numerical differentiation
+ * Multi-sided differencing for numerical differentiation
+ * @param cJointHistory Must have a size greater than or equal to 5 and must not be empty
+ * @param dt Time step (always around 5ms)
+ * @return Vector containing joint velocity
  */
-rl::math::Vector mastersclient::calculateJointVelocityMultiSided(
-        const std::deque<d_vecJointPosition> &cJointHistory, double dt) {
-
+rl::math::Vector //
+mastersclient::calculateJointVelocityMultiSided(
+        const std::deque<d_vecJointPosition> &cJointHistory,
+        double dt) {
 
     std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
-
-
-    if (!cJointHistory.empty()) {
+    if (!cJointHistory.empty() && cJointHistory.size() >= 5) {
         size_t size = cJointHistory.front().size();
         rl::math::Vector derivativeVector(size);
         derivativeVector.setZero();
@@ -140,19 +125,11 @@ rl::math::Vector mastersclient::calculateJointVelocityMultiSided(
             derivativeVector[j] =
                     ((-1 * cJointHistory[0][j]) + (8 * cJointHistory[1][j]) -
                      (8 * cJointHistory[3][j]) + (cJointHistory[4][j])) / (12 * dt);
-
-            //  derivativeVector(j) =
-            //        std::round(derivativeVector(j) * ROUND_AFTER_COMMA) /
-            //      ROUND_AFTER_COMMA;
         }
-        /* std::cout << "MultiSided: Derivative Vector: "
-                   << derivativeVector.transpose()
-                   << std::endl;
- */
         return derivativeVector;
     } else {
         throw std::runtime_error(
-                "cJointHistory is empty. Unable to perform calculations."
+                "cJointHistory is empty or its size is less than 5. Unable to perform calculations."
                                 );
     }
 }
@@ -261,6 +238,7 @@ void mastersclient::command() {
     // robotCommand().setJointPosition(jointPos);
     // robotCommand().setJointPosition()
 }
+
 /*!
  * @brief
  * @param jointVel
@@ -277,6 +255,7 @@ void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
     robotmdl->getTransformation(0);
 
 }
+
 /*!
  * @brief
  */
@@ -316,51 +295,45 @@ void mastersclient::doPositionAndVelocity() {
                 }
                                         );
 
-        // Multi Sided:
-        if (dQ_JointP_history.size() < 6) {
+        auto multiSidedResult = std::async(
+                std::launch::async,
+                [&]() {
+                    auto result =
+                            calculateJointVelocityMultiSided(
+                                    dQ_JointP_history,
+                                    deltaTime.count()
+                                                            );
 
+                    // Sende
+                    return result;
+                }
+                                          );
+
+        multiSided_jointVel = multiSidedResult.get() * -1;
+
+        // Process the joint data asynchronously
+
+        auto processJointDataResult = std::async(
+                std::launch::async, [&]() {
+                    doProcessJointData(multiSided_jointVel);
+                }
+                                                );
+
+        // Remove the oldest joint position from history
+        {
+            std::lock_guard<std::mutex> lock(historyMutex);
+            dQ_JointP_history.pop_front();
         }
-            // Start the asynchronous computation only if dQ_JointP_history size is sufficient
-        else {
-            auto multiSidedResult = std::async(
-                    std::launch::async,
-                    [&]() {
-                        auto result =
-                                calculateJointVelocityMultiSided(
-                                        dQ_JointP_history,
-                                        deltaTime.count()
-                                                                );
+        // Wait for the asynchronous computations to finish
+        rl::math::Vector oneSided_jointVel = oneSidedResult.get();
 
-                        // Sende
-                        return result;
-                    }
-                                              );
-
-            multiSided_jointVel = multiSidedResult.get() * -1;
-
-            // Process the joint data asynchronously
-
-            auto processJointDataResult = std::async(
-                    std::launch::async, [&]() {
-                        doProcessJointData(multiSided_jointVel);
-                    }
-                                                    );
-
-            // Remove the oldest joint position from history
-            {
-                std::lock_guard<std::mutex> lock(historyMutex);
-                dQ_JointP_history.pop_front();
-            }
-            // Wait for the asynchronous computations to finish
-            rl::math::Vector oneSided_jointVel = oneSidedResult.get();
-
-            if (doPlot) {
-                plotter.addVelocityData(oneSided_jointVel, multiSided_jointVel);
-            }
-
-            processJointDataResult.wait();
+        if (doPlot) {
+            plotter.addVelocityData(oneSided_jointVel, multiSided_jointVel);
         }
+
+        processJointDataResult.wait();
     }
+
     catch (const std::runtime_error &e) {
         std::cerr << "Runtime Error in mastersclient->robotCalc() caught: "
                   << e.what() << std::endl;

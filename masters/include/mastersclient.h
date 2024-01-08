@@ -1,7 +1,7 @@
 /**
-\file
-\version {1.17}
-*/
+ * \file
+ * \version {1.17}
+ */
 #ifndef MASTERSCLIENT_H
 #define MASTERSCLIENT_H
 
@@ -28,12 +28,7 @@ public:
     mastersclient(bool doPlot=false,double plotCount=15e1);
     ~mastersclient();
 
-    /**
-     * \brief Callback for FRI state changes.
-     */
-    virtual void waitForCommand();
-
-    /// \brief
+    /// \brief Callback for FRI state changes.
     /// \param oldState
     /// \param newState
     virtual void onStateChange(KUKA::FRI::ESessionState oldState,
@@ -47,71 +42,101 @@ public:
     virtual void monitor();
 
     /**
+     * \brief Callback for the FRI state 'Commanding Wait'.
+     */
+    virtual void waitForCommand();
+
+    /**
      * \brief Callback for the FRI state 'Commanding Active'.
      */
     void command() override;
 
 private:
 
-    int _jointMask;         //!< Bitmask encoding of overlay joints
-    double _freqHz;         //!< sine frequency (Hertz)
-    double _amplRad;        //!< sine amplitude (radians)
-    double _filterCoeff;    //!< filter coefficient
-    double _offset;         //!< offset for current interpolation step
-    double _phi;            //!< phase of sine wave
-    double _stepWidth;      //!< stepwidth for sine
 
+    std::chrono::time_point<std::chrono::seconds,
+            std::chrono::nanoseconds> currentSampleTime,prvSampleTime;
+    std::chrono::duration<double> deltaTime{};
 
-    std::chrono::time_point<std::chrono::seconds, std::chrono::nanoseconds> currentSampleTime;
-    std::chrono::time_point<std::chrono::seconds, std::chrono::nanoseconds> prvSampleTime;
-    // Update these declarations accordingly
-    std::chrono::duration<double> deltaTime;
+    bool doPlot = false; ///< Flag to enable or disable plotting.
 
+    static std::mutex historyMutex,calculationMutex,multiSidedJointVelMutex,
+            oneSidedJointVelMutex; ///< Mutexes for various operations.
 
+    robotModel *robotmdl; ///< Pointer to the robot model.
 
-    //double deltaTime{};
-    robotModel *robotmdl;
-    plotMaster plotter;
-    static std::mutex calculationMutex;
-    //Gnuplot gp;
+    plotMaster plotter; ///< The plotMaster object for plotting.
 
     using d_vecJointPosition = std::vector<double>;
     using rlvec_Velocity = rl::math::Vector;
 
-    d_vecJointPosition jointPosition;
-    rlvec_Velocity jointvel;
+    d_vecJointPosition jointPosition; ///< Vector to store joint positions.
+    rlvec_Velocity jointvel; ///< Vector to store joint velocities.
 
-    std::deque<d_vecJointPosition> dQ_JointP_history;
+    std::deque<d_vecJointPosition> dQ_JointP_history; ///< History of jo
 
 
+    // Methods private
+
+    /**
+     * \brief Compare two vectors for equality within a specified tolerance.
+     *
+     * \param v1 The first vector.
+     * \param v2 The second vector.
+     * \param tolerance Tolerance for equality check.
+     * \param verbosity If true, print detailed information about differences.
+     * \return True if the vectors are approximately equal, false otherwise.
+     */
     static bool
     compareVectors(const rl::math::Vector &v1, const rl::math::Vector &v2,
                    double tolerance = 1e-6, bool verbosity = false);
 
+    /**
+     * \brief Perform position and velocity calculations.
+     */
     void doPositionAndVelocity();
 
+    /**
+     * \brief Get the current timestamp and check for timestamp errors.
+     */
     void getCurrentTimestamp();
 
+    /**
+     * \brief Calculate joint velocity using one-sided differencing.
+     *
+     * \param oldJointPos The old joint positions.
+     * \param currJointPos The current joint positions.
+     * \param dt The time step.
+     * \return Vector containing joint velocity.
+     */
     static rl::math::Vector
     calculateJointVelocityOneSided(const std::vector<double> &oldJointPos,
                                    const std::vector<double> &currJointPos,
                                    double dt);
 
-
+    /**
+     * \brief Calculate joint velocity using multi-sided differencing.
+     *
+     * \param cJointHistory History of joint positions.
+     * \param dt Time step (always around 5ms).
+     * \return Vector containing joint velocity.
+     */
     static rl::math::Vector
     calculateJointVelocityMultiSided(
             const std::deque<d_vecJointPosition> &cJointHistory,
             double dt);
 
+    /**
+     * \brief Process joint data, set joint positions and velocities in the robot model.
+     *
+     * \param jointVel Joint velocity vector.
+     */
     void doProcessJointData(const rl::math::Vector &jointVel);
 
+    /**
+     * \brief Plot velocity histories if enabled.
+     */
     void plotVelocityHistories();
-
-    bool doPlot = false;
-    static std::mutex historyMutex;
-    static std::mutex multiSidedJointVelMutex;
-    static std::mutex oneSidedJointVelMutex;
-
 };
 
 #endif //MASTERSCLIENT_H
