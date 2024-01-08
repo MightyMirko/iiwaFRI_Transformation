@@ -25,22 +25,7 @@ class mastersclient : public KUKA::FRI::LBRClient {
 public:
     //KUKA::FRI::ESessionState eSessionState;
     const char *s_eSessionstate{};
-
-    /**
-     * \brief Constructor.
-     *
-     * @param jointMask Bitmask that encodes the joint indices to be overlayed by sine waves
-     * @param freqHz Sine frequency in hertz
-     * @param amplRad Sine amplitude in radians
-     * @param filterCoeff Filter coefficient between 0 (filter off) and 1 (max filter)
-     */
-    mastersclient(unsigned int jointMask, double freqHz,
-                  double amplRad, double filterCoeff,
-                  plotMaster plotter);
-
-    /**
-    * \brief Destructor.
-    */
+    mastersclient(bool doPlot=false,double plotCount=15e1);
     ~mastersclient();
 
     /**

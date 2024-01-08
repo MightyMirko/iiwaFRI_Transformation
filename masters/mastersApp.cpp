@@ -60,7 +60,7 @@ int main(int argc, char** argv) {
     std::cout << "Using " << numThreads << " threads." << std::endl;
 
     // Create a new sine overlay client
-    mastersclient trafoClient(jointMask, frequency, amplitude, filterCoeff, plotMaster(plotCount));
+    mastersclient trafoClient(false,plotCount);
 
     // Pass connection and client to a new FRI client application
     UdpConnection connection;

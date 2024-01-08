@@ -106,8 +106,6 @@ bool plotMaster::clearData() {
     return false;
 }
 
-plotMaster::plotMaster(double histsize) : histsize(histsize) {}
-
 
 
 /*

@@ -1,11 +1,11 @@
 /**
-
-\file
-\version {1.17}
+* \author Mirko Matošin
+* \file mastersclient.cpp
+* \version {0.1}
+* \brief The code is executed on this Turtle.
 */
 #include "include/mastersclient.h"
 #include "friLBRState.h"
-#include <cstdio>
 #include <cmath>
 #include <filesystem>
 #include <future>
@@ -15,23 +15,9 @@
 using namespace KUKA::FRI;
 
 //******************************************************************************
-mastersclient::mastersclient(unsigned int jointMask, double freqHz,
-                             double amplRad, double filterCoeff,
-                             plotMaster plotter)
-        : _jointMask(jointMask), _freqHz(freqHz), _amplRad(amplRad),
-          _filterCoeff(filterCoeff), _offset(0.0), _phi(0.0), _stepWidth(0.0),
-          plotter(plotter) {
-    printf(
-            "mastersclient initialized:\n"
-            "\tjoint mask: 0x%x\n"
-            "\tfrequency (Hz): %f\n"
-            "\tamplitude (rad): %f\n"
-            "\tfilterCoeff: %f\n",
-            jointMask, freqHz, amplRad, filterCoeff
-          );
-    //jointPosition = new std::vector<double>;
-    //jointPosition.resize(LBRState::NUMBER_OF_JOINTS,0.0);
-    //std::cout << "\nSize : " << jointPos.size();
+mastersclient::mastersclient(bool doPlot, double plotCount)
+        : doPlot(doPlot), plotter(plotCount) {
+    // init vars
     jointPosition.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
     //oldJointPos.resize(LBRState::NUMBER_OF_JOINTS, 0.0);
     jointvel.resize(LBRState::NUMBER_OF_JOINTS, 1);
