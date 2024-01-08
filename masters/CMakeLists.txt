@@ -1,6 +1,7 @@
 # CMakeLists.txt im "masters"-Ordner
 cmake_minimum_required(VERSION 3.27)
-# GoogleTest requires at least C++14
+project(SubProj DESCRIPTION "Mirko Matošin 2024 Masterthesis")
+set(PROJECT_DESCRIPTION "Calculation of Velocities on Gripper")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 message(STATUS "Configuring Binary ${CMAKE_CURRENT_BINARY_DIR}")
@@ -30,8 +31,9 @@ endif ()
 find_package(Doxygen
              REQUIRED dot
              OPTIONAL_COMPONENTS mscgen dia)
-message(STATUS "Configuring Project Binary ${PROJECT_SOURCE_DIR}")
 if (DOXYGEN_FOUND)
+    SET(DOXYGEN_GENERATE_LATEX YES)
+    message(STATUS "Configuring Project Binary ${PROJECT_SOURCE_DIR}")
     doxygen_add_docs(doxygen_m
                      ${PROJECT_SOURCE_DIR}
                      CONFIG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/doc/Doxyfile.in
