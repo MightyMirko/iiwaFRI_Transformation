@@ -88,6 +88,8 @@ void robotModel::performForwardKinematics() {
 
     kinematics->forwardPosition();
     kinematics->forwardVelocity();
+
+    kinematics->calculateJacobian();
 }
 
 /*!
