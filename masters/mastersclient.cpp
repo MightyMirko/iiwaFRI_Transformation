@@ -348,11 +348,13 @@ void mastersclient::doPositionAndVelocity() {
                       << oneSided_jointVel.transpose() << std::endl;
             plotter.addVelocityData(oneSided_jointVel, multiSided_jointVel);
 
+            processJointDataResult.wait();
         }
 
 
         // Plot velocity histories
-        this->plotVelocityHistories();
+        if (doPlot)
+            this->plotVelocityHistories();
 
         // End time measurement
         auto endTime = std::chrono::high_resolution_clock::now();

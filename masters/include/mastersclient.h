@@ -122,6 +122,7 @@ private:
 
     void plotVelocityHistories();
 
+    bool doPlot = false;
     static std::mutex historyMutex;
     static std::mutex multiSidedJointVelMutex;
     static std::mutex oneSidedJointVelMutex;
