@@ -37,6 +37,10 @@ public:
 
     void getUnitsFromModel() const;
 
+    void printTransform(rl::math::Transform &t, bool addNewLine) const;
+
+    ::rl::math::Real cartesianRobotDistanceToObject(
+            rl::math::Vector3& objectPosition) const;
 private:
     void printQ();
 

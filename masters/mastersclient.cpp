@@ -347,13 +347,28 @@ void mastersclient::doPositionAndVelocity() {
             rl::math::Vector oneSided_jointVel = oneSidedResult.get();
 
 
+            // Wait for the asynchronous joint data processing to finish
             //std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
+
+// todo Interface preparation for network with Sick Laserscanner? Get EFI Data via Profinet and UDP? or even ros2
+            rl::math::Vector3 humanPos;  // Assuming 3 elements for XYZ
+
+            // Set the XYZ values relative to the robot's world frame
+            humanPos(0) = 1;  // X coordinate
+            humanPos(1) = 0;  // Y coordinate
+            humanPos(2) = 0;  // Z coordinate
+
+            robotmdl->cartesianRobotDistanceToObject(humanPos);
+
+            if (doPlot){
+
             plotter.printJointPos(jointPosition);
             std::cout << "\rMulti-Sided Derivative Vector: "
                       << multiSided_jointVel.transpose() << std::endl;
             std::cout << "One-Sided Derivative Vector: "
                       << oneSided_jointVel.transpose() << std::endl;
             plotter.addVelocityData(oneSided_jointVel, multiSided_jointVel);
+            }
 
             processJointDataResult.wait();
         }

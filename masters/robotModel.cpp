@@ -199,3 +199,52 @@ void robotModel::update_model() {
     lbr.tau = model->getTorque();
 */
 }
+
+// src: https://github.com/sjentzsch/mopl/blob/3347103df78cf60103fff1b62f225c9110554b1d/src/DamaModel.cpp
+void robotModel::printTransform(rl::math::Transform &t, bool addNewLine) const {
+    const rl::math::Transform::TranslationPart position = t.translation();
+    const rl::math::Vector3 orientation = t.rotation().eulerAngles(2, 1, 0);
+
+    ::std::cout << position.x() << " | " << position.y() << " | " << position.z()
+                << " || " << (orientation.x() * rl::math::RAD2DEG) << " | "
+                << (orientation.y() * rl::math::RAD2DEG) << " | "
+                << (orientation.z() * rl::math::RAD2DEG);
+
+    if (addNewLine)
+        std::cout << std::endl;
+}
+
+
+::rl::math::Real
+robotModel::cartesianRobotDistanceToObject(rl::math::Vector3 &objectPosition) const {
+   // std::cout << "Current Joints Position: " << model->getPosition().transpose()<< std::endl;
+
+    // Get the current TCP position
+    rl::math::Transform currentTcpPosition = kinematics->getOperationalPosition(0);
+
+    // Calculate the Euclidean distance between the current and target TCP positions
+    rl::math::Vector3 distanceVector =
+            objectPosition - currentTcpPosition.translation();
+
+    rl::math::Real distance = distanceVector.norm();
+    // Debug print: Display the current TCP position
+   /* std::cout << "Current TCP Position: "
+              << currentTcpPosition.translation().transpose() << std::endl;
+
+    // Debug print: Display the distance vector components
+    std::cout << "Distance Vector (X, Y, Z): " << distanceVector.transpose()
+              << std::endl;
+*/
+    // Debug print: Display the calculated distance
+    if (distance<= 0.8)
+    {
+    std::cerr << "Calculated Distance: " << distance << std::endl;
+    }
+    else
+    {
+        std::cout << "Calculated Distance: " << distance << std::endl;
+    }
+
+
+    return distance;
+}
