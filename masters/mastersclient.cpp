@@ -254,11 +254,11 @@ void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
 
     // Get transformation matrix at joint 0
     //auto transformationMatrix =
-    robotmdl->getTransformation(0);
+    //robotmdl->getTransformation(0);
 
     // Get TCP velocity at joint 0
     //auto tcpVelocity =
-    robotmdl->getTCPvelocity(0);
+    //robotmdl->getTCPvelocity(0);
 
 
 }
@@ -330,7 +330,14 @@ void mastersclient::doPositionAndVelocity() {
             multiSided_jointVel = multiSidedResult.get();
 
             multiSided_jointVel *= -1;
-            doProcessJointData(multiSided_jointVel);
+            // Process the joint data asynchronously
+
+            auto processJointDataResult = std::async(
+                    std::launch::async, [&]() {
+                        doProcessJointData(multiSided_jointVel);
+                    }
+                                                    );
+
             // Remove the oldest joint position from history
             {
                 std::lock_guard<std::mutex> lock(historyMutex);
