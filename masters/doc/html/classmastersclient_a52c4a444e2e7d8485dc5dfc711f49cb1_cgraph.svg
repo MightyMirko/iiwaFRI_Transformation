@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278" target="_top" xlink:title="This method is responsible for retrieving and printing the transformation of the end&#45;effector....">
+<g id="a_node2"><a xlink:href="classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278" target="_top" xlink:title="Retrieves and prints the transformation of the end&#45;effector.">
 <polygon fill="white" stroke="black" points="164,-88.5 164,-107.5 313,-107.5 313,-88.5 164,-88.5"/>
 <text text-anchor="middle" x="238.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::getTransformation</text>
 </a>
@@ -37,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2" target="_top" xlink:title="This method is responsible for updating the forward kinematics of the robot. Forward kinematics invol...">
+<g id="a_node3"><a xlink:href="classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2" target="_top" xlink:title="Updates the forward kinematics of the robot.">
 <polygon fill="white" stroke="black" points="169,-39 169,-69 308,-69 308,-39 169,-39"/>
 <text text-anchor="start" x="177" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::performForward</text>
 <text text-anchor="middle" x="238.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">Kinematics</text>
@@ -53,7 +53,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classrobot_model.html#a08fc87648e1634ba61fcff546da0880a" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classrobot_model.html#a08fc87648e1634ba61fcff546da0880a" target="_top" xlink:title="Sets the joint positions and velocities for the robot model.">
 <polygon fill="white" stroke="black" points="192.5,-0.5 192.5,-19.5 284.5,-19.5 284.5,-0.5 192.5,-0.5"/>
 <text text-anchor="middle" x="238.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::setQ</text>
 </a>

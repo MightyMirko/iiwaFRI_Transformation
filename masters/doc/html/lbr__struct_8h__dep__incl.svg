@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="robot_model_8h.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="robot_model_8h.html" target="_top" xlink:title="Definition of the robotModel class.">
 <polygon fill="white" stroke="black" points="103.5,-112.5 103.5,-131.5 210.5,-131.5 210.5,-112.5 103.5,-112.5"/>
 <text text-anchor="middle" x="157" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/robotModel.h</text>
 </a>

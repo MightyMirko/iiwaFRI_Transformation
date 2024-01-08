@@ -4,7 +4,7 @@
 <area shape="rect" id="node3" href="$classmastersclient.html#a357664506b2c550cf7edaed6a8fd31a2" title="Calculate joint velocity using multi&#45;sided differencing." alt="" coords="236,57,396,98"/>
 <area shape="rect" id="node4" href="$classmastersclient.html#af38ef9a717f7cec043278ce59ed51c9d" title="Calculate joint velocity using one&#45;sided differencing." alt="" coords="236,122,396,163"/>
 <area shape="rect" id="node5" href="$classmastersclient.html#a52c4a444e2e7d8485dc5dfc711f49cb1" title="Process joint data, set joint positions and velocities in the robot model." alt="" coords="231,187,401,229"/>
-<area shape="rect" id="node6" href="$classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278" title="This method is responsible for retrieving and printing the transformation of the end&#45;effector...." alt="" coords="457,136,656,163"/>
-<area shape="rect" id="node7" href="$classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2" title="This method is responsible for updating the forward kinematics of the robot. Forward kinematics invol..." alt="" coords="464,187,649,229"/>
-<area shape="rect" id="node8" href="$classrobot_model.html#a08fc87648e1634ba61fcff546da0880a" title=" " alt="" coords="495,253,618,280"/>
+<area shape="rect" id="node6" href="$classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278" title="Retrieves and prints the transformation of the end&#45;effector." alt="" coords="457,136,656,163"/>
+<area shape="rect" id="node7" href="$classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2" title="Updates the forward kinematics of the robot." alt="" coords="464,187,649,229"/>
+<area shape="rect" id="node8" href="$classrobot_model.html#a08fc87648e1634ba61fcff546da0880a" title="Sets the joint positions and velocities for the robot model." alt="" coords="495,253,618,280"/>
 </map>

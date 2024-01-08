@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Calculates and returns the Euclidean distance between the robot&#39;s TCP and a given object position.">
 <polygon fill="#bfbfbf" stroke="black" points="149,-0.5 149,-30.5 286,-30.5 286,-0.5 149,-0.5"/>
 <text text-anchor="start" x="157" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::cartesianRobot</text>
 <text text-anchor="middle" x="217.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">DistanceToObject</text>

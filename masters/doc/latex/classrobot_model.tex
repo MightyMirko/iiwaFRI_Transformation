@@ -2,11 +2,17 @@
 \label{classrobot_model}\index{robotModel@{robotModel}}
 
 
+Class representing the robot model and providing kinematic information.  
+
+
+
+
 {\ttfamily \#include $<$robot\+Model.\+h$>$}
 
 
 
-Collaboration diagram for robot\+Model\+:\nopagebreak
+Collaboration diagram for robot\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,48 +23,53 @@ Collaboration diagram for robot\+Model\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classrobot_model_a7716124e4326c3cbc109270c8703bf50}{robot\+Model}} (const std\+::string \&xml\+File\+Path)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classrobot_model}{robot\+Model}} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrobot_model_a8741821f3b9995b0bd2647e643d4afe2}{perform\+Forward\+Kinematics}} ()
-\begin{DoxyCompactList}\small\item\em This method is responsible for updating the forward kinematics of the robot. Forward kinematics involves determining the position and orientation of the end-\/effector based on the current joint positions and velocities. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates the forward kinematics of the robot. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrobot_model_a6d79eb6c55649f2a88517e4a9e960278}{get\+Transformation}} (bool print\+Flag=false)
-\begin{DoxyCompactList}\small\item\em This method is responsible for retrieving and printing the transformation of the end-\/effector. This method essentially calculates and prints the linear and angular velocities of the end-\/effector based on the kinematic state. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Retrieves and prints the transformation of the end-\/effector. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrobot_model_a443e5efec9d0d95a50a1cfcff46939c6}{get\+TCPvelocity}} (bool print\+Flag=false)
-\begin{DoxyCompactList}\small\item\em This method converts and prints the linear and angular velocities of the end-\/effector. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Converts and prints the linear and angular velocities of the end-\/effector. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrobot_model_a08fc87648e1634ba61fcff546da0880a}{setQ}} (const std\+::vector$<$ double $>$ \&joint\+Positions, const rl\+::math\+::\+Vector \&joint\+Velocities)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the joint positions and velocities for the robot model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrobot_model_a15a9830147ca85b11bad1f024c7ba36e}{get\+Units\+From\+Model}} () const
-\item 
-void \mbox{\hyperlink{classrobot_model_a6c27822ac92c8a1a02707fe1b35b5a0f}{print\+Transform}} (rl\+::math\+::\+Transform \&t, bool add\+New\+Line) const
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the units of joint positions, velocities, and accelerations from the robot model. \end{DoxyCompactList}\item 
 \+::rl\+::math\+::\+Real \mbox{\hyperlink{classrobot_model_a1a92e57456ef8f44e8ac04e747641133}{cartesian\+Robot\+Distance\+To\+Object}} (rl\+::math\+::\+Vector3 \&object\+Position) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculates and returns the Euclidean distance between the robot\textquotesingle{}s TCP and a given object position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classrobot_model_afe5a2ce80f14d227bdc9f990f492ec5c}{printQ}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the joint positions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrobot_model_a3157c622491cb8170ff8c024efb24d50}{update\+\_\+model}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the robot model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrobot_model_aada8035ce070174e49202b49faf8d067}{print\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Prints a vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrobot_model_a6c27822ac92c8a1a02707fe1b35b5a0f}{print\+Transform}} (rl\+::math\+::\+Transform \&t, bool add\+New\+Line) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::shared\+\_\+ptr$<$ rl\+::mdl\+::\+Model $>$ \mbox{\hyperlink{classrobot_model_a182e96b755a85c59201ac16ac1ab9bfb}{model}}
-\item 
+\begin{DoxyCompactList}\small\item\em Shared pointer to the robot model. \end{DoxyCompactList}\item 
 rl\+::mdl\+::\+Kinematic $\ast$ \mbox{\hyperlink{classrobot_model_ae146e81df6017e48b2d510306aa7d97e}{kinematics}}
-\item 
+\begin{DoxyCompactList}\small\item\em Pointer to the kinematics of the robot model. \end{DoxyCompactList}\item 
 rl\+::mdl\+::\+Dynamic $\ast$ \mbox{\hyperlink{classrobot_model_adca23f570c2d613061a734fb83f08596}{dynamic}}
-\item 
+\begin{DoxyCompactList}\small\item\em Pointer to the dynamic model of the robot (commented-\/out). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_t_c_p_parameters}{TCPParameters}} \mbox{\hyperlink{classrobot_model_adb87c65dd3a230ba5205eb1425c69abe}{tcp}}
-\item 
+\begin{DoxyCompactList}\small\item\em Structure to hold TCP parameters. \end{DoxyCompactList}\item 
 rl\+::math\+::\+Transform \mbox{\hyperlink{classrobot_model_ab19d4ea646a0266ed8985dde2b64f4da}{tra\+Position}}
-\item 
+\begin{DoxyCompactList}\small\item\em Transformation for position. \end{DoxyCompactList}\item 
 rl\+::math\+::\+Motion\+Vector \mbox{\hyperlink{classrobot_model_ac1e92118795ba6d2c54e1a2f3acee6b4}{tra\+Velocity}}
-\item 
+\begin{DoxyCompactList}\small\item\em Motion vector for velocity. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_l_b_r___rob}{LBR\+\_\+\+Rob}} \mbox{\hyperlink{classrobot_model_a7ea1e76a9043d5dbae2c41d90fafb3b6}{lbr}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure to hold LBR robot parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class representing the robot model and providing kinematic information. 
+
+The \mbox{\hyperlink{classrobot_model}{robot\+Model}} class is responsible for managing the robot model, performing forward kinematics, and providing information about the robot\textquotesingle{}s transformation. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classrobot_model_a7716124e4326c3cbc109270c8703bf50}\label{classrobot_model_a7716124e4326c3cbc109270c8703bf50}} 
@@ -69,6 +80,15 @@ rl\+::math\+::\+Motion\+Vector \mbox{\hyperlink{classrobot_model_ac1e92118795ba6
 
 
 
+Constructor for the \mbox{\hyperlink{classrobot_model}{robot\+Model}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+File\+Path} & The path to the XML file containing the robot model description. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classrobot_model_a1a92e57456ef8f44e8ac04e747641133}\label{classrobot_model_a1a92e57456ef8f44e8ac04e747641133}} 
 \index{robotModel@{robotModel}!cartesianRobotDistanceToObject@{cartesianRobotDistanceToObject}}
@@ -76,7 +96,20 @@ rl\+::math\+::\+Motion\+Vector \mbox{\hyperlink{classrobot_model_ac1e92118795ba6
 \doxysubsubsection{\texorpdfstring{cartesianRobotDistanceToObject()}{cartesianRobotDistanceToObject()}}
 {\footnotesize\ttfamily rl\+::math\+::\+Real robot\+Model\+::cartesian\+Robot\+Distance\+To\+Object (\begin{DoxyParamCaption}\item[{rl\+::math\+::\+Vector3 \&}]{object\+Position }\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Calculates and returns the Euclidean distance between the robot\textquotesingle{}s TCP and a given object position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Position} & The position of the object in 3D space. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated distance between the robot\textquotesingle{}s TCP and the object position. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -91,9 +124,16 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-This method converts and prints the linear and angular velocities of the end-\/effector. 
+Converts and prints the linear and angular velocities of the end-\/effector. 
 
-tcp.\+vecV = rl\+::math\+::\+RAD2\+DEG $\ast$ tcp.\+vecV;\+: Converts linear velocity to degrees. tcp.\+vec\+Omega = rl\+::math\+::\+RAD2\+DEG $\ast$ tcp.\+vec\+Omega;\+: Converts angular velocity to degrees. std\+::cout $<$$<$ \char`\"{}\textbackslash{}t\char`\"{} $<$$<$ tcp.\+vec\+V.\+transpose() $<$$<$ std\+::endl;\+: Prints the converted linear velocity. \mbox{\Hypertarget{classrobot_model_a6d79eb6c55649f2a88517e4a9e960278}\label{classrobot_model_a6d79eb6c55649f2a88517e4a9e960278}} 
+This method converts linear and angular velocities to degrees and prints the values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em print\+Flag} & If true, the velocity information will be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrobot_model_a6d79eb6c55649f2a88517e4a9e960278}\label{classrobot_model_a6d79eb6c55649f2a88517e4a9e960278}} 
 \index{robotModel@{robotModel}!getTransformation@{getTransformation}}
 \index{getTransformation@{getTransformation}!robotModel@{robotModel}}
 \doxysubsubsection{\texorpdfstring{getTransformation()}{getTransformation()}}
@@ -101,9 +141,17 @@ tcp.\+vecV = rl\+::math\+::\+RAD2\+DEG $\ast$ tcp.\+vecV;\+: Converts linear vel
 
 
 
-This method is responsible for retrieving and printing the transformation of the end-\/effector. This method essentially calculates and prints the linear and angular velocities of the end-\/effector based on the kinematic state. 
+Retrieves and prints the transformation of the end-\/effector. 
 
-rl\+::math\+::\+Motion\+Vector xd = kinematics-\/$>$get\+Operational\+Velocity(0);\+: Retrieves the operational velocity of the end-\/effector. tcp.\+vecV = kinematics-\/$>$get\+Operational\+Position(0).linear() $\ast$ xd.\+linear();\+: Computes the linear velocity of the end-\/effector. tcp.\+vec\+Omega = kinematics-\/$>$get\+Operational\+Position(0).linear() $\ast$ xd.\+angular();\+: Computes the angular velocity of the end-\/effector. tcp.\+matrix\+\_\+position = kinematics-\/$>$get\+Operational\+Position(0);\+: Retrieves the operational position of the end-\/effector. Here is the caller graph for this function\+:\nopagebreak
+This method calculates and prints the linear and angular velocities of the end-\/effector based on the kinematic state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em print\+Flag} & If true, the transformation information will be printed. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -116,7 +164,12 @@ rl\+::math\+::\+Motion\+Vector xd = kinematics-\/$>$get\+Operational\+Velocity(0
 \doxysubsubsection{\texorpdfstring{getUnitsFromModel()}{getUnitsFromModel()}}
 {\footnotesize\ttfamily void robot\+Model\+::get\+Units\+From\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Prints the units of joint positions, velocities, and accelerations from the robot model. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -131,9 +184,10 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-This method is responsible for updating the forward kinematics of the robot. Forward kinematics involves determining the position and orientation of the end-\/effector based on the current joint positions and velocities. 
+Updates the forward kinematics of the robot. 
 
-kinematics-\/$>$set\+Position(this-\/$>$lbr.\+q);\+: Sets the joint positions of the robot model to the values stored in the lbr.\+q vector. kinematics-\/$>$set\+Velocity(this-\/$>$lbr.\+qd);\+: Sets the joint velocities of the robot model to the values stored in the lbr.\+qd vector. kinematics-\/$>$forward\+Position();\+: Computes the forward position kinematics, determining the end-\/effector position and orientation based on the current joint positions. kinematics-\/$>$forward\+Velocity();\+: Computes the forward velocity kinematics, determining the end-\/effector linear and angular velocities based on the current joint positions and velocities. Here is the caller graph for this function\+:\nopagebreak
+This method sets the joint positions and velocities, computes the forward position and velocity kinematics, and calculates the Jacobian. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -146,11 +200,15 @@ kinematics-\/$>$set\+Position(this-\/$>$lbr.\+q);\+: Sets the joint positions of
 \doxysubsubsection{\texorpdfstring{printQ()}{printQ()}}
 {\footnotesize\ttfamily void robot\+Model\+::printQ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Prints the joint positions. 
+
 \mbox{\Hypertarget{classrobot_model_a6c27822ac92c8a1a02707fe1b35b5a0f}\label{classrobot_model_a6c27822ac92c8a1a02707fe1b35b5a0f}} 
 \index{robotModel@{robotModel}!printTransform@{printTransform}}
 \index{printTransform@{printTransform}!robotModel@{robotModel}}
 \doxysubsubsection{\texorpdfstring{printTransform()}{printTransform()}}
-{\footnotesize\ttfamily void robot\+Model\+::print\+Transform (\begin{DoxyParamCaption}\item[{rl\+::math\+::\+Transform \&}]{t,  }\item[{bool}]{add\+New\+Line }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void robot\+Model\+::print\+Transform (\begin{DoxyParamCaption}\item[{rl\+::math\+::\+Transform \&}]{t,  }\item[{bool}]{add\+New\+Line }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classrobot_model_aada8035ce070174e49202b49faf8d067}\label{classrobot_model_aada8035ce070174e49202b49faf8d067}} 
 \index{robotModel@{robotModel}!printVector@{printVector}}
@@ -158,13 +216,29 @@ kinematics-\/$>$set\+Position(this-\/$>$lbr.\+q);\+: Sets the joint positions of
 \doxysubsubsection{\texorpdfstring{printVector()}{printVector()}}
 {\footnotesize\ttfamily void robot\+Model\+::print\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Prints a vector. 
+
 \mbox{\Hypertarget{classrobot_model_a08fc87648e1634ba61fcff546da0880a}\label{classrobot_model_a08fc87648e1634ba61fcff546da0880a}} 
 \index{robotModel@{robotModel}!setQ@{setQ}}
 \index{setQ@{setQ}!robotModel@{robotModel}}
 \doxysubsubsection{\texorpdfstring{setQ()}{setQ()}}
 {\footnotesize\ttfamily void robot\+Model\+::setQ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{joint\+Positions,  }\item[{const rl\+::math\+::\+Vector \&}]{joint\+Velocities }\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Sets the joint positions and velocities for the robot model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+Positions} & Vector containing joint positions. \\
+\hline
+{\em joint\+Velocities} & Vector containing joint velocities. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -179,6 +253,10 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
+Updates the robot model. 
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classrobot_model_adca23f570c2d613061a734fb83f08596}\label{classrobot_model_adca23f570c2d613061a734fb83f08596}} 
 \index{robotModel@{robotModel}!dynamic@{dynamic}}
@@ -186,11 +264,19 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{dynamic}{dynamic}}
 {\footnotesize\ttfamily rl\+::mdl\+::\+Dynamic$\ast$ robot\+Model\+::dynamic\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Pointer to the dynamic model of the robot (commented-\/out). 
+
 \mbox{\Hypertarget{classrobot_model_ae146e81df6017e48b2d510306aa7d97e}\label{classrobot_model_ae146e81df6017e48b2d510306aa7d97e}} 
 \index{robotModel@{robotModel}!kinematics@{kinematics}}
 \index{kinematics@{kinematics}!robotModel@{robotModel}}
 \doxysubsubsection{\texorpdfstring{kinematics}{kinematics}}
 {\footnotesize\ttfamily rl\+::mdl\+::\+Kinematic$\ast$ robot\+Model\+::kinematics\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the kinematics of the robot model. 
 
 \mbox{\Hypertarget{classrobot_model_a7ea1e76a9043d5dbae2c41d90fafb3b6}\label{classrobot_model_a7ea1e76a9043d5dbae2c41d90fafb3b6}} 
 \index{robotModel@{robotModel}!lbr@{lbr}}
@@ -198,11 +284,19 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{lbr}{lbr}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_l_b_r___rob}{LBR\+\_\+\+Rob}} robot\+Model\+::lbr\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Structure to hold LBR robot parameters. 
+
 \mbox{\Hypertarget{classrobot_model_a182e96b755a85c59201ac16ac1ab9bfb}\label{classrobot_model_a182e96b755a85c59201ac16ac1ab9bfb}} 
 \index{robotModel@{robotModel}!model@{model}}
 \index{model@{model}!robotModel@{robotModel}}
 \doxysubsubsection{\texorpdfstring{model}{model}}
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$rl\+::mdl\+::\+Model$>$ robot\+Model\+::model\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Shared pointer to the robot model. 
 
 \mbox{\Hypertarget{classrobot_model_adb87c65dd3a230ba5205eb1425c69abe}\label{classrobot_model_adb87c65dd3a230ba5205eb1425c69abe}} 
 \index{robotModel@{robotModel}!tcp@{tcp}}
@@ -210,17 +304,29 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tcp}{tcp}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_t_c_p_parameters}{TCPParameters}} robot\+Model\+::tcp\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Structure to hold TCP parameters. 
+
 \mbox{\Hypertarget{classrobot_model_ab19d4ea646a0266ed8985dde2b64f4da}\label{classrobot_model_ab19d4ea646a0266ed8985dde2b64f4da}} 
 \index{robotModel@{robotModel}!traPosition@{traPosition}}
 \index{traPosition@{traPosition}!robotModel@{robotModel}}
 \doxysubsubsection{\texorpdfstring{traPosition}{traPosition}}
 {\footnotesize\ttfamily rl\+::math\+::\+Transform robot\+Model\+::tra\+Position\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Transformation for position. 
+
 \mbox{\Hypertarget{classrobot_model_ac1e92118795ba6d2c54e1a2f3acee6b4}\label{classrobot_model_ac1e92118795ba6d2c54e1a2f3acee6b4}} 
 \index{robotModel@{robotModel}!traVelocity@{traVelocity}}
 \index{traVelocity@{traVelocity}!robotModel@{robotModel}}
 \doxysubsubsection{\texorpdfstring{traVelocity}{traVelocity}}
 {\footnotesize\ttfamily rl\+::math\+::\+Motion\+Vector robot\+Model\+::tra\+Velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Motion vector for velocity. 
 
 
 
