@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classrobot_model.html#a1a92e57456ef8f44e8ac04e747641133" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classrobot_model.html#a1a92e57456ef8f44e8ac04e747641133" target="_top" xlink:title="Calculates and returns the Euclidean distance between the robot&#39;s TCP and a given object position.">
 <polygon fill="white" stroke="black" points="149,-457 149,-487 286,-487 286,-457 149,-457"/>
 <text text-anchor="start" x="157" y="-475" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::cartesianRobot</text>
 <text text-anchor="middle" x="217.5" y="-464" font-family="Helvetica,sans-Serif" font-size="10.00">DistanceToObject</text>
@@ -148,7 +148,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278" target="_top" xlink:title="This method is responsible for retrieving and printing the transformation of the end&#45;effector....">
+<g id="a_node8"><a xlink:href="classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278" target="_top" xlink:title="Retrieves and prints the transformation of the end&#45;effector.">
 <polygon fill="white" stroke="black" points="499,-430.5 499,-449.5 648,-449.5 648,-430.5 499,-430.5"/>
 <text text-anchor="middle" x="573.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::getTransformation</text>
 </a>
@@ -163,7 +163,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2" target="_top" xlink:title="This method is responsible for updating the forward kinematics of the robot. Forward kinematics invol...">
+<g id="a_node9"><a xlink:href="classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2" target="_top" xlink:title="Updates the forward kinematics of the robot.">
 <polygon fill="white" stroke="black" points="504,-381 504,-411 643,-411 643,-381 504,-381"/>
 <text text-anchor="start" x="512" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::performForward</text>
 <text text-anchor="middle" x="573.5" y="-388" font-family="Helvetica,sans-Serif" font-size="10.00">Kinematics</text>
@@ -179,7 +179,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classrobot_model.html#a08fc87648e1634ba61fcff546da0880a" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classrobot_model.html#a08fc87648e1634ba61fcff546da0880a" target="_top" xlink:title="Sets the joint positions and velocities for the robot model.">
 <polygon fill="white" stroke="black" points="527.5,-342.5 527.5,-361.5 619.5,-361.5 619.5,-342.5 527.5,-342.5"/>
 <text text-anchor="middle" x="573.5" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">robotModel::setQ</text>
 </a>

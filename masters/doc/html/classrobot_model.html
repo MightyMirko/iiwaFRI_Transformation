@@ -92,6 +92,9 @@ $(document).ready(function(){initNavTree('classrobot_model.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 
+<p>Class representing the robot model and providing kinematic information.  
+ <a href="classrobot_model.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="robot_model_8h_source.html">robotModel.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for robotModel:</div>
@@ -102,52 +105,69 @@ Collaboration diagram for robotModel:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7716124e4326c3cbc109270c8703bf50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a7716124e4326c3cbc109270c8703bf50">robotModel</a> (const std::string &amp;xmlFilePath)</td></tr>
+<tr class="memdesc:a7716124e4326c3cbc109270c8703bf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classrobot_model.html" title="Class representing the robot model and providing kinematic information.">robotModel</a> class.  <a href="classrobot_model.html#a7716124e4326c3cbc109270c8703bf50">More...</a><br /></td></tr>
 <tr class="separator:a7716124e4326c3cbc109270c8703bf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8741821f3b9995b0bd2647e643d4afe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2">performForwardKinematics</a> ()</td></tr>
-<tr class="memdesc:a8741821f3b9995b0bd2647e643d4afe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for updating the forward kinematics of the robot. Forward kinematics involves determining the position and orientation of the end-effector based on the current joint positions and velocities.  <a href="classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2">More...</a><br /></td></tr>
+<tr class="memdesc:a8741821f3b9995b0bd2647e643d4afe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the forward kinematics of the robot.  <a href="classrobot_model.html#a8741821f3b9995b0bd2647e643d4afe2">More...</a><br /></td></tr>
 <tr class="separator:a8741821f3b9995b0bd2647e643d4afe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d79eb6c55649f2a88517e4a9e960278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278">getTransformation</a> (bool printFlag=false)</td></tr>
-<tr class="memdesc:a6d79eb6c55649f2a88517e4a9e960278"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for retrieving and printing the transformation of the end-effector. This method essentially calculates and prints the linear and angular velocities of the end-effector based on the kinematic state.  <a href="classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278">More...</a><br /></td></tr>
+<tr class="memdesc:a6d79eb6c55649f2a88517e4a9e960278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves and prints the transformation of the end-effector.  <a href="classrobot_model.html#a6d79eb6c55649f2a88517e4a9e960278">More...</a><br /></td></tr>
 <tr class="separator:a6d79eb6c55649f2a88517e4a9e960278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a443e5efec9d0d95a50a1cfcff46939c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a443e5efec9d0d95a50a1cfcff46939c6">getTCPvelocity</a> (bool printFlag=false)</td></tr>
-<tr class="memdesc:a443e5efec9d0d95a50a1cfcff46939c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method converts and prints the linear and angular velocities of the end-effector.  <a href="classrobot_model.html#a443e5efec9d0d95a50a1cfcff46939c6">More...</a><br /></td></tr>
+<tr class="memdesc:a443e5efec9d0d95a50a1cfcff46939c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts and prints the linear and angular velocities of the end-effector.  <a href="classrobot_model.html#a443e5efec9d0d95a50a1cfcff46939c6">More...</a><br /></td></tr>
 <tr class="separator:a443e5efec9d0d95a50a1cfcff46939c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08fc87648e1634ba61fcff546da0880a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a08fc87648e1634ba61fcff546da0880a">setQ</a> (const std::vector&lt; double &gt; &amp;jointPositions, const rl::math::Vector &amp;jointVelocities)</td></tr>
+<tr class="memdesc:a08fc87648e1634ba61fcff546da0880a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the joint positions and velocities for the robot model.  <a href="classrobot_model.html#a08fc87648e1634ba61fcff546da0880a">More...</a><br /></td></tr>
 <tr class="separator:a08fc87648e1634ba61fcff546da0880a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15a9830147ca85b11bad1f024c7ba36e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a15a9830147ca85b11bad1f024c7ba36e">getUnitsFromModel</a> () const</td></tr>
+<tr class="memdesc:a15a9830147ca85b11bad1f024c7ba36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the units of joint positions, velocities, and accelerations from the robot model.  <a href="classrobot_model.html#a15a9830147ca85b11bad1f024c7ba36e">More...</a><br /></td></tr>
 <tr class="separator:a15a9830147ca85b11bad1f024c7ba36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c27822ac92c8a1a02707fe1b35b5a0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a6c27822ac92c8a1a02707fe1b35b5a0f">printTransform</a> (rl::math::Transform &amp;t, bool addNewLine) const</td></tr>
-<tr class="separator:a6c27822ac92c8a1a02707fe1b35b5a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a92e57456ef8f44e8ac04e747641133"><td class="memItemLeft" align="right" valign="top">::rl::math::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a1a92e57456ef8f44e8ac04e747641133">cartesianRobotDistanceToObject</a> (rl::math::Vector3 &amp;objectPosition) const</td></tr>
+<tr class="memdesc:a1a92e57456ef8f44e8ac04e747641133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and returns the Euclidean distance between the robot's TCP and a given object position.  <a href="classrobot_model.html#a1a92e57456ef8f44e8ac04e747641133">More...</a><br /></td></tr>
 <tr class="separator:a1a92e57456ef8f44e8ac04e747641133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:afe5a2ce80f14d227bdc9f990f492ec5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#afe5a2ce80f14d227bdc9f990f492ec5c">printQ</a> ()</td></tr>
+<tr class="memdesc:afe5a2ce80f14d227bdc9f990f492ec5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the joint positions.  <a href="classrobot_model.html#afe5a2ce80f14d227bdc9f990f492ec5c">More...</a><br /></td></tr>
 <tr class="separator:afe5a2ce80f14d227bdc9f990f492ec5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3157c622491cb8170ff8c024efb24d50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a3157c622491cb8170ff8c024efb24d50">update_model</a> ()</td></tr>
+<tr class="memdesc:a3157c622491cb8170ff8c024efb24d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the robot model.  <a href="classrobot_model.html#a3157c622491cb8170ff8c024efb24d50">More...</a><br /></td></tr>
 <tr class="separator:a3157c622491cb8170ff8c024efb24d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada8035ce070174e49202b49faf8d067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#aada8035ce070174e49202b49faf8d067">printVector</a> ()</td></tr>
+<tr class="memdesc:aada8035ce070174e49202b49faf8d067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a vector.  <a href="classrobot_model.html#aada8035ce070174e49202b49faf8d067">More...</a><br /></td></tr>
 <tr class="separator:aada8035ce070174e49202b49faf8d067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c27822ac92c8a1a02707fe1b35b5a0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a6c27822ac92c8a1a02707fe1b35b5a0f">printTransform</a> (rl::math::Transform &amp;t, bool addNewLine) const</td></tr>
+<tr class="separator:a6c27822ac92c8a1a02707fe1b35b5a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a182e96b755a85c59201ac16ac1ab9bfb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; rl::mdl::Model &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a182e96b755a85c59201ac16ac1ab9bfb">model</a></td></tr>
+<tr class="memdesc:a182e96b755a85c59201ac16ac1ab9bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the robot model.  <a href="classrobot_model.html#a182e96b755a85c59201ac16ac1ab9bfb">More...</a><br /></td></tr>
 <tr class="separator:a182e96b755a85c59201ac16ac1ab9bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae146e81df6017e48b2d510306aa7d97e"><td class="memItemLeft" align="right" valign="top">rl::mdl::Kinematic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#ae146e81df6017e48b2d510306aa7d97e">kinematics</a></td></tr>
+<tr class="memdesc:ae146e81df6017e48b2d510306aa7d97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the kinematics of the robot model.  <a href="classrobot_model.html#ae146e81df6017e48b2d510306aa7d97e">More...</a><br /></td></tr>
 <tr class="separator:ae146e81df6017e48b2d510306aa7d97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca23f570c2d613061a734fb83f08596"><td class="memItemLeft" align="right" valign="top">rl::mdl::Dynamic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#adca23f570c2d613061a734fb83f08596">dynamic</a></td></tr>
+<tr class="memdesc:adca23f570c2d613061a734fb83f08596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the dynamic model of the robot (commented-out).  <a href="classrobot_model.html#adca23f570c2d613061a734fb83f08596">More...</a><br /></td></tr>
 <tr class="separator:adca23f570c2d613061a734fb83f08596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb87c65dd3a230ba5205eb1425c69abe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_t_c_p_parameters.html">TCPParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#adb87c65dd3a230ba5205eb1425c69abe">tcp</a></td></tr>
+<tr class="memdesc:adb87c65dd3a230ba5205eb1425c69abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold TCP parameters.  <a href="classrobot_model.html#adb87c65dd3a230ba5205eb1425c69abe">More...</a><br /></td></tr>
 <tr class="separator:adb87c65dd3a230ba5205eb1425c69abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab19d4ea646a0266ed8985dde2b64f4da"><td class="memItemLeft" align="right" valign="top">rl::math::Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#ab19d4ea646a0266ed8985dde2b64f4da">traPosition</a></td></tr>
+<tr class="memdesc:ab19d4ea646a0266ed8985dde2b64f4da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transformation for position.  <a href="classrobot_model.html#ab19d4ea646a0266ed8985dde2b64f4da">More...</a><br /></td></tr>
 <tr class="separator:ab19d4ea646a0266ed8985dde2b64f4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1e92118795ba6d2c54e1a2f3acee6b4"><td class="memItemLeft" align="right" valign="top">rl::math::MotionVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#ac1e92118795ba6d2c54e1a2f3acee6b4">traVelocity</a></td></tr>
+<tr class="memdesc:ac1e92118795ba6d2c54e1a2f3acee6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Motion vector for velocity.  <a href="classrobot_model.html#ac1e92118795ba6d2c54e1a2f3acee6b4">More...</a><br /></td></tr>
 <tr class="separator:ac1e92118795ba6d2c54e1a2f3acee6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ea1e76a9043d5dbae2c41d90fafb3b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_l_b_r___rob.html">LBR_Rob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot_model.html#a7ea1e76a9043d5dbae2c41d90fafb3b6">lbr</a></td></tr>
+<tr class="memdesc:a7ea1e76a9043d5dbae2c41d90fafb3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold LBR robot parameters.  <a href="classrobot_model.html#a7ea1e76a9043d5dbae2c41d90fafb3b6">More...</a><br /></td></tr>
 <tr class="separator:a7ea1e76a9043d5dbae2c41d90fafb3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class representing the robot model and providing kinematic information. </p>
+<p>The <a class="el" href="classrobot_model.html" title="Class representing the robot model and providing kinematic information.">robotModel</a> class is responsible for managing the robot model, performing forward kinematics, and providing information about the robot's transformation. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7716124e4326c3cbc109270c8703bf50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7716124e4326c3cbc109270c8703bf50">&#9670;&nbsp;</a></span>robotModel()</h2>
 
@@ -172,6 +192,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor for the <a class="el" href="classrobot_model.html" title="Class representing the robot model and providing kinematic information.">robotModel</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmlFilePath</td><td>The path to the XML file containing the robot model description. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -190,6 +218,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calculates and returns the Euclidean distance between the robot's TCP and a given object position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objectPosition</td><td>The position of the object in 3D space. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The calculated distance between the robot's TCP and the object position. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -214,8 +251,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>This method converts and prints the linear and angular velocities of the end-effector. </p>
-<p>tcp.vecV = rl::math::RAD2DEG * tcp.vecV;: Converts linear velocity to degrees. tcp.vecOmega = rl::math::RAD2DEG * tcp.vecOmega;: Converts angular velocity to degrees. std::cout &lt;&lt; "\t" &lt;&lt; tcp.vecV.transpose() &lt;&lt; std::endl;: Prints the converted linear velocity. </p>
+<p>Converts and prints the linear and angular velocities of the end-effector. </p>
+<p>This method converts linear and angular velocities to degrees and prints the values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">printFlag</td><td>If true, the velocity information will be printed. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -235,8 +278,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>This method is responsible for retrieving and printing the transformation of the end-effector. This method essentially calculates and prints the linear and angular velocities of the end-effector based on the kinematic state. </p>
-<p>rl::math::MotionVector xd = kinematics-&gt;getOperationalVelocity(0);: Retrieves the operational velocity of the end-effector. tcp.vecV = kinematics-&gt;getOperationalPosition(0).linear() * xd.linear();: Computes the linear velocity of the end-effector. tcp.vecOmega = kinematics-&gt;getOperationalPosition(0).linear() * xd.angular();: Computes the angular velocity of the end-effector. tcp.matrix_position = kinematics-&gt;getOperationalPosition(0);: Retrieves the operational position of the end-effector. </p>
+<p>Retrieves and prints the transformation of the end-effector. </p>
+<p>This method calculates and prints the linear and angular velocities of the end-effector based on the kinematic state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">printFlag</td><td>If true, the transformation information will be printed. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -259,6 +308,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints the units of joint positions, velocities, and accelerations from the robot model. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -282,8 +333,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>This method is responsible for updating the forward kinematics of the robot. Forward kinematics involves determining the position and orientation of the end-effector based on the current joint positions and velocities. </p>
-<p>kinematics-&gt;setPosition(this-&gt;lbr.q);: Sets the joint positions of the robot model to the values stored in the lbr.q vector. kinematics-&gt;setVelocity(this-&gt;lbr.qd);: Sets the joint velocities of the robot model to the values stored in the lbr.qd vector. kinematics-&gt;forwardPosition();: Computes the forward position kinematics, determining the end-effector position and orientation based on the current joint positions. kinematics-&gt;forwardVelocity();: Computes the forward velocity kinematics, determining the end-effector linear and angular velocities based on the current joint positions and velocities. </p>
+<p>Updates the forward kinematics of the robot. </p>
+<p>This method sets the joint positions and velocities, computes the forward position and velocity kinematics, and calculates the Jacobian. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -315,6 +366,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Prints the joint positions. </p>
+
 </div>
 </div>
 <a id="a6c27822ac92c8a1a02707fe1b35b5a0f"></a>
@@ -322,6 +375,9 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void robotModel::printTransform </td>
@@ -341,6 +397,11 @@ Here is the caller graph for this function:</div>
           <td></td><td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -367,6 +428,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Prints a vector. </p>
 
 </div>
 </div>
@@ -395,6 +458,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the joint positions and velocities for the robot model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jointPositions</td><td>Vector containing joint positions. </td></tr>
+    <tr><td class="paramname">jointVelocities</td><td>Vector containing joint velocities. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -426,6 +498,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Updates the robot model. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -449,6 +523,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Pointer to the dynamic model of the robot (commented-out). </p>
+
 </div>
 </div>
 <a id="ae146e81df6017e48b2d510306aa7d97e"></a>
@@ -470,6 +546,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Pointer to the kinematics of the robot model. </p>
 
 </div>
 </div>
@@ -493,6 +571,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Structure to hold LBR robot parameters. </p>
+
 </div>
 </div>
 <a id="a182e96b755a85c59201ac16ac1ab9bfb"></a>
@@ -514,6 +594,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Shared pointer to the robot model. </p>
 
 </div>
 </div>
@@ -537,6 +619,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Structure to hold TCP parameters. </p>
+
 </div>
 </div>
 <a id="ab19d4ea646a0266ed8985dde2b64f4da"></a>
@@ -559,6 +643,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Transformation for position. </p>
+
 </div>
 </div>
 <a id="ac1e92118795ba6d2c54e1a2f3acee6b4"></a>
@@ -580,6 +666,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Motion vector for velocity. </p>
 
 </div>
 </div>
