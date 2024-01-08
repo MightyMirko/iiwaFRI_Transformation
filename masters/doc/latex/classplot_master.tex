@@ -1,0 +1,142 @@
+\hypertarget{classplot_master}{}\doxysection{plot\+Master Class Reference}
+\label{classplot_master}\index{plotMaster@{plotMaster}}
+
+
+{\ttfamily \#include $<$plot\+Master.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classplot_master_ae441eb5a6e4908cbe5614d7eaf6c360c}{plot\+Master}} (double history\+Jointsize=5e2)
+\item 
+\mbox{\hyperlink{classplot_master_ab6b2f4ea360d2c9c9541798504c597a4}{$\sim$plot\+Master}} ()
+\item 
+bool \mbox{\hyperlink{classplot_master_a31c67a01be59bdb9ebf3bf86bf93bf32}{plot\+Live\+First\+Axis}} (const std\+::string \&colour1, const std\+::string \&colour2)
+\item 
+bool \mbox{\hyperlink{classplot_master_ad2f26d2c1dcc762f9e6dbe596da22e2d}{add\+Velocity\+Data}} (const rl\+::math\+::\+Vector oneside\+\_\+v1, const rl\+::math\+::\+Vector multiside\+\_\+v2)
+\item 
+bool \mbox{\hyperlink{classplot_master_ac81e23afe9bc69d1731d8688f56c54cc}{get\+Hist\+Size}} ()
+\item 
+bool \mbox{\hyperlink{classplot_master_a8f82bb73ecf8b47ef9fdb53b50fded08}{clear\+Data}} ()
+\item 
+void \mbox{\hyperlink{classplot_master_a92a8303ea59e3f2f810d2654d5ebc306}{print\+Joint\+Pos}} (const std\+::vector$<$ double $>$ \&j\+Pos) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::deque$<$ rl\+::math\+::\+Vector $>$ \mbox{\hyperlink{classplot_master_a8f767bef4fc23480b232c7bf5db286f1}{hist\+\_\+velocity}}
+\item 
+std\+::deque$<$ rl\+::math\+::\+Vector $>$ \mbox{\hyperlink{classplot_master_abbc806d7a98c7cccddeb09d2e4755438}{hist\+\_\+velprecise}}
+\item 
+double \mbox{\hyperlink{classplot_master_abdb0be365bdcefc2c519ef200a5f3d2a}{histsize}} = 5e2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classplot_master_ae441eb5a6e4908cbe5614d7eaf6c360c}\label{classplot_master_ae441eb5a6e4908cbe5614d7eaf6c360c}} 
+\index{plotMaster@{plotMaster}!plotMaster@{plotMaster}}
+\index{plotMaster@{plotMaster}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{plotMaster()}{plotMaster()}}
+{\footnotesize\ttfamily plot\+Master\+::plot\+Master (\begin{DoxyParamCaption}\item[{double}]{history\+Jointsize = {\ttfamily 5e2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classplot_master_ab6b2f4ea360d2c9c9541798504c597a4}\label{classplot_master_ab6b2f4ea360d2c9c9541798504c597a4}} 
+\index{plotMaster@{plotMaster}!````~plotMaster@{$\sim$plotMaster}}
+\index{````~plotMaster@{$\sim$plotMaster}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{$\sim$plotMaster()}{~plotMaster()}}
+{\footnotesize\ttfamily plot\+Master\+::$\sim$plot\+Master (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classplot_master_ad2f26d2c1dcc762f9e6dbe596da22e2d}\label{classplot_master_ad2f26d2c1dcc762f9e6dbe596da22e2d}} 
+\index{plotMaster@{plotMaster}!addVelocityData@{addVelocityData}}
+\index{addVelocityData@{addVelocityData}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{addVelocityData()}{addVelocityData()}}
+{\footnotesize\ttfamily bool plot\+Master\+::add\+Velocity\+Data (\begin{DoxyParamCaption}\item[{const rl\+::math\+::\+Vector}]{oneside\+\_\+v1,  }\item[{const rl\+::math\+::\+Vector}]{multiside\+\_\+v2 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplot_master_ad2f26d2c1dcc762f9e6dbe596da22e2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplot_master_a8f82bb73ecf8b47ef9fdb53b50fded08}\label{classplot_master_a8f82bb73ecf8b47ef9fdb53b50fded08}} 
+\index{plotMaster@{plotMaster}!clearData@{clearData}}
+\index{clearData@{clearData}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{clearData()}{clearData()}}
+{\footnotesize\ttfamily bool plot\+Master\+::clear\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplot_master_a8f82bb73ecf8b47ef9fdb53b50fded08_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplot_master_ac81e23afe9bc69d1731d8688f56c54cc}\label{classplot_master_ac81e23afe9bc69d1731d8688f56c54cc}} 
+\index{plotMaster@{plotMaster}!getHistSize@{getHistSize}}
+\index{getHistSize@{getHistSize}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{getHistSize()}{getHistSize()}}
+{\footnotesize\ttfamily bool plot\+Master\+::get\+Hist\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplot_master_ac81e23afe9bc69d1731d8688f56c54cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplot_master_a31c67a01be59bdb9ebf3bf86bf93bf32}\label{classplot_master_a31c67a01be59bdb9ebf3bf86bf93bf32}} 
+\index{plotMaster@{plotMaster}!plotLiveFirstAxis@{plotLiveFirstAxis}}
+\index{plotLiveFirstAxis@{plotLiveFirstAxis}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{plotLiveFirstAxis()}{plotLiveFirstAxis()}}
+{\footnotesize\ttfamily bool plot\+Master\+::plot\+Live\+First\+Axis (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{colour1,  }\item[{const std\+::string \&}]{colour2 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplot_master_a31c67a01be59bdb9ebf3bf86bf93bf32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplot_master_a31c67a01be59bdb9ebf3bf86bf93bf32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplot_master_a92a8303ea59e3f2f810d2654d5ebc306}\label{classplot_master_a92a8303ea59e3f2f810d2654d5ebc306}} 
+\index{plotMaster@{plotMaster}!printJointPos@{printJointPos}}
+\index{printJointPos@{printJointPos}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{printJointPos()}{printJointPos()}}
+{\footnotesize\ttfamily void plot\+Master\+::print\+Joint\+Pos (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{j\+Pos }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classplot_master_a8f767bef4fc23480b232c7bf5db286f1}\label{classplot_master_a8f767bef4fc23480b232c7bf5db286f1}} 
+\index{plotMaster@{plotMaster}!hist\_velocity@{hist\_velocity}}
+\index{hist\_velocity@{hist\_velocity}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{hist\_velocity}{hist\_velocity}}
+{\footnotesize\ttfamily std\+::deque$<$rl\+::math\+::\+Vector$>$ plot\+Master\+::hist\+\_\+velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classplot_master_abbc806d7a98c7cccddeb09d2e4755438}\label{classplot_master_abbc806d7a98c7cccddeb09d2e4755438}} 
+\index{plotMaster@{plotMaster}!hist\_velprecise@{hist\_velprecise}}
+\index{hist\_velprecise@{hist\_velprecise}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{hist\_velprecise}{hist\_velprecise}}
+{\footnotesize\ttfamily std\+::deque$<$rl\+::math\+::\+Vector$>$ plot\+Master\+::hist\+\_\+velprecise\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classplot_master_abdb0be365bdcefc2c519ef200a5f3d2a}\label{classplot_master_abdb0be365bdcefc2c519ef200a5f3d2a}} 
+\index{plotMaster@{plotMaster}!histsize@{histsize}}
+\index{histsize@{histsize}!plotMaster@{plotMaster}}
+\doxysubsubsection{\texorpdfstring{histsize}{histsize}}
+{\footnotesize\ttfamily double plot\+Master\+::histsize = 5e2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{plot_master_8h}{plot\+Master.\+h}}\item 
+\mbox{\hyperlink{plot_master_8cpp}{plot\+Master.\+cpp}}\end{DoxyCompactItemize}

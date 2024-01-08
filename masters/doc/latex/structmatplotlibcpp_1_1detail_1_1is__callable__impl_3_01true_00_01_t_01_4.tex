@@ -1,0 +1,82 @@
+\hypertarget{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4}{}\doxysection{matplotlibcpp\+::detail\+::is\+\_\+callable\+\_\+impl$<$ true, T $>$ Struct Template Reference}
+\label{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4}\index{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}}
+
+
+{\ttfamily \#include $<$matplotlibcpp.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_check}{Check}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_derived}{Derived}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_1_1_fallback}{Fallback}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename U $>$ }\\static std\+::true\+\_\+type \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a0a9fd9d26d8d3cb932a4186a17a54026}{test}} (...)
+\item 
+{\footnotesize template$<$typename U $>$ }\\static std\+::false\+\_\+type \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_aa482a76b1b16937240670a80f3a27e47}{test}} (Check$<$ void(Fallback\+::$\ast$)(), \&U\+::operator()$>$ $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+decltype(\mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a0a9fd9d26d8d3cb932a4186a17a54026}{test}}$<$ Derived $>$(nullptr)) typedef \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_ab3b84ab99dcdc4a7de6497c5b0985216}{type}}
+\item 
+decltype(\&Fallback\+::operator()) typedef \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_aedc864521ba0dc4e9e01eb1d8a32bcbc}{dtype}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a254367a81240c8cfc1c281043210076f}{value}} = type\+::value
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a0a9fd9d26d8d3cb932a4186a17a54026}\label{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a0a9fd9d26d8d3cb932a4186a17a54026}} 
+\index{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}!test@{test}}
+\index{test@{test}!matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+static std\+::true\+\_\+type \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl}{matplotlibcpp\+::detail\+::is\+\_\+callable\+\_\+impl}}$<$ true, T $>$\+::test (\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_aa482a76b1b16937240670a80f3a27e47}\label{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_aa482a76b1b16937240670a80f3a27e47}} 
+\index{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}!test@{test}}
+\index{test@{test}!matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+static std\+::false\+\_\+type \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl}{matplotlibcpp\+::detail\+::is\+\_\+callable\+\_\+impl}}$<$ true, T $>$\+::test (\begin{DoxyParamCaption}\item[{Check$<$ void(Fallback\+::$\ast$)(), \&U\+::operator()$>$ $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_aedc864521ba0dc4e9e01eb1d8a32bcbc}\label{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_aedc864521ba0dc4e9e01eb1d8a32bcbc}} 
+\index{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}!dtype@{dtype}}
+\index{dtype@{dtype}!matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}}
+\doxysubsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+decltype(\&Fallback\+::operator()) typedef \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl}{matplotlibcpp\+::detail\+::is\+\_\+callable\+\_\+impl}}$<$ true, T $>$\+::dtype}
+
+\mbox{\Hypertarget{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_ab3b84ab99dcdc4a7de6497c5b0985216}\label{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_ab3b84ab99dcdc4a7de6497c5b0985216}} 
+\index{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}!type@{type}}
+\index{type@{type}!matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+decltype(\mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a0a9fd9d26d8d3cb932a4186a17a54026}{test}}$<$Derived$>$(nullptr)) typedef \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl}{matplotlibcpp\+::detail\+::is\+\_\+callable\+\_\+impl}}$<$ true, T $>$\+::type}
+
+\mbox{\Hypertarget{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a254367a81240c8cfc1c281043210076f}\label{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4_a254367a81240c8cfc1c281043210076f}} 
+\index{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}!value@{value}}
+\index{value@{value}!matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$@{matplotlibcpp::detail::is\_callable\_impl$<$ true, T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr bool \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl}{matplotlibcpp\+::detail\+::is\+\_\+callable\+\_\+impl}}$<$ true, T $>$\+::value = type\+::value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{matplotlibcpp_8h}{matplotlibcpp.\+h}}\end{DoxyCompactItemize}

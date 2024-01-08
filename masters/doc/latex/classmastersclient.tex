@@ -1,0 +1,500 @@
+\hypertarget{classmastersclient}{}\doxysection{mastersclient Class Reference}
+\label{classmastersclient}\index{mastersclient@{mastersclient}}
+
+
+Test client that can overlay interpolator joint positions with sine waves.  
+
+
+
+
+{\ttfamily \#include $<$mastersclient.\+h$>$}
+
+
+
+Inheritance diagram for mastersclient\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classmastersclient__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mastersclient\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmastersclient_ae7b3d3622c123c82f1587adee3a1237b}{mastersclient}} (bool \mbox{\hyperlink{classmastersclient_a89506b77db2b152462ad0e0536fb4548}{do\+Plot}}=false, double plot\+Count=15e1)
+\item 
+\mbox{\hyperlink{classmastersclient_a4c7802ae9074203a3b072e7d76505cd6}{$\sim$mastersclient}} ()
+\item 
+virtual void \mbox{\hyperlink{classmastersclient_a6d939a40d2c9e831fdbfc5e260787963}{on\+State\+Change}} (KUKA\+::\+FRI\+::\+ESession\+State old\+State, KUKA\+::\+FRI\+::\+ESession\+State new\+State)
+\begin{DoxyCompactList}\small\item\em Callback for FRI state changes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmastersclient_a4868c3c6b7959803d944e780bbff5ee4}{monitor}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI session states \textquotesingle{}Monitoring Wait\textquotesingle{} and \textquotesingle{}Monitoring Ready\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmastersclient_a2524a8f399b97a1f8e4b7e05c51448e6}{wait\+For\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI state \textquotesingle{}Commanding Wait\textquotesingle{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmastersclient_aad50ef2d724addad72c45be784cc429f}{command}} () override
+\begin{DoxyCompactList}\small\item\em Callback for the FRI state \textquotesingle{}Commanding Active\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{classmastersclient_ab2a9cf22260e53536b6794addb6da339}{s\+\_\+e\+Sessionstate}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{d\+\_\+vec\+Joint\+Position}} = std\+::vector$<$ double $>$
+\item 
+using \mbox{\hyperlink{classmastersclient_af55158983e9f90a327a6cfa9207e1d2f}{rlvec\+\_\+\+Velocity}} = rl\+::math\+::\+Vector
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmastersclient_a171d575864d9fa65755b2e4ce2cb0513}{do\+Position\+And\+Velocity}} ()
+\begin{DoxyCompactList}\small\item\em Perform position and velocity calculations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmastersclient_a45555dfe6add1c3995667b14541c9139}{get\+Current\+Timestamp}} ()
+\begin{DoxyCompactList}\small\item\em Get the current timestamp and check for timestamp errors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmastersclient_a52c4a444e2e7d8485dc5dfc711f49cb1}{do\+Process\+Joint\+Data}} (const rl\+::math\+::\+Vector \&joint\+Vel)
+\begin{DoxyCompactList}\small\item\em Process joint data, set joint positions and velocities in the robot model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmastersclient_a67ce0ffe6f714613edecda218bb84055}{plot\+Velocity\+Histories}} ()
+\begin{DoxyCompactList}\small\item\em Plot velocity histories if enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classmastersclient_ab1e06423aec31c60d0e99d2b1337ebca}{compare\+Vectors}} (const rl\+::math\+::\+Vector \&v1, const rl\+::math\+::\+Vector \&v2, double tolerance=1e-\/6, bool verbosity=false)
+\begin{DoxyCompactList}\small\item\em Compare two vectors for equality within a specified tolerance. \end{DoxyCompactList}\item 
+static rl\+::math\+::\+Vector \mbox{\hyperlink{classmastersclient_af38ef9a717f7cec043278ce59ed51c9d}{calculate\+Joint\+Velocity\+One\+Sided}} (const std\+::vector$<$ double $>$ \&old\+Joint\+Pos, const std\+::vector$<$ double $>$ \&curr\+Joint\+Pos, double dt)
+\begin{DoxyCompactList}\small\item\em Calculate joint velocity using one-\/sided differencing. \end{DoxyCompactList}\item 
+static rl\+::math\+::\+Vector \mbox{\hyperlink{classmastersclient_a357664506b2c550cf7edaed6a8fd31a2}{calculate\+Joint\+Velocity\+Multi\+Sided}} (const std\+::deque$<$ \mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{d\+\_\+vec\+Joint\+Position}} $>$ \&c\+Joint\+History, double dt)
+\begin{DoxyCompactList}\small\item\em Calculate joint velocity using multi-\/sided differencing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::seconds, std\+::chrono\+::nanoseconds $>$ \mbox{\hyperlink{classmastersclient_a283e52c140cd0682de16af5157c7354e}{current\+Sample\+Time}}
+\item 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::seconds, std\+::chrono\+::nanoseconds $>$ \mbox{\hyperlink{classmastersclient_a47d35e0f5052f2abbeb07dd13d76555f}{prv\+Sample\+Time}}
+\item 
+std\+::chrono\+::duration$<$ double $>$ \mbox{\hyperlink{classmastersclient_a4a38085a2b29f77217cd21dec9e75409}{delta\+Time}} \{\}
+\item 
+bool \mbox{\hyperlink{classmastersclient_a89506b77db2b152462ad0e0536fb4548}{do\+Plot}} = false
+\begin{DoxyCompactList}\small\item\em Flag to enable or disable plotting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrobot_model}{robot\+Model}} $\ast$ \mbox{\hyperlink{classmastersclient_ab9df8f0b418d2abad574a37afce5e8e8}{robotmdl}}
+\begin{DoxyCompactList}\small\item\em Pointer to the robot model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classplot_master}{plot\+Master}} \mbox{\hyperlink{classmastersclient_a4346208672edf6c3e110ea088e15ed3e}{plotter}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classplot_master}{plot\+Master}} object for plotting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{d\+\_\+vec\+Joint\+Position}} \mbox{\hyperlink{classmastersclient_ab9a34ba4a4bf09e1a9d548c22742ea92}{joint\+Position}}
+\begin{DoxyCompactList}\small\item\em Vector to store joint positions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmastersclient_af55158983e9f90a327a6cfa9207e1d2f}{rlvec\+\_\+\+Velocity}} \mbox{\hyperlink{classmastersclient_ab620795a3a252d9856c69a487064e747}{jointvel}}
+\begin{DoxyCompactList}\small\item\em Vector to store joint velocities. \end{DoxyCompactList}\item 
+std\+::deque$<$ \mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{d\+\_\+vec\+Joint\+Position}} $>$ \mbox{\hyperlink{classmastersclient_ac560206a36af044cb5d6e5edee5e3ed8}{d\+Q\+\_\+\+Joint\+P\+\_\+history}}
+\begin{DoxyCompactList}\small\item\em History of jo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::mutex \mbox{\hyperlink{classmastersclient_aa461465e0863885d6fd11b391ede3f71}{history\+Mutex}}
+\item 
+static std\+::mutex \mbox{\hyperlink{classmastersclient_a5df102361844c9264550a5113df7cb15}{calculation\+Mutex}}
+\item 
+static std\+::mutex \mbox{\hyperlink{classmastersclient_ac8f999fdaf5e66d05c271429b3adeb5b}{multi\+Sided\+Joint\+Vel\+Mutex}}
+\item 
+static std\+::mutex \mbox{\hyperlink{classmastersclient_a7752acdef04b94011d9d6c3787a1ba72}{one\+Sided\+Joint\+Vel\+Mutex}}
+\begin{DoxyCompactList}\small\item\em Mutexes for various operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test client that can overlay interpolator joint positions with sine waves. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}\label{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}} 
+\index{mastersclient@{mastersclient}!d\_vecJointPosition@{d\_vecJointPosition}}
+\index{d\_vecJointPosition@{d\_vecJointPosition}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{d\_vecJointPosition}{d\_vecJointPosition}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{mastersclient\+::d\+\_\+vec\+Joint\+Position}} =  std\+::vector$<$double$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmastersclient_af55158983e9f90a327a6cfa9207e1d2f}\label{classmastersclient_af55158983e9f90a327a6cfa9207e1d2f}} 
+\index{mastersclient@{mastersclient}!rlvec\_Velocity@{rlvec\_Velocity}}
+\index{rlvec\_Velocity@{rlvec\_Velocity}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{rlvec\_Velocity}{rlvec\_Velocity}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classmastersclient_af55158983e9f90a327a6cfa9207e1d2f}{mastersclient\+::rlvec\+\_\+\+Velocity}} =  rl\+::math\+::\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmastersclient_ae7b3d3622c123c82f1587adee3a1237b}\label{classmastersclient_ae7b3d3622c123c82f1587adee3a1237b}} 
+\index{mastersclient@{mastersclient}!mastersclient@{mastersclient}}
+\index{mastersclient@{mastersclient}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{mastersclient()}{mastersclient()}}
+{\footnotesize\ttfamily mastersclient\+::mastersclient (\begin{DoxyParamCaption}\item[{bool}]{do\+Plot = {\ttfamily false},  }\item[{double}]{plot\+Count = {\ttfamily 15e1} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_ae7b3d3622c123c82f1587adee3a1237b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_a4c7802ae9074203a3b072e7d76505cd6}\label{classmastersclient_a4c7802ae9074203a3b072e7d76505cd6}} 
+\index{mastersclient@{mastersclient}!````~mastersclient@{$\sim$mastersclient}}
+\index{````~mastersclient@{$\sim$mastersclient}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{$\sim$mastersclient()}{~mastersclient()}}
+{\footnotesize\ttfamily mastersclient\+::$\sim$mastersclient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmastersclient_a357664506b2c550cf7edaed6a8fd31a2}\label{classmastersclient_a357664506b2c550cf7edaed6a8fd31a2}} 
+\index{mastersclient@{mastersclient}!calculateJointVelocityMultiSided@{calculateJointVelocityMultiSided}}
+\index{calculateJointVelocityMultiSided@{calculateJointVelocityMultiSided}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{calculateJointVelocityMultiSided()}{calculateJointVelocityMultiSided()}}
+{\footnotesize\ttfamily rl\+::math\+::\+Vector mastersclient\+::calculate\+Joint\+Velocity\+Multi\+Sided (\begin{DoxyParamCaption}\item[{const std\+::deque$<$ \mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{d\+\_\+vec\+Joint\+Position}} $>$ \&}]{c\+Joint\+History,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculate joint velocity using multi-\/sided differencing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+Joint\+History} & History of joint positions. Must have a size greater than or equal to 5 and must not be empty. \\
+\hline
+{\em dt} & Time step (always around 5ms). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing joint velocity. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a357664506b2c550cf7edaed6a8fd31a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_af38ef9a717f7cec043278ce59ed51c9d}\label{classmastersclient_af38ef9a717f7cec043278ce59ed51c9d}} 
+\index{mastersclient@{mastersclient}!calculateJointVelocityOneSided@{calculateJointVelocityOneSided}}
+\index{calculateJointVelocityOneSided@{calculateJointVelocityOneSided}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{calculateJointVelocityOneSided()}{calculateJointVelocityOneSided()}}
+{\footnotesize\ttfamily rl\+::math\+::\+Vector mastersclient\+::calculate\+Joint\+Velocity\+One\+Sided (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{old\+Joint\+Pos,  }\item[{const std\+::vector$<$ double $>$ \&}]{curr\+Joint\+Pos,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculate joint velocity using one-\/sided differencing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Joint\+Pos} & The old joint positions. \\
+\hline
+{\em curr\+Joint\+Pos} & The current joint positions. \\
+\hline
+{\em dt} & The time step. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing joint velocity. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_af38ef9a717f7cec043278ce59ed51c9d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_aad50ef2d724addad72c45be784cc429f}\label{classmastersclient_aad50ef2d724addad72c45be784cc429f}} 
+\index{mastersclient@{mastersclient}!command@{command}}
+\index{command@{command}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily void mastersclient\+::command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Callback for the FRI state \textquotesingle{}Commanding Active\textquotesingle{}. 
+
+\mbox{\Hypertarget{classmastersclient_ab1e06423aec31c60d0e99d2b1337ebca}\label{classmastersclient_ab1e06423aec31c60d0e99d2b1337ebca}} 
+\index{mastersclient@{mastersclient}!compareVectors@{compareVectors}}
+\index{compareVectors@{compareVectors}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{compareVectors()}{compareVectors()}}
+{\footnotesize\ttfamily bool mastersclient\+::compare\+Vectors (\begin{DoxyParamCaption}\item[{const rl\+::math\+::\+Vector \&}]{v1,  }\item[{const rl\+::math\+::\+Vector \&}]{v2,  }\item[{double}]{tolerance = {\ttfamily 1e-\/6},  }\item[{bool}]{verbosity = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Compare two vectors for equality within a specified tolerance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector. \\
+\hline
+{\em tolerance} & Tolerance for equality check. \\
+\hline
+{\em verbosity} & If true, print detailed information about differences. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vectors are approximately equal, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmastersclient_a171d575864d9fa65755b2e4ce2cb0513}\label{classmastersclient_a171d575864d9fa65755b2e4ce2cb0513}} 
+\index{mastersclient@{mastersclient}!doPositionAndVelocity@{doPositionAndVelocity}}
+\index{doPositionAndVelocity@{doPositionAndVelocity}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{doPositionAndVelocity()}{doPositionAndVelocity()}}
+{\footnotesize\ttfamily void mastersclient\+::do\+Position\+And\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Perform position and velocity calculations. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a171d575864d9fa65755b2e4ce2cb0513_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a171d575864d9fa65755b2e4ce2cb0513_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_a52c4a444e2e7d8485dc5dfc711f49cb1}\label{classmastersclient_a52c4a444e2e7d8485dc5dfc711f49cb1}} 
+\index{mastersclient@{mastersclient}!doProcessJointData@{doProcessJointData}}
+\index{doProcessJointData@{doProcessJointData}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{doProcessJointData()}{doProcessJointData()}}
+{\footnotesize\ttfamily void mastersclient\+::do\+Process\+Joint\+Data (\begin{DoxyParamCaption}\item[{const rl\+::math\+::\+Vector \&}]{joint\+Vel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Process joint data, set joint positions and velocities in the robot model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+Vel} & Joint velocity vector. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a52c4a444e2e7d8485dc5dfc711f49cb1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a52c4a444e2e7d8485dc5dfc711f49cb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_a45555dfe6add1c3995667b14541c9139}\label{classmastersclient_a45555dfe6add1c3995667b14541c9139}} 
+\index{mastersclient@{mastersclient}!getCurrentTimestamp@{getCurrentTimestamp}}
+\index{getCurrentTimestamp@{getCurrentTimestamp}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{getCurrentTimestamp()}{getCurrentTimestamp()}}
+{\footnotesize\ttfamily void mastersclient\+::get\+Current\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the current timestamp and check for timestamp errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a45555dfe6add1c3995667b14541c9139_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_a4868c3c6b7959803d944e780bbff5ee4}\label{classmastersclient_a4868c3c6b7959803d944e780bbff5ee4}} 
+\index{mastersclient@{mastersclient}!monitor@{monitor}}
+\index{monitor@{monitor}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{monitor()}{monitor()}}
+{\footnotesize\ttfamily void mastersclient\+::monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI session states \textquotesingle{}Monitoring Wait\textquotesingle{} and \textquotesingle{}Monitoring Ready\textquotesingle{}. 
+
+If you do not want to change the default-\/behavior, you do not have to implement this method. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a4868c3c6b7959803d944e780bbff5ee4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_a6d939a40d2c9e831fdbfc5e260787963}\label{classmastersclient_a6d939a40d2c9e831fdbfc5e260787963}} 
+\index{mastersclient@{mastersclient}!onStateChange@{onStateChange}}
+\index{onStateChange@{onStateChange}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{onStateChange()}{onStateChange()}}
+{\footnotesize\ttfamily void mastersclient\+::on\+State\+Change (\begin{DoxyParamCaption}\item[{KUKA\+::\+FRI\+::\+ESession\+State}]{old\+State,  }\item[{KUKA\+::\+FRI\+::\+ESession\+State}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for FRI state changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+State} & \\
+\hline
+{\em new\+State} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmastersclient_a67ce0ffe6f714613edecda218bb84055}\label{classmastersclient_a67ce0ffe6f714613edecda218bb84055}} 
+\index{mastersclient@{mastersclient}!plotVelocityHistories@{plotVelocityHistories}}
+\index{plotVelocityHistories@{plotVelocityHistories}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{plotVelocityHistories()}{plotVelocityHistories()}}
+{\footnotesize\ttfamily void mastersclient\+::plot\+Velocity\+Histories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Plot velocity histories if enabled. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a67ce0ffe6f714613edecda218bb84055_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmastersclient_a67ce0ffe6f714613edecda218bb84055_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmastersclient_a2524a8f399b97a1f8e4b7e05c51448e6}\label{classmastersclient_a2524a8f399b97a1f8e4b7e05c51448e6}} 
+\index{mastersclient@{mastersclient}!waitForCommand@{waitForCommand}}
+\index{waitForCommand@{waitForCommand}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{waitForCommand()}{waitForCommand()}}
+{\footnotesize\ttfamily void mastersclient\+::wait\+For\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI state \textquotesingle{}Commanding Wait\textquotesingle{}. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmastersclient_a5df102361844c9264550a5113df7cb15}\label{classmastersclient_a5df102361844c9264550a5113df7cb15}} 
+\index{mastersclient@{mastersclient}!calculationMutex@{calculationMutex}}
+\index{calculationMutex@{calculationMutex}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{calculationMutex}{calculationMutex}}
+{\footnotesize\ttfamily std\+::mutex mastersclient\+::calculation\+Mutex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmastersclient_a283e52c140cd0682de16af5157c7354e}\label{classmastersclient_a283e52c140cd0682de16af5157c7354e}} 
+\index{mastersclient@{mastersclient}!currentSampleTime@{currentSampleTime}}
+\index{currentSampleTime@{currentSampleTime}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{currentSampleTime}{currentSampleTime}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$std\+::chrono\+::seconds, std\+::chrono\+::nanoseconds$>$ mastersclient\+::current\+Sample\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmastersclient_a4a38085a2b29f77217cd21dec9e75409}\label{classmastersclient_a4a38085a2b29f77217cd21dec9e75409}} 
+\index{mastersclient@{mastersclient}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{deltaTime}{deltaTime}}
+{\footnotesize\ttfamily std\+::chrono\+::duration$<$double$>$ mastersclient\+::delta\+Time \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmastersclient_a89506b77db2b152462ad0e0536fb4548}\label{classmastersclient_a89506b77db2b152462ad0e0536fb4548}} 
+\index{mastersclient@{mastersclient}!doPlot@{doPlot}}
+\index{doPlot@{doPlot}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{doPlot}{doPlot}}
+{\footnotesize\ttfamily bool mastersclient\+::do\+Plot = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to enable or disable plotting. 
+
+\mbox{\Hypertarget{classmastersclient_ac560206a36af044cb5d6e5edee5e3ed8}\label{classmastersclient_ac560206a36af044cb5d6e5edee5e3ed8}} 
+\index{mastersclient@{mastersclient}!dQ\_JointP\_history@{dQ\_JointP\_history}}
+\index{dQ\_JointP\_history@{dQ\_JointP\_history}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{dQ\_JointP\_history}{dQ\_JointP\_history}}
+{\footnotesize\ttfamily std\+::deque$<$\mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{d\+\_\+vec\+Joint\+Position}}$>$ mastersclient\+::d\+Q\+\_\+\+Joint\+P\+\_\+history\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+History of jo. 
+
+\mbox{\Hypertarget{classmastersclient_aa461465e0863885d6fd11b391ede3f71}\label{classmastersclient_aa461465e0863885d6fd11b391ede3f71}} 
+\index{mastersclient@{mastersclient}!historyMutex@{historyMutex}}
+\index{historyMutex@{historyMutex}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{historyMutex}{historyMutex}}
+{\footnotesize\ttfamily std\+::mutex mastersclient\+::history\+Mutex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmastersclient_ab9a34ba4a4bf09e1a9d548c22742ea92}\label{classmastersclient_ab9a34ba4a4bf09e1a9d548c22742ea92}} 
+\index{mastersclient@{mastersclient}!jointPosition@{jointPosition}}
+\index{jointPosition@{jointPosition}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{jointPosition}{jointPosition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmastersclient_a5d54d98da53ccdcfc0f0ac05613360f2}{d\+\_\+vec\+Joint\+Position}} mastersclient\+::joint\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector to store joint positions. 
+
+\mbox{\Hypertarget{classmastersclient_ab620795a3a252d9856c69a487064e747}\label{classmastersclient_ab620795a3a252d9856c69a487064e747}} 
+\index{mastersclient@{mastersclient}!jointvel@{jointvel}}
+\index{jointvel@{jointvel}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{jointvel}{jointvel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmastersclient_af55158983e9f90a327a6cfa9207e1d2f}{rlvec\+\_\+\+Velocity}} mastersclient\+::jointvel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector to store joint velocities. 
+
+\mbox{\Hypertarget{classmastersclient_ac8f999fdaf5e66d05c271429b3adeb5b}\label{classmastersclient_ac8f999fdaf5e66d05c271429b3adeb5b}} 
+\index{mastersclient@{mastersclient}!multiSidedJointVelMutex@{multiSidedJointVelMutex}}
+\index{multiSidedJointVelMutex@{multiSidedJointVelMutex}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{multiSidedJointVelMutex}{multiSidedJointVelMutex}}
+{\footnotesize\ttfamily std\+::mutex mastersclient\+::multi\+Sided\+Joint\+Vel\+Mutex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmastersclient_a7752acdef04b94011d9d6c3787a1ba72}\label{classmastersclient_a7752acdef04b94011d9d6c3787a1ba72}} 
+\index{mastersclient@{mastersclient}!oneSidedJointVelMutex@{oneSidedJointVelMutex}}
+\index{oneSidedJointVelMutex@{oneSidedJointVelMutex}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{oneSidedJointVelMutex}{oneSidedJointVelMutex}}
+{\footnotesize\ttfamily std\+::mutex mastersclient\+::one\+Sided\+Joint\+Vel\+Mutex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Mutexes for various operations. 
+
+\mbox{\Hypertarget{classmastersclient_a4346208672edf6c3e110ea088e15ed3e}\label{classmastersclient_a4346208672edf6c3e110ea088e15ed3e}} 
+\index{mastersclient@{mastersclient}!plotter@{plotter}}
+\index{plotter@{plotter}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{plotter}{plotter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classplot_master}{plot\+Master}} mastersclient\+::plotter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \mbox{\hyperlink{classplot_master}{plot\+Master}} object for plotting. 
+
+\mbox{\Hypertarget{classmastersclient_a47d35e0f5052f2abbeb07dd13d76555f}\label{classmastersclient_a47d35e0f5052f2abbeb07dd13d76555f}} 
+\index{mastersclient@{mastersclient}!prvSampleTime@{prvSampleTime}}
+\index{prvSampleTime@{prvSampleTime}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{prvSampleTime}{prvSampleTime}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$std\+::chrono\+::seconds, std\+::chrono\+::nanoseconds$>$ mastersclient\+::prv\+Sample\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmastersclient_ab9df8f0b418d2abad574a37afce5e8e8}\label{classmastersclient_ab9df8f0b418d2abad574a37afce5e8e8}} 
+\index{mastersclient@{mastersclient}!robotmdl@{robotmdl}}
+\index{robotmdl@{robotmdl}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{robotmdl}{robotmdl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrobot_model}{robot\+Model}}$\ast$ mastersclient\+::robotmdl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the robot model. 
+
+\mbox{\Hypertarget{classmastersclient_ab2a9cf22260e53536b6794addb6da339}\label{classmastersclient_ab2a9cf22260e53536b6794addb6da339}} 
+\index{mastersclient@{mastersclient}!s\_eSessionstate@{s\_eSessionstate}}
+\index{s\_eSessionstate@{s\_eSessionstate}!mastersclient@{mastersclient}}
+\doxysubsubsection{\texorpdfstring{s\_eSessionstate}{s\_eSessionstate}}
+{\footnotesize\ttfamily const char$\ast$ mastersclient\+::s\+\_\+e\+Sessionstate \{\}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{mastersclient_8h}{mastersclient.\+h}}\item 
+\mbox{\hyperlink{mastersclient_8cpp}{mastersclient.\+cpp}}\end{DoxyCompactItemize}

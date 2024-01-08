@@ -1,0 +1,8 @@
+<map id="mastersclient" name="mastersclient">
+<area shape="rect" id="node1" title="Test client that can overlay interpolator joint positions with sine waves." alt="" coords="178,184,278,211"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,163,121"/>
+<area shape="rect" id="node3" href="$classplot_master.html" title=" " alt="" coords="187,95,269,121"/>
+<area shape="rect" id="node4" href="$classrobot_model.html" title=" " alt="" coords="294,95,381,121"/>
+<area shape="rect" id="node5" href="$struct_t_c_p_parameters.html" title=" " alt="" coords="219,5,335,32"/>
+<area shape="rect" id="node6" href="$struct_l_b_r___rob.html" title=" " alt="" coords="359,5,438,32"/>
+</map>

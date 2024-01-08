@@ -14,7 +14,7 @@ find_package(Doxygen
              OPTIONAL_COMPONENTS mscgen dia)
 
 include_directories(${PYTHON_INCLUDE_DIRS})
-
+message(STATUS "Configuring Project Binary ${PROJECT_SOURCE_DIR}")
 if (DOXYGEN_FOUND)
     doxygen_add_docs(doxygen_m
                      ${PROJECT_SOURCE_DIR}

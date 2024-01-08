@@ -1,0 +1,5 @@
+<map id="mastersclient::calculateJointVelocityOneSided" name="mastersclient::calculateJointVelocityOneSided">
+<area shape="rect" id="node1" title="Calculate joint velocity using one&#45;sided differencing." alt="" coords="421,5,581,47"/>
+<area shape="rect" id="node2" href="$classmastersclient.html#a171d575864d9fa65755b2e4ce2cb0513" title="Perform position and velocity calculations." alt="" coords="204,5,373,47"/>
+<area shape="rect" id="node3" href="$classmastersclient.html#a4868c3c6b7959803d944e780bbff5ee4" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="5,13,156,39"/>
+</map>

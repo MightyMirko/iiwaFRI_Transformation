@@ -1,0 +1,155 @@
+\hypertarget{namespacematplotlibcpp_1_1detail}{}\doxysection{matplotlibcpp\+::detail Namespace Reference}
+\label{namespacematplotlibcpp_1_1detail}\index{matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1__interpreter}{\+\_\+interpreter}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type}{select\+\_\+npy\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01double_01_4}{select\+\_\+npy\+\_\+type$<$ double $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01float_01_4}{select\+\_\+npy\+\_\+type$<$ float $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01bool_01_4}{select\+\_\+npy\+\_\+type$<$ bool $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01int8__t_01_4}{select\+\_\+npy\+\_\+type$<$ int8\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01int16__t_01_4}{select\+\_\+npy\+\_\+type$<$ int16\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01int32__t_01_4}{select\+\_\+npy\+\_\+type$<$ int32\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01int64__t_01_4}{select\+\_\+npy\+\_\+type$<$ int64\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01uint8__t_01_4}{select\+\_\+npy\+\_\+type$<$ uint8\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01uint16__t_01_4}{select\+\_\+npy\+\_\+type$<$ uint16\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01uint32__t_01_4}{select\+\_\+npy\+\_\+type$<$ uint32\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01uint64__t_01_4}{select\+\_\+npy\+\_\+type$<$ uint64\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01long_01long_01_4}{select\+\_\+npy\+\_\+type$<$ long long $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1select__npy__type_3_01unsigned_01long_01long_01_4}{select\+\_\+npy\+\_\+type$<$ unsigned long long $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl}{is\+\_\+callable\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01false_00_01_t_01_4}{is\+\_\+callable\+\_\+impl$<$ false, T $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable__impl_3_01true_00_01_t_01_4}{is\+\_\+callable\+\_\+impl$<$ true, T $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1is__callable}{is\+\_\+callable}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1plot__impl}{plot\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1plot__impl_3_01std_1_1false__type_01_4}{plot\+\_\+impl$<$ std\+::false\+\_\+type $>$}}
+\item 
+struct \mbox{\hyperlink{structmatplotlibcpp_1_1detail_1_1plot__impl_3_01std_1_1true__type_01_4}{plot\+\_\+impl$<$ std\+::true\+\_\+type $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_ad711caf78c271008983e97009c6d314c}{is\+\_\+function}} = typename std\+::is\+\_\+function$<$ std\+::remove\+\_\+pointer$<$ std\+::remove\+\_\+reference$<$ T $>$ $>$$>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Numeric $>$ }\\Py\+Object $\ast$ \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_a9bcca44556cf0ddbbf147a423d9a9496}{get\+\_\+array}} (const std\+::vector$<$ Numeric $>$ \&v)
+\item 
+{\footnotesize template$<$typename Numeric $>$ }\\Py\+Object $\ast$ \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_a6a8f516c60a23fe89ccddfca2f13ccb4}{get\+\_\+2darray}} (const std\+::vector$<$\+::std\+::vector$<$ Numeric $>$$>$ \&v)
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_aaa0a60f890414f4db33abe9d800876a8}{get\+\_\+array}} (const std\+::vector$<$ std\+::string $>$ \&strings)
+\item 
+{\footnotesize template$<$typename Numeric $>$ }\\Py\+Object $\ast$ \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_a7ec0ef4c548f7ac8786ff9aa7e52c3da}{get\+\_\+listlist}} (const std\+::vector$<$ std\+::vector$<$ Numeric $>$$>$ \&ll)
+\item 
+void \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_ab78ea1d46cdefdf8037d2a2c0bcfaedb}{imshow}} (void $\ast$ptr, const NPY\+\_\+\+TYPES type, const int rows, const int columns, const int colors, const std\+::map$<$ std\+::string, std\+::string $>$ \&keywords, Py\+Object $\ast$$\ast$out)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_aeb07303791268bfde1e5c3d60c4f9f7e}{s\+\_\+backend}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacematplotlibcpp_1_1detail_ad711caf78c271008983e97009c6d314c}\label{namespacematplotlibcpp_1_1detail_ad711caf78c271008983e97009c6d314c}} 
+\index{matplotlibcpp::detail@{matplotlibcpp::detail}!is\_function@{is\_function}}
+\index{is\_function@{is\_function}!matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsubsection{\texorpdfstring{is\_function}{is\_function}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{namespacematplotlibcpp_1_1detail_ad711caf78c271008983e97009c6d314c}{matplotlibcpp\+::detail\+::is\+\_\+function}} = typedef typename std\+::is\+\_\+function$<$std\+::remove\+\_\+pointer$<$std\+::remove\+\_\+reference$<$T$>$ $>$$>$\+::type}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacematplotlibcpp_1_1detail_a6a8f516c60a23fe89ccddfca2f13ccb4}\label{namespacematplotlibcpp_1_1detail_a6a8f516c60a23fe89ccddfca2f13ccb4}} 
+\index{matplotlibcpp::detail@{matplotlibcpp::detail}!get\_2darray@{get\_2darray}}
+\index{get\_2darray@{get\_2darray}!matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsubsection{\texorpdfstring{get\_2darray()}{get\_2darray()}}
+{\footnotesize\ttfamily template$<$typename Numeric $>$ \\
+Py\+Object$\ast$ matplotlibcpp\+::detail\+::get\+\_\+2darray (\begin{DoxyParamCaption}\item[{const std\+::vector$<$\+::std\+::vector$<$ Numeric $>$$>$ \&}]{v }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacematplotlibcpp_1_1detail_a6a8f516c60a23fe89ccddfca2f13ccb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacematplotlibcpp_1_1detail_a9bcca44556cf0ddbbf147a423d9a9496}\label{namespacematplotlibcpp_1_1detail_a9bcca44556cf0ddbbf147a423d9a9496}} 
+\index{matplotlibcpp::detail@{matplotlibcpp::detail}!get\_array@{get\_array}}
+\index{get\_array@{get\_array}!matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsubsection{\texorpdfstring{get\_array()}{get\_array()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Numeric $>$ \\
+Py\+Object$\ast$ matplotlibcpp\+::detail\+::get\+\_\+array (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Numeric $>$ \&}]{v }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacematplotlibcpp_1_1detail_a9bcca44556cf0ddbbf147a423d9a9496_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacematplotlibcpp_1_1detail_aaa0a60f890414f4db33abe9d800876a8}\label{namespacematplotlibcpp_1_1detail_aaa0a60f890414f4db33abe9d800876a8}} 
+\index{matplotlibcpp::detail@{matplotlibcpp::detail}!get\_array@{get\_array}}
+\index{get\_array@{get\_array}!matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsubsection{\texorpdfstring{get\_array()}{get\_array()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Py\+Object$\ast$ matplotlibcpp\+::detail\+::get\+\_\+array (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{strings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacematplotlibcpp_1_1detail_a7ec0ef4c548f7ac8786ff9aa7e52c3da}\label{namespacematplotlibcpp_1_1detail_a7ec0ef4c548f7ac8786ff9aa7e52c3da}} 
+\index{matplotlibcpp::detail@{matplotlibcpp::detail}!get\_listlist@{get\_listlist}}
+\index{get\_listlist@{get\_listlist}!matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsubsection{\texorpdfstring{get\_listlist()}{get\_listlist()}}
+{\footnotesize\ttfamily template$<$typename Numeric $>$ \\
+Py\+Object$\ast$ matplotlibcpp\+::detail\+::get\+\_\+listlist (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ Numeric $>$$>$ \&}]{ll }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{namespacematplotlibcpp_1_1detail_a7ec0ef4c548f7ac8786ff9aa7e52c3da_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacematplotlibcpp_1_1detail_ab78ea1d46cdefdf8037d2a2c0bcfaedb}\label{namespacematplotlibcpp_1_1detail_ab78ea1d46cdefdf8037d2a2c0bcfaedb}} 
+\index{matplotlibcpp::detail@{matplotlibcpp::detail}!imshow@{imshow}}
+\index{imshow@{imshow}!matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsubsection{\texorpdfstring{imshow()}{imshow()}}
+{\footnotesize\ttfamily void matplotlibcpp\+::detail\+::imshow (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{const NPY\+\_\+\+TYPES}]{type,  }\item[{const int}]{rows,  }\item[{const int}]{columns,  }\item[{const int}]{colors,  }\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{keywords,  }\item[{Py\+Object $\ast$$\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacematplotlibcpp_1_1detail_ab78ea1d46cdefdf8037d2a2c0bcfaedb_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacematplotlibcpp_1_1detail_aeb07303791268bfde1e5c3d60c4f9f7e}\label{namespacematplotlibcpp_1_1detail_aeb07303791268bfde1e5c3d60c4f9f7e}} 
+\index{matplotlibcpp::detail@{matplotlibcpp::detail}!s\_backend@{s\_backend}}
+\index{s\_backend@{s\_backend}!matplotlibcpp::detail@{matplotlibcpp::detail}}
+\doxysubsubsection{\texorpdfstring{s\_backend}{s\_backend}}
+{\footnotesize\ttfamily std\+::string matplotlibcpp\+::detail\+::s\+\_\+backend\hspace{0.3cm}{\ttfamily [static]}}
+

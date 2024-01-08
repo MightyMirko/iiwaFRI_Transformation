@@ -1,0 +1,106 @@
+\hypertarget{masters_app_8cpp}{}\doxysection{masters\+App.\+cpp File Reference}
+\label{masters_app_8cpp}\index{mastersApp.cpp@{mastersApp.cpp}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}include/mastersclient.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fri\+Udp\+Connection.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fri\+Client\+Application.\+h\char`\"{}}\newline
+Include dependency graph for masters\+App.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{masters_app_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{masters_app_8cpp_a0d20b69b0ad703df78459e1033d5c1d4}{print\+Help}} ()
+\item 
+int \mbox{\hyperlink{masters_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{masters_app_8cpp_a594799889b83fc13f20200b25f326b71}{DEFAULT\+\_\+\+PORT\+\_\+\+ID}} = 30201
+\item 
+constexpr unsigned int \mbox{\hyperlink{masters_app_8cpp_a9ec26bc0364ac538f0a81930dfb96a4b}{DEFAULT\+\_\+\+JOINT\+\_\+\+MASK}} = 0x8
+\item 
+constexpr double \mbox{\hyperlink{masters_app_8cpp_af75d9a2cddc51e29cf678a64cb579315}{DEFAULT\+\_\+\+FREQUENCY}} = 0.\+5
+\item 
+constexpr double \mbox{\hyperlink{masters_app_8cpp_a8a73b230e86b8dceb6eaff415c5ce8ec}{DEFAULT\+\_\+\+AMPLITUDE}} = 0.\+08
+\item 
+constexpr double \mbox{\hyperlink{masters_app_8cpp_aea03f1afd827e808eb8f24d121723376}{DEFAULT\+\_\+\+FILTER\+\_\+\+COEFFICIENT}} = 0.\+99
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+\{1.\+17\} 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{masters_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{masters_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{mastersApp.cpp@{mastersApp.cpp}!main@{main}}
+\index{main@{main}!mastersApp.cpp@{mastersApp.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{masters_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{masters_app_8cpp_a0d20b69b0ad703df78459e1033d5c1d4}\label{masters_app_8cpp_a0d20b69b0ad703df78459e1033d5c1d4}} 
+\index{mastersApp.cpp@{mastersApp.cpp}!printHelp@{printHelp}}
+\index{printHelp@{printHelp}!mastersApp.cpp@{mastersApp.cpp}}
+\doxysubsubsection{\texorpdfstring{printHelp()}{printHelp()}}
+{\footnotesize\ttfamily void print\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{masters_app_8cpp_a0d20b69b0ad703df78459e1033d5c1d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{masters_app_8cpp_a8a73b230e86b8dceb6eaff415c5ce8ec}\label{masters_app_8cpp_a8a73b230e86b8dceb6eaff415c5ce8ec}} 
+\index{mastersApp.cpp@{mastersApp.cpp}!DEFAULT\_AMPLITUDE@{DEFAULT\_AMPLITUDE}}
+\index{DEFAULT\_AMPLITUDE@{DEFAULT\_AMPLITUDE}!mastersApp.cpp@{mastersApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_AMPLITUDE}{DEFAULT\_AMPLITUDE}}
+{\footnotesize\ttfamily constexpr double DEFAULT\+\_\+\+AMPLITUDE = 0.\+08\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{masters_app_8cpp_aea03f1afd827e808eb8f24d121723376}\label{masters_app_8cpp_aea03f1afd827e808eb8f24d121723376}} 
+\index{mastersApp.cpp@{mastersApp.cpp}!DEFAULT\_FILTER\_COEFFICIENT@{DEFAULT\_FILTER\_COEFFICIENT}}
+\index{DEFAULT\_FILTER\_COEFFICIENT@{DEFAULT\_FILTER\_COEFFICIENT}!mastersApp.cpp@{mastersApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_FILTER\_COEFFICIENT}{DEFAULT\_FILTER\_COEFFICIENT}}
+{\footnotesize\ttfamily constexpr double DEFAULT\+\_\+\+FILTER\+\_\+\+COEFFICIENT = 0.\+99\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{masters_app_8cpp_af75d9a2cddc51e29cf678a64cb579315}\label{masters_app_8cpp_af75d9a2cddc51e29cf678a64cb579315}} 
+\index{mastersApp.cpp@{mastersApp.cpp}!DEFAULT\_FREQUENCY@{DEFAULT\_FREQUENCY}}
+\index{DEFAULT\_FREQUENCY@{DEFAULT\_FREQUENCY}!mastersApp.cpp@{mastersApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_FREQUENCY}{DEFAULT\_FREQUENCY}}
+{\footnotesize\ttfamily constexpr double DEFAULT\+\_\+\+FREQUENCY = 0.\+5\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{masters_app_8cpp_a9ec26bc0364ac538f0a81930dfb96a4b}\label{masters_app_8cpp_a9ec26bc0364ac538f0a81930dfb96a4b}} 
+\index{mastersApp.cpp@{mastersApp.cpp}!DEFAULT\_JOINT\_MASK@{DEFAULT\_JOINT\_MASK}}
+\index{DEFAULT\_JOINT\_MASK@{DEFAULT\_JOINT\_MASK}!mastersApp.cpp@{mastersApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_JOINT\_MASK}{DEFAULT\_JOINT\_MASK}}
+{\footnotesize\ttfamily constexpr unsigned int DEFAULT\+\_\+\+JOINT\+\_\+\+MASK = 0x8\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{masters_app_8cpp_a594799889b83fc13f20200b25f326b71}\label{masters_app_8cpp_a594799889b83fc13f20200b25f326b71}} 
+\index{mastersApp.cpp@{mastersApp.cpp}!DEFAULT\_PORT\_ID@{DEFAULT\_PORT\_ID}}
+\index{DEFAULT\_PORT\_ID@{DEFAULT\_PORT\_ID}!mastersApp.cpp@{mastersApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PORT\_ID}{DEFAULT\_PORT\_ID}}
+{\footnotesize\ttfamily constexpr int DEFAULT\+\_\+\+PORT\+\_\+\+ID = 30201\hspace{0.3cm}{\ttfamily [constexpr]}}
+

@@ -13,8 +13,7 @@
 #include <chrono>
 
 using namespace KUKA::FRI;
-
-//******************************************************************************
+//ctor
 mastersclient::mastersclient(bool doPlot, double plotCount)
         : doPlot(doPlot), plotter(plotCount) {
     // init vars
@@ -34,19 +33,14 @@ mastersclient::mastersclient(bool doPlot, double plotCount)
     for (const auto &i: xmlpath) {
         if (!std::filesystem::exists(i)) {
             std::cerr << "Error: File does not exist - " << i << std::endl;
-            // You might want to handle this error in an appropriate way for your application
-            // For example, throw an exception or return from the constructor
-            // Alternatively, you can set some default values for the model
             throw std::invalid_argument("File does not exist");
         }
     }
     robotmdl = new robotModel(xmlpath[0]);
     robotmdl->getUnitsFromModel();
-
 }
 
-//******************************************************************************
-//mastersclient::~mastersclient() = default;
+//dtor
 mastersclient::~mastersclient() {
     delete s_eSessionstate;
 }
@@ -104,12 +98,7 @@ mastersclient::calculateJointVelocityOneSided(const std::vector<double> &oldJoin
     return derivativeVector;
 }
 
-/*
- * Multi-sided differencing for numerical differentiation
- * @param cJointHistory Must have a size greater than or equal to 5 and must not be empty
- * @param dt Time step (always around 5ms)
- * @return Vector containing joint velocity
- */
+
 rl::math::Vector //
 mastersclient::calculateJointVelocityMultiSided(
         const std::deque<d_vecJointPosition> &cJointHistory,
@@ -234,15 +223,10 @@ void mastersclient::waitForCommand() {}
 
 //******************************************************************************
 void mastersclient::command() {
-    // Uncomment the line below if you want to set joint positions in robotCommand
-    // robotCommand().setJointPosition(jointPos);
-    // robotCommand().setJointPosition()
+
 }
 
-/*!
- * @brief
- * @param jointVel
- */
+
 void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
     //std::cout << "jointVel: " << jointVel.transpose() << std::endl;
     // Set joint positions and velocities in the robot model
@@ -256,9 +240,6 @@ void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
 
 }
 
-/*!
- * @brief
- */
 void mastersclient::plotVelocityHistories() {
     // Check if the size of the velocity history is sufficient for plotting
     if (plotter.getHistSize()) {

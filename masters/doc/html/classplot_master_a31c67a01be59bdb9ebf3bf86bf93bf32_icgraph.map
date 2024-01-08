@@ -1,0 +1,5 @@
+<map id="plotMaster::plotLiveFirstAxis" name="plotMaster::plotLiveFirstAxis">
+<area shape="rect" id="node1" title=" " alt="" coords="428,13,616,39"/>
+<area shape="rect" id="node2" href="$classmastersclient.html#a67ce0ffe6f714613edecda218bb84055" title="Plot velocity histories if enabled." alt="" coords="204,5,380,47"/>
+<area shape="rect" id="node3" href="$classmastersclient.html#a4868c3c6b7959803d944e780bbff5ee4" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="5,13,156,39"/>
+</map>

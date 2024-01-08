@@ -116,8 +116,8 @@ private:
 
     /**
      * \brief Calculate joint velocity using multi-sided differencing.
-     *
-     * \param cJointHistory History of joint positions.
+     * \param cJointHistory History of joint positions.  Must have a size greater than or
+     * equal to 5 and must not be empty.
      * \param dt Time step (always around 5ms).
      * \return Vector containing joint velocity.
      */

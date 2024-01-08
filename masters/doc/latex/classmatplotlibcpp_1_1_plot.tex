@@ -1,0 +1,117 @@
+\hypertarget{classmatplotlibcpp_1_1_plot}{}\doxysection{matplotlibcpp\+::Plot Class Reference}
+\label{classmatplotlibcpp_1_1_plot}\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+
+
+{\ttfamily \#include $<$matplotlibcpp.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Numeric $>$ }\\\mbox{\hyperlink{classmatplotlibcpp_1_1_plot_a6ab809f4fc44d6e4eadb100cba5b519e}{Plot}} (const std\+::string \&name, const std\+::vector$<$ Numeric $>$ \&x, const std\+::vector$<$ Numeric $>$ \&y, const std\+::string \&format=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classmatplotlibcpp_1_1_plot_ab24b1e66f705495fda89621df753ed0b}{Plot}} (const std\+::string \&name=\char`\"{}\char`\"{}, const std\+::string \&format=\char`\"{}\char`\"{})
+\item 
+{\footnotesize template$<$typename Numeric $>$ }\\bool \mbox{\hyperlink{classmatplotlibcpp_1_1_plot_ac515760537365754e3437322e87cfc79}{update}} (const std\+::vector$<$ Numeric $>$ \&x, const std\+::vector$<$ Numeric $>$ \&y)
+\item 
+bool \mbox{\hyperlink{classmatplotlibcpp_1_1_plot_a177f13fea5b50e991a373bdbea36fb59}{clear}} ()
+\item 
+void \mbox{\hyperlink{classmatplotlibcpp_1_1_plot_ac78c9ebb89d13558046ea23eee188aea}{remove}} ()
+\item 
+\mbox{\hyperlink{classmatplotlibcpp_1_1_plot_a82d08055d06388b56feed10602d2208b}{$\sim$\+Plot}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmatplotlibcpp_1_1_plot_abb79f574f69ff150c39a9c25d16ec519}{decref}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{classmatplotlibcpp_1_1_plot_af6067c761bd9402df9eeb9a70c06c425}{line}} = nullptr
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{classmatplotlibcpp_1_1_plot_a0bab8f1042f6e8bb4f60d0c36b50ab90}{set\+\_\+data\+\_\+fct}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_a6ab809f4fc44d6e4eadb100cba5b519e}\label{classmatplotlibcpp_1_1_plot_a6ab809f4fc44d6e4eadb100cba5b519e}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!Plot@{Plot}}
+\index{Plot@{Plot}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{Plot()}{Plot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Numeric $>$ \\
+matplotlibcpp\+::\+Plot\+::\+Plot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::vector$<$ Numeric $>$ \&}]{x,  }\item[{const std\+::vector$<$ Numeric $>$ \&}]{y,  }\item[{const std\+::string \&}]{format = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmatplotlibcpp_1_1_plot_a6ab809f4fc44d6e4eadb100cba5b519e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_ab24b1e66f705495fda89621df753ed0b}\label{classmatplotlibcpp_1_1_plot_ab24b1e66f705495fda89621df753ed0b}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!Plot@{Plot}}
+\index{Plot@{Plot}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{Plot()}{Plot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily matplotlibcpp\+::\+Plot\+::\+Plot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{format = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_a82d08055d06388b56feed10602d2208b}\label{classmatplotlibcpp_1_1_plot_a82d08055d06388b56feed10602d2208b}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!````~Plot@{$\sim$Plot}}
+\index{````~Plot@{$\sim$Plot}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{$\sim$Plot()}{~Plot()}}
+{\footnotesize\ttfamily matplotlibcpp\+::\+Plot\+::$\sim$\+Plot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_a177f13fea5b50e991a373bdbea36fb59}\label{classmatplotlibcpp_1_1_plot_a177f13fea5b50e991a373bdbea36fb59}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!clear@{clear}}
+\index{clear@{clear}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily bool matplotlibcpp\+::\+Plot\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_abb79f574f69ff150c39a9c25d16ec519}\label{classmatplotlibcpp_1_1_plot_abb79f574f69ff150c39a9c25d16ec519}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!decref@{decref}}
+\index{decref@{decref}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{decref()}{decref()}}
+{\footnotesize\ttfamily void matplotlibcpp\+::\+Plot\+::decref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_ac78c9ebb89d13558046ea23eee188aea}\label{classmatplotlibcpp_1_1_plot_ac78c9ebb89d13558046ea23eee188aea}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!remove@{remove}}
+\index{remove@{remove}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void matplotlibcpp\+::\+Plot\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_ac515760537365754e3437322e87cfc79}\label{classmatplotlibcpp_1_1_plot_ac515760537365754e3437322e87cfc79}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!update@{update}}
+\index{update@{update}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$typename Numeric $>$ \\
+bool matplotlibcpp\+::\+Plot\+::update (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Numeric $>$ \&}]{x,  }\item[{const std\+::vector$<$ Numeric $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classmatplotlibcpp_1_1_plot_ac515760537365754e3437322e87cfc79_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_af6067c761bd9402df9eeb9a70c06c425}\label{classmatplotlibcpp_1_1_plot_af6067c761bd9402df9eeb9a70c06c425}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!line@{line}}
+\index{line@{line}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily Py\+Object$\ast$ matplotlibcpp\+::\+Plot\+::line = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmatplotlibcpp_1_1_plot_a0bab8f1042f6e8bb4f60d0c36b50ab90}\label{classmatplotlibcpp_1_1_plot_a0bab8f1042f6e8bb4f60d0c36b50ab90}} 
+\index{matplotlibcpp::Plot@{matplotlibcpp::Plot}!set\_data\_fct@{set\_data\_fct}}
+\index{set\_data\_fct@{set\_data\_fct}!matplotlibcpp::Plot@{matplotlibcpp::Plot}}
+\doxysubsubsection{\texorpdfstring{set\_data\_fct}{set\_data\_fct}}
+{\footnotesize\ttfamily Py\+Object$\ast$ matplotlibcpp\+::\+Plot\+::set\+\_\+data\+\_\+fct = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{matplotlibcpp_8h}{matplotlibcpp.\+h}}\end{DoxyCompactItemize}

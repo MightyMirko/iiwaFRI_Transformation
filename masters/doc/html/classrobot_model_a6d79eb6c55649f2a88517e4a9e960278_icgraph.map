@@ -1,0 +1,6 @@
+<map id="robotModel::getTransformation" name="robotModel::getTransformation">
+<area shape="rect" id="node1" title="This method is responsible for retrieving and printing the transformation of the end&#45;effector...." alt="" coords="640,13,839,39"/>
+<area shape="rect" id="node2" href="$classmastersclient.html#a52c4a444e2e7d8485dc5dfc711f49cb1" title="Process joint data, set joint positions and velocities in the robot model." alt="" coords="421,5,592,47"/>
+<area shape="rect" id="node3" href="$classmastersclient.html#a171d575864d9fa65755b2e4ce2cb0513" title="Perform position and velocity calculations." alt="" coords="204,5,373,47"/>
+<area shape="rect" id="node4" href="$classmastersclient.html#a4868c3c6b7959803d944e780bbff5ee4" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="5,13,156,39"/>
+</map>
