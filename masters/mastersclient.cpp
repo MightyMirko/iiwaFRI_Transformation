@@ -213,11 +213,15 @@ mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 19
     prvSampleTime = currentSampleTime;
 
     // Check if the error between deltaTime and desiredDeltaTime is larger than 500 microseconds
-    const auto error = std::chrono::duration_cast<std::chrono::microseconds>( deltaTime - desiredDeltaTime);
+    const auto error = std::chrono::duration_cast<std::chrono::microseconds>(
+            deltaTime - desiredDeltaTime
+                                                                            );
     if (std::abs(error.count()) > 500) {
         // If the error is too large, log the error and throw an exception
         std::cerr << "Error: " << error.count() << " microseconds." << std::endl;
-        throw std::runtime_error("DeltaTime error exceeds 500 microseconds. Handle the exception accordingly.");
+        throw std::runtime_error(
+                "DeltaTime error exceeds 500 microseconds. Handle the exception accordingly."
+                                );
     }
 
 }
@@ -236,14 +240,10 @@ void mastersclient::command() {
     // robotCommand().setJointPosition(jointPos);
     // robotCommand().setJointPosition()
 }
-
-
-
-// ...
-
-
-// ...
-
+/*!
+ * @brief
+ * @param jointVel
+ */
 void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
     //std::cout << "jointVel: " << jointVel.transpose() << std::endl;
     // Set joint positions and velocities in the robot model
@@ -253,16 +253,12 @@ void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
     robotmdl->performForwardKinematics();
 
     // Get transformation matrix at joint 0
-    //auto transformationMatrix =
-    //robotmdl->getTransformation(0);
-
-    // Get TCP velocity at joint 0
-    //auto tcpVelocity =
-    //robotmdl->getTCPvelocity(0);
-
+    robotmdl->getTransformation(0);
 
 }
-
+/*!
+ * @brief
+ */
 void mastersclient::plotVelocityHistories() {
     // Check if the size of the velocity history is sufficient for plotting
     if (plotter.getHistSize()) {

@@ -8,13 +8,12 @@
 
 
 struct TCPParameters {
-    rl::math::Vector3 orient;
-    rl::math::Vector3 posi;
-    rl::math::Real a;
-    rl::math::Real b;
-    rl::math::Real c;
+    rl::math::Vector3 orient; // in euler (kuka definition)
+    rl::math::Vector3 posi; // in meter
+    rl::math::Real a,b,c,x,y,z; // in degree and meter
     rl::math::Vector3 vecV, vecOmega;
-    rl::math::Transform vecQ;
+    rl::math::Transform matrix_position; // getOperationalPosition (Fkine)
+    rl::math::MotionVector xd;
 };
 
 //Gelenkdynamiken

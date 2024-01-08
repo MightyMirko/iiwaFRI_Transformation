@@ -100,26 +100,47 @@ void robotModel::performForwardKinematics() {
  * end-effector.
  * tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();: Computes the angular velocity of
  * the end-effector.
- *  tcp.vecQ = kinematics->getOperationalPosition(0);: Retrieves the operational position of the end-effector.
+ *  tcp.matrix_position = kinematics->getOperationalPosition(0);: Retrieves the operational position of the end-effector.
  */
 void robotModel::getTransformation(bool printFlag /*= false*/) {
+    // Endeffektor Geschwindgkeitsvekor
+
+    tcp.matrix_position = kinematics->getOperationalPosition(0); // output value
+    tcp.xd = kinematics->getOperationalVelocity(0);
+    //tcp.matrix_position.translate(); Setze vektor auf tcp basis um?
+
+    tcp.posi = tcp.matrix_position.translation();
+
+    tcp.orient = tcp.matrix_position.rotation().eulerAngles(2,1,0);
+    tcp.a = tcp.orient(0) * rl::math::RAD2DEG;
+    tcp.b = tcp.orient(1) * rl::math::RAD2DEG;
+    tcp.c = tcp.orient(2) * rl::math::RAD2DEG;
+
+    tcp.vecV = tcp.matrix_position.linear() * tcp.xd.linear();
+    tcp.vecOmega = tcp.matrix_position.linear() * tcp.xd.angular();
 
 
-    // Endeffektor Geschwindgkeitsvektor
-    rl::math::MotionVector xd = kinematics->getOperationalVelocity(0);
-
-    tcp.vecV = kinematics->getOperationalPosition(0).linear() * xd.linear();
-    tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();
-    tcp.vecQ = kinematics->getOperationalPosition(0); // output value
-    //std::cout<< "\t"<< tcp.vecQ.matrix()<<std::endl;
+    //std::cout<< "\t"<< tcp.matrix_position.matrix()<<std::endl;
     //std::cout<< "\t"<< tcp.vecV.matrix()<<std::endl;
     if (printFlag) {
         // Set the width for better formatting
-        const int width = 10;
+        const int width = 20;
 
-        /*  std::cout << "Aktuelle Geschwindigkeitsvektor in WeltKoordinaten xyz \t"
-                    << std::setw(width) << xd. x() << std::setw(width) << xd.y() << std::setw(width) << xd.z()
-                    << std::endl;*/
+        //std::cout << *tcp.matrix_position.data() << std::endl; // pointer auf erste Position in Matrix
+        std::cout << tcp.matrix_position.matrix() << "\n Matrix()" << std::endl; // komplette Matrix
+        std::cout << tcp.matrix_position.linear() << "\n linear()" <<std::endl; // Matrix linear Anteil (3x3
+        std::cout << tcp.matrix_position.translation().transpose() << "\n translation()" <<std::endl; // komplette Matrix
+        //std::cout << *tcp.matrix_position.data() << std::endl; // pointer auf erste Position in Matrix
+        //std::cout << tcp.xd.matrix() << "\n Matrix()" << std::endl; // komplette Matrix
+        //std::cout << tcp.xd.linear().transpose() << "\n linear()" <<std::endl; // Matrix linear Anteil (3x3
+        //std::cout << tcp.xd.angular().transpose() << "\n translation()" <<std::endl; // komplette Matrix
+
+
+        std::cout
+                << "Aktuelle Vektor radial in WeltKoordinaten abc \t"
+                << std::setw(width) << tcp.a << std::setw(width)
+                << tcp.b << std::setw(width) << tcp.c
+                << std::endl;
 
         std::cout
                 << "Aktuelle Geschwindigkeitsvektor linear in WeltKoordinaten xyz \t"
@@ -128,7 +149,7 @@ void robotModel::getTransformation(bool printFlag /*= false*/) {
                 << std::endl;
 
         std::cout
-                << "Aktuelle Geschwindigkeitsvektor radial inWeltKoordinaten xyz \t"
+                << "Aktuelle Geschwindigkeitsvektor radial in WeltKoordinaten xyz \t"
                 << std::setw(width) << tcp.vecOmega.x() << std::setw(width)
                 << tcp.vecOmega.y() << std::setw(width) << tcp.vecOmega.z()
                 << std::endl;
@@ -150,7 +171,7 @@ void robotModel::getUnitsFromModel() const {
  */
 void robotModel::getTCPvelocity(bool printFlag /*= false*/) {
     // Convert values to degrees
-    //tcp.vecV = rl::math::RAD2DEG * tcp.vecV;
+    tcp.vecV = rl::math::RAD2DEG * tcp.vecV;
     tcp.vecOmega = rl::math::RAD2DEG * tcp.vecOmega;
 
     if (printFlag) {
@@ -174,7 +195,6 @@ void robotModel::getTCPvelocity(bool printFlag /*= false*/) {
 void robotModel::printQ() {
     std::cout << "\nq: " << lbr.q.transpose() << std::endl;
     std::cout << "\nqd: " << lbr.qd.transpose() << std::endl;
-
 }
 
 void robotModel::printVector() {
@@ -192,12 +212,7 @@ void robotModel::printVector() {
 }
 
 void robotModel::update_model() {
-    // std::cout << model->getPosition().transpose();
-    /*lbr.q = model->getPosition();
-    lbr.qd = model->getVelocity();
-    lbr.qdd = model->getAcceleration();
-    lbr.tau = model->getTorque();
-*/
+
 }
 
 // src: https://github.com/sjentzsch/mopl/blob/3347103df78cf60103fff1b62f225c9110554b1d/src/DamaModel.cpp
@@ -219,14 +234,12 @@ void robotModel::printTransform(rl::math::Transform &t, bool addNewLine) const {
 robotModel::cartesianRobotDistanceToObject(rl::math::Vector3 &objectPosition) const {
    // std::cout << "Current Joints Position: " << model->getPosition().transpose()<< std::endl;
 
-    // Get the current TCP position
-    rl::math::Transform currentTcpPosition = kinematics->getOperationalPosition(0);
-
     // Calculate the Euclidean distance between the current and target TCP positions
     rl::math::Vector3 distanceVector =
-            objectPosition - currentTcpPosition.translation();
+            objectPosition - tcp.posi;
 
     rl::math::Real distance = distanceVector.norm();
+
     // Debug print: Display the current TCP position
    /* std::cout << "Current TCP Position: "
               << currentTcpPosition.translation().transpose() << std::endl;
