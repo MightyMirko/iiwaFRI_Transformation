@@ -3,8 +3,6 @@
 //
 
 #include "robotModel.h"
-#include <cstdio>
-#include <cstring>
 #include <cmath>
 #include <iostream>
 #include <rl/math/Transform.h>
@@ -71,17 +69,6 @@ void robotModel::setQ(const std::vector<double> &jointPositions,
 
 
 
-/*!
- * @brief This method is responsible for updating the forward kinematics of the robot. Forward kinematics involves determining the position and orientation of the end-effector based on the current joint positions and velocities.
- * @details
- *   kinematics->setPosition(this->lbr.q);: Sets the joint positions of the robot model to the values stored in the lbr.q vector.
- *   kinematics->setVelocity(this->lbr.qd);: Sets the joint velocities of the robot model to the values stored in the
- *   lbr.qd vector.
- *   kinematics->forwardPosition();: Computes the forward position kinematics, determining the end-effector position
- *   and orientation based on the current joint positions.
- *   kinematics->forwardVelocity();: Computes the forward velocity kinematics, determining the end-effector linear
- *   and angular velocities based on the current joint positions and velocities.
- */
 void robotModel::performForwardKinematics() {
     kinematics->setPosition(this->lbr.q);
     kinematics->setVelocity(this->lbr.qd);
@@ -92,18 +79,6 @@ void robotModel::performForwardKinematics() {
     kinematics->calculateJacobian();
 }
 
-/*!
- * @brief This method is responsible for retrieving and printing the transformation of the end-effector. This method essentially calculates and prints the linear and angular velocities of the end-effector based on the kinematic state.
- *
- * @details
- * rl::math::MotionVector xd = kinematics->getOperationalVelocity(0);: Retrieves the operational velocity of the
- * end-effector.
- * tcp.vecV = kinematics->getOperationalPosition(0).linear() * xd.linear();: Computes the linear velocity of the
- * end-effector.
- * tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();: Computes the angular velocity of
- * the end-effector.
- *  tcp.matrix_position = kinematics->getOperationalPosition(0);: Retrieves the operational position of the end-effector.
- */
 void robotModel::getTransformation(bool printFlag /*= false*/) {
     // Endeffektor Geschwindgkeitsvekor
 
@@ -164,13 +139,6 @@ void robotModel::getUnitsFromModel() const {
     auto qdd_units = model->getAccelerationUnits();
 }
 
-/*!
- * @brief This method converts and prints the linear and angular velocities of the end-effector.
- * @details
- * tcp.vecV = rl::math::RAD2DEG * tcp.vecV;: Converts linear velocity to degrees.
- * tcp.vecOmega = rl::math::RAD2DEG * tcp.vecOmega;: Converts angular velocity to degrees.
- * std::cout << "\t" << tcp.vecV.transpose() << std::endl;: Prints the converted linear velocity.
- */
 void robotModel::getTCPvelocity(bool printFlag /*= false*/) {
     // Convert values to degrees
     tcp.vecV = rl::math::RAD2DEG * tcp.vecV;
