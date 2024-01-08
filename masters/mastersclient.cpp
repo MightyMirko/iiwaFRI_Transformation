@@ -55,6 +55,13 @@ mastersclient::mastersclient(unsigned int jointMask, double freqHz,
     robotmdl = new robotModel(xmlpath[0]);
 
     robotmdl->getUnitsFromModel();
+    this->dQ_JointP_history = std::deque<d_vecJointPosition>(
+            5,
+            d_vecJointPosition(
+                    jointPosition.size(), 0.0
+                              ));
+
+
 }
 
 //******************************************************************************
@@ -227,8 +234,36 @@ mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 19
 }
 
 void mastersclient::monitor() {
+
+    // Start time measurement
+    getCurrentTimestamp();
+    auto startTime = std::chrono::high_resolution_clock::now();
     LBRClient::monitor();
     doPositionAndVelocity();
+    // todo Interface preparation for network with Sick Laserscanner? Get EFI Data via Profinet and UDP? or even ros2
+    rl::math::Vector3 humanPos;  // Assuming 3 elements for XYZ
+
+    // Set the XYZ values relative to the robot's world frame
+    humanPos(0) = -0.8;  // X coordinate
+    humanPos(1) = 1.5;  // Y coordinate
+    humanPos(2) = .8;  // Z coordinate
+
+    robotmdl->cartesianRobotDistanceToObject(humanPos);
+    // Plot velocity histories
+    if (doPlot)
+        this->plotVelocityHistories();
+    // End time measurement
+    auto endTime = std::chrono::high_resolution_clock::now();
+    auto duration =
+            std::chrono::duration_cast<std::chrono::nanoseconds>(
+                    endTime - startTime
+                                                                );
+    // Print the duration
+    /*
+    if (duration.count() > 5e5) {
+        std::cout << "Time taken by threads: " << duration.count()
+                  << " nanoseconds." << std::endl;
+    }*/
 }
 
 
@@ -273,47 +308,41 @@ std::mutex mastersclient::multiSidedJointVelMutex;
 
 void mastersclient::doPositionAndVelocity() {
     try {
-
-        getCurrentTimestamp();
+        rl::math::Vector multiSided_jointVel;
+        multiSided_jointVel.setZero();
         const double *measuredJointPosPtr = robotState().getMeasuredJointPosition();
-
         const std::vector<double> oldJointPos = jointPosition;
-        std::copy(
-                measuredJointPosPtr,
-                measuredJointPosPtr + LBRState::NUMBER_OF_JOINTS,
-                jointPosition.begin());
 
+        std::copy(
+                measuredJointPosPtr, measuredJointPosPtr +
+                                     LBRState::NUMBER_OF_JOINTS,
+                jointPosition.begin());
 
         {
             std::lock_guard<std::mutex> lock(historyMutex);
             dQ_JointP_history.push_back(jointPosition);
         }
-
-
-
-        // Start time measurement
-        auto startTime = std::chrono::high_resolution_clock::now();
-
         // One Sided:
         auto oneSidedResult = std::async(
                 std::launch::async, [&]() {
                     return calculateJointVelocityOneSided(
-                            oldJointPos, jointPosition, deltaTime.count()
-                                                         );
+                            oldJointPos, jointPosition, deltaTime.count());
                 }
                                         );
 
-        rl::math::Vector multiSided_jointVel;
-        multiSided_jointVel.setZero();
         // Multi Sided:
-        if (dQ_JointP_history.size() >= 5) {
+        if (dQ_JointP_history.size() < 6) {
+
+        }
             // Start the asynchronous computation only if dQ_JointP_history size is sufficient
+        else {
             auto multiSidedResult = std::async(
                     std::launch::async,
                     [&]() {
                         auto result =
                                 calculateJointVelocityMultiSided(
-                                        dQ_JointP_history, deltaTime.count()
+                                        dQ_JointP_history,
+                                        deltaTime.count()
                                                                 );
 
                         // Sende
@@ -321,11 +350,8 @@ void mastersclient::doPositionAndVelocity() {
                     }
                                               );
 
+            multiSided_jointVel = multiSidedResult.get() * -1;
 
-            //std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
-            multiSided_jointVel = multiSidedResult.get();
-
-            multiSided_jointVel *= -1;
             // Process the joint data asynchronously
 
             auto processJointDataResult = std::async(
@@ -342,51 +368,12 @@ void mastersclient::doPositionAndVelocity() {
             // Wait for the asynchronous computations to finish
             rl::math::Vector oneSided_jointVel = oneSidedResult.get();
 
-
-            // Wait for the asynchronous joint data processing to finish
-            //std::lock_guard<std::mutex> lock(multiSidedJointVelMutex);
-
-// todo Interface preparation for network with Sick Laserscanner? Get EFI Data via Profinet and UDP? or even ros2
-            rl::math::Vector3 humanPos;  // Assuming 3 elements for XYZ
-
-            // Set the XYZ values relative to the robot's world frame
-            humanPos(0) = 1;  // X coordinate
-            humanPos(1) = 0;  // Y coordinate
-            humanPos(2) = 0;  // Z coordinate
-
-            robotmdl->cartesianRobotDistanceToObject(humanPos);
-
-            if (doPlot){
-
-            plotter.printJointPos(jointPosition);
-            std::cout << "\rMulti-Sided Derivative Vector: "
-                      << multiSided_jointVel.transpose() << std::endl;
-            std::cout << "One-Sided Derivative Vector: "
-                      << oneSided_jointVel.transpose() << std::endl;
-            plotter.addVelocityData(oneSided_jointVel, multiSided_jointVel);
+            if (doPlot) {
+                plotter.addVelocityData(oneSided_jointVel, multiSided_jointVel);
             }
 
             processJointDataResult.wait();
         }
-
-
-        // Plot velocity histories
-        if (doPlot)
-            this->plotVelocityHistories();
-
-        // End time measurement
-        auto endTime = std::chrono::high_resolution_clock::now();
-        auto duration =
-                std::chrono::duration_cast<std::chrono::nanoseconds>(
-                        endTime - startTime
-                                                                    );
-
-        // Print the duration
-        /*
-        if (duration.count() > 5e5) {
-            std::cout << "Time taken by threads: " << duration.count()
-                      << " nanoseconds." << std::endl;
-        }*/
     }
     catch (const std::runtime_error &e) {
         std::cerr << "Runtime Error in mastersclient->robotCalc() caught: "
