@@ -120,6 +120,8 @@ private:
      * @brief Prints a vector.
      */
     void printVector();
+
+    void printTransform(rl::math::Transform &t, bool addNewLine) const;
 };
 
 #endif //FRICLIENT_ROBOTMODEL_H
