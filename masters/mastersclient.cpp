@@ -247,7 +247,7 @@ void mastersclient::command() {
 void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
     //std::cout << "jointVel: " << jointVel.transpose() << std::endl;
     // Set joint positions and velocities in the robot model
-    robotmdl->setQ(jointPosition, jointVel);
+    robotmdl->setQ(this->jointPosition, jointVel);
 
     // Perform forward kinematics
     robotmdl->performForwardKinematics();

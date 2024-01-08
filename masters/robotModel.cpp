@@ -51,18 +51,22 @@ robotModel::robotModel(const std::string &xmlFilePath) {
 }
 
 
-void robotModel::setQ(std::vector<double> &jointPositions, const rl::math::Vector &jointVelocities) {
+void robotModel::setQ(const std::vector<double> &jointPositions,
+                      const rl::math::Vector &jointVelocities) {
     // Ensure that the sizes of input vectors match the sizes of robot model vectors
-    assert(jointPositions.size() == lbr.q.size());
-    assert(jointVelocities.size() == lbr.qd.size());
-
+    if (jointPositions.size() != lbr.q.size() ||
+        jointVelocities.size() != lbr.qd.size()) {
+        throw std::invalid_argument(
+                "Invalid jointPositions or jointVelocities size"
+                                   );
+    }
     // Set current joint positions in the robot model
-    lbr.q(jointPositions.data(), jointPositions.size());
-
-    // Set current joint velocities in the robot model
+    for (size_t i = 0; i < jointPositions.size(); ++i) {
+        lbr.q(i) = jointPositions[i];
+    }
     lbr.qd = jointVelocities;
-    // Note: Depending on the implementation, this might involve a copy operation.
 }
+
 
 
 /*!
