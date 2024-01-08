@@ -27,15 +27,21 @@ public:
     explicit robotModel(const std::string &xmlFilePath);
 
     void performForwardKinematics();
-    void getTransformation(bool printFlag= false);
-    void getTCPvelocity(bool printFlag=false /*= false*/);
 
-    void setQ(std::vector<double>& jointPositions, const rl::math::Vector& jointVelocities);
+    void getTransformation(bool printFlag = false);
+
+    void getTCPvelocity(bool printFlag = false /*= false*/);
+
+    void setQ(const std::vector<double> &jointPositions,
+              const rl::math::Vector &jointVelocities);
+
     void getUnitsFromModel() const;
 
 private:
     void printQ();
+
     void update_model();
+
     // Model and casts
     std::shared_ptr<rl::mdl::Model> model;
     rl::mdl::Kinematic *kinematics;

@@ -19,7 +19,8 @@ robotModel::robotModel(const std::string &xmlFilePath) {
         std::shared_ptr<rl::mdl::Model> tempModel(factory.create(xmlFilePath));
         model = std::move(tempModel);  // Move ownership to the member variable
         std::cout << "Model created successfully!" << std::endl;
-    } catch (const std::exception &e) {
+    }
+    catch (const std::exception &e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
         // Handle the exception as needed
     }
@@ -33,7 +34,8 @@ robotModel::robotModel(const std::string &xmlFilePath) {
     } else {
         // Dynamic cast failed
         // Handle the failure or print an error message
-        std::cerr << "Dynamic cast to rl::mdl::Kinematic or Dynamic failed." << std::endl;
+        std::cerr << "Dynamic cast to rl::mdl::Kinematic or Dynamic failed."
+                  << std::endl;
     }
 
     lbr.q.resize(model->getDof());
@@ -101,8 +103,11 @@ void robotModel::performForwardKinematics() {
  *  tcp.vecQ = kinematics->getOperationalPosition(0);: Retrieves the operational position of the end-effector.
  */
 void robotModel::getTransformation(bool printFlag /*= false*/) {
-    rl::math::MotionVector xd = kinematics->getOperationalVelocity(0); // Endeffektor Geschwindgkeitsvektor
-    //kinematics->forwardPosition(); // das muss falsch sein an der stelle.
+
+
+    // Endeffektor Geschwindgkeitsvektor
+    rl::math::MotionVector xd = kinematics->getOperationalVelocity(0);
+
     tcp.vecV = kinematics->getOperationalPosition(0).linear() * xd.linear();
     tcp.vecOmega = kinematics->getOperationalPosition(0).linear() * xd.angular();
     tcp.vecQ = kinematics->getOperationalPosition(0); // output value
@@ -112,17 +117,21 @@ void robotModel::getTransformation(bool printFlag /*= false*/) {
         // Set the width for better formatting
         const int width = 10;
 
-      /*  std::cout << "Aktuelle Geschwindigkeitsvektor in WeltKoordinaten xyz \t"
-                  << std::setw(width) << xd. x() << std::setw(width) << xd.y() << std::setw(width) << xd.z()
-                  << std::endl;*/
+        /*  std::cout << "Aktuelle Geschwindigkeitsvektor in WeltKoordinaten xyz \t"
+                    << std::setw(width) << xd. x() << std::setw(width) << xd.y() << std::setw(width) << xd.z()
+                    << std::endl;*/
 
-        std::cout << "Aktuelle Geschwindigkeitsvektor linear in WeltKoordinaten xyz \t"
-                  << std::setw(width) << tcp.vecV.x() << std::setw(width) << tcp.vecV.y() << std::setw(width) << tcp.vecV.z()
-                  << std::endl;
+        std::cout
+                << "Aktuelle Geschwindigkeitsvektor linear in WeltKoordinaten xyz \t"
+                << std::setw(width) << tcp.vecV.x() << std::setw(width)
+                << tcp.vecV.y() << std::setw(width) << tcp.vecV.z()
+                << std::endl;
 
-        std::cout << "Aktuelle Geschwindigkeitsvektor radial inWeltKoordinaten xyz \t"
-                  << std::setw(width) << tcp.vecOmega.x() << std::setw(width) << tcp.vecOmega.y() << std::setw(width) << tcp.vecOmega.z()
-                  << std::endl;
+        std::cout
+                << "Aktuelle Geschwindigkeitsvektor radial inWeltKoordinaten xyz \t"
+                << std::setw(width) << tcp.vecOmega.x() << std::setw(width)
+                << tcp.vecOmega.y() << std::setw(width) << tcp.vecOmega.z()
+                << std::endl;
     }
 }
 
@@ -131,6 +140,7 @@ void robotModel::getUnitsFromModel() const {
     auto qd_units = model->getVelocityUnits();
     auto qdd_units = model->getAccelerationUnits();
 }
+
 /*!
  * @brief This method converts and prints the linear and angular velocities of the end-effector.
  * @details
@@ -148,10 +158,15 @@ void robotModel::getTCPvelocity(bool printFlag /*= false*/) {
         const int width = 25;
 
         // Print linear velocity
-        std::cout << "[Vx, Vy, Vz] = [" << std::setw(width) << tcp.vecV.coeff(0) << std::setw(width) << tcp.vecV.coeff(1) << std::setw(width) << tcp.vecV.coeff(2) << "]" << std::endl;
+        std::cout << "[Vx, Vy, Vz] = [" << std::setw(width) << tcp.vecV.coeff(0)
+                  << std::setw(width) << tcp.vecV.coeff(1) << std::setw(width)
+                  << tcp.vecV.coeff(2) << "]" << std::endl;
 
         // Print angular velocity
-        std::cout << "[Omega_x, Omega_y, Omega_z] = [" << std::setw(width) << tcp.vecOmega.coeff(0) << std::setw(width) << tcp.vecOmega.coeff(1) << std::setw(width) << tcp.vecOmega.coeff(2) << "]" << std::endl;
+        std::cout << "[Omega_x, Omega_y, Omega_z] = [" << std::setw(width)
+                  << tcp.vecOmega.coeff(0) << std::setw(width)
+                  << tcp.vecOmega.coeff(1) << std::setw(width)
+                  << tcp.vecOmega.coeff(2) << "]" << std::endl;
     }
 }
 
@@ -163,11 +178,16 @@ void robotModel::printQ() {
 }
 
 void robotModel::printVector() {
-    std::cout << "x: " << tcp.posi.x() << " m\ty: " << tcp.posi.y() << " m\tz: " << tcp.posi.z() << " m" << std::endl;
-    std::cout << "a: " << tcp.orient.x() * rl::math::RAD2DEG << " deg\tb: " << tcp.orient.y() * rl::math::RAD2DEG
-              << " deg\tc: " << tcp.orient.z() * rl::math::RAD2DEG << " deg" << std::endl;
-    std::cout << "Joint configuration in degrees: " << lbr.q.transpose() * rl::math::RAD2DEG << std::endl;
-    std::cout << "End-effector tcp_kuka_posi: [m] " << tcp.posi.transpose() << " tcp_kuka_orient [deg] "
+    std::cout << "x: " << tcp.posi.x() << " m\ty: " << tcp.posi.y() << " m\tz: "
+              << tcp.posi.z() << " m" << std::endl;
+    std::cout << "a: " << tcp.orient.x() * rl::math::RAD2DEG << " deg\tb: "
+              << tcp.orient.y() * rl::math::RAD2DEG
+              << " deg\tc: " << tcp.orient.z() * rl::math::RAD2DEG << " deg"
+              << std::endl;
+    std::cout << "Joint configuration in degrees: "
+              << lbr.q.transpose() * rl::math::RAD2DEG << std::endl;
+    std::cout << "End-effector tcp_kuka_posi: [m] " << tcp.posi.transpose()
+              << " tcp_kuka_orient [deg] "
               << tcp.orient.transpose() * rl::math::RAD2DEG << std::endl;
 }
 
