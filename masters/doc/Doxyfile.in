@@ -1,0 +1,11 @@
+# Doxyfile.in
+
+# Project information
+PROJECT_NAME           = "Master Thesis"
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/doc
+
+# Source and header files to include in documentation
+INPUT                  = @CMAKE_SOURCE_DIR@
+FILE_PATTERNS          = *.cpp *.h
+
+# Other configuration settings...
