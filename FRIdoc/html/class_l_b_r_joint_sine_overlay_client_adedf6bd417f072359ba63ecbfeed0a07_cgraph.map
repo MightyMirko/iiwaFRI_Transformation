@@ -1,0 +1,5 @@
+<map id="LBRJointSineOverlayClient::onStateChange" name="LBRJointSineOverlayClient::onStateChange">
+<area shape="rect" id="node1" title="Callback for FRI state changes." alt="" coords="5,39,187,80"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state.html#a9d444c64abfae06e7f51d305b9800048" title="Get the sample time in seconds." alt="" coords="236,5,391,47"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client.html#af99433aa6795f9b6764b0fb539188e6d" title="Provide read access to the current robot state." alt="" coords="235,71,392,112"/>
+</map>

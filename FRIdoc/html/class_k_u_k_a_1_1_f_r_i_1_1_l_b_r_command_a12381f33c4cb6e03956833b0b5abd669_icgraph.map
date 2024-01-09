@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::LBRCommand::setWrench" name="KUKA::FRI::LBRCommand::setWrench">
+<area shape="rect" id="node1" title="Set the applied wrench vector of the current interpolation step." alt="" coords="251,39,433,80"/>
+<area shape="rect" id="node2" href="$class_l_b_r_wrench_sine_overlay_client.html#ace90bc97d85544a1d2d12b0161a4a19b" title="Callback for the FRI state &#39;Commanding Active&#39;." alt="" coords="5,5,203,47"/>
+<area shape="rect" id="node3" href="$class_l_b_r_wrench_sine_overlay_client.html#ac75b5b35086e28f88d85fb8be9fd38f7" title="Callback for the FRI session state &#39;Commanding Wait&#39;." alt="" coords="5,71,203,112"/>
+</map>

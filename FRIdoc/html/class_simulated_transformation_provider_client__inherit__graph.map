@@ -1,0 +1,4 @@
+<map id="SimulatedTransformationProviderClient" name="SimulatedTransformationProviderClient">
+<area shape="rect" id="node1" title="Test client that sends back simulated transformations corresponding to a slight translation with chan..." alt="" coords="5,95,220,136"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html" title="Abstract FRI transformation client." alt="" coords="21,5,205,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::UdpConnection::close" name="KUKA::FRI::UdpConnection::close">
+<area shape="rect" id="node1" title="Close a connection to the KUKA Sunrise controller." alt="" coords="240,39,427,80"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_udp_connection.html#a5b26b390797f0a03fc7e3dc7b477b61b" title="Open a connection to the KUKA Sunrise controller." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_udp_connection.html#a0bdfc7d2ee2c2dc040da1ed55ef79c43" title="Destructor." alt="" coords="5,71,192,112"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::TransformationClient" name="KUKA::FRI::TransformationClient">
+<area shape="rect" id="node1" title="Abstract FRI transformation client." alt="" coords="134,5,318,47"/>
+<area shape="rect" id="node2" href="$class_simulated_transformation_provider_client.html" title="Test client that sends back simulated transformations corresponding to a slight translation with chan..." alt="" coords="5,95,220,136"/>
+<area shape="rect" id="node3" href="$class_transformation_provider_client.html" title="Example client for changing the transformation matrix of a robot frame." alt="" coords="244,102,435,129"/>
+</map>

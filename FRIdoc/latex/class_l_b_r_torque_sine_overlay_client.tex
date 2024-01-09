@@ -1,0 +1,235 @@
+\hypertarget{class_l_b_r_torque_sine_overlay_client}{}\doxysection{LBRTorque\+Sine\+Overlay\+Client Class Reference}
+\label{class_l_b_r_torque_sine_overlay_client}\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+
+
+Test client that superposes joint torques with sine waves.  
+
+
+
+
+{\ttfamily \#include $<$LBRTorque\+Sine\+Overlay\+Client.\+h$>$}
+
+
+
+Inheritance diagram for LBRTorque\+Sine\+Overlay\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_l_b_r_torque_sine_overlay_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for LBRTorque\+Sine\+Overlay\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_torque_sine_overlay_client__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a2ba865f30a2a10f85a8852eb30cd9621}{LBRTorque\+Sine\+Overlay\+Client}} (unsigned int joint\+Mask, double freq\+Hz, double torque\+Amplitude)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a631b9a588bd72733e61e7763707dc5e3}{$\sim$\+LBRTorque\+Sine\+Overlay\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_afc6eeb71f86b2265228d7b9a8865ad1f}{on\+State\+Change}} (\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}} old\+State, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Callback for FRI state changes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a8d34866a1ee8c864ee1c1abeccb5028b}{wait\+For\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI session state \textquotesingle{}Commanding Wait\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_ac6be1b28bf0fbb6d4ef82b45e7cb28f4}{command}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI state \textquotesingle{}Commanding Active\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a186e6c5681db7541c1970a5c778a61a8}{\+\_\+joint\+Mask}}
+\begin{DoxyCompactList}\small\item\em bit mask encoding of overlay joints \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a6503f6f8c682f80128489c1e8e90d046}{\+\_\+freq\+Hz}}
+\begin{DoxyCompactList}\small\item\em sine frequency (Hertz) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a9311d0e02e9265721f9508e85e7ef7fb}{\+\_\+torque\+Ampl}}
+\begin{DoxyCompactList}\small\item\em sine amplitude (Nm) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a0660bb168e635357b3116375374a3838}{\+\_\+phi}}
+\begin{DoxyCompactList}\small\item\em phase of sine wave \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_af5f301ecf54dba626b6354e8c47d7319}{\+\_\+step\+Width}}
+\begin{DoxyCompactList}\small\item\em stepwidth for sine \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_aab75f66da62f716402de6aec1e545901}{\+\_\+torques}} \mbox{[}\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a2483401ea64f10b9bab6cf84201168e6ad0e39e10161e30843a4182e37a0f5321}{KUKA\+::\+FRI\+::\+LBRState\+::\+NUMBER\+\_\+\+OF\+\_\+\+JOINTS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em commanded superposed torques \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Test client that superposes joint torques with sine waves. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_a2ba865f30a2a10f85a8852eb30cd9621}\label{class_l_b_r_torque_sine_overlay_client_a2ba865f30a2a10f85a8852eb30cd9621}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{LBRTorqueSineOverlayClient()}{LBRTorqueSineOverlayClient()}}
+{\footnotesize\ttfamily LBRTorque\+Sine\+Overlay\+Client\+::\+LBRTorque\+Sine\+Overlay\+Client (\begin{DoxyParamCaption}\item[{unsigned int}]{joint\+Mask,  }\item[{double}]{freq\+Hz,  }\item[{double}]{torque\+Amplitude }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+Mask} & Bit mask that encodes the joint indices to be overlaid by sine waves \\
+\hline
+{\em freq\+Hz} & Sine frequency in Hertz \\
+\hline
+{\em torque\+Amplitude} & Sine amplitude in Nm \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_a631b9a588bd72733e61e7763707dc5e3}\label{class_l_b_r_torque_sine_overlay_client_a631b9a588bd72733e61e7763707dc5e3}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!````~LBRTorqueSineOverlayClient@{$\sim$LBRTorqueSineOverlayClient}}
+\index{````~LBRTorqueSineOverlayClient@{$\sim$LBRTorqueSineOverlayClient}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$LBRTorqueSineOverlayClient()}{~LBRTorqueSineOverlayClient()}}
+{\footnotesize\ttfamily LBRTorque\+Sine\+Overlay\+Client\+::$\sim$\+LBRTorque\+Sine\+Overlay\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_ac6be1b28bf0fbb6d4ef82b45e7cb28f4}\label{class_l_b_r_torque_sine_overlay_client_ac6be1b28bf0fbb6d4ef82b45e7cb28f4}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!command@{command}}
+\index{command@{command}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily void LBRTorque\+Sine\+Overlay\+Client\+::command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI state \textquotesingle{}Commanding Active\textquotesingle{}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a30e219dc3f5d5fe6f121e81f7728b57b}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_torque_sine_overlay_client_ac6be1b28bf0fbb6d4ef82b45e7cb28f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_afc6eeb71f86b2265228d7b9a8865ad1f}\label{class_l_b_r_torque_sine_overlay_client_afc6eeb71f86b2265228d7b9a8865ad1f}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!onStateChange@{onStateChange}}
+\index{onStateChange@{onStateChange}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{onStateChange()}{onStateChange()}}
+{\footnotesize\ttfamily void LBRTorque\+Sine\+Overlay\+Client\+::on\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}}}]{old\+State,  }\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}}}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for FRI state changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+State} & \\
+\hline
+{\em new\+State} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a90a4f9f1ed44e5ad43ff3aafa449b4a6}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_torque_sine_overlay_client_afc6eeb71f86b2265228d7b9a8865ad1f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_a8d34866a1ee8c864ee1c1abeccb5028b}\label{class_l_b_r_torque_sine_overlay_client_a8d34866a1ee8c864ee1c1abeccb5028b}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!waitForCommand@{waitForCommand}}
+\index{waitForCommand@{waitForCommand}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{waitForCommand()}{waitForCommand()}}
+{\footnotesize\ttfamily void LBRTorque\+Sine\+Overlay\+Client\+::wait\+For\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI session state \textquotesingle{}Commanding Wait\textquotesingle{}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_ac949b46d6adcb4f9902c38c5a724fa0b}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_torque_sine_overlay_client_a8d34866a1ee8c864ee1c1abeccb5028b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_a6503f6f8c682f80128489c1e8e90d046}\label{class_l_b_r_torque_sine_overlay_client_a6503f6f8c682f80128489c1e8e90d046}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!\_freqHz@{\_freqHz}}
+\index{\_freqHz@{\_freqHz}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_freqHz}{\_freqHz}}
+{\footnotesize\ttfamily double LBRTorque\+Sine\+Overlay\+Client\+::\+\_\+freq\+Hz\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sine frequency (Hertz) 
+
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_a186e6c5681db7541c1970a5c778a61a8}\label{class_l_b_r_torque_sine_overlay_client_a186e6c5681db7541c1970a5c778a61a8}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!\_jointMask@{\_jointMask}}
+\index{\_jointMask@{\_jointMask}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_jointMask}{\_jointMask}}
+{\footnotesize\ttfamily int LBRTorque\+Sine\+Overlay\+Client\+::\+\_\+joint\+Mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+bit mask encoding of overlay joints 
+
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_a0660bb168e635357b3116375374a3838}\label{class_l_b_r_torque_sine_overlay_client_a0660bb168e635357b3116375374a3838}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!\_phi@{\_phi}}
+\index{\_phi@{\_phi}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_phi}{\_phi}}
+{\footnotesize\ttfamily double LBRTorque\+Sine\+Overlay\+Client\+::\+\_\+phi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+phase of sine wave 
+
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_af5f301ecf54dba626b6354e8c47d7319}\label{class_l_b_r_torque_sine_overlay_client_af5f301ecf54dba626b6354e8c47d7319}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!\_stepWidth@{\_stepWidth}}
+\index{\_stepWidth@{\_stepWidth}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_stepWidth}{\_stepWidth}}
+{\footnotesize\ttfamily double LBRTorque\+Sine\+Overlay\+Client\+::\+\_\+step\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stepwidth for sine 
+
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_a9311d0e02e9265721f9508e85e7ef7fb}\label{class_l_b_r_torque_sine_overlay_client_a9311d0e02e9265721f9508e85e7ef7fb}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!\_torqueAmpl@{\_torqueAmpl}}
+\index{\_torqueAmpl@{\_torqueAmpl}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_torqueAmpl}{\_torqueAmpl}}
+{\footnotesize\ttfamily double LBRTorque\+Sine\+Overlay\+Client\+::\+\_\+torque\+Ampl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sine amplitude (Nm) 
+
+\mbox{\Hypertarget{class_l_b_r_torque_sine_overlay_client_aab75f66da62f716402de6aec1e545901}\label{class_l_b_r_torque_sine_overlay_client_aab75f66da62f716402de6aec1e545901}} 
+\index{LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}!\_torques@{\_torques}}
+\index{\_torques@{\_torques}!LBRTorqueSineOverlayClient@{LBRTorqueSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_torques}{\_torques}}
+{\footnotesize\ttfamily double LBRTorque\+Sine\+Overlay\+Client\+::\+\_\+torques\mbox{[}\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a2483401ea64f10b9bab6cf84201168e6ad0e39e10161e30843a4182e37a0f5321}{KUKA\+::\+FRI\+::\+LBRState\+::\+NUMBER\+\_\+\+OF\+\_\+\+JOINTS}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+commanded superposed torques 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+LBRTorque\+Sine\+Overlay/\mbox{\hyperlink{_l_b_r_torque_sine_overlay_client_8h}{LBRTorque\+Sine\+Overlay\+Client.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+LBRTorque\+Sine\+Overlay/\mbox{\hyperlink{_l_b_r_torque_sine_overlay_client_8cpp}{LBRTorque\+Sine\+Overlay\+Client.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::ClientData::setBooleanIOValue" name="KUKA::FRI::ClientData::setBooleanIOValue">
+<area shape="rect" id="node1" title=" " alt="" coords="237,39,396,80"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command.html#acf4aacbc5a1667df9e6288619870f3a1" title="Set boolean output value." alt="" coords="6,5,189,47"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#a905bbbadfa4e347683b03eef44761878" title="Set boolean output value." alt="" coords="5,71,189,112"/>
+</map>

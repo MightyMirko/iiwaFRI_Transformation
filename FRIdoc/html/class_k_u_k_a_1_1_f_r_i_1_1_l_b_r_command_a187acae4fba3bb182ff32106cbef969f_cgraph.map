@@ -1,0 +1,4 @@
+<map id="KUKA::FRI::LBRCommand::setTorque" name="KUKA::FRI::LBRCommand::setTorque">
+<area shape="rect" id="node1" title="Set the applied joint torques for the current interpolation step." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node2" href="$pb__syshdr_8h.html#a39dc31816e18e5a0b48da2865a4b698c" title=" " alt="" coords="236,13,308,39"/>
+</map>

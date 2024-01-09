@@ -1,0 +1,289 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection}{}\doxysection{KUKA\+::FRI\+::Udp\+Connection Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection}\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+
+
+This class implements the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} interface using UDP sockets.  
+
+
+
+
+{\ttfamily \#include $<$fri\+Udp\+Connection.\+h$>$}
+
+
+
+Inheritance diagram for KUKA\+::FRI\+::Udp\+Connection\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for KUKA\+::FRI\+::Udp\+Connection\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aa607c2f6cc991260b244fec6037606b7}{Udp\+Connection}} (unsigned int receive\+Timeout=0)
+\begin{DoxyCompactList}\small\item\em Constructor with an optional parameter for setting a receive timeout. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a0bdfc7d2ee2c2dc040da1ed55ef79c43}{$\sim$\+Udp\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a5b26b390797f0a03fc7e3dc7b477b61b}{open}} (int port, const char $\ast$controller\+Address=\mbox{\hyperlink{pb__syshdr__win_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})
+\begin{DoxyCompactList}\small\item\em Open a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aaa4a42e6ed80d5e5d0cd9e6774196104}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1861b742d19d7345a424647ccacdaf87}{is\+Open}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller is established. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aae5a35cfb41f855e13030b145c20b2ff}{receive}} (char $\ast$buffer, int max\+Size)
+\begin{DoxyCompactList}\small\item\em Receive a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message from the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a9d3bd85371dd6fc558409230ab4d6cee}{send}} (const char $\ast$buffer, int size)
+\begin{DoxyCompactList}\small\item\em Send a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a4ffef8f0a73335139d7dcef35c06e72b}{\+\_\+udp\+Sock}}
+\begin{DoxyCompactList}\small\item\em UDP socket handle. \end{DoxyCompactList}\item 
+struct sockaddr\+\_\+in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a6b4feaa482fb2ff0a6c210d0c1817477}{\+\_\+controller\+Addr}}
+\begin{DoxyCompactList}\small\item\em the controller\textquotesingle{}s socket address \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_af25bacc84ae116a595f7d22885826ecc}{\+\_\+receive\+Timeout}}
+\item 
+fd\+\_\+set \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1bd19613b4dc3b3bc19becd13439a0bd}{\+\_\+filedescriptor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} interface using UDP sockets. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aa607c2f6cc991260b244fec6037606b7}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aa607c2f6cc991260b244fec6037606b7}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!UdpConnection@{UdpConnection}}
+\index{UdpConnection@{UdpConnection}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{UdpConnection()}{UdpConnection()}}
+{\footnotesize\ttfamily Udp\+Connection\+::\+Udp\+Connection (\begin{DoxyParamCaption}\item[{unsigned int}]{receive\+Timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor with an optional parameter for setting a receive timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em receive\+Timeout} & Timeout (in ms) for receiving a UDP message (0 = wait forever) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a0bdfc7d2ee2c2dc040da1ed55ef79c43}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a0bdfc7d2ee2c2dc040da1ed55ef79c43}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!````~UdpConnection@{$\sim$UdpConnection}}
+\index{````~UdpConnection@{$\sim$UdpConnection}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{$\sim$UdpConnection()}{~UdpConnection()}}
+{\footnotesize\ttfamily Udp\+Connection\+::$\sim$\+Udp\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a0bdfc7d2ee2c2dc040da1ed55ef79c43_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aaa4a42e6ed80d5e5d0cd9e6774196104}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aaa4a42e6ed80d5e5d0cd9e6774196104}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!close@{close}}
+\index{close@{close}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Udp\+Connection\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Close a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+
+
+Implements \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_afbf9253c40ef19660654216ff3ee4381}{KUKA\+::\+FRI\+::\+IConnection}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aaa4a42e6ed80d5e5d0cd9e6774196104_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aaa4a42e6ed80d5e5d0cd9e6774196104_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1861b742d19d7345a424647ccacdaf87}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1861b742d19d7345a424647ccacdaf87}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Udp\+Connection\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks whether a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller is established. 
+
+\begin{DoxyReturn}{Returns}
+True if connection is established 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a61dca018a26afa39f543041487e8379c}{KUKA\+::\+FRI\+::\+IConnection}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1861b742d19d7345a424647ccacdaf87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a5b26b390797f0a03fc7e3dc7b477b61b}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a5b26b390797f0a03fc7e3dc7b477b61b}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!open@{open}}
+\index{open@{open}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Udp\+Connection\+::open (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{const char $\ast$}]{controller\+Address = {\ttfamily \mbox{\hyperlink{pb__syshdr__win_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Open a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port ID for the connection ~\newline
+ \\
+\hline
+{\em controller\+Address} & The IPv4 address of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. If NULL, the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} Client accepts connections from any address. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if connection was established, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_aa28671be2311219b94f96295e34e6774}{KUKA\+::\+FRI\+::\+IConnection}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a5b26b390797f0a03fc7e3dc7b477b61b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aae5a35cfb41f855e13030b145c20b2ff}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aae5a35cfb41f855e13030b145c20b2ff}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!receive@{receive}}
+\index{receive@{receive}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily int Udp\+Connection\+::receive (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{int}]{max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Receive a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message from the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+This method blocks until a new message arrives. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to the allocated buffer that will hold the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} message \\
+\hline
+{\em max\+Size} & Size in bytes of the allocated buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes received (0 when connection was terminated, negative in case of errors or receive timeout) 
+\end{DoxyReturn}
+HAVE\+\_\+\+SOCKLEN\+\_\+T Yes -\/ unbelievable\+: There are differences in standard calling parameters (types) to recvfrom Windows winsock, Vx\+Works and QNX use int newer Posix (most Linuxes) use socklen\+\_\+t
+
+check for timeout Because SO\+\_\+\+RCVTIMEO is in Windows not correctly implemented, select is used for the receive time out. If a timeout greater than 0 is given, wait until the timeout is reached or a message was received. If t, abort the function with an error.
+
+Replace FD\+\_\+\+ZERO with memset, because bzero is not available for Vx\+Works User Space Aplications(\+RTPs). Therefore the macro FD\+\_\+\+ZERO does not compile.
+
+Implements \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a458e9479c2752e72c9ed820f9236eb3e}{KUKA\+::\+FRI\+::\+IConnection}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aae5a35cfb41f855e13030b145c20b2ff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a9d3bd85371dd6fc558409230ab4d6cee}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a9d3bd85371dd6fc558409230ab4d6cee}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!send@{send}}
+\index{send@{send}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Udp\+Connection\+::send (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Send a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to the buffer holding the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} message \\
+\hline
+{\em size} & Size in bytes of the message to be send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a4c8837816371fc6d6bab88dcb71db3d6}{KUKA\+::\+FRI\+::\+IConnection}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a9d3bd85371dd6fc558409230ab4d6cee_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a6b4feaa482fb2ff0a6c210d0c1817477}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a6b4feaa482fb2ff0a6c210d0c1817477}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!\_controllerAddr@{\_controllerAddr}}
+\index{\_controllerAddr@{\_controllerAddr}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{\_controllerAddr}{\_controllerAddr}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in KUKA\+::\+FRI\+::\+Udp\+Connection\+::\+\_\+controller\+Addr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the controller\textquotesingle{}s socket address 
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1bd19613b4dc3b3bc19becd13439a0bd}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1bd19613b4dc3b3bc19becd13439a0bd}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!\_filedescriptor@{\_filedescriptor}}
+\index{\_filedescriptor@{\_filedescriptor}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{\_filedescriptor}{\_filedescriptor}}
+{\footnotesize\ttfamily fd\+\_\+set KUKA\+::\+FRI\+::\+Udp\+Connection\+::\+\_\+filedescriptor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_af25bacc84ae116a595f7d22885826ecc}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_af25bacc84ae116a595f7d22885826ecc}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!\_receiveTimeout@{\_receiveTimeout}}
+\index{\_receiveTimeout@{\_receiveTimeout}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{\_receiveTimeout}{\_receiveTimeout}}
+{\footnotesize\ttfamily unsigned int KUKA\+::\+FRI\+::\+Udp\+Connection\+::\+\_\+receive\+Timeout\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a4ffef8f0a73335139d7dcef35c06e72b}\label{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a4ffef8f0a73335139d7dcef35c06e72b}} 
+\index{KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}!\_udpSock@{\_udpSock}}
+\index{\_udpSock@{\_udpSock}!KUKA::FRI::UdpConnection@{KUKA::FRI::UdpConnection}}
+\doxysubsubsection{\texorpdfstring{\_udpSock}{\_udpSock}}
+{\footnotesize\ttfamily int KUKA\+::\+FRI\+::\+Udp\+Connection\+::\+\_\+udp\+Sock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+UDP socket handle. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/\mbox{\hyperlink{fri_udp_connection_8h}{fri\+Udp\+Connection.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/connection/\mbox{\hyperlink{fri_udp_connection_8cpp}{fri\+Udp\+Connection.\+cpp}}\end{DoxyCompactItemize}

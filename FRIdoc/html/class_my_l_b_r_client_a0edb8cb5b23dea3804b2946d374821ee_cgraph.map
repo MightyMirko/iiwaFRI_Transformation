@@ -1,0 +1,8 @@
+<map id="MyLBRClient::monitor" name="MyLBRClient::monitor">
+<area shape="rect" id="node1" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="5,78,156,105"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client.html#a11c4e9df043726944c8b1da6b426934e" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="204,71,361,112"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client.html#aa6dcd610503f9c67153ffeb5d3fab203" title="Provide write access to the robot commands." alt="" coords="422,5,579,47"/>
+<area shape="rect" id="node4" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client.html#af99433aa6795f9b6764b0fb539188e6d" title="Provide read access to the current robot state." alt="" coords="422,71,579,112"/>
+<area shape="rect" id="node5" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command.html#af250c07674fc06147243c8ce481709f6" title="Set the joint positions for the current interpolation step." alt="" coords="409,136,592,177"/>
+<area shape="rect" id="node6" href="$pb__syshdr_8h.html#a39dc31816e18e5a0b48da2865a4b698c" title=" " alt="" coords="640,143,712,170"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::LBRState::getDigitalIOValue" name="KUKA::FRI::LBRState::getDigitalIOValue">
+<area shape="rect" id="node1" title="Get digital IO value." alt="" coords="5,5,160,47"/>
+<area shape="rect" id="node2" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#add3e7842c27fd6322b4b1e1db2babc40" title=" " alt="" coords="208,5,367,47"/>
+<area shape="rect" id="node3" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#a5bce1775434444edbcecce32b0a7d06f" title=" " alt="" coords="415,5,573,47"/>
+</map>

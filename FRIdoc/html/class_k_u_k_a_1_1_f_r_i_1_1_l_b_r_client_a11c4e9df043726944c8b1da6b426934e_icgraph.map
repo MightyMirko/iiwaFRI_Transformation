@@ -1,0 +1,4 @@
+<map id="KUKA::FRI::LBRClient::monitor" name="KUKA::FRI::LBRClient::monitor">
+<area shape="rect" id="node1" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="204,5,361,47"/>
+<area shape="rect" id="node2" href="$class_my_l_b_r_client.html#a0edb8cb5b23dea3804b2946d374821ee" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="5,13,156,39"/>
+</map>

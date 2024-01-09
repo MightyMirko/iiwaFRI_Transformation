@@ -1,0 +1,32 @@
+<map id="pb_readbyte" name="pb_readbyte">
+<area shape="rect" id="node1" title=" " alt="" coords="2459,263,2552,289"/>
+<area shape="rect" id="node2" href="$pb__decode_8c.html#a47bde3dca6b389ba0d58b1f0a7dad7c4" title=" " alt="" coords="2279,107,2403,133"/>
+<area shape="rect" id="node11" href="$pb__decode_8c.html#abef49f760a21798e59538eec4aea23c2" title=" " alt="" coords="2272,339,2411,365"/>
+<area shape="rect" id="node3" href="$pb__frimessages__callbacks_8c.html#a73c0b03ce19bcaebfb2c5956739c255c" title=" " alt="" coords="2088,157,2224,184"/>
+<area shape="rect" id="node7" href="$pb__decode_8c.html#ab49344bb28b526b19312a4af590f55d8" title=" " alt="" coords="2101,5,2211,32"/>
+<area shape="rect" id="node8" href="$pb__decode_8c.html#a2e8b9b6b511f76d740e68e25741927fa" title=" " alt="" coords="2105,56,2207,83"/>
+<area shape="rect" id="node9" href="$pb__decode_8c.html#ac65955bdfa42d9b5652c82121c7da00f" title=" " alt="" coords="2091,107,2221,133"/>
+<area shape="rect" id="node4" href="$pb__frimessages__callbacks_8c.html#a81a65250b51118ec352d28e397db9b6c" title=" " alt="" coords="1889,157,2008,184"/>
+<area shape="rect" id="node5" href="$class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder.html#a5f7d8c50c6b2275a90ee8053eeeeda0a" title=" " alt="" coords="1599,70,1809,111"/>
+<area shape="rect" id="node6" href="$class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder.html#a839c031de8bf792b17b612fc6ef91d05" title=" " alt="" coords="1309,70,1551,111"/>
+<area shape="rect" id="node10" href="$pb__decode_8c.html#a617bbe7dacb7abd3b7734598b83632b1" title=" " alt="" coords="1893,107,2004,133"/>
+<area shape="rect" id="node12" href="$pb__decode_8c.html#a15f2b12ed6c126fe4e54c7ae0b588cb3" title=" " alt="" coords="2105,364,2207,391"/>
+<area shape="rect" id="node13" href="$pb__decode_8c.html#ac5cddfbfd98fb7a18ce912e1ee6405d4" title=" " alt="" coords="2105,415,2207,441"/>
+<area shape="rect" id="node14" href="$pb__decode_8c.html#aefe6134d81ea2f861f0111984553b23b" title=" " alt="" coords="1117,465,1228,492"/>
+<area shape="rect" id="node22" href="$pb__decode_8c.html#a7433fc394255932c4f00274e7f890721" title=" " alt="" coords="1857,263,2040,289"/>
+<area shape="rect" id="node29" href="$pb__decode_8c.html#afa3e9c4da6d998fd6315d4cbd51b02e4" title=" " alt="" coords="2103,313,2209,340"/>
+<area shape="rect" id="node15" href="$pb__decode_8c.html#a0c0f95a964239344d503e724818e8fc0" title=" " alt="" coords="739,316,861,343"/>
+<area shape="rect" id="node16" href="$pb__decode_8c.html#adb01106a062444577e9e3f3a047db2ef" title=" " alt="" coords="379,249,525,276"/>
+<area shape="rect" id="node17" href="$pb__decode_8c.html#a75c9a727abe84bfaaef633ac68d48cfa" title=" " alt="" coords="605,187,691,213"/>
+<area shape="rect" id="node18" href="$class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder.html#aa72fb1e622847a636e6f5d7ac4770103" title=" " alt="" coords="347,183,557,225"/>
+<area shape="rect" id="node21" href="$pb__decode_8c.html#a7c030d7dee687e354a62a72d45dca39b" title=" " alt="" coords="380,132,524,159"/>
+<area shape="rect" id="node19" href="$class_k_u_k_a_1_1_f_r_i_1_1_client_application.html#a9939bfd1fa78c59dc3675a6d2a5de7a7" title="Run a single processing step." alt="" coords="104,183,299,225"/>
+<area shape="rect" id="node20" href="$_i_o_access_app_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,191,56,217"/>
+<area shape="rect" id="node23" href="$pb__decode_8c.html#a69a78d2efcd4b9057215ac8b79a5eb2b" title=" " alt="" coords="1629,364,1779,391"/>
+<area shape="rect" id="node27" href="$pb__decode_8c.html#af65dd063304df2ed380dc411bb6caae6" title=" " alt="" coords="1633,313,1775,340"/>
+<area shape="rect" id="node28" href="$pb__decode_8c.html#a02c14bf9763a469e0414bf9a1eb13632" title=" " alt="" coords="1637,263,1771,289"/>
+<area shape="rect" id="node24" href="$pb__decode_8c.html#a48151430d329252cc54fd9764dd820f7" title=" " alt="" coords="1383,313,1477,340"/>
+<area shape="rect" id="node25" href="$pb__decode_8c.html#a7c09905fda4c6398697bcf0d42882c04" title=" " alt="" coords="1084,275,1261,301"/>
+<area shape="rect" id="node26" href="$pb__decode_8c.html#a30eb2ecefe2a2095c1c668e3932b63fc" title=" " alt="" coords="909,275,1036,301"/>
+<area shape="rect" id="node30" href="$pb__decode_8c.html#ab5102942c8402c215f836364e1b775b1" title=" " alt="" coords="1899,364,1998,391"/>
+</map>

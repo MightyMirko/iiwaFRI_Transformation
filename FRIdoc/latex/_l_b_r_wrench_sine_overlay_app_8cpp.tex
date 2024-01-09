@@ -1,0 +1,90 @@
+\hypertarget{_l_b_r_wrench_sine_overlay_app_8cpp}{}\doxysection{build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+LBRWrench\+Sine\+Overlay/\+LBRWrench\+Sine\+Overlay\+App.cpp File Reference}
+\label{_l_b_r_wrench_sine_overlay_app_8cpp}\index{build/FRI-\/Client-\/SDK\_Cpp/example/LBRWrenchSineOverlay/LBRWrenchSineOverlayApp.cpp@{build/FRI-\/Client-\/SDK\_Cpp/example/LBRWrenchSineOverlay/LBRWrenchSineOverlayApp.cpp}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include \char`\"{}LBRWrench\+Sine\+Overlay\+Client.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fri\+Udp\+Connection.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fri\+Client\+Application.\+h\char`\"{}}\newline
+Include dependency graph for LBRWrench\+Sine\+Overlay\+App.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_b_r_wrench_sine_overlay_app_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_l_b_r_wrench_sine_overlay_app_8cpp_af7eb469a9f777dbd90a3d9efaa1602d5}{DEFAULT\+\_\+\+PORTID}}~30200
+\item 
+\#define \mbox{\hyperlink{_l_b_r_wrench_sine_overlay_app_8cpp_a052b63090cda80236391c5fc0c1fe30c}{DEFAULT\+\_\+\+FREQUENCY}}~0.\+25
+\item 
+\#define \mbox{\hyperlink{_l_b_r_wrench_sine_overlay_app_8cpp_a61ba769a36240c77ddd555c4ac20c8ac}{DEFAULT\+\_\+\+AMPLITUDE}}~5.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_l_b_r_wrench_sine_overlay_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The following license terms and conditions apply, unless a redistribution agreement or other license is obtained by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH, Augsburg, Germany.
+
+SCOPE
+
+The software “\+KUKA Sunrise.\+Connectivity FRI Client SDK” is targeted to work in conjunction with the “\+KUKA Sunrise.\+Connectivity Fast\+Robot\+Interface” toolkit. In the following, the term “software” refers to all material directly belonging to the provided SDK “\+Software development kit”, particularly source code, libraries, binaries, manuals and technical documentation.
+
+COPYRIGHT
+
+All Rights Reserved Copyright (C) 2014-\/2020 \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH Augsburg, Germany
+
+LICENSE
+
+Redistribution and use of the software in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+: a) The software is used in conjunction with \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} products only. b) Redistributions of source code must retain the above copyright notice, this list of conditions and the disclaimer. c) Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the disclaimer in the documentation and/or other materials provided with the distribution. Altered source code of the redistribution must be made available upon request with the distribution. d) Modification and contributions to the original software provided by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} must be clearly marked and the authorship must be stated. e) Neither the name of \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} nor the trademarks owned by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} may be used to endorse or promote products derived from this software without specific prior written permission.
+
+DISCLAIMER OF WARRANTY
+
+The Software is provided \char`\"{}\+AS IS\char`\"{} and \char`\"{}\+WITH ALL FAULTS,\char`\"{} without warranty of any kind, including without limitation the warranties of merchantability, fitness for a particular purpose and non-\/infringement. \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} makes no warranty that the Software is free of defects or is suitable for any particular purpose. In no event shall \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} be responsible for loss or damages arising from the installation or use of the Software, including but not limited to any indirect, punitive, special, incidental or consequential damages of any character including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. The entire risk to the quality and performance of the Software is not borne by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}}. Should the Software prove defective, \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} is not liable for the entire cost of any service and repair.
+
+\begin{DoxyVersion}{Version}
+\{1.\+17\} 
+\end{DoxyVersion}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_l_b_r_wrench_sine_overlay_app_8cpp_a61ba769a36240c77ddd555c4ac20c8ac}\label{_l_b_r_wrench_sine_overlay_app_8cpp_a61ba769a36240c77ddd555c4ac20c8ac}} 
+\index{LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}!DEFAULT\_AMPLITUDE@{DEFAULT\_AMPLITUDE}}
+\index{DEFAULT\_AMPLITUDE@{DEFAULT\_AMPLITUDE}!LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_AMPLITUDE}{DEFAULT\_AMPLITUDE}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+AMPLITUDE~5.\+0}
+
+\mbox{\Hypertarget{_l_b_r_wrench_sine_overlay_app_8cpp_a052b63090cda80236391c5fc0c1fe30c}\label{_l_b_r_wrench_sine_overlay_app_8cpp_a052b63090cda80236391c5fc0c1fe30c}} 
+\index{LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}!DEFAULT\_FREQUENCY@{DEFAULT\_FREQUENCY}}
+\index{DEFAULT\_FREQUENCY@{DEFAULT\_FREQUENCY}!LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_FREQUENCY}{DEFAULT\_FREQUENCY}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+FREQUENCY~0.\+25}
+
+\mbox{\Hypertarget{_l_b_r_wrench_sine_overlay_app_8cpp_af7eb469a9f777dbd90a3d9efaa1602d5}\label{_l_b_r_wrench_sine_overlay_app_8cpp_af7eb469a9f777dbd90a3d9efaa1602d5}} 
+\index{LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}!DEFAULT\_PORTID@{DEFAULT\_PORTID}}
+\index{DEFAULT\_PORTID@{DEFAULT\_PORTID}!LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PORTID}{DEFAULT\_PORTID}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+PORTID~30200}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_l_b_r_wrench_sine_overlay_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{_l_b_r_wrench_sine_overlay_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}!main@{main}}
+\index{main@{main}!LBRWrenchSineOverlayApp.cpp@{LBRWrenchSineOverlayApp.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_b_r_wrench_sine_overlay_app_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

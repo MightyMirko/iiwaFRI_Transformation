@@ -1,0 +1,9 @@
+<map id="KUKA::FRI::ClientData::getDigitalIOValue" name="KUKA::FRI::ClientData::getDigitalIOValue">
+<area shape="rect" id="node1" title=" " alt="" coords="741,82,900,123"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state.html#a6b1d593daf83e832a407e6088d3df152" title="Get digital IO value." alt="" coords="524,49,679,90"/>
+<area shape="rect" id="node7" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#aed32a3e6179a4a9652f26d1027996640" title="Get digital IO value." alt="" coords="509,114,693,155"/>
+<area shape="rect" id="node3" href="$class_i_o_access_client.html#a01d1b4f46c4b43527106ccfae8440255" title=" " alt="" coords="279,49,461,90"/>
+<area shape="rect" id="node4" href="$class_i_o_access_client.html#ae855d596323dfa86d9d089203092ec04" title="Callback for the FRI session state &#39;Commanding&#39;." alt="" coords="29,5,207,32"/>
+<area shape="rect" id="node5" href="$class_i_o_access_client.html#adbfc68a5d43cc546ba6e31b61c3528b4" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="35,56,201,83"/>
+<area shape="rect" id="node6" href="$class_i_o_access_client.html#ace9215030d5cdb787ad8f200ba073e8c" title="Callback for the FRI session state &#39;Commanding Wait&#39;." alt="" coords="5,107,231,133"/>
+</map>

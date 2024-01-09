@@ -1,0 +1,4 @@
+<map id="KUKA::FRI::TransformationClient::setTransformation" name="KUKA::FRI::TransformationClient::setTransformation">
+<area shape="rect" id="node1" title="Provides a requested transformation matrix." alt="" coords="268,5,452,47"/>
+<area shape="rect" id="node2" href="$class_simulated_transformation_provider_client.html#ad7c1847511910657aa8f95573777697d" title="Callback which is called whenever a new FRI message arrives." alt="" coords="5,5,220,47"/>
+</map>

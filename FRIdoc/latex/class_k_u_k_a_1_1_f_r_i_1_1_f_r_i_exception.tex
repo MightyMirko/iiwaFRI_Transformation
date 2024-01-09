@@ -1,0 +1,132 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{}\doxysection{KUKA\+::FRI\+::FRIException Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}\index{KUKA::FRI::FRIException@{KUKA::FRI::FRIException}}
+
+
+Standard exception for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} Client.  
+
+
+
+
+{\ttfamily \#include $<$fri\+Exception.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a1c0e219d5964861d2efa88987a950905}{FRIException}} (const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_ad3eee4bcb27d67cb0c18b9b48dcf505d}{FRIException}} (const char $\ast$message, const char $\ast$param1)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a90978f27dc445b7edec8cbc72eb6f258}{FRIException}} (const char $\ast$message, const char $\ast$param1, const char $\ast$param2)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} Constructor. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a0bfc541535a17452d435d65cae6ae018}{get\+Error\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Get error string. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_ac4ef7c05f6b894e45e6753191b3b9fc9}{$\sim$\+FRIException}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_aa547027db8eb8349c2a4370aaf32051b}{\+\_\+buffer}} \mbox{[}1024\mbox{]} = \{ 0 \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Standard exception for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} Client. 
+
+\begin{DoxyNote}{Note}
+For realtime considerations the internal message buffer is static. So don\textquotesingle{}t use this exception in more than one thread per process. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a1c0e219d5964861d2efa88987a950905}\label{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a1c0e219d5964861d2efa88987a950905}} 
+\index{KUKA::FRI::FRIException@{KUKA::FRI::FRIException}!FRIException@{FRIException}}
+\index{FRIException@{FRIException}!KUKA::FRI::FRIException@{KUKA::FRI::FRIException}}
+\doxysubsubsection{\texorpdfstring{FRIException()}{FRIException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily KUKA\+::\+FRI\+::\+FRIException\+::\+FRIException (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Error message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_ad3eee4bcb27d67cb0c18b9b48dcf505d}\label{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_ad3eee4bcb27d67cb0c18b9b48dcf505d}} 
+\index{KUKA::FRI::FRIException@{KUKA::FRI::FRIException}!FRIException@{FRIException}}
+\index{FRIException@{FRIException}!KUKA::FRI::FRIException@{KUKA::FRI::FRIException}}
+\doxysubsubsection{\texorpdfstring{FRIException()}{FRIException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily KUKA\+::\+FRI\+::\+FRIException\+::\+FRIException (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message,  }\item[{const char $\ast$}]{param1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Error message which may contain one \char`\"{}\%s\char`\"{} parameter \\
+\hline
+{\em param1} & First format parameter for parameter message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a90978f27dc445b7edec8cbc72eb6f258}\label{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a90978f27dc445b7edec8cbc72eb6f258}} 
+\index{KUKA::FRI::FRIException@{KUKA::FRI::FRIException}!FRIException@{FRIException}}
+\index{FRIException@{FRIException}!KUKA::FRI::FRIException@{KUKA::FRI::FRIException}}
+\doxysubsubsection{\texorpdfstring{FRIException()}{FRIException()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily KUKA\+::\+FRI\+::\+FRIException\+::\+FRIException (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message,  }\item[{const char $\ast$}]{param1,  }\item[{const char $\ast$}]{param2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Error message which may contain two \char`\"{}\%s\char`\"{} parameter \\
+\hline
+{\em param1} & First format parameter for parameter message. \\
+\hline
+{\em param2} & Second format parameter for parameter message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_ac4ef7c05f6b894e45e6753191b3b9fc9}\label{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_ac4ef7c05f6b894e45e6753191b3b9fc9}} 
+\index{KUKA::FRI::FRIException@{KUKA::FRI::FRIException}!````~FRIException@{$\sim$FRIException}}
+\index{````~FRIException@{$\sim$FRIException}!KUKA::FRI::FRIException@{KUKA::FRI::FRIException}}
+\doxysubsubsection{\texorpdfstring{$\sim$FRIException()}{~FRIException()}}
+{\footnotesize\ttfamily virtual KUKA\+::\+FRI\+::\+FRIException\+::$\sim$\+FRIException (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a0bfc541535a17452d435d65cae6ae018}\label{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_a0bfc541535a17452d435d65cae6ae018}} 
+\index{KUKA::FRI::FRIException@{KUKA::FRI::FRIException}!getErrorMessage@{getErrorMessage}}
+\index{getErrorMessage@{getErrorMessage}!KUKA::FRI::FRIException@{KUKA::FRI::FRIException}}
+\doxysubsubsection{\texorpdfstring{getErrorMessage()}{getErrorMessage()}}
+{\footnotesize\ttfamily const char$\ast$ KUKA\+::\+FRI\+::\+FRIException\+::get\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get error string. 
+
+\begin{DoxyReturn}{Returns}
+Error message stored in the exception. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_aa547027db8eb8349c2a4370aaf32051b}\label{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception_aa547027db8eb8349c2a4370aaf32051b}} 
+\index{KUKA::FRI::FRIException@{KUKA::FRI::FRIException}!\_buffer@{\_buffer}}
+\index{\_buffer@{\_buffer}!KUKA::FRI::FRIException@{KUKA::FRI::FRIException}}
+\doxysubsubsection{\texorpdfstring{\_buffer}{\_buffer}}
+{\footnotesize\ttfamily char FRIException\+::\+\_\+buffer = \{ 0 \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/\mbox{\hyperlink{fri_exception_8h}{fri\+Exception.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/client\+\_\+lbr/\mbox{\hyperlink{fri_l_b_r_client_8cpp}{fri\+LBRClient.\+cpp}}\end{DoxyCompactItemize}

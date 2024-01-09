@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::TransformationClient::getTimestampSec" name="KUKA::FRI::TransformationClient::getTimestampSec">
+<area shape="rect" id="node1" title="Get the timestamp of the current received FRI monitor message in Unix time." alt="" coords="531,5,715,47"/>
+<area shape="rect" id="node2" href="$class_simulated_transformation_provider_client.html#a9ffecdf8c7c5eca163cecbbbfd1db80f" title=" " alt="" coords="268,5,483,47"/>
+<area shape="rect" id="node3" href="$class_simulated_transformation_provider_client.html#ad7c1847511910657aa8f95573777697d" title="Callback which is called whenever a new FRI message arrives." alt="" coords="5,5,220,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="KUKA::FRI::LBRClient::waitForCommand" name="KUKA::FRI::LBRClient::waitForCommand">
+<area shape="rect" id="node1" title="Callback for the FRI session state &#39;Commanding Wait&#39;." alt="" coords="264,5,421,47"/>
+<area shape="rect" id="node2" href="$class_my_l_b_r_client.html#a32e8d5369604b74411c6c580b626e47c" title="Callback for the FRI session state &#39;Commanding Wait&#39;." alt="" coords="5,13,216,39"/>
+</map>

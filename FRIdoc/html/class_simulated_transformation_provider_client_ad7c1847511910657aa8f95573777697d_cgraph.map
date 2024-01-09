@@ -1,0 +1,9 @@
+<map id="SimulatedTransformationProviderClient::provide" name="SimulatedTransformationProviderClient::provide">
+<area shape="rect" id="node1" title="Callback which is called whenever a new FRI message arrives." alt="" coords="5,71,220,112"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#a4ba58c36a68750baf89c705f42239d78" title="Returns a vector of identifiers of all requested transformation matrices." alt="" coords="268,5,521,47"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#a57bf908a411b019bc97cfa3c671387ae" title="Provides a requested transformation matrix." alt="" coords="303,71,487,112"/>
+<area shape="rect" id="node5" href="$class_simulated_transformation_provider_client.html#a9ffecdf8c7c5eca163cecbbbfd1db80f" title=" " alt="" coords="287,136,502,177"/>
+<area shape="rect" id="node4" href="$pb__syshdr_8h.html#a39dc31816e18e5a0b48da2865a4b698c" title=" " alt="" coords="634,79,706,106"/>
+<area shape="rect" id="node6" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#a1a068f1dae75a8478a1e63a3ffd2a0f2" title="Get the nanoseconds elapsed since the last second (in Unix time)." alt="" coords="569,133,771,175"/>
+<area shape="rect" id="node7" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#a98bd724fa7d308ceeb488881b986f2a0" title="Get the timestamp of the current received FRI monitor message in Unix time." alt="" coords="578,199,762,240"/>
+</map>

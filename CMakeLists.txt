@@ -190,6 +190,19 @@ if (BUILD_FRI_APPS)
     build_fri_example(TransformationProvider)
 endif (BUILD_FRI_APPS)
 
+find_package(Doxygen
+             REQUIRED dot
+             OPTIONAL_COMPONENTS mscgen dia)
+if (DOXYGEN_FOUND)
+    message(STATUS "Configuring KUKA SDK  DOXYGENBinary ${PROJECT_SOURCE_DIR}")
+    doxygen_add_docs(KUKA_FRI_doxy
+                     CONFIG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/KUKA_FRI.doxyfile
+                     COMMENT "Generating API documentation with Doxygen"
+                     )
+else ()
+    message(WARNING "Doxygen not found, documentation will not be generated.")
+endif ()
+
 
 ################
 # build masters

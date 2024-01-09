@@ -1,0 +1,96 @@
+\hypertarget{fri_client_if_8h}{}\doxysection{build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/fri\+Client\+If.h File Reference}
+\label{fri_client_if_8h}\index{build/FRI-\/Client-\/SDK\_Cpp/include/friClientIf.h@{build/FRI-\/Client-\/SDK\_Cpp/include/friClientIf.h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fri_client_if_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{KUKA\+::\+FRI\+::\+IClient}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}}
+\item 
+ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{KUKA\+::\+FRI}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}} \{ \newline
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08fa57ed533948cacb643ae88736fa1b4319}{KUKA\+::\+FRI\+::\+IDLE}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08faf9199fcb7892eadd28a8ed61140b3310}{KUKA\+::\+FRI\+::\+MONITORING\+\_\+\+WAIT}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08fa46ef3112aeb80b777394e506862483c0}{KUKA\+::\+FRI\+::\+MONITORING\+\_\+\+READY}} = 2
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08fa9bbb70f72ee2c749eca925c335f70b7d}{KUKA\+::\+FRI\+::\+COMMANDING\+\_\+\+WAIT}} = 3
+, \newline
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08faa44d1b96add69627ca6d54f03b97ae54}{KUKA\+::\+FRI\+::\+COMMANDING\+\_\+\+ACTIVE}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the FRI session state. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a69339e6f4f8c91bfab09cd7c0709b27d}{KUKA\+::\+FRI\+::\+EConnection\+Quality}} \{ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a69339e6f4f8c91bfab09cd7c0709b27da809269e842e75fcf46c376fbe9f2e722}{KUKA\+::\+FRI\+::\+POOR}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a69339e6f4f8c91bfab09cd7c0709b27dae0eb5e34e7e5f470616367f607b664a2}{KUKA\+::\+FRI\+::\+FAIR}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a69339e6f4f8c91bfab09cd7c0709b27da69b83de675168d4f4c2c83504cf027cd}{KUKA\+::\+FRI\+::\+GOOD}} = 2
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a69339e6f4f8c91bfab09cd7c0709b27da93cadbdd82ef1419662b21d4069af724}{KUKA\+::\+FRI\+::\+EXCELLENT}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the FRI connection quality. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a6309263e641f5a4b88a0bf6262d95948}{KUKA\+::\+FRI\+::\+ESafety\+State}} \{ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a6309263e641f5a4b88a0bf6262d95948a0d5ad68fe5bbf349a01105888d703fb6}{KUKA\+::\+FRI\+::\+NORMAL\+\_\+\+OPERATION}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a6309263e641f5a4b88a0bf6262d95948a8346e7539bf185022b8143999d6339ab}{KUKA\+::\+FRI\+::\+SAFETY\+\_\+\+STOP\+\_\+\+LEVEL\+\_\+0}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a6309263e641f5a4b88a0bf6262d95948ab87c48c2b438a6f2c6e6e4ba88acef1d}{KUKA\+::\+FRI\+::\+SAFETY\+\_\+\+STOP\+\_\+\+LEVEL\+\_\+1}} = 2
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a6309263e641f5a4b88a0bf6262d95948a838cc3aeaa2c42ed94316c5b10e8ce82}{KUKA\+::\+FRI\+::\+SAFETY\+\_\+\+STOP\+\_\+\+LEVEL\+\_\+2}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the controller\textquotesingle{}s safety state. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a09e0df19e311b9452454f17e5af04241}{KUKA\+::\+FRI\+::\+EOperation\+Mode}} \{ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a09e0df19e311b9452454f17e5af04241ac12f3b4fdcad958a3f7f30dd2141c6ea}{KUKA\+::\+FRI\+::\+TEST\+\_\+\+MODE\+\_\+1}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a09e0df19e311b9452454f17e5af04241adfae870e2e5bc851517b19de9da7582d}{KUKA\+::\+FRI\+::\+TEST\+\_\+\+MODE\+\_\+2}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a09e0df19e311b9452454f17e5af04241a1903617bff7f19161a180bc3566cc276}{KUKA\+::\+FRI\+::\+AUTOMATIC\+\_\+\+MODE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the controller\textquotesingle{}s current mode of operation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a9364d8c73f13b608fe2f844ddb53e817}{KUKA\+::\+FRI\+::\+EDrive\+State}} \{ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a9364d8c73f13b608fe2f844ddb53e817abab99a4455a47691230d85722c22b5d7}{KUKA\+::\+FRI\+::\+OFF}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a9364d8c73f13b608fe2f844ddb53e817afb0d44d0ef54fbf87eb520571dda049f}{KUKA\+::\+FRI\+::\+TRANSITIONING}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a9364d8c73f13b608fe2f844ddb53e817ab7da0f4590b299202b6853be8b9e40db}{KUKA\+::\+FRI\+::\+ACTIVE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of a drive\textquotesingle{}s state. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a555a9311ac6b5049e3dbed980c7e7ccd}{KUKA\+::\+FRI\+::\+EControl\+Mode}} \{ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a555a9311ac6b5049e3dbed980c7e7ccda7077ffb947a93a5e38ed6ab8778cadc8}{KUKA\+::\+FRI\+::\+POSITION\+\_\+\+CONTROL\+\_\+\+MODE}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a555a9311ac6b5049e3dbed980c7e7ccdaf2aaa2980e4cdc1735f1263fd2590ce1}{KUKA\+::\+FRI\+::\+CART\+\_\+\+IMP\+\_\+\+CONTROL\+\_\+\+MODE}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a555a9311ac6b5049e3dbed980c7e7ccdace4e322b2a34d7e0bf2587683a3eb5b3}{KUKA\+::\+FRI\+::\+JOINT\+\_\+\+IMP\+\_\+\+CONTROL\+\_\+\+MODE}} = 2
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a555a9311ac6b5049e3dbed980c7e7ccdac0fa32648a6af71f73392cfe41e72fb3}{KUKA\+::\+FRI\+::\+NO\+\_\+\+CONTROL}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of control mode. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab37cbee97834c90615415394721b3f67}{KUKA\+::\+FRI\+::\+EClient\+Command\+Mode}} \{ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab37cbee97834c90615415394721b3f67a92d85c73a9dbb92fb3df7e6f680c8a6d}{KUKA\+::\+FRI\+::\+NO\+\_\+\+COMMAND\+\_\+\+MODE}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab37cbee97834c90615415394721b3f67aae87bd93213c82548d7deca5d20591de}{KUKA\+::\+FRI\+::\+POSITION}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab37cbee97834c90615415394721b3f67a13272e59a287756395b2b1df465e219a}{KUKA\+::\+FRI\+::\+WRENCH}} = 2
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab37cbee97834c90615415394721b3f67a450c3899ca199bf4a64564bce828f40e}{KUKA\+::\+FRI\+::\+TORQUE}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the client command mode. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab83788fc82c286ece5952fa66fe6c317}{KUKA\+::\+FRI\+::\+EOverlay\+Type}} \{ \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab83788fc82c286ece5952fa66fe6c317a4603f76a445cd9c54ad2b6159c0e517d}{KUKA\+::\+FRI\+::\+NO\+\_\+\+OVERLAY}} = 0
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab83788fc82c286ece5952fa66fe6c317aa63646ba27da6aaf66c2f4a58e0d74e4}{KUKA\+::\+FRI\+::\+JOINT}} = 1
+, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab83788fc82c286ece5952fa66fe6c317add790c125bb0a175a46390d8f0bd2d9f}{KUKA\+::\+FRI\+::\+CARTESIAN}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the overlay type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The following license terms and conditions apply, unless a redistribution agreement or other license is obtained by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH, Augsburg, Germany.
+
+SCOPE
+
+The software “\+KUKA Sunrise.\+Connectivity FRI Client SDK” is targeted to work in conjunction with the “\+KUKA Sunrise.\+Connectivity Fast\+Robot\+Interface” toolkit. In the following, the term “software” refers to all material directly belonging to the provided SDK “\+Software development kit”, particularly source code, libraries, binaries, manuals and technical documentation.
+
+COPYRIGHT
+
+All Rights Reserved Copyright (C) 2014-\/2020 \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH Augsburg, Germany
+
+LICENSE
+
+Redistribution and use of the software in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+: a) The software is used in conjunction with \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} products only. b) Redistributions of source code must retain the above copyright notice, this list of conditions and the disclaimer. c) Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the disclaimer in the documentation and/or other materials provided with the distribution. Altered source code of the redistribution must be made available upon request with the distribution. d) Modification and contributions to the original software provided by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} must be clearly marked and the authorship must be stated. e) Neither the name of \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} nor the trademarks owned by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} may be used to endorse or promote products derived from this software without specific prior written permission.
+
+DISCLAIMER OF WARRANTY
+
+The Software is provided \char`\"{}\+AS IS\char`\"{} and \char`\"{}\+WITH ALL FAULTS,\char`\"{} without warranty of any kind, including without limitation the warranties of merchantability, fitness for a particular purpose and non-\/infringement. \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} makes no warranty that the Software is free of defects or is suitable for any particular purpose. In no event shall \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} be responsible for loss or damages arising from the installation or use of the Software, including but not limited to any indirect, punitive, special, incidental or consequential damages of any character including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. The entire risk to the quality and performance of the Software is not borne by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}}. Should the Software prove defective, \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} is not liable for the entire cost of any service and repair.
+
+\begin{DoxyVersion}{Version}
+\{1.\+17\} 
+\end{DoxyVersion}

@@ -96,9 +96,9 @@ $(document).ready(function(){initNavTree('mastersclient_8h_source.html',''); ini
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;gnuplot-iostream.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="plot_master_8h.html">plotMaster.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="plot_master_8h.html">plotMaster.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="mastersclient_8h.html#a2dc5e0dfc0b28d8786267430ef7c1b51">   18</a></span>&#160;<span class="preprocessor">#define ROUND_AFTER_COMMA 1e7</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('mastersclient_8h_source.html',''); ini
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classmastersclient.html#a89506b77db2b152462ad0e0536fb4548">   61</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classmastersclient.html#a89506b77db2b152462ad0e0536fb4548">doPlot</a> = <span class="keyword">false</span>; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classmastersclient.html#a5df102361844c9264550a5113df7cb15">   63</a></span>&#160;    <span class="keyword">static</span> std::mutex <a class="code" href="classmastersclient.html#aa461465e0863885d6fd11b391ede3f71">historyMutex</a>,<a class="code" href="classmastersclient.html#a5df102361844c9264550a5113df7cb15">calculationMutex</a>,<a class="code" href="classmastersclient.html#ac8f999fdaf5e66d05c271429b3adeb5b">multiSidedJointVelMutex</a>,</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classmastersclient.html#a5df102361844c9264550a5113df7cb15">   63</a></span>&#160;    <span class="keyword">static</span> std::mutex <a class="code" href="classmastersclient.html#aa461465e0863885d6fd11b391ede3f71">historyMutex</a>, <a class="code" href="classmastersclient.html#a5df102361844c9264550a5113df7cb15">calculationMutex</a>,<a class="code" href="classmastersclient.html#ac8f999fdaf5e66d05c271429b3adeb5b">multiSidedJointVelMutex</a>,</div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classmastersclient.html#a7752acdef04b94011d9d6c3787a1ba72">   64</a></span>&#160;            <a class="code" href="classmastersclient.html#a7752acdef04b94011d9d6c3787a1ba72">oneSidedJointVelMutex</a>; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classmastersclient.html#ab9df8f0b418d2abad574a37afce5e8e8">   66</a></span>&#160;    <a class="code" href="classrobot_model.html">robotModel</a> *<a class="code" href="classmastersclient.html#ab9df8f0b418d2abad574a37afce5e8e8">robotmdl</a>; </div>
@@ -210,7 +210,7 @@ $(document).ready(function(){initNavTree('mastersclient_8h_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="mastersclient_8h.html">mastersclient.h</a></li>
-    <li class="footer">Generated on Mon Jan 8 2024 22:23:02 for Mirko Matošin 2024 Masterthesis by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Jan 9 2024 05:00:00 for Mirko Matošin 2024 Masterthesis by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

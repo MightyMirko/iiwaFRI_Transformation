@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::LBRCommand::setTorque" name="KUKA::FRI::LBRCommand::setTorque">
+<area shape="rect" id="node1" title="Set the applied joint torques for the current interpolation step." alt="" coords="245,39,428,80"/>
+<area shape="rect" id="node2" href="$class_l_b_r_torque_sine_overlay_client.html#ac6be1b28bf0fbb6d4ef82b45e7cb28f4" title="Callback for the FRI state &#39;Commanding Active&#39;." alt="" coords="5,5,197,47"/>
+<area shape="rect" id="node3" href="$class_l_b_r_torque_sine_overlay_client.html#a8d34866a1ee8c864ee1c1abeccb5028b" title="Callback for the FRI session state &#39;Commanding Wait&#39;." alt="" coords="5,71,197,112"/>
+</map>

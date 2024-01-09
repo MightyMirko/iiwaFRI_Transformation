@@ -1,0 +1,308 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command}{}\doxysection{KUKA\+::FRI\+::LBRCommand Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command}\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+
+
+Wrapper class for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message for a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR (leightweight) robot.  
+
+
+
+
+{\ttfamily \#include $<$fri\+LBRCommand.\+h$>$}
+
+
+
+Collaboration diagram for KUKA\+::FRI\+::LBRCommand\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_af250c07674fc06147243c8ce481709f6}{set\+Joint\+Position}} (const double $\ast$values)
+\begin{DoxyCompactList}\small\item\em Set the joint positions for the current interpolation step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a12381f33c4cb6e03956833b0b5abd669}{set\+Wrench}} (const double $\ast$wrench)
+\begin{DoxyCompactList}\small\item\em Set the applied wrench vector of the current interpolation step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a187acae4fba3bb182ff32106cbef969f}{set\+Torque}} (const double $\ast$torques)
+\begin{DoxyCompactList}\small\item\em Set the applied joint torques for the current interpolation step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_acf4aacbc5a1667df9e6288619870f3a1}{set\+Boolean\+IOValue}} (const char $\ast$name, const \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} value)
+\begin{DoxyCompactList}\small\item\em Set boolean output value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ab6f840a8c126235a5eec3ab0299f18aa}{set\+Digital\+IOValue}} (const char $\ast$name, const unsigned long long value)
+\begin{DoxyCompactList}\small\item\em Set digital output value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac62fc6a59a5cc24fcacda4b22a2ff2de}{set\+Analog\+IOValue}} (const char $\ast$name, const double value)
+\begin{DoxyCompactList}\small\item\em Set analog output value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fri_l_b_r_command_8h_ad8122e0a2266933fdcb3f5ff9ef10487}{FRICommand\+Message}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a99d88169de69e13ad0b20ee49a4c3520}{\+\_\+cmd\+Message}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message (protobuf struct) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac26ee26d6163d1bfb5b63f0ce41a4b97}{\+\_\+mon\+Message}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message (protobuf struct) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a1b58c82134fb77380c7e8e0b4d31673f}{LBRCOMMANDMESSAGEID}} = 0x34001
+\begin{DoxyCompactList}\small\item\em type identifier for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message corresponding to a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac6a886bf0f241f29fa732e8b9aeb5591}{LBRClient}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper class for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message for a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR (leightweight) robot. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac62fc6a59a5cc24fcacda4b22a2ff2de}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac62fc6a59a5cc24fcacda4b22a2ff2de}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!setAnalogIOValue@{setAnalogIOValue}}
+\index{setAnalogIOValue@{setAnalogIOValue}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{setAnalogIOValue()}{setAnalogIOValue()}}
+{\footnotesize\ttfamily void LBRCommand\+::set\+Analog\+IOValue (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const double}]{value }\end{DoxyParamCaption})}
+
+
+
+Set analog output value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & Throws a \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if more outputs are set than can be registered. \\
+\hline
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & May throw an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if the IO is of wrong type, unknown or not an output. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Full name of the IO (Syntax \char`\"{}\+IOGroup\+Name.\+IOName\char`\"{}). \\
+\hline
+{\em value} & Analog value to set. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac62fc6a59a5cc24fcacda4b22a2ff2de_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac62fc6a59a5cc24fcacda4b22a2ff2de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_acf4aacbc5a1667df9e6288619870f3a1}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_acf4aacbc5a1667df9e6288619870f3a1}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!setBooleanIOValue@{setBooleanIOValue}}
+\index{setBooleanIOValue@{setBooleanIOValue}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{setBooleanIOValue()}{setBooleanIOValue()}}
+{\footnotesize\ttfamily void LBRCommand\+::set\+Boolean\+IOValue (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Set boolean output value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & Throws a \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if more outputs are set than can be registered. \\
+\hline
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & May throw an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if the IO is of wrong type, unknown or not an output. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Full name of the IO (Syntax \char`\"{}\+IOGroup\+Name.\+IOName\char`\"{}). \\
+\hline
+{\em value} & Boolean value to set. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_acf4aacbc5a1667df9e6288619870f3a1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ab6f840a8c126235a5eec3ab0299f18aa}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ab6f840a8c126235a5eec3ab0299f18aa}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!setDigitalIOValue@{setDigitalIOValue}}
+\index{setDigitalIOValue@{setDigitalIOValue}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{setDigitalIOValue()}{setDigitalIOValue()}}
+{\footnotesize\ttfamily void LBRCommand\+::set\+Digital\+IOValue (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const unsigned long long}]{value }\end{DoxyParamCaption})}
+
+
+
+Set digital output value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & Throws a \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if more outputs are set than can be registered. \\
+\hline
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & May throw an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if the IO is of wrong type, unknown or not an output. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Full name of the IO (Syntax \char`\"{}\+IOGroup\+Name.\+IOName\char`\"{}). \\
+\hline
+{\em value} & Digital value to set. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ab6f840a8c126235a5eec3ab0299f18aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ab6f840a8c126235a5eec3ab0299f18aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_af250c07674fc06147243c8ce481709f6}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_af250c07674fc06147243c8ce481709f6}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!setJointPosition@{setJointPosition}}
+\index{setJointPosition@{setJointPosition}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{setJointPosition()}{setJointPosition()}}
+{\footnotesize\ttfamily void LBRCommand\+::set\+Joint\+Position (\begin{DoxyParamCaption}\item[{const double $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Set the joint positions for the current interpolation step. 
+
+This method is only effective when the client is in a commanding state. 
+\begin{DoxyParams}{Parameters}
+{\em values} & Array with the new joint positions (in rad) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_af250c07674fc06147243c8ce481709f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_af250c07674fc06147243c8ce481709f6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a187acae4fba3bb182ff32106cbef969f}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a187acae4fba3bb182ff32106cbef969f}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!setTorque@{setTorque}}
+\index{setTorque@{setTorque}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{setTorque()}{setTorque()}}
+{\footnotesize\ttfamily void LBRCommand\+::set\+Torque (\begin{DoxyParamCaption}\item[{const double $\ast$}]{torques }\end{DoxyParamCaption})}
+
+
+
+Set the applied joint torques for the current interpolation step. 
+
+This method is only effective when the client is in a commanding state. The Control\+Mode of the robot has to be joint impedance control mode. The Client Command Mode has to be torque.
+
+
+\begin{DoxyParams}{Parameters}
+{\em torques} & Array with the applied torque values (in Nm) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a187acae4fba3bb182ff32106cbef969f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a187acae4fba3bb182ff32106cbef969f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a12381f33c4cb6e03956833b0b5abd669}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a12381f33c4cb6e03956833b0b5abd669}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!setWrench@{setWrench}}
+\index{setWrench@{setWrench}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{setWrench()}{setWrench()}}
+{\footnotesize\ttfamily void LBRCommand\+::set\+Wrench (\begin{DoxyParamCaption}\item[{const double $\ast$}]{wrench }\end{DoxyParamCaption})}
+
+
+
+Set the applied wrench vector of the current interpolation step. 
+
+The wrench vector consists of\+: \mbox{[}F\+\_\+x, F\+\_\+y, F\+\_\+z, tau\+\_\+A, tau\+\_\+B, tau\+\_\+C\mbox{]}
+
+F ... forces (in N) applied along the Cartesian axes of the currently used motion center. tau ... torques (in Nm) applied along the orientation angles (Euler angles A, B, C) of the currently used motion center.
+
+This method is only effective when the client is in a commanding state. The Control\+Mode of the robot has to be Cartesian impedance control mode. The Client Command Mode has to be wrench.
+
+
+\begin{DoxyParams}{Parameters}
+{\em wrench} & Applied Cartesian wrench vector. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a12381f33c4cb6e03956833b0b5abd669_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a12381f33c4cb6e03956833b0b5abd669_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac6a886bf0f241f29fa732e8b9aeb5591}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac6a886bf0f241f29fa732e8b9aeb5591}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!LBRClient@{LBRClient}}
+\index{LBRClient@{LBRClient}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{LBRClient}{LBRClient}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client}{LBRClient}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a99d88169de69e13ad0b20ee49a4c3520}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a99d88169de69e13ad0b20ee49a4c3520}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!\_cmdMessage@{\_cmdMessage}}
+\index{\_cmdMessage@{\_cmdMessage}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{\_cmdMessage}{\_cmdMessage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{fri_l_b_r_command_8h_ad8122e0a2266933fdcb3f5ff9ef10487}{FRICommand\+Message}}$\ast$ KUKA\+::\+FRI\+::\+LBRCommand\+::\+\_\+cmd\+Message\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message (protobuf struct) 
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac26ee26d6163d1bfb5b63f0ce41a4b97}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_ac26ee26d6163d1bfb5b63f0ce41a4b97}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!\_monMessage@{\_monMessage}}
+\index{\_monMessage@{\_monMessage}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{\_monMessage}{\_monMessage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}}$\ast$ KUKA\+::\+FRI\+::\+LBRCommand\+::\+\_\+mon\+Message\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message (protobuf struct) 
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a1b58c82134fb77380c7e8e0b4d31673f}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command_a1b58c82134fb77380c7e8e0b4d31673f}} 
+\index{KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}!LBRCOMMANDMESSAGEID@{LBRCOMMANDMESSAGEID}}
+\index{LBRCOMMANDMESSAGEID@{LBRCOMMANDMESSAGEID}!KUKA::FRI::LBRCommand@{KUKA::FRI::LBRCommand}}
+\doxysubsubsection{\texorpdfstring{LBRCOMMANDMESSAGEID}{LBRCOMMANDMESSAGEID}}
+{\footnotesize\ttfamily const int KUKA\+::\+FRI\+::\+LBRCommand\+::\+LBRCOMMANDMESSAGEID = 0x34001\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+type identifier for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message corresponding to a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/\mbox{\hyperlink{fri_l_b_r_command_8h}{fri\+LBRCommand.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/client\+\_\+lbr/\mbox{\hyperlink{fri_l_b_r_command_8cpp}{fri\+LBRCommand.\+cpp}}\end{DoxyCompactItemize}

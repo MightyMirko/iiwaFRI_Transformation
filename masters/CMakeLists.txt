@@ -15,13 +15,10 @@ find_package(Python3 COMPONENTS Interpreter Development NumPy )
 # Check if Python 3 is found
 if (Python3_FOUND)
     message(STATUS "Python 3 found: ${Python3_EXECUTABLE}")
-
     # Include directories for Python 3 and NumPy
     include_directories(${Python3_INCLUDE_DIRS} ${Python3_NumPy_INCLUDE_DIRS})
-
     # Link options for Python 3
     set(PYTHON_LINK_OPTIONS ${Python3_LINK_OPTIONS})
-
     # Additional configurations for your target, if needed
 else ()
     message(WARNING "Python 3 not found. Please make sure Python 3 is installed.")
@@ -31,18 +28,14 @@ find_package(Doxygen
              REQUIRED dot
              OPTIONAL_COMPONENTS mscgen dia)
 if (DOXYGEN_FOUND)
-    SET(DOXYGEN_GENERATE_LATEX YES)
     message(STATUS "Configuring Project Binary ${PROJECT_SOURCE_DIR}")
-    doxygen_add_docs(doxygen_m
-                     ${PROJECT_SOURCE_DIR}
-                     CONFIG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/doc/Doxyfile.in
+    doxygen_add_docs(MastersApp_doxygen
+                     CONFIG_FILE ${PROJECT_SOURCE_DIR}/Doxyfile.in
                      COMMENT "Generating API documentation with Doxygen"
                      )
 else ()
     message(WARNING "Doxygen not found, documentation will not be generated.")
 endif ()
-
-
 
 # Fügen Sie Ihre Quelldateien und Header-Dateien hinzu
 file(GLOB MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)

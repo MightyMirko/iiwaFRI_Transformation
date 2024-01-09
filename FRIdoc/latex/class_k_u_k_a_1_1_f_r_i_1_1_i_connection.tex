@@ -1,0 +1,199 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{}\doxysection{KUKA\+::FRI\+::IConnection Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}\index{KUKA::FRI::IConnection@{KUKA::FRI::IConnection}}
+
+
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} connection interface.  
+
+
+
+
+{\ttfamily \#include $<$fri\+Connection\+If.\+h$>$}
+
+
+
+Inheritance diagram for KUKA\+::FRI\+::IConnection\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_connection__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_ae49d6ed7434abf21510189fe3206731a}{$\sim$\+IConnection}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_aa28671be2311219b94f96295e34e6774}{open}} (int port, const char $\ast$remote\+Host)=0
+\begin{DoxyCompactList}\small\item\em Open a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_afbf9253c40ef19660654216ff3ee4381}{close}} ()=0
+\begin{DoxyCompactList}\small\item\em Close a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a61dca018a26afa39f543041487e8379c}{is\+Open}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks whether a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller is established. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a458e9479c2752e72c9ed820f9236eb3e}{receive}} (char $\ast$buffer, int max\+Size)=0
+\begin{DoxyCompactList}\small\item\em Receive a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message from the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a4c8837816371fc6d6bab88dcb71db3d6}{send}} (const char $\ast$buffer, int size)=0
+\begin{DoxyCompactList}\small\item\em Send a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} connection interface. 
+
+Connections to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller have to be implemented using this interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_ae49d6ed7434abf21510189fe3206731a}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_ae49d6ed7434abf21510189fe3206731a}} 
+\index{KUKA::FRI::IConnection@{KUKA::FRI::IConnection}!````~IConnection@{$\sim$IConnection}}
+\index{````~IConnection@{$\sim$IConnection}!KUKA::FRI::IConnection@{KUKA::FRI::IConnection}}
+\doxysubsubsection{\texorpdfstring{$\sim$IConnection()}{~IConnection()}}
+{\footnotesize\ttfamily virtual KUKA\+::\+FRI\+::\+IConnection\+::$\sim$\+IConnection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_afbf9253c40ef19660654216ff3ee4381}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_afbf9253c40ef19660654216ff3ee4381}} 
+\index{KUKA::FRI::IConnection@{KUKA::FRI::IConnection}!close@{close}}
+\index{close@{close}!KUKA::FRI::IConnection@{KUKA::FRI::IConnection}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily virtual void KUKA\+::\+FRI\+::\+IConnection\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Close a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aaa4a42e6ed80d5e5d0cd9e6774196104}{KUKA\+::\+FRI\+::\+Udp\+Connection}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_afbf9253c40ef19660654216ff3ee4381_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a61dca018a26afa39f543041487e8379c}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a61dca018a26afa39f543041487e8379c}} 
+\index{KUKA::FRI::IConnection@{KUKA::FRI::IConnection}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!KUKA::FRI::IConnection@{KUKA::FRI::IConnection}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} KUKA\+::\+FRI\+::\+IConnection\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks whether a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller is established. 
+
+\begin{DoxyReturn}{Returns}
+True if connection is established 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a1861b742d19d7345a424647ccacdaf87}{KUKA\+::\+FRI\+::\+Udp\+Connection}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a61dca018a26afa39f543041487e8379c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_aa28671be2311219b94f96295e34e6774}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_aa28671be2311219b94f96295e34e6774}} 
+\index{KUKA::FRI::IConnection@{KUKA::FRI::IConnection}!open@{open}}
+\index{open@{open}!KUKA::FRI::IConnection@{KUKA::FRI::IConnection}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} KUKA\+::\+FRI\+::\+IConnection\+::open (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{const char $\ast$}]{remote\+Host }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Open a connection to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port ID \\
+\hline
+{\em remote\+Host} & The address of the remote host \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if connection was established 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a5b26b390797f0a03fc7e3dc7b477b61b}{KUKA\+::\+FRI\+::\+Udp\+Connection}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_aa28671be2311219b94f96295e34e6774_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a458e9479c2752e72c9ed820f9236eb3e}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a458e9479c2752e72c9ed820f9236eb3e}} 
+\index{KUKA::FRI::IConnection@{KUKA::FRI::IConnection}!receive@{receive}}
+\index{receive@{receive}!KUKA::FRI::IConnection@{KUKA::FRI::IConnection}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily virtual int KUKA\+::\+FRI\+::\+IConnection\+::receive (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{int}]{max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Receive a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message from the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+This method blocks until a new message arrives. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to the allocated buffer that will hold the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} message \\
+\hline
+{\em max\+Size} & Size in bytes of the allocated buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes received (0 when connection was terminated, negative in case of errors) 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_aae5a35cfb41f855e13030b145c20b2ff}{KUKA\+::\+FRI\+::\+Udp\+Connection}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a458e9479c2752e72c9ed820f9236eb3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a4c8837816371fc6d6bab88dcb71db3d6}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a4c8837816371fc6d6bab88dcb71db3d6}} 
+\index{KUKA::FRI::IConnection@{KUKA::FRI::IConnection}!send@{send}}
+\index{send@{send}!KUKA::FRI::IConnection@{KUKA::FRI::IConnection}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} KUKA\+::\+FRI\+::\+IConnection\+::send (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Send a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to the buffer holding the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} message \\
+\hline
+{\em size} & Size in bytes of the message to be send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_udp_connection_a9d3bd85371dd6fc558409230ab4d6cee}{KUKA\+::\+FRI\+::\+Udp\+Connection}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_connection_a4c8837816371fc6d6bab88dcb71db3d6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/\mbox{\hyperlink{fri_connection_if_8h}{fri\+Connection\+If.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,263 @@
+\hypertarget{class_i_o_access_client}{}\doxysection{IOAccess\+Client Class Reference}
+\label{class_i_o_access_client}\index{IOAccessClient@{IOAccessClient}}
+
+
+Example client for Fieldbus access.  
+
+
+
+
+{\ttfamily \#include $<$IOAccess\+Client.\+h$>$}
+
+
+
+Inheritance diagram for IOAccess\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_i_o_access_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IOAccess\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_o_access_client__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_o_access_client_af13a54485513af05ec52279aba03dbef}{IOAccess\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_o_access_client_a800361d17d034ef86b2723a285c150ef}{$\sim$\+IOAccess\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_o_access_client_af3917778dece8f0a713448967fa5a34a}{on\+State\+Change}} (\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}} new\+State, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}} old\+State)
+\begin{DoxyCompactList}\small\item\em Callback that is called whenever the FRI session state changes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_o_access_client_adbfc68a5d43cc546ba6e31b61c3528b4}{monitor}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI session states \textquotesingle{}Monitoring Wait\textquotesingle{} and \textquotesingle{}Monitoring Ready\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_o_access_client_ace9215030d5cdb787ad8f200ba073e8c}{wait\+For\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI session state \textquotesingle{}Commanding Wait\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_o_access_client_ae855d596323dfa86d9d089203092ec04}{command}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI session state \textquotesingle{}Commanding\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_i_o_access_client_a01d1b4f46c4b43527106ccfae8440255}{get\+And\+Set\+Example}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+clock\+\_\+t \mbox{\hyperlink{class_i_o_access_client_a086322ade47ab13c15a9c6d3eba6de3c}{start\+Time}}
+\item 
+double \mbox{\hyperlink{class_i_o_access_client_acf1f4c602261ea62c005c906a46f316d}{analog\+Max}}
+\item 
+double \mbox{\hyperlink{class_i_o_access_client_a43c47f5ab9a871293b480123bbf7c555}{analog\+Min}}
+\item 
+long \mbox{\hyperlink{class_i_o_access_client_a9ee940184d6ebacb96966d49be62bb02}{digital\+Max}}
+\item 
+long \mbox{\hyperlink{class_i_o_access_client_a9b33f1008d33c22b154c51dcc0c4066b}{digital\+Min}}
+\item 
+double \mbox{\hyperlink{class_i_o_access_client_a333f231eee4a0ff61f75360563fbc53d}{step}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Example client for Fieldbus access. 
+
+The following license terms and conditions apply, unless a redistribution agreement or other license is obtained by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH, Augsburg, Germany.
+
+SCOPE
+
+The software “\+KUKA Sunrise.\+Connectivity FRI Client SDK” is targeted to work in conjunction with the “\+KUKA Sunrise.\+Connectivity Fast\+Robot\+Interface” toolkit. In the following, the term “software” refers to all material directly belonging to the provided SDK “\+Software development kit”, particularly source code, libraries, binaries, manuals and technical documentation.
+
+COPYRIGHT
+
+All Rights Reserved Copyright (C) 2014-\/2020 \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH Augsburg, Germany
+
+LICENSE
+
+Redistribution and use of the software in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+: a) The software is used in conjunction with \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} products only. b) Redistributions of source code must retain the above copyright notice, this list of conditions and the disclaimer. c) Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the disclaimer in the documentation and/or other materials provided with the distribution. Altered source code of the redistribution must be made available upon request with the distribution. d) Modification and contributions to the original software provided by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} must be clearly marked and the authorship must be stated. e) Neither the name of \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} nor the trademarks owned by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} may be used to endorse or promote products derived from this software without specific prior written permission.
+
+DISCLAIMER OF WARRANTY
+
+The Software is provided \char`\"{}\+AS IS\char`\"{} and \char`\"{}\+WITH ALL FAULTS,\char`\"{} without warranty of any kind, including without limitation the warranties of merchantability, fitness for a particular purpose and non-\/infringement. \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} makes no warranty that the Software is free of defects or is suitable for any particular purpose. In no event shall \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} be responsible for loss or damages arising from the installation or use of the Software, including but not limited to any indirect, punitive, special, incidental or consequential damages of any character including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. The entire risk to the quality and performance of the Software is not borne by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}}. Should the Software prove defective, \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} is not liable for the entire cost of any service and repair.
+
+1.\+17 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_o_access_client_af13a54485513af05ec52279aba03dbef}\label{class_i_o_access_client_af13a54485513af05ec52279aba03dbef}} 
+\index{IOAccessClient@{IOAccessClient}!IOAccessClient@{IOAccessClient}}
+\index{IOAccessClient@{IOAccessClient}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{IOAccessClient()}{IOAccessClient()}}
+{\footnotesize\ttfamily IOAccess\+Client\+::\+IOAccess\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_i_o_access_client_a800361d17d034ef86b2723a285c150ef}\label{class_i_o_access_client_a800361d17d034ef86b2723a285c150ef}} 
+\index{IOAccessClient@{IOAccessClient}!````~IOAccessClient@{$\sim$IOAccessClient}}
+\index{````~IOAccessClient@{$\sim$IOAccessClient}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$IOAccessClient()}{~IOAccessClient()}}
+{\footnotesize\ttfamily IOAccess\+Client\+::$\sim$\+IOAccess\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_o_access_client_ae855d596323dfa86d9d089203092ec04}\label{class_i_o_access_client_ae855d596323dfa86d9d089203092ec04}} 
+\index{IOAccessClient@{IOAccessClient}!command@{command}}
+\index{command@{command}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily void IOAccess\+Client\+::command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI session state \textquotesingle{}Commanding\textquotesingle{}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a30e219dc3f5d5fe6f121e81f7728b57b}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_o_access_client_ae855d596323dfa86d9d089203092ec04_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_o_access_client_a01d1b4f46c4b43527106ccfae8440255}\label{class_i_o_access_client_a01d1b4f46c4b43527106ccfae8440255}} 
+\index{IOAccessClient@{IOAccessClient}!getAndSetExample@{getAndSetExample}}
+\index{getAndSetExample@{getAndSetExample}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{getAndSetExample()}{getAndSetExample()}}
+{\footnotesize\ttfamily void IOAccess\+Client\+::get\+And\+Set\+Example (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_o_access_client_a01d1b4f46c4b43527106ccfae8440255_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_o_access_client_a01d1b4f46c4b43527106ccfae8440255_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_o_access_client_adbfc68a5d43cc546ba6e31b61c3528b4}\label{class_i_o_access_client_adbfc68a5d43cc546ba6e31b61c3528b4}} 
+\index{IOAccessClient@{IOAccessClient}!monitor@{monitor}}
+\index{monitor@{monitor}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{monitor()}{monitor()}}
+{\footnotesize\ttfamily void IOAccess\+Client\+::monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI session states \textquotesingle{}Monitoring Wait\textquotesingle{} and \textquotesingle{}Monitoring Ready\textquotesingle{}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a11c4e9df043726944c8b1da6b426934e}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_o_access_client_adbfc68a5d43cc546ba6e31b61c3528b4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_i_o_access_client_af3917778dece8f0a713448967fa5a34a}\label{class_i_o_access_client_af3917778dece8f0a713448967fa5a34a}} 
+\index{IOAccessClient@{IOAccessClient}!onStateChange@{onStateChange}}
+\index{onStateChange@{onStateChange}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{onStateChange()}{onStateChange()}}
+{\footnotesize\ttfamily void IOAccess\+Client\+::on\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}}}]{old\+State,  }\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}}}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback that is called whenever the FRI session state changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+State} & previous FRI session state \\
+\hline
+{\em new\+State} & current FRI session state \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a90a4f9f1ed44e5ad43ff3aafa449b4a6}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+\mbox{\Hypertarget{class_i_o_access_client_ace9215030d5cdb787ad8f200ba073e8c}\label{class_i_o_access_client_ace9215030d5cdb787ad8f200ba073e8c}} 
+\index{IOAccessClient@{IOAccessClient}!waitForCommand@{waitForCommand}}
+\index{waitForCommand@{waitForCommand}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{waitForCommand()}{waitForCommand()}}
+{\footnotesize\ttfamily void IOAccess\+Client\+::wait\+For\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI session state \textquotesingle{}Commanding Wait\textquotesingle{}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_ac949b46d6adcb4f9902c38c5a724fa0b}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_o_access_client_ace9215030d5cdb787ad8f200ba073e8c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_o_access_client_acf1f4c602261ea62c005c906a46f316d}\label{class_i_o_access_client_acf1f4c602261ea62c005c906a46f316d}} 
+\index{IOAccessClient@{IOAccessClient}!analogMax@{analogMax}}
+\index{analogMax@{analogMax}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{analogMax}{analogMax}}
+{\footnotesize\ttfamily double IOAccess\+Client\+::analog\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_i_o_access_client_a43c47f5ab9a871293b480123bbf7c555}\label{class_i_o_access_client_a43c47f5ab9a871293b480123bbf7c555}} 
+\index{IOAccessClient@{IOAccessClient}!analogMin@{analogMin}}
+\index{analogMin@{analogMin}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{analogMin}{analogMin}}
+{\footnotesize\ttfamily double IOAccess\+Client\+::analog\+Min\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_i_o_access_client_a9ee940184d6ebacb96966d49be62bb02}\label{class_i_o_access_client_a9ee940184d6ebacb96966d49be62bb02}} 
+\index{IOAccessClient@{IOAccessClient}!digitalMax@{digitalMax}}
+\index{digitalMax@{digitalMax}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{digitalMax}{digitalMax}}
+{\footnotesize\ttfamily long IOAccess\+Client\+::digital\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_i_o_access_client_a9b33f1008d33c22b154c51dcc0c4066b}\label{class_i_o_access_client_a9b33f1008d33c22b154c51dcc0c4066b}} 
+\index{IOAccessClient@{IOAccessClient}!digitalMin@{digitalMin}}
+\index{digitalMin@{digitalMin}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{digitalMin}{digitalMin}}
+{\footnotesize\ttfamily long IOAccess\+Client\+::digital\+Min\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_i_o_access_client_a086322ade47ab13c15a9c6d3eba6de3c}\label{class_i_o_access_client_a086322ade47ab13c15a9c6d3eba6de3c}} 
+\index{IOAccessClient@{IOAccessClient}!startTime@{startTime}}
+\index{startTime@{startTime}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{startTime}{startTime}}
+{\footnotesize\ttfamily clock\+\_\+t IOAccess\+Client\+::start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_i_o_access_client_a333f231eee4a0ff61f75360563fbc53d}\label{class_i_o_access_client_a333f231eee4a0ff61f75360563fbc53d}} 
+\index{IOAccessClient@{IOAccessClient}!step@{step}}
+\index{step@{step}!IOAccessClient@{IOAccessClient}}
+\doxysubsubsection{\texorpdfstring{step}{step}}
+{\footnotesize\ttfamily double IOAccess\+Client\+::step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+IOAccess/\mbox{\hyperlink{_i_o_access_client_8h}{IOAccess\+Client.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+IOAccess/\mbox{\hyperlink{_i_o_access_client_8cpp}{IOAccess\+Client.\+cpp}}\end{DoxyCompactItemize}

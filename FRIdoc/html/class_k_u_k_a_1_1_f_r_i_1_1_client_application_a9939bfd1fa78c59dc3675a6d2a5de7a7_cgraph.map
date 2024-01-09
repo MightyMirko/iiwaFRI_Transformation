@@ -1,0 +1,52 @@
+<map id="KUKA::FRI::ClientApplication::step" name="KUKA::FRI::ClientApplication::step">
+<area shape="rect" id="node1" title="Run a single processing step." alt="" coords="5,867,200,909"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_i_client.html#ae2b1f840b048ba11ff10f8a1e72ab6c0" title="Callback for the FRI session state &#39;Commanding&#39;." alt="" coords="286,541,421,582"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder.html#aa72fb1e622847a636e6f5d7ac4770103" title=" " alt="" coords="248,606,459,647"/>
+<area shape="rect" id="node31" href="$class_k_u_k_a_1_1_f_r_i_1_1_command_message_encoder.html#a53c2553cb91250334d979f2aaa4006a4" title=" " alt="" coords="248,671,459,713"/>
+<area shape="rect" id="node43" href="$class_k_u_k_a_1_1_f_r_i_1_1_i_connection.html#a61dca018a26afa39f543041487e8379c" title="Checks whether a connection to the KUKA Sunrise controller is established." alt="" coords="270,737,437,778"/>
+<area shape="rect" id="node44" href="$class_k_u_k_a_1_1_f_r_i_1_1_i_client.html#a2f5a76fadff18150efad48fd8eded1bc" title="Callback for the FRI session states &#39;Monitoring Wait&#39; and &#39;Monitoring Ready&#39;." alt="" coords="286,802,421,843"/>
+<area shape="rect" id="node45" href="$class_k_u_k_a_1_1_f_r_i_1_1_i_client.html#a1816c9c4e7b93ebca3178b7c5e7b58b3" title="Callback that is called whenever the FRI session state changes." alt="" coords="286,867,421,909"/>
+<area shape="rect" id="node46" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#aa21b0759e9a7a22516752841bede1a3c" title="Callback which is called whenever a new FRI message arrives." alt="" coords="261,933,445,974"/>
+<area shape="rect" id="node47" href="$class_k_u_k_a_1_1_f_r_i_1_1_i_connection.html#a458e9479c2752e72c9ed820f9236eb3e" title="Receive a new FRI monitoring message from the KUKA Sunrise controller." alt="" coords="270,998,437,1039"/>
+<area shape="rect" id="node48" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#aa6b42ef174e80c2e38d3401537e1a114" title=" " alt="" coords="267,1063,439,1105"/>
+<area shape="rect" id="node49" href="$class_k_u_k_a_1_1_f_r_i_1_1_i_connection.html#a4c8837816371fc6d6bab88dcb71db3d6" title="Send a new FRI command message to the KUKA Sunrise controller." alt="" coords="270,1129,437,1170"/>
+<area shape="rect" id="node50" href="$class_k_u_k_a_1_1_f_r_i_1_1_i_client.html#ab02eabc2be3c968f53a36cd7b42373fe" title="Callback for the FRI session state &#39;Commanding Wait&#39;." alt="" coords="286,1194,421,1235"/>
+<area shape="rect" id="node4" href="$pb__decode_8c.html#a75c9a727abe84bfaaef633ac68d48cfa" title=" " alt="" coords="545,487,631,513"/>
+<area shape="rect" id="node11" href="$pb__decode_8c.html#a37dc2b0c54c27ddd29791e7522c85548" title=" " alt="" coords="1817,360,1976,387"/>
+<area shape="rect" id="node5" href="$pb__decode_8c.html#a0c0f95a964239344d503e724818e8fc0" title=" " alt="" coords="752,259,875,285"/>
+<area shape="rect" id="node28" href="$pb__decode_8c.html#a086200ce4dac8198dc0537e64318d66e" title=" " alt="" coords="717,487,909,513"/>
+<area shape="rect" id="node6" href="$pb__decode_8c.html#a30eb2ecefe2a2095c1c668e3932b63fc" title=" " alt="" coords="983,56,1109,83"/>
+<area shape="rect" id="node8" href="$pb__decode_8c.html#a48151430d329252cc54fd9764dd820f7" title=" " alt="" coords="1436,56,1531,83"/>
+<area shape="rect" id="node16" href="$pb__decode_8c.html#ab5102942c8402c215f836364e1b775b1" title=" " alt="" coords="1847,208,1946,235"/>
+<area shape="rect" id="node23" href="$pb__decode_8c.html#a45b7deb9b949803e7342070ca209d4be" title=" " alt="" coords="977,309,1115,336"/>
+<area shape="rect" id="node24" href="$pb__decode_8c.html#ac2d909d6194bfbca3c31b95749c4e848" title=" " alt="" coords="1222,335,1321,361"/>
+<area shape="rect" id="node25" href="$pb__decode_8c.html#aefe6134d81ea2f861f0111984553b23b" title=" " alt="" coords="1216,157,1327,184"/>
+<area shape="rect" id="node26" href="$pb__decode_8c.html#a7897e383f3ae811b1afc2ecd36277512" title=" " alt="" coords="999,360,1093,387"/>
+<area shape="rect" id="node27" href="$pb__decode_8c.html#a1dd25c1621de36f7de14a3b9ba2c532d" title=" " alt="" coords="1001,411,1091,437"/>
+<area shape="rect" id="node7" href="$pb__decode_8c.html#a7c09905fda4c6398697bcf0d42882c04" title=" " alt="" coords="1183,56,1360,83"/>
+<area shape="rect" id="node9" href="$pb__decode_8c.html#a69a78d2efcd4b9057215ac8b79a5eb2b" title=" " alt="" coords="1607,107,1757,133"/>
+<area shape="rect" id="node21" href="$pb__decode_8c.html#af65dd063304df2ed380dc411bb6caae6" title=" " alt="" coords="1611,56,1753,83"/>
+<area shape="rect" id="node22" href="$pb__decode_8c.html#a02c14bf9763a469e0414bf9a1eb13632" title=" " alt="" coords="1615,5,1749,32"/>
+<area shape="rect" id="node10" href="$pb__decode_8c.html#ac0a84ef26be0f3bf894deaee63e5114c" title=" " alt="" coords="1806,56,1987,83"/>
+<area shape="rect" id="node13" href="$pb__decode_8c.html#a7433fc394255932c4f00274e7f890721" title=" " alt="" coords="1805,5,1988,32"/>
+<area shape="rect" id="node20" href="$pb__decode_8c.html#a3f23856ca4723854f204b46d5f10c3ec" title=" " alt="" coords="2036,107,2149,133"/>
+<area shape="rect" id="node12" href="$pb__decode_8c.html#a9746f7244f9d14b2a095ddfcad55febe" title=" " alt="" coords="2395,309,2467,336"/>
+<area shape="rect" id="node14" href="$pb__decode_8c.html#abef49f760a21798e59538eec4aea23c2" title=" " alt="" coords="2197,157,2336,184"/>
+<area shape="rect" id="node15" href="$pb__decode_8c.html#a13d38bcceb0a06bfc8c4c9c6da0f7258" title=" " alt="" coords="2384,157,2477,184"/>
+<area shape="rect" id="node17" href="$pb__decode_8c.html#ad54a52168427208d756087919ff82d41" title=" " alt="" coords="2233,259,2301,285"/>
+<area shape="rect" id="node18" href="$pb__decode_8c.html#afa3e9c4da6d998fd6315d4cbd51b02e4" title=" " alt="" coords="2039,208,2146,235"/>
+<area shape="rect" id="node19" href="$pb__decode_8c.html#a57738ceef4b30349437900b245a33c77" title=" " alt="" coords="2039,309,2146,336"/>
+<area shape="rect" id="node29" href="$pb__syshdr_8h.html#a39dc31816e18e5a0b48da2865a4b698c" title=" " alt="" coords="1010,512,1082,539"/>
+<area shape="rect" id="node30" href="$pb__syshdr_8h.html#aebca9679ad3da8a3bfe87d58959c7ca5" title=" " alt="" coords="1011,563,1081,589"/>
+<area shape="rect" id="node32" href="$pb__encode_8c.html#af44dde5296bd546d99be35f15658af3e" title=" " alt="" coords="545,679,631,705"/>
+<area shape="rect" id="node41" href="$pb__encode_8c.html#a52a102e2c3f0d96a08c1e62d5038092e" title=" " alt="" coords="507,747,669,773"/>
+<area shape="rect" id="node33" href="$pb__encode_8c.html#a0c789b04243dc72075c00744134546c3" title=" " alt="" coords="734,715,893,741"/>
+<area shape="rect" id="node35" href="$pb__encode_8c.html#a8aa23313175c09e050e2acbc54a17bd4" title=" " alt="" coords="1224,708,1319,735"/>
+<area shape="rect" id="node34" href="$pb__encode_8c.html#a3a12936f07ae378d68408c7bee72e3c0" title=" " alt="" coords="957,715,1135,741"/>
+<area shape="rect" id="node36" href="$pb__encode_8c.html#a1f186424780069ab183fb7d2360d274e" title=" " alt="" coords="1417,683,1550,709"/>
+<area shape="rect" id="node40" href="$pb__encode_8c.html#aacffda1f85cad8e448a183dcc6c13559" title=" " alt="" coords="1408,733,1559,760"/>
+<area shape="rect" id="node37" href="$pb__encode_8c.html#afb8fc9e49589eaae694eff25c858a19c" title=" " alt="" coords="1632,671,1732,697"/>
+<area shape="rect" id="node39" href="$pb__encode_8c.html#a3e0f1ac29dce37f78220ecd6b9d21cba" title=" " alt="" coords="1815,721,1978,748"/>
+<area shape="rect" id="node38" href="$pb__encode_8c.html#acfbcc89e5e4355b8c263d6d4f2bc8c6f" title=" " alt="" coords="2037,696,2148,723"/>
+<area shape="rect" id="node42" href="$pb__encode_8c.html#aa987a466c397e7769605789cc0b22054" title=" " alt="" coords="776,765,851,792"/>
+</map>

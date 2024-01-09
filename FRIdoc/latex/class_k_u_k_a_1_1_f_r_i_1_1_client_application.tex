@@ -1,0 +1,258 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application}{}\doxysection{KUKA\+::FRI\+::Client\+Application Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application}\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+
+
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application class.  
+
+
+
+
+{\ttfamily \#include $<$fri\+Client\+Application.\+h$>$}
+
+
+
+Collaboration diagram for KUKA\+::FRI\+::Client\+Application\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9c748a814ce9bfe0206a06fe03893492}{Client\+Application}} (\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} \&connection, \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} \&client)
+\begin{DoxyCompactList}\small\item\em Constructor without transformation client. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a6aca798b674b29530f94c2e9f1b6e0ad}{Client\+Application}} (\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} \&connection, \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} \&client, \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client}{Transformation\+Client}} \&trafo\+Client)
+\begin{DoxyCompactList}\small\item\em Constructor with transformation client. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_aa8d7e55e1f5d744e2a59a7c9c6c7ce8d}{$\sim$\+Client\+Application}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a17bc0e8dab4235fc53e0c568c3da3dbe}{connect}} (int port, const char $\ast$remote\+Host=\mbox{\hyperlink{pb__syshdr__win_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})
+\begin{DoxyCompactList}\small\item\em Connect the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application with a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae24af29c4f2fd5e678f2f71bdc94d1d9}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application from a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9939bfd1fa78c59dc3675a6d2a5de7a7}{step}} ()
+\begin{DoxyCompactList}\small\item\em Run a single processing step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} \& \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a0480dbcc8d0f1f4b720bb4559bf4ccd3}{\+\_\+connection}}
+\begin{DoxyCompactList}\small\item\em connection interface \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_afc8e71f218e89bb27353286c2c1a1fac}{\+\_\+robot\+Client}}
+\begin{DoxyCompactList}\small\item\em robot client interface \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client}{Transformation\+Client}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae7d3f8f12b46fa7bb785f740da4eb377}{\+\_\+trafo\+Client}}
+\begin{DoxyCompactList}\small\item\em transformation client interface \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_k_u_k_a_1_1_f_r_i_1_1_client_data}{Client\+Data}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a027203fe2ce7b1d28d618dce44cbab49}{\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em client data structure (for internal use) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application class. 
+
+A client application takes an instance of the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} interface and an instance of an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} interface to provide the functionality needed to set up an \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application. It can be used to easily integrate the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client code within other applications. The algorithmic functionality of an \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application is implemented using the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9c748a814ce9bfe0206a06fe03893492}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9c748a814ce9bfe0206a06fe03893492}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!ClientApplication@{ClientApplication}}
+\index{ClientApplication@{ClientApplication}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{ClientApplication()}{ClientApplication()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Client\+Application\+::\+Client\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} \&}]{connection,  }\item[{\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} \&}]{client }\end{DoxyParamCaption})}
+
+
+
+Constructor without transformation client. 
+
+This constructor takes an instance of the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} interface and an instance of the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} interface as parameters. 
+\begin{DoxyParams}{Parameters}
+{\em connection} & \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} connection class \\
+\hline
+{\em client} & \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client class \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9c748a814ce9bfe0206a06fe03893492_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a6aca798b674b29530f94c2e9f1b6e0ad}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a6aca798b674b29530f94c2e9f1b6e0ad}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!ClientApplication@{ClientApplication}}
+\index{ClientApplication@{ClientApplication}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{ClientApplication()}{ClientApplication()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Client\+Application\+::\+Client\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} \&}]{connection,  }\item[{\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} \&}]{client,  }\item[{\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client}{Transformation\+Client}} \&}]{trafo\+Client }\end{DoxyParamCaption})}
+
+
+
+Constructor with transformation client. 
+
+This constructor takes an instance of the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}} interface and an instance of the \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}} interface and an instance of a \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client}{Transformation\+Client}} as parameters. 
+\begin{DoxyParams}{Parameters}
+{\em connection} & \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} connection class \\
+\hline
+{\em client} & \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client class \\
+\hline
+{\em trafo\+Client} & \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} transformation client class \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a6aca798b674b29530f94c2e9f1b6e0ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_aa8d7e55e1f5d744e2a59a7c9c6c7ce8d}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_aa8d7e55e1f5d744e2a59a7c9c6c7ce8d}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!````~ClientApplication@{$\sim$ClientApplication}}
+\index{````~ClientApplication@{$\sim$ClientApplication}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{$\sim$ClientApplication()}{~ClientApplication()}}
+{\footnotesize\ttfamily Client\+Application\+::$\sim$\+Client\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_aa8d7e55e1f5d744e2a59a7c9c6c7ce8d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a17bc0e8dab4235fc53e0c568c3da3dbe}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a17bc0e8dab4235fc53e0c568c3da3dbe}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!connect@{connect}}
+\index{connect@{connect}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Client\+Application\+::connect (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{const char $\ast$}]{remote\+Host = {\ttfamily \mbox{\hyperlink{pb__syshdr__win_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}} }\end{DoxyParamCaption})}
+
+
+
+Connect the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application with a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port ID \\
+\hline
+{\em remote\+Host} & The address of the remote host \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if connection was established 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a17bc0e8dab4235fc53e0c568c3da3dbe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a17bc0e8dab4235fc53e0c568c3da3dbe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae24af29c4f2fd5e678f2f71bdc94d1d9}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae24af29c4f2fd5e678f2f71bdc94d1d9}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void Client\+Application\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client application from a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae24af29c4f2fd5e678f2f71bdc94d1d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae24af29c4f2fd5e678f2f71bdc94d1d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9939bfd1fa78c59dc3675a6d2a5de7a7}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9939bfd1fa78c59dc3675a6d2a5de7a7}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!step@{step}}
+\index{step@{step}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Client\+Application\+::step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run a single processing step. 
+
+The processing step consists of receiving a new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message, calling the corresponding client callback and sending the resulting \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} command message back to the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \begin{DoxyReturn}{Returns}
+True if all of the substeps succeeded. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9939bfd1fa78c59dc3675a6d2a5de7a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a9939bfd1fa78c59dc3675a6d2a5de7a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a0480dbcc8d0f1f4b720bb4559bf4ccd3}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a0480dbcc8d0f1f4b720bb4559bf4ccd3}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!\_connection@{\_connection}}
+\index{\_connection@{\_connection}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{\_connection}{\_connection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_connection}{IConnection}}\& KUKA\+::\+FRI\+::\+Client\+Application\+::\+\_\+connection\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+connection interface 
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a027203fe2ce7b1d28d618dce44cbab49}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_a027203fe2ce7b1d28d618dce44cbab49}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!\_data@{\_data}}
+\index{\_data@{\_data}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{\_data}{\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_k_u_k_a_1_1_f_r_i_1_1_client_data}{Client\+Data}}$\ast$ KUKA\+::\+FRI\+::\+Client\+Application\+::\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+client data structure (for internal use) 
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_afc8e71f218e89bb27353286c2c1a1fac}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_afc8e71f218e89bb27353286c2c1a1fac}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!\_robotClient@{\_robotClient}}
+\index{\_robotClient@{\_robotClient}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{\_robotClient}{\_robotClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{IClient}}$\ast$ KUKA\+::\+FRI\+::\+Client\+Application\+::\+\_\+robot\+Client\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+robot client interface 
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae7d3f8f12b46fa7bb785f740da4eb377}\label{class_k_u_k_a_1_1_f_r_i_1_1_client_application_ae7d3f8f12b46fa7bb785f740da4eb377}} 
+\index{KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}!\_trafoClient@{\_trafoClient}}
+\index{\_trafoClient@{\_trafoClient}!KUKA::FRI::ClientApplication@{KUKA::FRI::ClientApplication}}
+\doxysubsubsection{\texorpdfstring{\_trafoClient}{\_trafoClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client}{Transformation\+Client}}$\ast$ KUKA\+::\+FRI\+::\+Client\+Application\+::\+\_\+trafo\+Client\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+transformation client interface 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/\mbox{\hyperlink{fri_client_application_8h}{fri\+Client\+Application.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/base/\mbox{\hyperlink{fri_client_application_8cpp}{fri\+Client\+Application.\+cpp}}\end{DoxyCompactItemize}

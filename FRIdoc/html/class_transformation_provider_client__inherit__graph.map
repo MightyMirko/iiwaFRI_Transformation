@@ -1,0 +1,4 @@
+<map id="TransformationProviderClient" name="TransformationProviderClient">
+<area shape="rect" id="node1" title="Example client for changing the transformation matrix of a robot frame." alt="" coords="5,95,196,121"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html" title="Abstract FRI transformation client." alt="" coords="9,5,193,47"/>
+</map>

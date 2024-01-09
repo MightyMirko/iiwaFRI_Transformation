@@ -1,0 +1,7 @@
+<map id="KUKA::FRI::LBRClient::command" name="KUKA::FRI::LBRClient::command">
+<area shape="rect" id="node1" title="Callback for the FRI session state &#39;Commanding&#39;." alt="" coords="5,71,163,112"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client.html#aa6dcd610503f9c67153ffeb5d3fab203" title="Provide write access to the robot commands." alt="" coords="223,5,381,47"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client.html#af99433aa6795f9b6764b0fb539188e6d" title="Provide read access to the current robot state." alt="" coords="223,71,381,112"/>
+<area shape="rect" id="node4" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_command.html#af250c07674fc06147243c8ce481709f6" title="Set the joint positions for the current interpolation step." alt="" coords="211,136,393,177"/>
+<area shape="rect" id="node5" href="$pb__syshdr_8h.html#a39dc31816e18e5a0b48da2865a4b698c" title=" " alt="" coords="441,143,513,170"/>
+</map>

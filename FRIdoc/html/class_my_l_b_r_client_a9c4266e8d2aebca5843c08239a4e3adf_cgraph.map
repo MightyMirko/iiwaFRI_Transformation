@@ -1,0 +1,4 @@
+<map id="MyLBRClient::onStateChange" name="MyLBRClient::onStateChange">
+<area shape="rect" id="node1" title="Callback for FRI state changes." alt="" coords="5,13,204,39"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client.html#a90a4f9f1ed44e5ad43ff3aafa449b4a6" title="Callback that is called whenever the FRI session state changes." alt="" coords="252,5,409,47"/>
+</map>

@@ -1,0 +1,303 @@
+\hypertarget{pb__frimessages__callbacks_8h}{}\doxysection{build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/protobuf/pb\+\_\+frimessages\+\_\+callbacks.h File Reference}
+\label{pb__frimessages__callbacks_8h}\index{build/FRI-\/Client-\/SDK\_Cpp/src/protobuf/pb\_frimessages\_callbacks.h@{build/FRI-\/Client-\/SDK\_Cpp/src/protobuf/pb\_frimessages\_callbacks.h}}
+{\ttfamily \#include \char`\"{}pb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}FRIMessages.\+pb.\+h\char`\"{}}\newline
+Include dependency graph for pb\+\_\+frimessages\+\_\+callbacks.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{pb__frimessages__callbacks_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrepeated_double_arguments}{repeated\+Double\+Arguments}}
+\item 
+struct \mbox{\hyperlink{structrepeated_int_arguments}{repeated\+Int\+Arguments}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structrepeated_double_arguments}{repeated\+Double\+Arguments}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}}
+\item 
+typedef struct \mbox{\hyperlink{structrepeated_int_arguments}{repeated\+Int\+Arguments}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}}
+\item 
+typedef enum \mbox{\hyperlink{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0}{DIRECTION}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}{e\+Nanopb\+Callback\+Direction}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0}{DIRECTION}} \{ \mbox{\hyperlink{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0a7c5dda57e3675b9edc62a78a01ac8932}{FRI\+\_\+\+MANAGER\+\_\+\+NANOPB\+\_\+\+DECODE}} = 0
+, \mbox{\hyperlink{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0ac1ce2c0ab1f0571444a35df8c117aa6e}{FRI\+\_\+\+MANAGER\+\_\+\+NANOPB\+\_\+\+ENCODE}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a3841575aaa517c808aeba5ab3e4f4e48}{encode\+\_\+repeated\+Double}} (\mbox{\hyperlink{pb_8h_a7a3931836768ffd30a82902385139c80}{pb\+\_\+ostream\+\_\+t}} $\ast$stream, const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$field, void $\ast$const $\ast$arg)
+\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_ac9ec67cd47aed6ee622a420a41fa6540}{decode\+\_\+repeated\+Double}} (\mbox{\hyperlink{pb_8h_abb041e718b4f681a7227ebe51a93d2ef}{pb\+\_\+istream\+\_\+t}} $\ast$stream, const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$field, void $\ast$$\ast$arg)
+\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_aca260ceb4ad963a7f5f6282ceaf17f2b}{encode\+\_\+repeated\+Int}} (\mbox{\hyperlink{pb_8h_a7a3931836768ffd30a82902385139c80}{pb\+\_\+ostream\+\_\+t}} $\ast$stream, const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$field, void $\ast$const $\ast$arg)
+\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a73c0b03ce19bcaebfb2c5956739c255c}{decode\+\_\+repeated\+Int}} (\mbox{\hyperlink{pb_8h_abb041e718b4f681a7227ebe51a93d2ef}{pb\+\_\+istream\+\_\+t}} $\ast$stream, const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$field, void $\ast$$\ast$arg)
+\item 
+void \mbox{\hyperlink{pb__frimessages__callbacks_8h_a5283f13633c8400371ab65d44d905901}{map\+\_\+repeated\+Double}} (\mbox{\hyperlink{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}{e\+Nanopb\+Callback\+Direction}} dir, int num\+DOF, \mbox{\hyperlink{pb_8h_a67b973d2bb5e2fc94eabd8e21a68b3d7}{pb\+\_\+callback\+\_\+t}} $\ast$values, \mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}} $\ast$arg)
+\item 
+void \mbox{\hyperlink{pb__frimessages__callbacks_8h_a81a65250b51118ec352d28e397db9b6c}{map\+\_\+repeated\+Int}} (\mbox{\hyperlink{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}{e\+Nanopb\+Callback\+Direction}} dir, int num\+DOF, \mbox{\hyperlink{pb_8h_a67b973d2bb5e2fc94eabd8e21a68b3d7}{pb\+\_\+callback\+\_\+t}} $\ast$values, \mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}} $\ast$arg)
+\item 
+void \mbox{\hyperlink{pb__frimessages__callbacks_8h_aed13761121758ecd4a18621c39826ab5}{init\+\_\+repeated\+Double}} (\mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}} $\ast$arg)
+\item 
+void \mbox{\hyperlink{pb__frimessages__callbacks_8h_a64f4c62dabc4131b2e9d60cb68219b1d}{init\+\_\+repeated\+Int}} (\mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}} $\ast$arg)
+\item 
+void \mbox{\hyperlink{pb__frimessages__callbacks_8h_a7b699fd7035a38bb0b52c322e4a9cd89}{free\+\_\+repeated\+Double}} (\mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}} $\ast$arg)
+\item 
+void \mbox{\hyperlink{pb__frimessages__callbacks_8h_ad40231c51b2420f508556356ce49fcc6}{free\+\_\+repeated\+Int}} (\mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}} $\ast$arg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The following license terms and conditions apply, unless a redistribution agreement or other license is obtained by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH, Augsburg, Germany.
+
+SCOPE
+
+The software “\+KUKA Sunrise.\+Connectivity FRI Client SDK” is targeted to work in conjunction with the “\+KUKA Sunrise.\+Connectivity Fast\+Robot\+Interface” toolkit. In the following, the term “software” refers to all material directly belonging to the provided SDK “\+Software development kit”, particularly source code, libraries, binaries, manuals and technical documentation.
+
+COPYRIGHT
+
+All Rights Reserved Copyright (C) 2014-\/2020 \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Deutschland GmbH Augsburg, Germany
+
+LICENSE
+
+Redistribution and use of the software in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+: a) The software is used in conjunction with \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} products only. b) Redistributions of source code must retain the above copyright notice, this list of conditions and the disclaimer. c) Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the disclaimer in the documentation and/or other materials provided with the distribution. Altered source code of the redistribution must be made available upon request with the distribution. d) Modification and contributions to the original software provided by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} must be clearly marked and the authorship must be stated. e) Neither the name of \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} nor the trademarks owned by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} may be used to endorse or promote products derived from this software without specific prior written permission.
+
+DISCLAIMER OF WARRANTY
+
+The Software is provided \char`\"{}\+AS IS\char`\"{} and \char`\"{}\+WITH ALL FAULTS,\char`\"{} without warranty of any kind, including without limitation the warranties of merchantability, fitness for a particular purpose and non-\/infringement. \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} makes no warranty that the Software is free of defects or is suitable for any particular purpose. In no event shall \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} be responsible for loss or damages arising from the installation or use of the Software, including but not limited to any indirect, punitive, special, incidental or consequential damages of any character including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. The entire risk to the quality and performance of the Software is not borne by \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}}. Should the Software prove defective, \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} is not liable for the entire cost of any service and repair.
+
+\begin{DoxyVersion}{Version}
+\{1.\+17\} 
+\end{DoxyVersion}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}\label{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!eNanopbCallbackDirection@{eNanopbCallbackDirection}}
+\index{eNanopbCallbackDirection@{eNanopbCallbackDirection}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{eNanopbCallbackDirection}{eNanopbCallbackDirection}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0}{DIRECTION}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}{e\+Nanopb\+Callback\+Direction}}}
+
+enumeration for direction (encoding/decoding) \mbox{\Hypertarget{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}\label{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!tRepeatedDoubleArguments@{tRepeatedDoubleArguments}}
+\index{tRepeatedDoubleArguments@{tRepeatedDoubleArguments}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{tRepeatedDoubleArguments}{tRepeatedDoubleArguments}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structrepeated_double_arguments}{repeated\+Double\+Arguments}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}}}
+
+container for repeated double elements \mbox{\Hypertarget{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}\label{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!tRepeatedIntArguments@{tRepeatedIntArguments}}
+\index{tRepeatedIntArguments@{tRepeatedIntArguments}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{tRepeatedIntArguments}{tRepeatedIntArguments}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structrepeated_int_arguments}{repeated\+Int\+Arguments}} \mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}}}
+
+container for repeated integer elements 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0}\label{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!DIRECTION@{DIRECTION}}
+\index{DIRECTION@{DIRECTION}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTION}{DIRECTION}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0}{DIRECTION}}}
+
+enumeration for direction (encoding/decoding) \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRI\_MANAGER\_NANOPB\_DECODE@{FRI\_MANAGER\_NANOPB\_DECODE}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!FRI\_MANAGER\_NANOPB\_DECODE@{FRI\_MANAGER\_NANOPB\_DECODE}}}\mbox{\Hypertarget{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0a7c5dda57e3675b9edc62a78a01ac8932}\label{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0a7c5dda57e3675b9edc62a78a01ac8932}} 
+FRI\+\_\+\+MANAGER\+\_\+\+NANOPB\+\_\+\+DECODE&Argument um eine. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRI\_MANAGER\_NANOPB\_ENCODE@{FRI\_MANAGER\_NANOPB\_ENCODE}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!FRI\_MANAGER\_NANOPB\_ENCODE@{FRI\_MANAGER\_NANOPB\_ENCODE}}}\mbox{\Hypertarget{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0ac1ce2c0ab1f0571444a35df8c117aa6e}\label{pb__frimessages__callbacks_8h_aa268a41a13430b18e933ed40207178d0ac1ce2c0ab1f0571444a35df8c117aa6e}} 
+FRI\+\_\+\+MANAGER\+\_\+\+NANOPB\+\_\+\+ENCODE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_ac9ec67cd47aed6ee622a420a41fa6540}\label{pb__frimessages__callbacks_8h_ac9ec67cd47aed6ee622a420a41fa6540}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!decode\_repeatedDouble@{decode\_repeatedDouble}}
+\index{decode\_repeatedDouble@{decode\_repeatedDouble}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{decode\_repeatedDouble()}{decode\_repeatedDouble()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} decode\+\_\+repeated\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb_8h_abb041e718b4f681a7227ebe51a93d2ef}{pb\+\_\+istream\+\_\+t}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$}]{field,  }\item[{void $\ast$$\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_ac9ec67cd47aed6ee622a420a41fa6540_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_ac9ec67cd47aed6ee622a420a41fa6540_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_a73c0b03ce19bcaebfb2c5956739c255c}\label{pb__frimessages__callbacks_8h_a73c0b03ce19bcaebfb2c5956739c255c}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!decode\_repeatedInt@{decode\_repeatedInt}}
+\index{decode\_repeatedInt@{decode\_repeatedInt}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{decode\_repeatedInt()}{decode\_repeatedInt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} decode\+\_\+repeated\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb_8h_abb041e718b4f681a7227ebe51a93d2ef}{pb\+\_\+istream\+\_\+t}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$}]{field,  }\item[{void $\ast$$\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a73c0b03ce19bcaebfb2c5956739c255c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a73c0b03ce19bcaebfb2c5956739c255c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_a3841575aaa517c808aeba5ab3e4f4e48}\label{pb__frimessages__callbacks_8h_a3841575aaa517c808aeba5ab3e4f4e48}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!encode\_repeatedDouble@{encode\_repeatedDouble}}
+\index{encode\_repeatedDouble@{encode\_repeatedDouble}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{encode\_repeatedDouble()}{encode\_repeatedDouble()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} encode\+\_\+repeated\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb_8h_a7a3931836768ffd30a82902385139c80}{pb\+\_\+ostream\+\_\+t}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$}]{field,  }\item[{void $\ast$const $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a3841575aaa517c808aeba5ab3e4f4e48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a3841575aaa517c808aeba5ab3e4f4e48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_aca260ceb4ad963a7f5f6282ceaf17f2b}\label{pb__frimessages__callbacks_8h_aca260ceb4ad963a7f5f6282ceaf17f2b}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!encode\_repeatedInt@{encode\_repeatedInt}}
+\index{encode\_repeatedInt@{encode\_repeatedInt}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{encode\_repeatedInt()}{encode\_repeatedInt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} encode\+\_\+repeated\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb_8h_a7a3931836768ffd30a82902385139c80}{pb\+\_\+ostream\+\_\+t}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{pb_8h_a95f1dc9bdb04121bc95d43f7e4bd891a}{pb\+\_\+field\+\_\+t}} $\ast$}]{field,  }\item[{void $\ast$const $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_aca260ceb4ad963a7f5f6282ceaf17f2b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_aca260ceb4ad963a7f5f6282ceaf17f2b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_a7b699fd7035a38bb0b52c322e4a9cd89}\label{pb__frimessages__callbacks_8h_a7b699fd7035a38bb0b52c322e4a9cd89}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!free\_repeatedDouble@{free\_repeatedDouble}}
+\index{free\_repeatedDouble@{free\_repeatedDouble}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{free\_repeatedDouble()}{free\_repeatedDouble()}}
+{\footnotesize\ttfamily void free\+\_\+repeated\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}} $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a7b699fd7035a38bb0b52c322e4a9cd89_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_ad40231c51b2420f508556356ce49fcc6}\label{pb__frimessages__callbacks_8h_ad40231c51b2420f508556356ce49fcc6}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!free\_repeatedInt@{free\_repeatedInt}}
+\index{free\_repeatedInt@{free\_repeatedInt}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{free\_repeatedInt()}{free\_repeatedInt()}}
+{\footnotesize\ttfamily void free\+\_\+repeated\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}} $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_ad40231c51b2420f508556356ce49fcc6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_aed13761121758ecd4a18621c39826ab5}\label{pb__frimessages__callbacks_8h_aed13761121758ecd4a18621c39826ab5}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!init\_repeatedDouble@{init\_repeatedDouble}}
+\index{init\_repeatedDouble@{init\_repeatedDouble}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{init\_repeatedDouble()}{init\_repeatedDouble()}}
+{\footnotesize\ttfamily void init\+\_\+repeated\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}} $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_aed13761121758ecd4a18621c39826ab5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_a64f4c62dabc4131b2e9d60cb68219b1d}\label{pb__frimessages__callbacks_8h_a64f4c62dabc4131b2e9d60cb68219b1d}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!init\_repeatedInt@{init\_repeatedInt}}
+\index{init\_repeatedInt@{init\_repeatedInt}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{init\_repeatedInt()}{init\_repeatedInt()}}
+{\footnotesize\ttfamily void init\+\_\+repeated\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}} $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a64f4c62dabc4131b2e9d60cb68219b1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_a5283f13633c8400371ab65d44d905901}\label{pb__frimessages__callbacks_8h_a5283f13633c8400371ab65d44d905901}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!map\_repeatedDouble@{map\_repeatedDouble}}
+\index{map\_repeatedDouble@{map\_repeatedDouble}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{map\_repeatedDouble()}{map\_repeatedDouble()}}
+{\footnotesize\ttfamily void map\+\_\+repeated\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}{e\+Nanopb\+Callback\+Direction}}}]{dir,  }\item[{int}]{num\+DOF,  }\item[{\mbox{\hyperlink{pb_8h_a67b973d2bb5e2fc94eabd8e21a68b3d7}{pb\+\_\+callback\+\_\+t}} $\ast$}]{values,  }\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a24c3c30b2764570e6e48ca7de8322701}{t\+Repeated\+Double\+Arguments}} $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a5283f13633c8400371ab65d44d905901_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a5283f13633c8400371ab65d44d905901_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{pb__frimessages__callbacks_8h_a81a65250b51118ec352d28e397db9b6c}\label{pb__frimessages__callbacks_8h_a81a65250b51118ec352d28e397db9b6c}} 
+\index{pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}!map\_repeatedInt@{map\_repeatedInt}}
+\index{map\_repeatedInt@{map\_repeatedInt}!pb\_frimessages\_callbacks.h@{pb\_frimessages\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{map\_repeatedInt()}{map\_repeatedInt()}}
+{\footnotesize\ttfamily void map\+\_\+repeated\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a9d7db8599f51bd12fc1c42e67acd45ea}{e\+Nanopb\+Callback\+Direction}}}]{dir,  }\item[{int}]{num\+DOF,  }\item[{\mbox{\hyperlink{pb_8h_a67b973d2bb5e2fc94eabd8e21a68b3d7}{pb\+\_\+callback\+\_\+t}} $\ast$}]{values,  }\item[{\mbox{\hyperlink{pb__frimessages__callbacks_8h_a836361bc02bfbb2a84661acd3adf26de}{t\+Repeated\+Int\+Arguments}} $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a81a65250b51118ec352d28e397db9b6c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pb__frimessages__callbacks_8h_a81a65250b51118ec352d28e397db9b6c_icgraph}
+\end{center}
+\end{figure}

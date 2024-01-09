@@ -1,0 +1,262 @@
+\hypertarget{class_simulated_transformation_provider_client}{}\doxysection{Simulated\+Transformation\+Provider\+Client Class Reference}
+\label{class_simulated_transformation_provider_client}\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+
+
+Test client that sends back simulated transformations corresponding to a slight translation with change of orientation in Cartesian space (duration is 5s, then it will loop). One can simulate a real sensor by setting a sampling rate for the sensor (i.\+e. when are transformations and corresponding timestamps updated) as well as providing the sampling rate by FRI (i.\+e. at what frequency is the client polled by the robot controller).  
+
+
+
+
+{\ttfamily \#include $<$Simulated\+Transformation\+Provider\+Client.\+h$>$}
+
+
+
+Inheritance diagram for Simulated\+Transformation\+Provider\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{class_simulated_transformation_provider_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Simulated\+Transformation\+Provider\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulated_transformation_provider_client__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simulated_transformation_provider_client_a4a1d96766a49fed5b59a8a37d844bbfb}{Simulated\+Transformation\+Provider\+Client}} (int fri\+MS, int sensor\+MS, int slow\+Down\+Factor, int wait\+Before\+Start\+MS)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_simulated_transformation_provider_client_ae060adcfe3ed29d03012c00ef9967057}{$\sim$\+Simulated\+Transformation\+Provider\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_simulated_transformation_provider_client_ad7c1847511910657aa8f95573777697d}{provide}} ()
+\begin{DoxyCompactList}\small\item\em Callback which is called whenever a new FRI message arrives. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_simulated_transformation_provider_client_a9ffecdf8c7c5eca163cecbbbfd1db80f}{update\+Current\+Sensor\+Data}} (int idx, int age\+Of\+Data\+MS)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_simulated_transformation_provider_client_a638084622ec20ed51a6a5813e0bbe832}{\+\_\+fri\+MS}}
+\begin{DoxyCompactList}\small\item\em FRI send period in ms. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_simulated_transformation_provider_client_af97356a11123badbdd80c1e90dad5f62}{\+\_\+sensor\+MS}}
+\begin{DoxyCompactList}\small\item\em Sensor sampling rate in ms. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_simulated_transformation_provider_client_a8dbea0862dcac8518e8f0fe6f5d1124e}{\+\_\+slow\+Down\+Factor}}
+\begin{DoxyCompactList}\small\item\em Slow down factor for motion. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_simulated_transformation_provider_client_a4a01a054a3021cc3f74c50d55bc19a95}{\+\_\+wait\+Before\+Start\+MS}}
+\begin{DoxyCompactList}\small\item\em wait for so many milliseconds before starting motion \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_simulated_transformation_provider_client_a706b796c65d3bbf1247c6e90e875304a}{\+\_\+current\+Sensor\+Data}} \mbox{[}3\mbox{]}\mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em current sensor data to send \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_simulated_transformation_provider_client_a8a6079d81918c2e9df0eeaec7a6a1ad7}{\+\_\+current\+Timestamp\+Sec}}
+\begin{DoxyCompactList}\small\item\em timestamp for current sensor data (sec) \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_simulated_transformation_provider_client_ab14bb538373ef93d26d6934453ee9037}{\+\_\+current\+Timestamp\+Nano\+Sec}}
+\begin{DoxyCompactList}\small\item\em timestamp for current sensor data (nanosec) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_simulated_transformation_provider_client_ad7532c4f6c02d9f12f772d7b9364dd6d}{\+\_\+milliseconds\+Expired}}
+\begin{DoxyCompactList}\small\item\em milliseconds expired since first callback \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_simulated_transformation_provider_client_aac9c8a10565d64adf484ef8fde50b2c1}{simu\+Trafo}} \mbox{[}5000\mbox{]}\mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em array with simulated transformation data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test client that sends back simulated transformations corresponding to a slight translation with change of orientation in Cartesian space (duration is 5s, then it will loop). One can simulate a real sensor by setting a sampling rate for the sensor (i.\+e. when are transformations and corresponding timestamps updated) as well as providing the sampling rate by FRI (i.\+e. at what frequency is the client polled by the robot controller). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_a4a1d96766a49fed5b59a8a37d844bbfb}\label{class_simulated_transformation_provider_client_a4a1d96766a49fed5b59a8a37d844bbfb}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{SimulatedTransformationProviderClient()}{SimulatedTransformationProviderClient()}}
+{\footnotesize\ttfamily Simulated\+Transformation\+Provider\+Client\+::\+Simulated\+Transformation\+Provider\+Client (\begin{DoxyParamCaption}\item[{int}]{fri\+MS,  }\item[{int}]{sensor\+MS,  }\item[{int}]{slow\+Down\+Factor,  }\item[{int}]{wait\+Before\+Start\+MS }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fri\+Ms} & sending period from FRI (e.\+g. when 4 each fourth transformation sample is sent back) \\
+\hline
+{\em sensor\+Ms} & simulated sensor sampling rate (when is the transformation updated) \\
+\hline
+{\em slow\+Down\+Factor} & slow down factor for motion (must not be larger than FRI send period) \\
+\hline
+{\em wait\+Before\+Start} & wait for so many milliseconds before starting motion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_ae060adcfe3ed29d03012c00ef9967057}\label{class_simulated_transformation_provider_client_ae060adcfe3ed29d03012c00ef9967057}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!````~SimulatedTransformationProviderClient@{$\sim$SimulatedTransformationProviderClient}}
+\index{````~SimulatedTransformationProviderClient@{$\sim$SimulatedTransformationProviderClient}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$SimulatedTransformationProviderClient()}{~SimulatedTransformationProviderClient()}}
+{\footnotesize\ttfamily Simulated\+Transformation\+Provider\+Client\+::$\sim$\+Simulated\+Transformation\+Provider\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_ad7c1847511910657aa8f95573777697d}\label{class_simulated_transformation_provider_client_ad7c1847511910657aa8f95573777697d}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!provide@{provide}}
+\index{provide@{provide}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{provide()}{provide()}}
+{\footnotesize\ttfamily void Simulated\+Transformation\+Provider\+Client\+::provide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback which is called whenever a new FRI message arrives. 
+
+{\bfseries{This element is an undocumented internal feature. It is not intended to be used by applications as it might change or be removed in future versions.}} ~\newline
+
+
+In this callback all requested transformations have to be set.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client_a4ba58c36a68750baf89c705f42239d78}{get\+Requested\+Transformation\+IDs()}}, \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client_a57bf908a411b019bc97cfa3c671387ae}{set\+Transformation()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_transformation_client_aa21b0759e9a7a22516752841bede1a3c}{KUKA\+::\+FRI\+::\+Transformation\+Client}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulated_transformation_provider_client_ad7c1847511910657aa8f95573777697d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_a9ffecdf8c7c5eca163cecbbbfd1db80f}\label{class_simulated_transformation_provider_client_a9ffecdf8c7c5eca163cecbbbfd1db80f}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!updateCurrentSensorData@{updateCurrentSensorData}}
+\index{updateCurrentSensorData@{updateCurrentSensorData}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{updateCurrentSensorData()}{updateCurrentSensorData()}}
+{\footnotesize\ttfamily void Simulated\+Transformation\+Provider\+Client\+::update\+Current\+Sensor\+Data (\begin{DoxyParamCaption}\item[{int}]{idx,  }\item[{int}]{age\+Of\+Data\+MS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulated_transformation_provider_client_a9ffecdf8c7c5eca163cecbbbfd1db80f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulated_transformation_provider_client_a9ffecdf8c7c5eca163cecbbbfd1db80f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_a706b796c65d3bbf1247c6e90e875304a}\label{class_simulated_transformation_provider_client_a706b796c65d3bbf1247c6e90e875304a}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_currentSensorData@{\_currentSensorData}}
+\index{\_currentSensorData@{\_currentSensorData}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_currentSensorData}{\_currentSensorData}}
+{\footnotesize\ttfamily double Simulated\+Transformation\+Provider\+Client\+::\+\_\+current\+Sensor\+Data\mbox{[}3\mbox{]}\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current sensor data to send 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_ab14bb538373ef93d26d6934453ee9037}\label{class_simulated_transformation_provider_client_ab14bb538373ef93d26d6934453ee9037}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_currentTimestampNanoSec@{\_currentTimestampNanoSec}}
+\index{\_currentTimestampNanoSec@{\_currentTimestampNanoSec}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_currentTimestampNanoSec}{\_currentTimestampNanoSec}}
+{\footnotesize\ttfamily unsigned int Simulated\+Transformation\+Provider\+Client\+::\+\_\+current\+Timestamp\+Nano\+Sec\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+timestamp for current sensor data (nanosec) 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_a8a6079d81918c2e9df0eeaec7a6a1ad7}\label{class_simulated_transformation_provider_client_a8a6079d81918c2e9df0eeaec7a6a1ad7}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_currentTimestampSec@{\_currentTimestampSec}}
+\index{\_currentTimestampSec@{\_currentTimestampSec}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_currentTimestampSec}{\_currentTimestampSec}}
+{\footnotesize\ttfamily unsigned int Simulated\+Transformation\+Provider\+Client\+::\+\_\+current\+Timestamp\+Sec\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+timestamp for current sensor data (sec) 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_a638084622ec20ed51a6a5813e0bbe832}\label{class_simulated_transformation_provider_client_a638084622ec20ed51a6a5813e0bbe832}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_friMS@{\_friMS}}
+\index{\_friMS@{\_friMS}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_friMS}{\_friMS}}
+{\footnotesize\ttfamily const int Simulated\+Transformation\+Provider\+Client\+::\+\_\+fri\+MS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+FRI send period in ms. 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_ad7532c4f6c02d9f12f772d7b9364dd6d}\label{class_simulated_transformation_provider_client_ad7532c4f6c02d9f12f772d7b9364dd6d}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_millisecondsExpired@{\_millisecondsExpired}}
+\index{\_millisecondsExpired@{\_millisecondsExpired}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_millisecondsExpired}{\_millisecondsExpired}}
+{\footnotesize\ttfamily int Simulated\+Transformation\+Provider\+Client\+::\+\_\+milliseconds\+Expired\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+milliseconds expired since first callback 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_af97356a11123badbdd80c1e90dad5f62}\label{class_simulated_transformation_provider_client_af97356a11123badbdd80c1e90dad5f62}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_sensorMS@{\_sensorMS}}
+\index{\_sensorMS@{\_sensorMS}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_sensorMS}{\_sensorMS}}
+{\footnotesize\ttfamily const int Simulated\+Transformation\+Provider\+Client\+::\+\_\+sensor\+MS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sensor sampling rate in ms. 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_a8dbea0862dcac8518e8f0fe6f5d1124e}\label{class_simulated_transformation_provider_client_a8dbea0862dcac8518e8f0fe6f5d1124e}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_slowDownFactor@{\_slowDownFactor}}
+\index{\_slowDownFactor@{\_slowDownFactor}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_slowDownFactor}{\_slowDownFactor}}
+{\footnotesize\ttfamily int Simulated\+Transformation\+Provider\+Client\+::\+\_\+slow\+Down\+Factor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Slow down factor for motion. 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_a4a01a054a3021cc3f74c50d55bc19a95}\label{class_simulated_transformation_provider_client_a4a01a054a3021cc3f74c50d55bc19a95}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!\_waitBeforeStartMS@{\_waitBeforeStartMS}}
+\index{\_waitBeforeStartMS@{\_waitBeforeStartMS}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{\_waitBeforeStartMS}{\_waitBeforeStartMS}}
+{\footnotesize\ttfamily const int Simulated\+Transformation\+Provider\+Client\+::\+\_\+wait\+Before\+Start\+MS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+wait for so many milliseconds before starting motion 
+
+\mbox{\Hypertarget{class_simulated_transformation_provider_client_aac9c8a10565d64adf484ef8fde50b2c1}\label{class_simulated_transformation_provider_client_aac9c8a10565d64adf484ef8fde50b2c1}} 
+\index{SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}!simuTrafo@{simuTrafo}}
+\index{simuTrafo@{simuTrafo}!SimulatedTransformationProviderClient@{SimulatedTransformationProviderClient}}
+\doxysubsubsection{\texorpdfstring{simuTrafo}{simuTrafo}}
+{\footnotesize\ttfamily const double Simulated\+Transformation\+Provider\+Client\+::simu\+Trafo\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= }
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+array with simulated transformation data 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+Simulated\+Transformation\+Provider/\mbox{\hyperlink{_simulated_transformation_provider_client_8h}{Simulated\+Transformation\+Provider\+Client.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+Simulated\+Transformation\+Provider/\mbox{\hyperlink{_simulated_transformation_provider_client_8cpp}{Simulated\+Transformation\+Provider\+Client.\+cpp}}\end{DoxyCompactItemize}

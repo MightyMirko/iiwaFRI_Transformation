@@ -1,0 +1,288 @@
+\hypertarget{class_l_b_r_wrench_sine_overlay_client}{}\doxysection{LBRWrench\+Sine\+Overlay\+Client Class Reference}
+\label{class_l_b_r_wrench_sine_overlay_client}\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+
+
+Test client that can overlay interpolator joint positions with sine waves.  
+
+
+
+
+{\ttfamily \#include $<$LBRWrench\+Sine\+Overlay\+Client.\+h$>$}
+
+
+
+Inheritance diagram for LBRWrench\+Sine\+Overlay\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{class_l_b_r_wrench_sine_overlay_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for LBRWrench\+Sine\+Overlay\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_wrench_sine_overlay_client__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a490bfcdda276b9033f83370053c8ed1d}{LBRWrench\+Sine\+Overlay\+Client}} (double freq\+HzX, double freq\+HzY, double ampl\+RadX, double ampl\+RadY)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a1ece14b7573e7ae212d4c556f47ba4bc}{$\sim$\+LBRWrench\+Sine\+Overlay\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a057d71ac5c28057955f32799fda956a6}{on\+State\+Change}} (\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}} old\+State, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Callback for FRI state changes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_ac75b5b35086e28f88d85fb8be9fd38f7}{wait\+For\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI session state \textquotesingle{}Commanding Wait\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_ace90bc97d85544a1d2d12b0161a4a19b}{command}} ()
+\begin{DoxyCompactList}\small\item\em Callback for the FRI state \textquotesingle{}Commanding Active\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a0e7728e45a79813be8db8d26bed55a03}{\+\_\+freq\+HzX}}
+\begin{DoxyCompactList}\small\item\em sine frequency x-\/direction (Hertz) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a416d8970b9ac650d966b2789be8b4836}{\+\_\+freq\+HzY}}
+\begin{DoxyCompactList}\small\item\em sine frequency y-\/direction (Hertz) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_afc36748748818624f3a99dbf4269ab37}{\+\_\+ampl\+RadX}}
+\begin{DoxyCompactList}\small\item\em sine amplitude x-\/direction (radians) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a0838964468e509346ff4ccb3e8b39e5b}{\+\_\+ampl\+RadY}}
+\begin{DoxyCompactList}\small\item\em sine amplitude y-\/direction (radians) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_afed284f6e6e8195e0ae051782350e4f8}{\+\_\+wrench}} \mbox{[}\mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a8b657a2e5ee65569efffba350e39d801}{CART\+\_\+\+VECTOR\+\_\+\+DIM}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em commanded wrench \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_af8e443992cf5e64d783f66a2d2b20ab5}{\+\_\+step\+WidthX}}
+\begin{DoxyCompactList}\small\item\em stepwidth for sine in x-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_aa86288c39e75f9d4de61db3706e1707b}{\+\_\+step\+WidthY}}
+\begin{DoxyCompactList}\small\item\em stepwidth for sine in y-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_abf97c640c2cfaaf01398c0a4a7611f54}{\+\_\+phiX}}
+\begin{DoxyCompactList}\small\item\em current phase for sine in x-\/direction \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a1254e4aab4193afa105faf20e6cf3a8d}{\+\_\+phiY}}
+\begin{DoxyCompactList}\small\item\em current phase for sine in y-\/direction \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a8b657a2e5ee65569efffba350e39d801}{CART\+\_\+\+VECTOR\+\_\+\+DIM}} = 6
+\begin{DoxyCompactList}\small\item\em number of elements in a Cartesian vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Test client that can overlay interpolator joint positions with sine waves. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a490bfcdda276b9033f83370053c8ed1d}\label{class_l_b_r_wrench_sine_overlay_client_a490bfcdda276b9033f83370053c8ed1d}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{LBRWrenchSineOverlayClient()}{LBRWrenchSineOverlayClient()}}
+{\footnotesize\ttfamily LBRWrench\+Sine\+Overlay\+Client\+::\+LBRWrench\+Sine\+Overlay\+Client (\begin{DoxyParamCaption}\item[{double}]{freq\+HzX,  }\item[{double}]{freq\+HzY,  }\item[{double}]{ampl\+RadX,  }\item[{double}]{ampl\+RadY }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\+HzX} & Sine frequency in hertz of force in X-\/direction \\
+\hline
+{\em freq\+HzY} & Sine frequency in hertz of force in Y-\/direction \\
+\hline
+{\em ampl\+RadX} & Sine amplitude in radians of force in X-\/direction \\
+\hline
+{\em ampl\+RadY} & Sine amplitude in radians of force in Y-\/direction \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a1ece14b7573e7ae212d4c556f47ba4bc}\label{class_l_b_r_wrench_sine_overlay_client_a1ece14b7573e7ae212d4c556f47ba4bc}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!````~LBRWrenchSineOverlayClient@{$\sim$LBRWrenchSineOverlayClient}}
+\index{````~LBRWrenchSineOverlayClient@{$\sim$LBRWrenchSineOverlayClient}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$LBRWrenchSineOverlayClient()}{~LBRWrenchSineOverlayClient()}}
+{\footnotesize\ttfamily LBRWrench\+Sine\+Overlay\+Client\+::$\sim$\+LBRWrench\+Sine\+Overlay\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_ace90bc97d85544a1d2d12b0161a4a19b}\label{class_l_b_r_wrench_sine_overlay_client_ace90bc97d85544a1d2d12b0161a4a19b}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!command@{command}}
+\index{command@{command}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily void LBRWrench\+Sine\+Overlay\+Client\+::command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI state \textquotesingle{}Commanding Active\textquotesingle{}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a30e219dc3f5d5fe6f121e81f7728b57b}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_wrench_sine_overlay_client_ace90bc97d85544a1d2d12b0161a4a19b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a057d71ac5c28057955f32799fda956a6}\label{class_l_b_r_wrench_sine_overlay_client_a057d71ac5c28057955f32799fda956a6}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!onStateChange@{onStateChange}}
+\index{onStateChange@{onStateChange}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{onStateChange()}{onStateChange()}}
+{\footnotesize\ttfamily void LBRWrench\+Sine\+Overlay\+Client\+::on\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}}}]{old\+State,  }\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{KUKA\+::\+FRI\+::\+ESession\+State}}}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for FRI state changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+State} & \\
+\hline
+{\em new\+State} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a90a4f9f1ed44e5ad43ff3aafa449b4a6}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_wrench_sine_overlay_client_a057d71ac5c28057955f32799fda956a6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_ac75b5b35086e28f88d85fb8be9fd38f7}\label{class_l_b_r_wrench_sine_overlay_client_ac75b5b35086e28f88d85fb8be9fd38f7}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!waitForCommand@{waitForCommand}}
+\index{waitForCommand@{waitForCommand}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{waitForCommand()}{waitForCommand()}}
+{\footnotesize\ttfamily void LBRWrench\+Sine\+Overlay\+Client\+::wait\+For\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callback for the FRI session state \textquotesingle{}Commanding Wait\textquotesingle{}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_ac949b46d6adcb4f9902c38c5a724fa0b}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_b_r_wrench_sine_overlay_client_ac75b5b35086e28f88d85fb8be9fd38f7_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_afc36748748818624f3a99dbf4269ab37}\label{class_l_b_r_wrench_sine_overlay_client_afc36748748818624f3a99dbf4269ab37}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_amplRadX@{\_amplRadX}}
+\index{\_amplRadX@{\_amplRadX}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_amplRadX}{\_amplRadX}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+ampl\+RadX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sine amplitude x-\/direction (radians) 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a0838964468e509346ff4ccb3e8b39e5b}\label{class_l_b_r_wrench_sine_overlay_client_a0838964468e509346ff4ccb3e8b39e5b}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_amplRadY@{\_amplRadY}}
+\index{\_amplRadY@{\_amplRadY}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_amplRadY}{\_amplRadY}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+ampl\+RadY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sine amplitude y-\/direction (radians) 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a0e7728e45a79813be8db8d26bed55a03}\label{class_l_b_r_wrench_sine_overlay_client_a0e7728e45a79813be8db8d26bed55a03}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_freqHzX@{\_freqHzX}}
+\index{\_freqHzX@{\_freqHzX}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_freqHzX}{\_freqHzX}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+freq\+HzX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sine frequency x-\/direction (Hertz) 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a416d8970b9ac650d966b2789be8b4836}\label{class_l_b_r_wrench_sine_overlay_client_a416d8970b9ac650d966b2789be8b4836}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_freqHzY@{\_freqHzY}}
+\index{\_freqHzY@{\_freqHzY}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_freqHzY}{\_freqHzY}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+freq\+HzY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+sine frequency y-\/direction (Hertz) 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_abf97c640c2cfaaf01398c0a4a7611f54}\label{class_l_b_r_wrench_sine_overlay_client_abf97c640c2cfaaf01398c0a4a7611f54}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_phiX@{\_phiX}}
+\index{\_phiX@{\_phiX}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_phiX}{\_phiX}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+phiX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current phase for sine in x-\/direction 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a1254e4aab4193afa105faf20e6cf3a8d}\label{class_l_b_r_wrench_sine_overlay_client_a1254e4aab4193afa105faf20e6cf3a8d}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_phiY@{\_phiY}}
+\index{\_phiY@{\_phiY}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_phiY}{\_phiY}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+phiY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current phase for sine in y-\/direction 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_af8e443992cf5e64d783f66a2d2b20ab5}\label{class_l_b_r_wrench_sine_overlay_client_af8e443992cf5e64d783f66a2d2b20ab5}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_stepWidthX@{\_stepWidthX}}
+\index{\_stepWidthX@{\_stepWidthX}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_stepWidthX}{\_stepWidthX}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+step\+WidthX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stepwidth for sine in x-\/direction 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_aa86288c39e75f9d4de61db3706e1707b}\label{class_l_b_r_wrench_sine_overlay_client_aa86288c39e75f9d4de61db3706e1707b}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_stepWidthY@{\_stepWidthY}}
+\index{\_stepWidthY@{\_stepWidthY}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_stepWidthY}{\_stepWidthY}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+step\+WidthY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stepwidth for sine in y-\/direction 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_afed284f6e6e8195e0ae051782350e4f8}\label{class_l_b_r_wrench_sine_overlay_client_afed284f6e6e8195e0ae051782350e4f8}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!\_wrench@{\_wrench}}
+\index{\_wrench@{\_wrench}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{\_wrench}{\_wrench}}
+{\footnotesize\ttfamily double LBRWrench\+Sine\+Overlay\+Client\+::\+\_\+wrench\mbox{[}\mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a8b657a2e5ee65569efffba350e39d801}{CART\+\_\+\+VECTOR\+\_\+\+DIM}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+commanded wrench 
+
+\mbox{\Hypertarget{class_l_b_r_wrench_sine_overlay_client_a8b657a2e5ee65569efffba350e39d801}\label{class_l_b_r_wrench_sine_overlay_client_a8b657a2e5ee65569efffba350e39d801}} 
+\index{LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}!CART\_VECTOR\_DIM@{CART\_VECTOR\_DIM}}
+\index{CART\_VECTOR\_DIM@{CART\_VECTOR\_DIM}!LBRWrenchSineOverlayClient@{LBRWrenchSineOverlayClient}}
+\doxysubsubsection{\texorpdfstring{CART\_VECTOR\_DIM}{CART\_VECTOR\_DIM}}
+{\footnotesize\ttfamily const int LBRWrench\+Sine\+Overlay\+Client\+::\+CART\+\_\+\+VECTOR\+\_\+\+DIM = 6\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+number of elements in a Cartesian vector 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+LBRWrench\+Sine\+Overlay/\mbox{\hyperlink{_l_b_r_wrench_sine_overlay_client_8h}{LBRWrench\+Sine\+Overlay\+Client.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/example/\+LBRWrench\+Sine\+Overlay/\mbox{\hyperlink{_l_b_r_wrench_sine_overlay_client_8cpp}{LBRWrench\+Sine\+Overlay\+Client.\+cpp}}\end{DoxyCompactItemize}

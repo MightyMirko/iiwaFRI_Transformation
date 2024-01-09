@@ -1,0 +1,135 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder}{}\doxysection{KUKA\+::FRI\+::Monitoring\+Message\+Decoder Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder}\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+
+
+{\ttfamily \#include $<$fri\+Monitoring\+Message\+Decoder.\+h$>$}
+
+
+
+Collaboration diagram for KUKA\+::FRI\+::Monitoring\+Message\+Decoder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_1_1_local_monitoring_data_container}{Local\+Monitoring\+Data\+Container}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a839c031de8bf792b17b612fc6ef91d05}{Monitoring\+Message\+Decoder}} (\mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}} $\ast$p\+Message, int num)
+\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a56683356aa506fa64b3b76e8995917e8}{$\sim$\+Monitoring\+Message\+Decoder}} ()
+\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aa72fb1e622847a636e6f5d7ac4770103}{decode}} (char $\ast$buffer, int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a5f7d8c50c6b2275a90ee8053eeeeda0a}{init\+Message}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a319ab303ee8c1bb7b4f0a5ca01623b11}{m\+\_\+n\+Num}}
+\item 
+\mbox{\hyperlink{struct_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_1_1_local_monitoring_data_container}{Local\+Monitoring\+Data\+Container}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aebce47af44020f4205056a9b518f520c}{m\+\_\+t\+Send\+Container}}
+\item 
+\mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a9a89e30c45b225ecff63decd42d01727}{m\+\_\+p\+Message}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a839c031de8bf792b17b612fc6ef91d05}\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a839c031de8bf792b17b612fc6ef91d05}} 
+\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}!MonitoringMessageDecoder@{MonitoringMessageDecoder}}
+\index{MonitoringMessageDecoder@{MonitoringMessageDecoder}!KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+\doxysubsubsection{\texorpdfstring{MonitoringMessageDecoder()}{MonitoringMessageDecoder()}}
+{\footnotesize\ttfamily Monitoring\+Message\+Decoder\+::\+Monitoring\+Message\+Decoder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}} $\ast$}]{p\+Message,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a839c031de8bf792b17b612fc6ef91d05_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a56683356aa506fa64b3b76e8995917e8}\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a56683356aa506fa64b3b76e8995917e8}} 
+\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}!````~MonitoringMessageDecoder@{$\sim$MonitoringMessageDecoder}}
+\index{````~MonitoringMessageDecoder@{$\sim$MonitoringMessageDecoder}!KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+\doxysubsubsection{\texorpdfstring{$\sim$MonitoringMessageDecoder()}{~MonitoringMessageDecoder()}}
+{\footnotesize\ttfamily Monitoring\+Message\+Decoder\+::$\sim$\+Monitoring\+Message\+Decoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aa72fb1e622847a636e6f5d7ac4770103}\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aa72fb1e622847a636e6f5d7ac4770103}} 
+\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}!decode@{decode}}
+\index{decode@{decode}!KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Monitoring\+Message\+Decoder\+::decode (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aa72fb1e622847a636e6f5d7ac4770103_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aa72fb1e622847a636e6f5d7ac4770103_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a5f7d8c50c6b2275a90ee8053eeeeda0a}\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a5f7d8c50c6b2275a90ee8053eeeeda0a}} 
+\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}!initMessage@{initMessage}}
+\index{initMessage@{initMessage}!KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+\doxysubsubsection{\texorpdfstring{initMessage()}{initMessage()}}
+{\footnotesize\ttfamily void Monitoring\+Message\+Decoder\+::init\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a5f7d8c50c6b2275a90ee8053eeeeda0a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a5f7d8c50c6b2275a90ee8053eeeeda0a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a319ab303ee8c1bb7b4f0a5ca01623b11}\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a319ab303ee8c1bb7b4f0a5ca01623b11}} 
+\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}!m\_nNum@{m\_nNum}}
+\index{m\_nNum@{m\_nNum}!KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+\doxysubsubsection{\texorpdfstring{m\_nNum}{m\_nNum}}
+{\footnotesize\ttfamily int KUKA\+::\+FRI\+::\+Monitoring\+Message\+Decoder\+::m\+\_\+n\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a9a89e30c45b225ecff63decd42d01727}\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_a9a89e30c45b225ecff63decd42d01727}} 
+\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}!m\_pMessage@{m\_pMessage}}
+\index{m\_pMessage@{m\_pMessage}!KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+\doxysubsubsection{\texorpdfstring{m\_pMessage}{m\_pMessage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}}$\ast$ KUKA\+::\+FRI\+::\+Monitoring\+Message\+Decoder\+::m\+\_\+p\+Message\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aebce47af44020f4205056a9b518f520c}\label{class_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_aebce47af44020f4205056a9b518f520c}} 
+\index{KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}!m\_tSendContainer@{m\_tSendContainer}}
+\index{m\_tSendContainer@{m\_tSendContainer}!KUKA::FRI::MonitoringMessageDecoder@{KUKA::FRI::MonitoringMessageDecoder}}
+\doxysubsubsection{\texorpdfstring{m\_tSendContainer}{m\_tSendContainer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_k_u_k_a_1_1_f_r_i_1_1_monitoring_message_decoder_1_1_local_monitoring_data_container}{Local\+Monitoring\+Data\+Container}} KUKA\+::\+FRI\+::\+Monitoring\+Message\+Decoder\+::m\+\_\+t\+Send\+Container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/protobuf/\mbox{\hyperlink{fri_monitoring_message_decoder_8h}{fri\+Monitoring\+Message\+Decoder.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/protobuf/\mbox{\hyperlink{fri_monitoring_message_decoder_8cpp}{fri\+Monitoring\+Message\+Decoder.\+cpp}}\end{DoxyCompactItemize}

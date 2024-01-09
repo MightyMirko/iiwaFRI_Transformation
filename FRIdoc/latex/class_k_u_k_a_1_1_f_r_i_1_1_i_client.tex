@@ -1,0 +1,193 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client}{}\doxysection{KUKA\+::FRI\+::IClient Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client}\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+
+
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client interface.  
+
+
+
+
+{\ttfamily \#include $<$fri\+Client\+If.\+h$>$}
+
+
+
+Inheritance diagram for KUKA\+::FRI\+::IClient\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_client__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a5c9de3293744c41843a77255f0913b28}{$\sim$\+IClient}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a1816c9c4e7b93ebca3178b7c5e7b58b3}{on\+State\+Change}} (\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{ESession\+State}} old\+State, \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{ESession\+State}} new\+State)=0
+\begin{DoxyCompactList}\small\item\em Callback that is called whenever the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state changes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a2f5a76fadff18150efad48fd8eded1bc}{monitor}} ()=0
+\begin{DoxyCompactList}\small\item\em Callback for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session states \textquotesingle{}Monitoring Wait\textquotesingle{} and \textquotesingle{}Monitoring Ready\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ab02eabc2be3c968f53a36cd7b42373fe}{wait\+For\+Command}} ()=0
+\begin{DoxyCompactList}\small\item\em Callback for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state \textquotesingle{}Commanding Wait\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ae2b1f840b048ba11ff10f8a1e72ab6c0}{command}} ()=0
+\begin{DoxyCompactList}\small\item\em Callback for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state \textquotesingle{}Commanding\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_k_u_k_a_1_1_f_r_i_1_1_client_data}{Client\+Data}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a5b763caa2185118070a354c443fc0374}{create\+Data}} ()=0
+\begin{DoxyCompactList}\small\item\em Method to create and initialize the client data structure (used internally). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a1a1bbaf3bcf6f3e46ea0da657a6b630a}{Client\+Application}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client interface. 
+
+This is the callback interface that should be implemented by \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} clients. Callbacks are automatically called by the client application (\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application}{Client\+Application}}) whenever new \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} messages arrive. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a5c9de3293744c41843a77255f0913b28}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a5c9de3293744c41843a77255f0913b28}} 
+\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}!````~IClient@{$\sim$IClient}}
+\index{````~IClient@{$\sim$IClient}!KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$IClient()}{~IClient()}}
+{\footnotesize\ttfamily virtual KUKA\+::\+FRI\+::\+IClient\+::$\sim$\+IClient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ae2b1f840b048ba11ff10f8a1e72ab6c0}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ae2b1f840b048ba11ff10f8a1e72ab6c0}} 
+\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}!command@{command}}
+\index{command@{command}!KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+\doxysubsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily virtual void KUKA\+::\+FRI\+::\+IClient\+::command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state \textquotesingle{}Commanding\textquotesingle{}. 
+
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a30e219dc3f5d5fe6f121e81f7728b57b}{KUKA\+::\+FRI\+::\+LBRClient}}, \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_ace90bc97d85544a1d2d12b0161a4a19b}{LBRWrench\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_ac6be1b28bf0fbb6d4ef82b45e7cb28f4}{LBRTorque\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_l_b_r_joint_sine_overlay_client_af1c5d90f3aa1c1717f849f6c7f7a1ad5}{LBRJoint\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_my_l_b_r_client_a926058556eaf110456d80f2f918afdaa}{My\+LBRClient}}, and \mbox{\hyperlink{class_i_o_access_client_ae855d596323dfa86d9d089203092ec04}{IOAccess\+Client}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ae2b1f840b048ba11ff10f8a1e72ab6c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a5b763caa2185118070a354c443fc0374}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a5b763caa2185118070a354c443fc0374}} 
+\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}!createData@{createData}}
+\index{createData@{createData}!KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+\doxysubsubsection{\texorpdfstring{createData()}{createData()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_k_u_k_a_1_1_f_r_i_1_1_client_data}{Client\+Data}}$\ast$ KUKA\+::\+FRI\+::\+IClient\+::create\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Method to create and initialize the client data structure (used internally). 
+
+\begin{DoxyReturn}{Returns}
+newly allocated client data structure 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_ad0a6f5ac8ae9f0a84b1aa37becaa7e4a}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a5b763caa2185118070a354c443fc0374_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a2f5a76fadff18150efad48fd8eded1bc}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a2f5a76fadff18150efad48fd8eded1bc}} 
+\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}!monitor@{monitor}}
+\index{monitor@{monitor}!KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+\doxysubsubsection{\texorpdfstring{monitor()}{monitor()}}
+{\footnotesize\ttfamily virtual void KUKA\+::\+FRI\+::\+IClient\+::monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session states \textquotesingle{}Monitoring Wait\textquotesingle{} and \textquotesingle{}Monitoring Ready\textquotesingle{}. 
+
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a11c4e9df043726944c8b1da6b426934e}{KUKA\+::\+FRI\+::\+LBRClient}}, \mbox{\hyperlink{class_my_l_b_r_client_a0edb8cb5b23dea3804b2946d374821ee}{My\+LBRClient}}, and \mbox{\hyperlink{class_i_o_access_client_adbfc68a5d43cc546ba6e31b61c3528b4}{IOAccess\+Client}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a2f5a76fadff18150efad48fd8eded1bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a1816c9c4e7b93ebca3178b7c5e7b58b3}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a1816c9c4e7b93ebca3178b7c5e7b58b3}} 
+\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}!onStateChange@{onStateChange}}
+\index{onStateChange@{onStateChange}!KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+\doxysubsubsection{\texorpdfstring{onStateChange()}{onStateChange()}}
+{\footnotesize\ttfamily virtual void KUKA\+::\+FRI\+::\+IClient\+::on\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{ESession\+State}}}]{old\+State,  }\item[{\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{ESession\+State}}}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback that is called whenever the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+State} & previous \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state \\
+\hline
+{\em new\+State} & current \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_a057d71ac5c28057955f32799fda956a6}{LBRWrench\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_afc6eeb71f86b2265228d7b9a8865ad1f}{LBRTorque\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_l_b_r_joint_sine_overlay_client_adedf6bd417f072359ba63ecbfeed0a07}{LBRJoint\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_my_l_b_r_client_a9c4266e8d2aebca5843c08239a4e3adf}{My\+LBRClient}}, \mbox{\hyperlink{class_i_o_access_client_af3917778dece8f0a713448967fa5a34a}{IOAccess\+Client}}, and \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_a90a4f9f1ed44e5ad43ff3aafa449b4a6}{KUKA\+::\+FRI\+::\+LBRClient}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a1816c9c4e7b93ebca3178b7c5e7b58b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ab02eabc2be3c968f53a36cd7b42373fe}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ab02eabc2be3c968f53a36cd7b42373fe}} 
+\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}!waitForCommand@{waitForCommand}}
+\index{waitForCommand@{waitForCommand}!KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+\doxysubsubsection{\texorpdfstring{waitForCommand()}{waitForCommand()}}
+{\footnotesize\ttfamily virtual void KUKA\+::\+FRI\+::\+IClient\+::wait\+For\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state \textquotesingle{}Commanding Wait\textquotesingle{}. 
+
+
+
+Implemented in \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client_ac949b46d6adcb4f9902c38c5a724fa0b}{KUKA\+::\+FRI\+::\+LBRClient}}, \mbox{\hyperlink{class_l_b_r_wrench_sine_overlay_client_ac75b5b35086e28f88d85fb8be9fd38f7}{LBRWrench\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_l_b_r_torque_sine_overlay_client_a8d34866a1ee8c864ee1c1abeccb5028b}{LBRTorque\+Sine\+Overlay\+Client}}, \mbox{\hyperlink{class_my_l_b_r_client_a32e8d5369604b74411c6c580b626e47c}{My\+LBRClient}}, and \mbox{\hyperlink{class_i_o_access_client_ace9215030d5cdb787ad8f200ba073e8c}{IOAccess\+Client}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_i_client_ab02eabc2be3c968f53a36cd7b42373fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a1a1bbaf3bcf6f3e46ea0da657a6b630a}\label{class_k_u_k_a_1_1_f_r_i_1_1_i_client_a1a1bbaf3bcf6f3e46ea0da657a6b630a}} 
+\index{KUKA::FRI::IClient@{KUKA::FRI::IClient}!ClientApplication@{ClientApplication}}
+\index{ClientApplication@{ClientApplication}!KUKA::FRI::IClient@{KUKA::FRI::IClient}}
+\doxysubsubsection{\texorpdfstring{ClientApplication}{ClientApplication}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_client_application}{Client\+Application}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/\mbox{\hyperlink{fri_client_if_8h}{fri\+Client\+If.\+h}}\end{DoxyCompactItemize}

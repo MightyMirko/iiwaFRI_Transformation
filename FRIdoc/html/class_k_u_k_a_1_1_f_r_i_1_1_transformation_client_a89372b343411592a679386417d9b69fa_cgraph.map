@@ -1,0 +1,5 @@
+<map id="KUKA::FRI::TransformationClient::getAnalogIOValue" name="KUKA::FRI::TransformationClient::getAnalogIOValue">
+<area shape="rect" id="node1" title="Get analog IO value." alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node2" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#ac77b81d510899c1afba106c2ec8c1727" title=" " alt="" coords="237,5,396,47"/>
+<area shape="rect" id="node3" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#a5bce1775434444edbcecce32b0a7d06f" title=" " alt="" coords="444,5,603,47"/>
+</map>

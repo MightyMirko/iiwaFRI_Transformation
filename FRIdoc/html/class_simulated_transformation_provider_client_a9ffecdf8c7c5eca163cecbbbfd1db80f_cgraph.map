@@ -1,0 +1,6 @@
+<map id="SimulatedTransformationProviderClient::updateCurrentSensorData" name="SimulatedTransformationProviderClient::updateCurrentSensorData">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,220,112"/>
+<area shape="rect" id="node2" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#a1a068f1dae75a8478a1e63a3ffd2a0f2" title="Get the nanoseconds elapsed since the last second (in Unix time)." alt="" coords="268,5,469,47"/>
+<area shape="rect" id="node3" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html#a98bd724fa7d308ceeb488881b986f2a0" title="Get the timestamp of the current received FRI monitor message in Unix time." alt="" coords="277,71,461,112"/>
+<area shape="rect" id="node4" href="$pb__syshdr_8h.html#a39dc31816e18e5a0b48da2865a4b698c" title=" " alt="" coords="333,137,405,163"/>
+</map>

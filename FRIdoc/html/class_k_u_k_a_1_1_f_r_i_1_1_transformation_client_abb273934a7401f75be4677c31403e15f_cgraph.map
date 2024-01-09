@@ -1,0 +1,6 @@
+<map id="KUKA::FRI::TransformationClient::setDigitalIOValue" name="KUKA::FRI::TransformationClient::setDigitalIOValue">
+<area shape="rect" id="node1" title="Set digital output value." alt="" coords="5,5,189,47"/>
+<area shape="rect" id="node2" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#aac37310af7f0dd4db183106c278e0810" title=" " alt="" coords="237,5,396,47"/>
+<area shape="rect" id="node3" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#a95e1117745481a9624d4e868d9c0cbfe" title=" " alt="" coords="444,5,603,47"/>
+<area shape="rect" id="node4" href="$struct_k_u_k_a_1_1_f_r_i_1_1_client_data.html#a5bce1775434444edbcecce32b0a7d06f" title=" " alt="" coords="651,5,809,47"/>
+</map>

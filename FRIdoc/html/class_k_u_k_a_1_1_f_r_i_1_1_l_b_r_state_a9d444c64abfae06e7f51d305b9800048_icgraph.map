@@ -1,0 +1,6 @@
+<map id="KUKA::FRI::LBRState::getSampleTime" name="KUKA::FRI::LBRState::getSampleTime">
+<area shape="rect" id="node1" title="Get the sample time in seconds." alt="" coords="251,71,405,112"/>
+<area shape="rect" id="node2" href="$class_l_b_r_joint_sine_overlay_client.html#adedf6bd417f072359ba63ecbfeed0a07" title="Callback for FRI state changes." alt="" coords="13,5,195,47"/>
+<area shape="rect" id="node3" href="$class_l_b_r_torque_sine_overlay_client.html#afc6eeb71f86b2265228d7b9a8865ad1f" title="Callback for FRI state changes." alt="" coords="8,71,200,112"/>
+<area shape="rect" id="node4" href="$class_l_b_r_wrench_sine_overlay_client.html#a057d71ac5c28057955f32799fda956a6" title="Callback for FRI state changes." alt="" coords="5,136,203,177"/>
+</map>

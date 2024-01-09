@@ -1,0 +1,519 @@
+\hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state}{}\doxysection{KUKA\+::FRI\+::LBRState Class Reference}
+\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state}\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+
+
+Wrapper class for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message for a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR (leightweight) robot.  
+
+
+
+
+{\ttfamily \#include $<$fri\+LBRState.\+h$>$}
+
+
+
+Collaboration diagram for KUKA\+::FRI\+::LBRState\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a2483401ea64f10b9bab6cf84201168e6ad0e39e10161e30843a4182e37a0f5321}{NUMBER\+\_\+\+OF\+\_\+\+JOINTS}} = 7
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a14d666dda2930124a08e591e7752acd2}{LBRState}} ()
+\item 
+double \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a9d444c64abfae06e7f51d305b9800048}{get\+Sample\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Get the sample time in seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{ESession\+State}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ae41a4b6e0be02090f239b73de4665dd1}{get\+Session\+State}} () const
+\begin{DoxyCompactList}\small\item\em Get the current \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a69339e6f4f8c91bfab09cd7c0709b27d}{EConnection\+Quality}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a614ccf0234d04f6b8dd3210358c633cd}{get\+Connection\+Quality}} () const
+\begin{DoxyCompactList}\small\item\em Get the current \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} connection quality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a6309263e641f5a4b88a0bf6262d95948}{ESafety\+State}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ae64a165b5d7b6c34c04cd340d0e12979}{get\+Safety\+State}} () const
+\begin{DoxyCompactList}\small\item\em Get the current safety state of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a09e0df19e311b9452454f17e5af04241}{EOperation\+Mode}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a9ba139b8ddf40d39c431d08733a9df4a}{get\+Operation\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em Get the current operation mode of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a9364d8c73f13b608fe2f844ddb53e817}{EDrive\+State}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a58cc3325592b7af641bd633f1e2e3b01}{get\+Drive\+State}} () const
+\begin{DoxyCompactList}\small\item\em Get the accumulated drive state over all drives of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab37cbee97834c90615415394721b3f67}{EClient\+Command\+Mode}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a57940ea297570db13972f34a5245cf69}{get\+Client\+Command\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em Get the client command mode specified by the client. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab83788fc82c286ece5952fa66fe6c317}{EOverlay\+Type}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a759c37abc003915c6088b46071a2c059}{get\+Overlay\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Get the overlay type specified by the client. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a555a9311ac6b5049e3dbed980c7e7ccd}{EControl\+Mode}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a8c5066e83d7e66a5de3fd14259fb725b}{get\+Control\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em Get the control mode of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_abf6e4185f3e5b65496196ed8c2b2593c}{get\+Timestamp\+Sec}} () const
+\begin{DoxyCompactList}\small\item\em Get the timestamp of the current robot state in Unix time. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ad93338a3e62fbbc08f969776de9e294d}{get\+Timestamp\+Nano\+Sec}} () const
+\begin{DoxyCompactList}\small\item\em Get the nanoseconds elapsed since the last second (in Unix time). \end{DoxyCompactList}\item 
+const double $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a393da3adc0085a01463f9b2e10dcf0f1}{get\+Measured\+Joint\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the currently measured joint positions of the robot. \end{DoxyCompactList}\item 
+const double $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a1eb0f357f13fb0d75e2fa483ce3bc85c}{get\+Commanded\+Joint\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the last commanded joint positions of the robot. \end{DoxyCompactList}\item 
+const double $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a88c1c36d3f49dc02d954ae6a04c5a075}{get\+Measured\+Torque}} () const
+\begin{DoxyCompactList}\small\item\em Get the currently measured joint torques of the robot. \end{DoxyCompactList}\item 
+const double $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ad843e9b0a04224a77179b642519b8fc8}{get\+Commanded\+Torque}} () const
+\begin{DoxyCompactList}\small\item\em Get the last commanded joint torques of the robot. \end{DoxyCompactList}\item 
+const double $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ab9696fcc4bfbf4edd3633ebd691cfe96}{get\+External\+Torque}} () const
+\begin{DoxyCompactList}\small\item\em Get the currently measured external joint torques of the robot. \end{DoxyCompactList}\item 
+const double $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aa8df9076603ca72bd53cae74449377fd}{get\+Ipo\+Joint\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the joint positions commanded by the interpolator. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_abf41527865f27323c89789b6e50baefe}{get\+Tracking\+Performance}} () const
+\begin{DoxyCompactList}\small\item\em Get an indicator for the current tracking performance of the commanded robot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aafaf0eacc7fb915ea08869afb31c5a3b}{get\+Boolean\+IOValue}} (const char $\ast$name) const
+\begin{DoxyCompactList}\small\item\em Get boolean IO value. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a6b1d593daf83e832a407e6088d3df152}{get\+Digital\+IOValue}} (const char $\ast$name) const
+\begin{DoxyCompactList}\small\item\em Get digital IO value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a899e75d623dc6c3098bf247b6323d793}{get\+Analog\+IOValue}} (const char $\ast$name) const
+\begin{DoxyCompactList}\small\item\em Get analog IO value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}} $\ast$ \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ab969e958fcccbd7176040978c77265d8}{\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message (protobuf struct) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_af5c045a92c4b93296acd544b9000e1a6}{LBRMONITORMESSAGEID}} = 0x245142
+\begin{DoxyCompactList}\small\item\em type identifier for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message corresponding to a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ac6a886bf0f241f29fa732e8b9aeb5591}{LBRClient}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper class for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message for a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR (leightweight) robot. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a2483401ea64f10b9bab6cf84201168e6}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a2483401ea64f10b9bab6cf84201168e6}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUMBER\_OF\_JOINTS@{NUMBER\_OF\_JOINTS}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!NUMBER\_OF\_JOINTS@{NUMBER\_OF\_JOINTS}}}\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a2483401ea64f10b9bab6cf84201168e6ad0e39e10161e30843a4182e37a0f5321}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a2483401ea64f10b9bab6cf84201168e6ad0e39e10161e30843a4182e37a0f5321}} 
+NUMBER\+\_\+\+OF\+\_\+\+JOINTS&number of axes of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a14d666dda2930124a08e591e7752acd2}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a14d666dda2930124a08e591e7752acd2}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!LBRState@{LBRState}}
+\index{LBRState@{LBRState}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{LBRState()}{LBRState()}}
+{\footnotesize\ttfamily LBRState\+::\+LBRState (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a899e75d623dc6c3098bf247b6323d793}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a899e75d623dc6c3098bf247b6323d793}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getAnalogIOValue@{getAnalogIOValue}}
+\index{getAnalogIOValue@{getAnalogIOValue}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getAnalogIOValue()}{getAnalogIOValue()}}
+{\footnotesize\ttfamily double LBRState\+::get\+Analog\+IOValue (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get analog IO value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & May throw an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if the IO is of wrong type or unknown. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Full name of the IO (Syntax \char`\"{}\+IOGroup\+Name.\+IOName\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns IO\textquotesingle{}s analog value. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a899e75d623dc6c3098bf247b6323d793_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a899e75d623dc6c3098bf247b6323d793_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aafaf0eacc7fb915ea08869afb31c5a3b}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aafaf0eacc7fb915ea08869afb31c5a3b}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getBooleanIOValue@{getBooleanIOValue}}
+\index{getBooleanIOValue@{getBooleanIOValue}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getBooleanIOValue()}{getBooleanIOValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pb__syshdr_8h_a1062901a7428fdd9c7f180f5e01ea056}{bool}} LBRState\+::get\+Boolean\+IOValue (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get boolean IO value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & May throw an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if the IO is of wrong type or unknown. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Full name of the IO (Syntax \char`\"{}\+IOGroup\+Name.\+IOName\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns IO\textquotesingle{}s boolean value. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aafaf0eacc7fb915ea08869afb31c5a3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aafaf0eacc7fb915ea08869afb31c5a3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a57940ea297570db13972f34a5245cf69}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a57940ea297570db13972f34a5245cf69}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getClientCommandMode@{getClientCommandMode}}
+\index{getClientCommandMode@{getClientCommandMode}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getClientCommandMode()}{getClientCommandMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab37cbee97834c90615415394721b3f67}{EClient\+Command\+Mode}} LBRState\+::get\+Client\+Command\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the client command mode specified by the client. 
+
+\begin{DoxyReturn}{Returns}
+the client command mode specified by the client. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a1eb0f357f13fb0d75e2fa483ce3bc85c}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a1eb0f357f13fb0d75e2fa483ce3bc85c}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getCommandedJointPosition@{getCommandedJointPosition}}
+\index{getCommandedJointPosition@{getCommandedJointPosition}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getCommandedJointPosition()}{getCommandedJointPosition()}}
+{\footnotesize\ttfamily const double $\ast$ LBRState\+::get\+Commanded\+Joint\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the last commanded joint positions of the robot. 
+
+\begin{DoxyReturn}{Returns}
+array of the commanded joint positions in radians 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ad843e9b0a04224a77179b642519b8fc8}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ad843e9b0a04224a77179b642519b8fc8}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getCommandedTorque@{getCommandedTorque}}
+\index{getCommandedTorque@{getCommandedTorque}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getCommandedTorque()}{getCommandedTorque()}}
+{\footnotesize\ttfamily const double $\ast$ LBRState\+::get\+Commanded\+Torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the last commanded joint torques of the robot. 
+
+\begin{DoxyReturn}{Returns}
+array of the commanded torques in Nm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a614ccf0234d04f6b8dd3210358c633cd}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a614ccf0234d04f6b8dd3210358c633cd}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getConnectionQuality@{getConnectionQuality}}
+\index{getConnectionQuality@{getConnectionQuality}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getConnectionQuality()}{getConnectionQuality()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a69339e6f4f8c91bfab09cd7c0709b27d}{EConnection\+Quality}} LBRState\+::get\+Connection\+Quality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} connection quality. 
+
+\begin{DoxyReturn}{Returns}
+current \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} connection quality 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a8c5066e83d7e66a5de3fd14259fb725b}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a8c5066e83d7e66a5de3fd14259fb725b}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getControlMode@{getControlMode}}
+\index{getControlMode@{getControlMode}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getControlMode()}{getControlMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a555a9311ac6b5049e3dbed980c7e7ccd}{EControl\+Mode}} LBRState\+::get\+Control\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the control mode of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot. 
+
+\begin{DoxyReturn}{Returns}
+current control mode of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a6b1d593daf83e832a407e6088d3df152}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a6b1d593daf83e832a407e6088d3df152}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getDigitalIOValue@{getDigitalIOValue}}
+\index{getDigitalIOValue@{getDigitalIOValue}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getDigitalIOValue()}{getDigitalIOValue()}}
+{\footnotesize\ttfamily unsigned long long LBRState\+::get\+Digital\+IOValue (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get digital IO value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & May throw an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} if the IO is of wrong type or unknown. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Full name of the IO (Syntax \char`\"{}\+IOGroup\+Name.\+IOName\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns IO\textquotesingle{}s digital value. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a6b1d593daf83e832a407e6088d3df152_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a6b1d593daf83e832a407e6088d3df152_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a58cc3325592b7af641bd633f1e2e3b01}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a58cc3325592b7af641bd633f1e2e3b01}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getDriveState@{getDriveState}}
+\index{getDriveState@{getDriveState}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getDriveState()}{getDriveState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a9364d8c73f13b608fe2f844ddb53e817}{EDrive\+State}} LBRState\+::get\+Drive\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the accumulated drive state over all drives of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR controller. 
+
+If the drive states differ between drives, the following rule applies\+: 1) The drive state is OFF if all drives are OFF. 2) The drive state is ACTIVE if all drives are ACTIVE. 3) otherwise the drive state is TRANSITIONING. \begin{DoxyReturn}{Returns}
+accumulated drive state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ab9696fcc4bfbf4edd3633ebd691cfe96}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ab9696fcc4bfbf4edd3633ebd691cfe96}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getExternalTorque@{getExternalTorque}}
+\index{getExternalTorque@{getExternalTorque}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getExternalTorque()}{getExternalTorque()}}
+{\footnotesize\ttfamily const double $\ast$ LBRState\+::get\+External\+Torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the currently measured external joint torques of the robot. 
+
+The external torques corresponds to the measured torques when removing the torques induced by the robot itself. \begin{DoxyReturn}{Returns}
+array of the external torques in Nm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aa8df9076603ca72bd53cae74449377fd}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_aa8df9076603ca72bd53cae74449377fd}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getIpoJointPosition@{getIpoJointPosition}}
+\index{getIpoJointPosition@{getIpoJointPosition}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getIpoJointPosition()}{getIpoJointPosition()}}
+{\footnotesize\ttfamily const double $\ast$ LBRState\+::get\+Ipo\+Joint\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the joint positions commanded by the interpolator. 
+
+When commanding a motion overlay in your robot application, this method will give access to the joint positions currently commanded by the motion interpolator. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}}} & This method will throw an \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_f_r_i_exception}{FRIException}} during monitoring mode. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+array of the ipo joint positions in radians 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a393da3adc0085a01463f9b2e10dcf0f1}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a393da3adc0085a01463f9b2e10dcf0f1}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getMeasuredJointPosition@{getMeasuredJointPosition}}
+\index{getMeasuredJointPosition@{getMeasuredJointPosition}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getMeasuredJointPosition()}{getMeasuredJointPosition()}}
+{\footnotesize\ttfamily const double $\ast$ LBRState\+::get\+Measured\+Joint\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the currently measured joint positions of the robot. 
+
+\begin{DoxyReturn}{Returns}
+array of the measured joint positions in radians 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a88c1c36d3f49dc02d954ae6a04c5a075}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a88c1c36d3f49dc02d954ae6a04c5a075}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getMeasuredTorque@{getMeasuredTorque}}
+\index{getMeasuredTorque@{getMeasuredTorque}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getMeasuredTorque()}{getMeasuredTorque()}}
+{\footnotesize\ttfamily const double $\ast$ LBRState\+::get\+Measured\+Torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the currently measured joint torques of the robot. 
+
+\begin{DoxyReturn}{Returns}
+array of the measured torques in Nm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a9ba139b8ddf40d39c431d08733a9df4a}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a9ba139b8ddf40d39c431d08733a9df4a}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getOperationMode@{getOperationMode}}
+\index{getOperationMode@{getOperationMode}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getOperationMode()}{getOperationMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a09e0df19e311b9452454f17e5af04241}{EOperation\+Mode}} LBRState\+::get\+Operation\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current operation mode of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+\begin{DoxyReturn}{Returns}
+current operation mode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a759c37abc003915c6088b46071a2c059}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a759c37abc003915c6088b46071a2c059}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getOverlayType@{getOverlayType}}
+\index{getOverlayType@{getOverlayType}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getOverlayType()}{getOverlayType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_ab83788fc82c286ece5952fa66fe6c317}{EOverlay\+Type}} LBRState\+::get\+Overlay\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the overlay type specified by the client. 
+
+\begin{DoxyReturn}{Returns}
+the overlay type specified by the client. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ae64a165b5d7b6c34c04cd340d0e12979}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ae64a165b5d7b6c34c04cd340d0e12979}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getSafetyState@{getSafetyState}}
+\index{getSafetyState@{getSafetyState}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getSafetyState()}{getSafetyState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_a6309263e641f5a4b88a0bf6262d95948}{ESafety\+State}} LBRState\+::get\+Safety\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current safety state of the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller. 
+
+\begin{DoxyReturn}{Returns}
+current safety state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a9d444c64abfae06e7f51d305b9800048}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a9d444c64abfae06e7f51d305b9800048}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getSampleTime@{getSampleTime}}
+\index{getSampleTime@{getSampleTime}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getSampleTime()}{getSampleTime()}}
+{\footnotesize\ttfamily double LBRState\+::get\+Sample\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sample time in seconds. 
+
+This is the period in which the \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} Sunrise controller is sending \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} packets. \begin{DoxyReturn}{Returns}
+sample time in seconds 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_a9d444c64abfae06e7f51d305b9800048_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ae41a4b6e0be02090f239b73de4665dd1}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ae41a4b6e0be02090f239b73de4665dd1}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getSessionState@{getSessionState}}
+\index{getSessionState@{getSessionState}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getSessionState()}{getSessionState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i_abe204e7918f10aa2066ecccc5d02d08f}{ESession\+State}} LBRState\+::get\+Session\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state. 
+
+\begin{DoxyReturn}{Returns}
+current \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} session state 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ae41a4b6e0be02090f239b73de4665dd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ad93338a3e62fbbc08f969776de9e294d}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ad93338a3e62fbbc08f969776de9e294d}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getTimestampNanoSec@{getTimestampNanoSec}}
+\index{getTimestampNanoSec@{getTimestampNanoSec}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getTimestampNanoSec()}{getTimestampNanoSec()}}
+{\footnotesize\ttfamily unsigned int LBRState\+::get\+Timestamp\+Nano\+Sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the nanoseconds elapsed since the last second (in Unix time). 
+
+This method complements \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_abf6e4185f3e5b65496196ed8c2b2593c}{get\+Timestamp\+Sec()}} to get a high resolution timestamp. \begin{DoxyReturn}{Returns}
+timestamp encoded as Unix time (nanoseconds part) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_abf6e4185f3e5b65496196ed8c2b2593c}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_abf6e4185f3e5b65496196ed8c2b2593c}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getTimestampSec@{getTimestampSec}}
+\index{getTimestampSec@{getTimestampSec}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getTimestampSec()}{getTimestampSec()}}
+{\footnotesize\ttfamily unsigned int LBRState\+::get\+Timestamp\+Sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the timestamp of the current robot state in Unix time. 
+
+This method returns the seconds since 0\+:00, January 1st, 1970 (UTC). Use \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ad93338a3e62fbbc08f969776de9e294d}{get\+Timestamp\+Nano\+Sec()}} to increase your timestamp resolution when seconds are insufficient. \begin{DoxyReturn}{Returns}
+timestamp encoded as Unix time (seconds) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_abf41527865f27323c89789b6e50baefe}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_abf41527865f27323c89789b6e50baefe}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!getTrackingPerformance@{getTrackingPerformance}}
+\index{getTrackingPerformance@{getTrackingPerformance}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{getTrackingPerformance()}{getTrackingPerformance()}}
+{\footnotesize\ttfamily double LBRState\+::get\+Tracking\+Performance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get an indicator for the current tracking performance of the commanded robot. 
+
+The tracking performance is an indicator on how well the commanded robot is able to follow the commands of the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} client. The best possible value 1.\+0 is reached when the robot executes the given commands instantaneously. The tracking performance drops towards 0 when latencies are induced, e.\+g. when the commanded velocity, acceleration or jerk exceeds the capabilities of the robot. The tracking performance will always be 0 when the session state does not equal COMMANDING\+\_\+\+ACTIVE. \begin{DoxyReturn}{Returns}
+current tracking performance 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ac6a886bf0f241f29fa732e8b9aeb5591}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ac6a886bf0f241f29fa732e8b9aeb5591}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!LBRClient@{LBRClient}}
+\index{LBRClient@{LBRClient}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{LBRClient}{LBRClient}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_client}{LBRClient}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ab969e958fcccbd7176040978c77265d8}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_ab969e958fcccbd7176040978c77265d8}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!\_message@{\_message}}
+\index{\_message@{\_message}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{\_message}{\_message}}
+{\footnotesize\ttfamily \mbox{\hyperlink{fri_l_b_r_state_8h_abe3ebd788f52ce93e978f0c8efb519c8}{FRIMonitoring\+Message}}$\ast$ KUKA\+::\+FRI\+::\+LBRState\+::\+\_\+message\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message (protobuf struct) 
+
+\mbox{\Hypertarget{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_af5c045a92c4b93296acd544b9000e1a6}\label{class_k_u_k_a_1_1_f_r_i_1_1_l_b_r_state_af5c045a92c4b93296acd544b9000e1a6}} 
+\index{KUKA::FRI::LBRState@{KUKA::FRI::LBRState}!LBRMONITORMESSAGEID@{LBRMONITORMESSAGEID}}
+\index{LBRMONITORMESSAGEID@{LBRMONITORMESSAGEID}!KUKA::FRI::LBRState@{KUKA::FRI::LBRState}}
+\doxysubsubsection{\texorpdfstring{LBRMONITORMESSAGEID}{LBRMONITORMESSAGEID}}
+{\footnotesize\ttfamily const int KUKA\+::\+FRI\+::\+LBRState\+::\+LBRMONITORMESSAGEID = 0x245142\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+type identifier for the \mbox{\hyperlink{namespace_k_u_k_a_1_1_f_r_i}{FRI}} monitoring message corresponding to a \mbox{\hyperlink{namespace_k_u_k_a}{KUKA}} LBR robot 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/include/\mbox{\hyperlink{fri_l_b_r_state_8h}{fri\+LBRState.\+h}}\item 
+build/\+FRI-\/\+Client-\/\+SDK\+\_\+\+Cpp/src/client\+\_\+lbr/\mbox{\hyperlink{fri_l_b_r_state_8cpp}{fri\+LBRState.\+cpp}}\end{DoxyCompactItemize}

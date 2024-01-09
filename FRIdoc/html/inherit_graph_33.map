@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_k_u_k_a_1_1_f_r_i_1_1_transformation_client.html" title="Abstract FRI transformation client." alt="" coords="5,35,189,76"/>
+<area shape="rect" id="node2" href="$class_simulated_transformation_provider_client.html" title="Test client that sends back simulated transformations corresponding to a slight translation with chan..." alt="" coords="237,5,452,47"/>
+<area shape="rect" id="node3" href="$class_transformation_provider_client.html" title="Example client for changing the transformation matrix of a robot frame." alt="" coords="249,71,440,98"/>
+</map>
