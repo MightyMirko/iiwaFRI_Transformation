@@ -3,23 +3,28 @@ FROM mmatosin/rl_app
 LABEL authors="mirko"
 LABEL image_name="mmatosin/mastersApp"
 LABEL org.image.authors="@mightymirko"
+LABEL "com.example.vendor"="AndAction"
+LABEL version="1.0"
+LABEL description="This text illustrates \
+that label-values can span multiple lines."
+ENV DEBIAN_FRONTEND noninteractive
 
 # Install Python3 and Doxygen
 RUN apt-get update && \
     apt-get install -y python3-dev python3 python3-pip doxygen graphviz \
     libssl-dev libffi-dev
 
-
 RUN useradd -m user && yes password | passwd user
 # Set ownership for directories
 RUN chown user:user -R /app /home/user
 
 # Switch to the user context
+ENV HOME /home/user/
 USER user
 
 # Install matplotlib
 RUN python3 -m pip install matplotlib
-
+ENV PATH="/home/user/.local/bin:${PATH}"
 # Set the working directory for the final build
 WORKDIR /app
 
@@ -34,6 +39,8 @@ RUN mkdir build && \
 
 # Set the working directory for the final application
 WORKDIR /app/masters
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD curl -f http://localhost/ || exit 1
 
 # Uncomment and adjust the following line as needed
-# ENTRYPOINT ["../build/masters/mastersApp", "172.31.0.147"]
+CMD ../build/masters/mastersApp "172.31.0.147"
