@@ -1,6 +1,6 @@
 ### build
 build
-.idea
+cmake-build-tests
 # Created by https://www.toptal.com/developers/gitignore/api/cmake,c++,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=cmake,c++,python
 

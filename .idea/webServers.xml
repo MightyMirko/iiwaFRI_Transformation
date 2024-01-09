@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9456f129-2677-4bbe-890c-c15ae88bcb3b" name="adm-work-win10">
+        <fileTransfer rootFolder="/C:/Users/iras-admin" accessType="SFTP" host="win10-kuka" port="22" sshConfigId="769199c8-42dc-4180-9dac-7dc2e8556b43" sshConfig="iras-admin@win10-kuka:22 agent" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

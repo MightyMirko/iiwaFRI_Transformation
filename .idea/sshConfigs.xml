@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="OPEN_SSH" host="win10-kuka" id="769199c8-42dc-4180-9dac-7dc2e8556b43" port="22" nameFormat="DESCRIPTIVE" username="iras-admin" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
