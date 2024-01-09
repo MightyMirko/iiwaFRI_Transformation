@@ -1,5 +1,5 @@
 # CMakeLists.txt im "masters"-Ordner
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.21)
 project(SubProj DESCRIPTION "Mirko Matošin 2024 Masterthesis")
 set(PROJECT_DESCRIPTION "Calculation of Velocities on Gripper")
 set(CMAKE_CXX_STANDARD 17)
@@ -10,7 +10,7 @@ message(STATUS "Configuring Source ${CMAKE_CURRENT_SOURCE_DIR}")
 find_package(RL COMPONENTS MDL KIN MATH REQUIRED)
 find_package(Boost REQUIRED COMPONENTS iostreams)
 # Find Python 3 interpreter, compiler, and development environment
-find_package(Python3 COMPONENTS Interpreter Development NumPy)
+find_package(Python COMPONENTS Interpreter Development NumPy )
 
 # Check if Python 3 is found
 if (Python3_FOUND)
@@ -23,9 +23,8 @@ if (Python3_FOUND)
     set(PYTHON_LINK_OPTIONS ${Python3_LINK_OPTIONS})
 
     # Additional configurations for your target, if needed
-
 else ()
-    message(WARNING "Python 3 not found. Please make sure Python 3 is installed.")
+    message(WARNING "iPython 3 not found. Please make sure Python 3 is installed.")
 endif ()
 
 find_package(Doxygen
@@ -42,6 +41,8 @@ if (DOXYGEN_FOUND)
 else ()
     message(WARNING "Doxygen not found, documentation will not be generated.")
 endif ()
+
+
 
 # Fügen Sie Ihre Quelldateien und Header-Dateien hinzu
 file(GLOB MASTERS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
@@ -78,4 +79,5 @@ add_executable(mastersApp mastersApp.cpp)
 
 # Linken Sie gegen die erstellte Masters-Bibliothek
 target_link_libraries(mastersApp PRIVATE mastersLibrary)
+
 add_subdirectory(tests)
