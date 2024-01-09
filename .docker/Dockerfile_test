@@ -1,0 +1,6 @@
+# syntax=docker/dockerfile:1.5-labs
+FROM mmatosin/rl_app
+
+LABEL authors="mirko"
+RUN mkdir /opt/test
+WORKDIR /opt/test
