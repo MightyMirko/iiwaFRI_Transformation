@@ -1,4 +1,6 @@
 FROM mmatosin/mybase
+LABEL image_name="roblib_image"
+
 WORKDIR /app
 # Build and install the Robotics Library dependencies
 RUN add-apt-repository ppa:roblib/ppa &&\
@@ -16,6 +18,7 @@ RUN mkdir build
 RUN cmake -S . -B build -D CMAKE_BUILD_TYPE=Debug -D RL_USE_QT6=${RL_USE_QT6}
 RUN cmake --build build --parallel 12
 RUN cmake --install build
+
 RUN ldconfig
 
 

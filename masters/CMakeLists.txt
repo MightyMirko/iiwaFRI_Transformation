@@ -10,7 +10,7 @@ message(STATUS "Configuring Source ${CMAKE_CURRENT_SOURCE_DIR}")
 find_package(RL COMPONENTS MDL KIN MATH REQUIRED)
 find_package(Boost REQUIRED COMPONENTS iostreams)
 # Find Python 3 interpreter, compiler, and development environment
-find_package(Python COMPONENTS Interpreter Development NumPy )
+find_package(Python3 COMPONENTS Interpreter Development NumPy )
 
 # Check if Python 3 is found
 if (Python3_FOUND)
@@ -24,7 +24,7 @@ if (Python3_FOUND)
 
     # Additional configurations for your target, if needed
 else ()
-    message(WARNING "iPython 3 not found. Please make sure Python 3 is installed.")
+    message(WARNING "Python 3 not found. Please make sure Python 3 is installed.")
 endif ()
 
 find_package(Doxygen

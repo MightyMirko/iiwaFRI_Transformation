@@ -26,8 +26,8 @@ mastersclient::mastersclient(bool doPlot, double plotCount)
                     d_vecJointPosition(jointPosition.size(), 0.0));
 
     std::vector<std::string> xmlpath{//
-            "/home/mirko/CLionProjects/thesis2024_orphaned/masters/descr/rlmdl/kuka-lbr-iiwa-7-r800.xml",
-            "/usr/share/rl-0.7.0/examples/rlmdl/mitsubishi-rv6sl.xml"
+            "descr/rlmdl/kuka-lbr-iiwa-7-r800.xml",
+            "/usr//local/share/rl-0.7.0/examples/rlmdl/mitsubishi-rv6sl.xml"
     };
     // Check if the file exists
     for (const auto &i: xmlpath) {

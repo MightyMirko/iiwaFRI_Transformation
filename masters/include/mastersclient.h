@@ -11,9 +11,9 @@
 #include <memory>
 #include <vector>
 #include <queue>
-#include "gnuplot-iostream.h"
 #include "plotMaster.h"
 #include <chrono>
+#include <mutex>
 
 #define ROUND_AFTER_COMMA 1e7
 
@@ -60,7 +60,7 @@ private:
 
     bool doPlot = false; ///< Flag to enable or disable plotting.
 
-    static std::mutex historyMutex,calculationMutex,multiSidedJointVelMutex,
+    static std::mutex historyMutex, calculationMutex,multiSidedJointVelMutex,
             oneSidedJointVelMutex; ///< Mutexes for various operations.
 
     robotModel *robotmdl; ///< Pointer to the robot model.
