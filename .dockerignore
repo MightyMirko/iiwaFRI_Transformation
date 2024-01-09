@@ -1,0 +1,9 @@
+*.yaml
+__pycache__/
+.git
+.aws
+.env
+../.gitignore
+
+build/
+cmake-build-tests/

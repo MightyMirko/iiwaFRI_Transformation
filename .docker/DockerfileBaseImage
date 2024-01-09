@@ -1,0 +1,35 @@
+# Use the official image as a base image
+# Stage 1: Build Stage
+FROM ubuntu:22.04 AS prepare
+LABEL image_name="prepare_image"
+ENV HOME /root
+SHELL ["/bin/bash", "-c"]
+
+# Install required dependencies
+WORKDIR /app
+COPY . .
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && apt-get install -y \
+    curl \
+    software-properties-common \
+    git \
+    wget \
+    gcc \
+    libc6-dev \
+    build-essential \
+    cmake \
+    ninja-build \
+    libprotobuf-dev \
+    protobuf-compiler \
+    doxygen \
+    libboost-all-dev \
+    libbullet-dev \
+    libeigen3-dev \
+    libnlopt-dev \
+    libode-dev \
+    libsimage-dev \
+    libsoqt-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    libdc1394-dev
