@@ -1,5 +1,5 @@
 FROM mmatosin/mybase
-LABEL image_name="roblib_image"
+LABEL image_name="mmatosin/roblib_app"
 
 WORKDIR /app
 # Build and install the Robotics Library dependencies

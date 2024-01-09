@@ -1,6 +1,9 @@
 FROM mmatosin/rl_app
+
 LABEL authors="mirko"
-# Install Python3 and Doxygen
+LABEL image_name="mmatosin/mastersApp"
+LABEL org.image.authors="@mightymirko"
+
 # Install Python3 and Doxygen
 RUN apt-get update && \
     apt-get install -y python3-dev python3 python3-pip doxygen graphviz \
@@ -9,16 +12,20 @@ RUN apt-get update && \
 # Install matplotlib
 RUN python3 -m pip install matplotlib
 
-
-ENV PATH="${PATH}:/usr/bin/"
-
-    # Set the working directory back to /app for the final build
+# Set the working directory for the final build
 WORKDIR /app
+
+# Copy your project files into the final image
 COPY . .
-RUN ls -l
+
 # Build your project
 RUN mkdir build && \
     cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=ninja -DBUILD_FRI_APPS:BOOL=OFF -G \
     Ninja -S . -B build && \
     cmake --build build --parallel 12
 
+# Set the working directory for the final application
+WORKDIR /app/masters
+
+# Uncomment and adjust the following line as needed
+# ENTRYPOINT ["../build/masters/mastersApp", "172.31.0.147"]

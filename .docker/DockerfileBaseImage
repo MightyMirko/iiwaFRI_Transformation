@@ -1,7 +1,7 @@
 # Use the official image as a base image
 # Stage 1: Build Stage
 FROM ubuntu:22.04 AS prepare
-LABEL image_name="prepare_image"
+LABEL image_name="mmatosin/base_image"
 ENV HOME /root
 SHELL ["/bin/bash", "-c"]
 
@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
     git \
     wget \
     gcc \
+    gdb\
+    g++\
     libc6-dev \
     build-essential \
     cmake \
@@ -32,4 +34,8 @@ RUN apt-get update && apt-get install -y \
     libsoqt-dev \
     libxml2-dev \
     libxslt1-dev \
-    libdc1394-dev
+    libdc1394-dev \
+    ssh \
+    clang \
+    tar\
+    rsync
