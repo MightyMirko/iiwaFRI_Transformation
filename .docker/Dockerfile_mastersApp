@@ -1,7 +1,7 @@
 FROM mmatosin/rl_app
 
 LABEL authors="mirko"
-LABEL image_name="mmatosin/mastersApp"
+LABEL image_name="mmatosin/master_app"
 LABEL org.image.authors="@mightymirko"
 LABEL "com.example.vendor"="AndAction"
 LABEL version="1.0"
