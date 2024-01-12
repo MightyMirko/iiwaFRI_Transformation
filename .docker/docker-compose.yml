@@ -1,0 +1,23 @@
+services:
+  base:
+    build:
+      dockerfile: ./DockerfileBaseImage
+      context: ..
+    container_name: mmatosin/mybase
+
+  rlapp:
+    build:
+      dockerfile: ./Dockerfile_rl
+      context: ..
+    container_name: mmatosin/rl-app
+    depends_on:
+      - base
+  # We dont need the others container running. This compose file is only a sample and easy way to build all deps
+  masters:
+    build:
+      dockerfile: ./Dockerfile_mastersApp
+      context: ..
+    container_name: mmatosin/masters-app
+    depends_on:
+      - base
+      - rlapp

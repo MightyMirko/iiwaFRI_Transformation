@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.5-labs
-FROM mmatosin/mybase
-LABEL image_name="mmatosin/roblib_app"
+FROM mmatosin/mybase AS base
+LABEL image_name="mmatosin/rl-app"
 ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /app
