@@ -1,0 +1,22 @@
+{
+	"name": "my_TexTenant",
+	"image": "mmatosin/mmatosin/masters_app",
+	"remoteUser": "root",
+	"hostRequirements": {
+		"storage": "32gb"
+	},
+	"remoteEnv": {
+		"user": "mmatosin",
+	},
+	"features": {},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				
+			},
+			"extensions": [
+				// Add other extensions if needed
+			]
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "formulahendry.docker-extension-pack",
+        "ms-azuretools.vscode-docker"
+    ]
+}
