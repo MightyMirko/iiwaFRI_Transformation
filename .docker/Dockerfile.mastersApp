@@ -1,4 +1,4 @@
-FROM mmatosin/rl_app AS roblib
+FROM mmatosin/rl-app AS roblib
 
 LABEL org.zimmer.image.authors="mirko"
 LABEL image_name="mmatosin/masters-app"
