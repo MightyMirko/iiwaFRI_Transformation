@@ -81,9 +81,12 @@ void robotModel::performForwardKinematics() {
 
 void robotModel::getTransformation(bool printFlag /*= false*/) {
     // Endeffektor Geschwindgkeitsvekor
-
+//dynamic->setPosition(q); // input value
+//dynamic->calculateMassMatrix(); // modify model
+//const rl::math::Matrix& m = dynamic->getMassMatrix(); // output value
     tcp.matrix_position = kinematics->getOperationalPosition(0); // output value
     tcp.xd = kinematics->getOperationalVelocity(0);
+    const rl::math::Matrix& j = kinematics->getJacobian(); // output value
     //tcp.matrix_position.translate(); Setze vektor auf tcp basis um?
 
     tcp.posi = tcp.matrix_position.translation();
@@ -104,9 +107,11 @@ void robotModel::getTransformation(bool printFlag /*= false*/) {
         const int width = 20;
 
         //std::cout << *tcp.matrix_position.data() << std::endl; // pointer auf erste Position in Matrix
-        std::cout << tcp.matrix_position.matrix() << "\n Matrix()" << std::endl; // komplette Matrix
-        std::cout << tcp.matrix_position.linear() << "\n linear()" <<std::endl; // Matrix linear Anteil (3x3
-        std::cout << tcp.matrix_position.translation().transpose() << "\n translation()" <<std::endl; // komplette Matrix
+        std::cout << "Matrix()\n" << tcp.matrix_position.matrix() << std::endl; // komplette Matrix
+        std::cout << "linear()\n" << tcp.matrix_position.linear() << std::endl; // Matrix linear Anteil (3x3
+        std::cout << "translation()\n" << tcp.matrix_position.translation().transpose()  <<std::endl; // komplette Matrix
+        std::cout << "Jacobi()\n" << j.matrix() << std::endl; // komplette Matrix
+
         //std::cout << *tcp.matrix_position.data() << std::endl; // pointer auf erste Position in Matrix
         //std::cout << tcp.xd.matrix() << "\n Matrix()" << std::endl; // komplette Matrix
         //std::cout << tcp.xd.linear().transpose() << "\n linear()" <<std::endl; // Matrix linear Anteil (3x3
@@ -114,19 +119,20 @@ void robotModel::getTransformation(bool printFlag /*= false*/) {
 
 
         std::cout
-                << "Aktuelle Vektor radial in WeltKoordinaten abc \t"
+        std::cout
+                << "Aktueller Vektor zum TCP radial in WeltKoordinaten abc \n"
                 << std::setw(width) << tcp.a << std::setw(width)
                 << tcp.b << std::setw(width) << tcp.c
                 << std::endl;
 
         std::cout
-                << "Aktuelle Geschwindigkeitsvektor linear in WeltKoordinaten xyz \t"
+                << "Aktuelle Geschwindigkeitsvektor TCP linear in WeltKoordinaten xyz \n"
                 << std::setw(width) << tcp.vecV.x() << std::setw(width)
                 << tcp.vecV.y() << std::setw(width) << tcp.vecV.z()
                 << std::endl;
 
         std::cout
-                << "Aktuelle Geschwindigkeitsvektor radial in WeltKoordinaten xyz \t"
+                << "Aktuelle Geschwindigkeitsvektor TCP radial in WeltKoordinaten xyz \n"
                 << std::setw(width) << tcp.vecOmega.x() << std::setw(width)
                 << tcp.vecOmega.y() << std::setw(width) << tcp.vecOmega.z()
                 << std::endl;

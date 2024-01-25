@@ -186,7 +186,7 @@ mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 19
 }
 
 void mastersclient::monitor() {
-
+    //std::cout << "mon: "<< std::endl;
     // Start time measurement
     getCurrentTimestamp();
     auto startTime = std::chrono::high_resolution_clock::now();
@@ -236,7 +236,7 @@ void mastersclient::doProcessJointData(const rl::math::Vector &jointVel) {
     robotmdl->performForwardKinematics();
 
     // Get transformation matrix at joint 0
-    robotmdl->getTransformation(0);
+    robotmdl->getTransformation(1);
 
 }
 

@@ -61,17 +61,21 @@ int main(int argc, char** argv) {
 
     // Create a new sine overlay client
     mastersclient trafoClient(false,plotCount);
-
+    std::cout << "Create TrafoCient from mastersclient succesfull"<< std::endl;
     // Pass connection and client to a new FRI client application
     UdpConnection connection;
     ClientApplication app(connection, trafoClient);
+    std::cout << "Connection establishing...: "<< std::endl;
 
     // Connect client application to KUKA Sunrise controller
     // Repeatedly call the step routine to receive and process FRI packets
     bool success = app.connect(port, hostname.c_str());
+    std::cout << "success: "<<success<< std::endl;
+
     while (success) {
         try {
             success = app.step();
+            std::cout << "step: "<< std::endl;
 
             if (trafoClient.s_eSessionstate) {
                 //std::printf("Session State:\traPosition%s\n", trafoClient.s_eSessionstate);
