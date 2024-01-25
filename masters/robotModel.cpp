@@ -90,7 +90,11 @@ void robotModel::getTransformation(bool printFlag /*= false*/) {
     //tcp.matrix_position.translate(); Setze vektor auf tcp basis um?
 
     tcp.posi = tcp.matrix_position.translation();
+    tcp.x = tcp.posi.row(0)(0);
+    tcp.y = tcp.posi.row(1)(0);
+    tcp.z = tcp.posi.row(2)(0);
 
+    //std::cout << tcp.posi.matrix()<< std::endl;
     tcp.orient = tcp.matrix_position.rotation().eulerAngles(2,1,0);
     tcp.a = tcp.orient(0) * rl::math::RAD2DEG;
     tcp.b = tcp.orient(1) * rl::math::RAD2DEG;
@@ -119,6 +123,10 @@ void robotModel::getTransformation(bool printFlag /*= false*/) {
 
 
         std::cout
+                << "Aktueller Vektor zum TCP in WeltKoordinaten xyz \n"
+                << std::setw(width) << tcp.x << std::setw(width)
+                << tcp.y << std::setw(width) << tcp.z
+                << std::endl;
         std::cout
                 << "Aktueller Vektor zum TCP radial in WeltKoordinaten abc \n"
                 << std::setw(width) << tcp.a << std::setw(width)
