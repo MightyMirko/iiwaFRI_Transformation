@@ -1,5 +1,3 @@
-Certainly! Here's the formatted project summary in Markdown:
-
 # Project Title
 
 The project is a robotics-related development that involves the utilization of the FRI (Fast Research Interface)
