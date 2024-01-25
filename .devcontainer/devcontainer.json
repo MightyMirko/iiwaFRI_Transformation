@@ -1,22 +1,30 @@
 {
-	"name": "my_TexTenant",
-	"image": "mmatosin/mmatosin/masters_app",
+	"name": "mastersApp-dev",
+	"image": "mmatosin/mastersapp-dev",
 	"remoteUser": "root",
 	"hostRequirements": {
 		"storage": "32gb"
 	},
-	"remoteEnv": {
-		"user": "mmatosin",
-	},
+	"forwardPorts": 
+	[
+		30201
+	],
 	"features": {},
-	"customizations": {
-		"vscode": {
-			"settings": {
-				
-			},
-			"extensions": [
-				// Add other extensions if needed
-			]
-		}
+	"runArgs": [
+		"--network=host",
+	],
+	"customizations": { // diese Settings müssten eigentlich in .vscode/settings. devcontainer sind universell und sollten nicht ide spezifische Settings haben
+	"vscode": {
+		"settings": {
+		
+		},
+		"extensions": [
+			"ms-vscode.cpptools",
+			"ms-vscode.cpptools-extension-pack",
+			"twxs.cmake",
+			"ms-vscode.cmake-tools",
+			"ms-vscode.cpptools-themes",
+		]
 	}
+},
 }

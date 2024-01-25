@@ -7,7 +7,6 @@ SHELL ["/bin/bash", "-c"]
 
 # Install required dependencies
 WORKDIR /app
-COPY . .
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y \
@@ -15,6 +14,8 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     git \
     wget \
+    nmap \
+    sudo \
     gcc \
     gdb\
     g++\
@@ -39,3 +40,15 @@ RUN apt-get update && apt-get install -y \
     clang \
     tar\
     rsync
+
+# Arguments for UID and GID
+ARG UID=1000
+ARG GID=1000
+ARG USERNAME=nonroot
+
+# Create a new user with the same UID and GID as the host user
+RUN groupadd -g $GID $USERNAME && \
+    useradd -m -l -u $UID -g $USERNAME $USERNAME && \
+    echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME && \
+    chown -R $USERNAME:$USERNAME /home/$USERNAME

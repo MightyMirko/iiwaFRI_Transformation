@@ -1,0 +1,12 @@
+{
+    "cmake.configureArgs": [
+        "-G Ninja",
+        "-DBUILD_FRI_APPS=OFF",
+        "-DBUILD_MASTER=ON",
+        "-DCMAKE_INSTALL_PREFIX:PATH=${PROJECT_DIR}\""
+    ],
+    "C_Cpp.doxygen.generatedStyle": "/*!",
+    "cmake.debugConfig": {
+        
+    }
+    }

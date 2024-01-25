@@ -1,6 +1,7 @@
 {
     "recommendations": [
-        "formulahendry.docker-extension-pack",
-        "ms-azuretools.vscode-docker"
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        
     ]
 }

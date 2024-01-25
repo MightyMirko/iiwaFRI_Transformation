@@ -4,6 +4,7 @@ __pycache__/
 .aws
 .env
 ../.gitignore
+.secrets
 
 build/
 cmake-build-tests/

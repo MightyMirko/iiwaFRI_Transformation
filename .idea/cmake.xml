@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CMakeSharedSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="build" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DBUILD_FRI_APPS:BOOL=OFF" />
-      <configuration PROFILE_NAME="Tests" ENABLED="true" CONFIG_NAME="Debug" />
-      <configuration PROFILE_NAME="Debug Docker" ENABLED="false" GENERATION_DIR="build" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Docker MastersApp" GENERATION_OPTIONS="-DBUILD_FRI_APPS:BOOL=OFF" />
+      <configuration PROFILE_NAME="Debug" ENABLED="false" GENERATION_DIR="build" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DBUILD_FRI_APPS:BOOL=OFF" />
+      <configuration PROFILE_NAME="Tests" ENABLED="false" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug Docker" ENABLED="true" GENERATION_DIR="build" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Docker MastersApp" GENERATION_OPTIONS="-G Ninja -DBUILD_FRI_APPS:BOOL=OFF" />
     </configurations>
   </component>
 </project>
