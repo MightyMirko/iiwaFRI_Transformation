@@ -170,17 +170,16 @@ mastersclient::getCurrentTimestamp() {// Get seconds since 0:00, January 1st, 19
 
     deltaTime = currentSampleTime - prvSampleTime;
     prvSampleTime = currentSampleTime;
-
+    std::cout <<"Tatsächliche Abtastrate [s]: \t "<< deltaTime.count() <<std::endl;
     // Check if the error between deltaTime and desiredDeltaTime is larger than 500 microseconds
-    const auto error = std::chrono::duration_cast<std::chrono::microseconds>(
-            deltaTime - desiredDeltaTime
-                                                                            );
-    if (std::abs(error.count()) > 500) {
+    //const auto error = std::chrono::duration_cast<std::chrono::microseconds>(
+    //        deltaTime - desiredDeltaTime);
+    if (std::abs(deltaTime.count()) > desiredDeltaTime.count()) {
         // If the error is too large, log the error and throw an exception
-        std::cerr << "Error: " << error.count() << " microseconds." << std::endl;
-        throw std::runtime_error(
-                "DeltaTime error exceeds 500 microseconds. Handle the exception accordingly."
-                                );
+        std::cerr << "Error: " << deltaTime.count() << " microseconds." << std::endl;
+     //   throw std::runtime_error(
+       //         "DeltaTime error exceeds 500 microseconds. Handle the exception accordingly."
+        //                        );
     }
 
 }
