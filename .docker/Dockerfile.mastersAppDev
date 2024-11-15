@@ -1,8 +1,8 @@
-ARG BASE_IMAGE=mmatosin/rl-app
+ARG BASE_IMAGE=localhost/rl-app
 FROM $BASE_IMAGE AS roblib
 
 LABEL org.zimmer.image.authors="mirko"
-LABEL image_name="mmatosin/masters-app"
+LABEL image_name="localhost/masters-app"
 LABEL org.image.authors="@mightymirko"
 LABEL "com.example.vendor"="AndAction"
 LABEL version="1.0"
