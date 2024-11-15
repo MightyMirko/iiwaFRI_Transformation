@@ -1,6 +1,6 @@
 {
 	"name": "mastersApp-dev",
-	"image": "mmatosin/mastersapp-dev",
+	"image": "localhost/mastersapp-dev",
 	"remoteUser": "root",
 	"hostRequirements": {
 		"storage": "32gb"
@@ -11,7 +11,7 @@
 	],
 	"features": {},
 	"runArgs": [
-		"--network=host",
+		"--network=host"
 	],
 	"customizations": { // diese Settings müssten eigentlich in .vscode/settings. devcontainer sind universell und sollten nicht ide spezifische Settings haben
 	"vscode": {
